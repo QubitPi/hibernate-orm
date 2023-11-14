@@ -1,0 +1,2974 @@
+[[settings-compliance]]
+=== Jakarta Persistence Compliance Settings
+
+[[settings-hibernate.jpa.compliance]]
+`*hibernate.jpa.compliance*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[JpaComplianceSettings.JPA_COMPLIANCE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* `true` with JPA bootstrapping; `false` otherwise.
+
+
+****
++
+Specifies a default value for all link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/spi/JpaCompliance.html[`JpaCompliance`] flags. Each individual flag may still be overridden by explicitly specifying its specific configuration property.
+
+
+'''
+[[settings-hibernate.jpa.compliance.caching]]
+`*hibernate.jpa.compliance.caching*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_CACHING_COMPLIANCE[JpaComplianceSettings.JPA_CACHING_COMPLIANCE]
+
+*_Since:_* _5.3_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+Hibernate's default behavior here is safer and more careful than the behavior mandated by the TCK but YOLO
+
+****
++
+By default, Hibernate uses second-level cache invalidation for entities with link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/SecondaryTable.html?is-external=true[secondary tables] in order to avoid the possibility of inconsistent cached data in the case where different transactions simultaneously update different table rows corresponding to the same entity instance. 
++
+The Jakarta Persistence TCK, requires that entities with secondary tables be immediately cached in the second-level cache rather than invalidated and re-cached on a subsequent read.
+
+
+
+'''
+[[settings-hibernate.jpa.compliance.closed]]
+`*hibernate.jpa.compliance.closed*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_CLOSED_COMPLIANCE[JpaComplianceSettings.JPA_CLOSED_COMPLIANCE]
+
+*_Since:_* _5.3_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+When enabled, this setting forces Hibernate to throw an exception if close() is called on an instance that was already closed.
+
+****
++
+JPA specifies that an link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true[`IllegalStateException`] must be thrown by link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#close()[`EntityManager.close()`] and link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManagerFactory.html?is-external=true#close()[`EntityManagerFactory.close()`] if the object has already been closed. By default, Hibernate treats any additional call to `close()` as a noop.
+
+
+'''
+[[settings-hibernate.jpa.compliance.global_id_generators]]
+`*hibernate.jpa.compliance.global_id_generators*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_ID_GENERATOR_GLOBAL_SCOPE_COMPLIANCE[JpaComplianceSettings.JPA_ID_GENERATOR_GLOBAL_SCOPE_COMPLIANCE]
+
+*_Since:_* _5.2.17_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+If enabled, the name will be considered globally scoped, and so the existence of two different generators with the same name will be considered a collision, and will result in an exception during bootstrap.
+
+****
++
+Determines whether the scope of any identifier generator name specified via link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/TableGenerator.html?is-external=true#name()[`TableGenerator.name()`] or link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/SequenceGenerator.html?is-external=true#name()[`SequenceGenerator.name()`] is considered global to the persistence unit, or local to the entity in which identifier generator is defined.
+
+
+'''
+[[settings-hibernate.jpa.compliance.list]]
+`[.line-through]#hibernate.jpa.compliance.list#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_LIST_COMPLIANCE[JpaComplianceSettings.JPA_LIST_COMPLIANCE]
+
+WARNING: *_This setting is considered deprecated_*
+
+*_Since:_* _5.3_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+If enabled, Hibernate will recognize it as a list where the OrderColumn annotation is simply missing (and its defaults will apply).
+
+****
++
+Controls whether Hibernate should treat what it would usually consider a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../collection/spi/PersistentBag.html["bag"], that is, a list with no index column, whose element order is not persistent, as a true link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../collection/spi/PersistentList.html[`list`] with an index column and a persistent element order.
+
+
+'''
+[[settings-hibernate.jpa.compliance.load_by_id]]
+`*hibernate.jpa.compliance.load_by_id*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_LOAD_BY_ID_COMPLIANCE[JpaComplianceSettings.JPA_LOAD_BY_ID_COMPLIANCE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+When enabled, coercion is disallowed, as required by the JPA specification. Hibernate's default (here non-compliant) behavior is to allow the coercion.
+
+****
++
+Determines if an identifier value passed to link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#find(java.lang.Class,java.lang.Object)[`EntityManager.find(java.lang.Class<T>, java.lang.Object)`] or link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#getReference(java.lang.Class,java.lang.Object)[`EntityManager.getReference(java.lang.Class<T>, java.lang.Object)`] may be link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/descriptor/java/JavaType.html#coerce(X,org.hibernate.type.descriptor.java.JavaType.CoercionContext)[coerced] to the identifier type declared by the entity. For example, an link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html?is-external=true[`Integer`] argument might be widened to link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Long.html?is-external=true[`Long`].
+
+
+'''
+[[settings-hibernate.jpa.compliance.orderby]]
+`*hibernate.jpa.compliance.orderby*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_ORDER_BY_MAPPING_COMPLIANCE[JpaComplianceSettings.JPA_ORDER_BY_MAPPING_COMPLIANCE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+If enabled, an exception is thrown for items which are not entity attribute references.
+
+****
++
+JPA specifies that items occurring in link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/OrderBy.html?is-external=true[`OrderBy`] lists must be references to entity attributes, whereas Hibernate, by default, allows more complex expressions.
+
+
+'''
+[[settings-hibernate.jpa.compliance.proxy]]
+`*hibernate.jpa.compliance.proxy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_PROXY_COMPLIANCE[JpaComplianceSettings.JPA_PROXY_COMPLIANCE]
+
+*_Since:_* _5.2.13_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+When enabled, this setting forces Hibernate to initialize the entity proxy when its identifier is accessed. Clearly, this setting is not recommended.
+
+****
++
+The JPA specification insists that an link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityNotFoundException.html?is-external=true[`EntityNotFoundException`] must be thrown whenever an uninitialized entity proxy with no corresponding row in the database is accessed. For most programs, this results in many completely unnecessary round trips to the database. 
++
+Traditionally, Hibernate does not initialize an entity proxy when its identifier attribute is accessed, since the identifier value is already known and held in the proxy instance. This behavior saves the round trip to the database.
+
+
+
+'''
+[[settings-hibernate.jpa.compliance.query]]
+`*hibernate.jpa.compliance.query*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_QUERY_COMPLIANCE[JpaComplianceSettings.JPA_QUERY_COMPLIANCE]
+
+*_Since:_* _5.3_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+When disabled, allows the many useful features of HQL
+
+****
++
+Controls whether Hibernate’s handling of link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Query.html?is-external=true[`Query`] (JPQL, Criteria and native) should strictly follow the requirements defined in the Jakarta Persistence specification, both in terms of JPQL validation and behavior of link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Query.html?is-external=true[`Query`] method implementations.
+
+
+'''
+[[settings-hibernate.jpa.compliance.transaction]]
+`*hibernate.jpa.compliance.transaction*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_TRANSACTION_COMPLIANCE[JpaComplianceSettings.JPA_TRANSACTION_COMPLIANCE]
+
+*_Since:_* _5.3_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JpaComplianceSettings.html#JPA_COMPLIANCE[`JPA_COMPLIANCE`]
+
+
+****
++
+When enabled, specifies that the Hibernate link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../Transaction.html[`Transaction`] should behave according to the semantics defined by the JPA specification for an link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html?is-external=true[`EntityTransaction`].
+
+
+'''
+
+[[settings-persistence]]
+=== Persistence Unit Settings
+
+[[settings-jakarta.persistence.provider]]
+`*jakarta.persistence.provider*`::
+Specifies a class implementing link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/spi/PersistenceProvider.html?is-external=true[`PersistenceProvider`]. Naturally, this should always be link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/HibernatePersistenceProvider.html[`HibernatePersistenceProvider`], which is the best damn persistence provider ever. There's no need to explicitly specify this setting when there are no inferior persistence providers floating about. 
++
+See JPA 2 sections 9.4.3 and 8.2.1.4
+
+
+
+'''
+[[settings-jakarta.persistence.transactionType]]
+`*jakarta.persistence.transactionType*`::
+Specifies the link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/spi/PersistenceUnitTransactionType.html?is-external=true[type of transactions] supported by the entity managers. The default depends on whether the program is considered to be executing in a Java SE or EE environment: 
++
+
+  * For Java SE, the default is link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/spi/PersistenceUnitTransactionType.html?is-external=true#RESOURCE_LOCAL[`RESOURCE_LOCAL`]. 
+  * For Java EE, the default is link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/spi/PersistenceUnitTransactionType.html?is-external=true#JTA[`JTA`].  
++
+See JPA 2 sections 9.4.3 and 8.2.1.2
+
+
+
+'''
+[[settings-hibernate.archive.autodetection]]
+`*hibernate.archive.autodetection*`::
+Identifies a comma-separated list of values indicating the types of things we should auto-detect during scanning. Allowable values include: 
++
+
+  * `"class"` specifies that `.class` files are discovered as managed classes 
+  * `"hbm"` specifies that `hbm.xml` files are discovered as mapping files 
+
+
+'''
+[[settings-hibernate.archive.interpreter]]
+`*hibernate.archive.interpreter*`::
+Specifies an link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/archive/spi/ArchiveDescriptorFactory.html[`ArchiveDescriptorFactory`] to use in the scanning process, either: 
++
+
+  * an instance of `ArchiveDescriptorFactory`, 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing a class that implements `ArchiveDescriptorFactory`, or 
+  * the name of a class that implements `ArchiveDescriptorFactory`.  
++
+See information on link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/archive/scan/spi/Scanner.html[`Scanner`] about expected constructor forms.
+
+
+
+'''
+[[settings-hibernate.archive.scanner]]
+`*hibernate.archive.scanner*`::
+Specifies an implementation of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/archive/scan/spi/Scanner.html[`Scanner`], either: 
++
+
+  * an instance of `Scanner`, 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing a class that implements `Scanner` 
+  * the name of a class that implements `Scanner`. 
+
+
+'''
+[[settings-hibernate.jpa_callbacks.enabled]]
+`*hibernate.jpa_callbacks.enabled*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/PersistenceSettings.html#JPA_CALLBACKS_ENABLED[PersistenceSettings.JPA_CALLBACKS_ENABLED]
+
+*_Since:_* _5.4_
+
+****
++
+Allows JPA callbacks (via link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/PreUpdate.html?is-external=true[`PreUpdate`] and friends) to be completely disabled. Mostly useful to save some memory when they are not used. 
++
+JPA callbacks are enabled by default. Set this property to `false` to disable them. 
+
++
+Experimental and will likely be removed as soon as the memory overhead is resolved.
+
+
+
+'''
+[[settings-hibernate.persistenceUnitName]]
+`*hibernate.persistenceUnitName*`::
+Specifies the name of the persistence unit.
+
+
+'''
+[[settings-hibernate.session_factory_name]]
+`*hibernate.session_factory_name*`::
+Setting used to name the Hibernate link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactory.html[`SessionFactory`]. 
++
+Naming the SessionFactory allows for it to be properly serialized across JVMs as long as the same name is used on each JVM. 
+
++
+If link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/PersistenceSettings.html#SESSION_FACTORY_NAME_IS_JNDI[`SESSION_FACTORY_NAME_IS_JNDI`] is set to `true`, this is also the name under which the SessionFactory is bound into JNDI on startup and from which it can be obtained from JNDI.
+
+
+
+'''
+[[settings-hibernate.session_factory_name_is_jndi]]
+`*hibernate.session_factory_name_is_jndi*`::
+Does the value defined by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/PersistenceSettings.html#SESSION_FACTORY_NAME[`SESSION_FACTORY_NAME`] represent a JNDI namespace into which the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactory.html[`SessionFactory`] should be bound and made accessible? 
++
+Defaults to `true` for backwards compatibility. 
+
++
+Set this to `false` if naming a SessionFactory is needed for serialization purposes, but no writable JNDI context exists in the runtime environment or if the user simply does not want JNDI to be used.
+
+
+
+'''
+[[settings-hibernate.session_factory_observer]]
+`*hibernate.session_factory_observer*`::
+Specifies a class which implements link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactoryObserver.html[`SessionFactoryObserver`] and has a constructor with no parameters.
+
+
+'''
+[[settings-javax.persistence.transactionType]]
+`[.line-through]#javax.persistence.transactionType#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/PersistenceSettings.html#JPA_TRANSACTION_TYPE[PersistenceSettings.JPA_TRANSACTION_TYPE]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+The type of transactions supported by the entity managers. 
++
+See JPA 2 sections 9.4.3 and 8.2.1.2
+
+
+
+'''
+
+[[settings-jdbc]]
+=== JDBC Settings
+
+[[settings-jakarta.persistence.database-major-version]]
+`*jakarta.persistence.database-major-version*`::
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_NAME["jakarta.persistence.database-product-name"] for the purpose of determining the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`] to use when the name does not provide enough detail. 
++
+The value is expected to match what would be returned from link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/DatabaseMetaData.html?is-external=true#getDatabaseMajorVersion()[`DatabaseMetaData.getDatabaseMajorVersion()`]) for the underlying database.
+
+
+
+'''
+[[settings-jakarta.persistence.database-minor-version]]
+`*jakarta.persistence.database-minor-version*`::
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_NAME["jakarta.persistence.database-product-name"] for the purpose of determining the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`] to use when the name does not provide enough detail. 
++
+The value is expected to match what would be returned from link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/DatabaseMetaData.html?is-external=true#getDatabaseMinorVersion()[`DatabaseMetaData.getDatabaseMinorVersion()`]) for the underlying database.
+
+
+
+'''
+[[settings-jakarta.persistence.database-product-name]]
+`*jakarta.persistence.database-product-name*`::
+Specifies the name of the database vendor (as would be reported by link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/DatabaseMetaData.html?is-external=true#getDatabaseProductName()[`DatabaseMetaData.getDatabaseProductName()`]) for the purpose of determining the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`] to use. 
++
+For cases when the name of the database vendor is not enough alone, a combination of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_VERSION["jakarta.persistence.database-product-version"], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_MAJOR_VERSION["jakarta.persistence.database-major-version"] link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_MINOR_VERSION["jakarta.persistence.database-minor-version"] can be used instead
+
+
+
+'''
+[[settings-jakarta.persistence.database-product-version]]
+`*jakarta.persistence.database-product-version*`::
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_NAME["jakarta.persistence.database-product-name"] for the purpose of determining the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`] to use when the name does not provide enough detail. 
++
+The value is expected to match what would be returned from link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/DatabaseMetaData.html?is-external=true#getDatabaseProductVersion()[`DatabaseMetaData.getDatabaseProductVersion()`]) for the underlying database.
+
+
+
+'''
+[[settings-jakarta.persistence.jdbc.driver]]
+`*jakarta.persistence.jdbc.driver*`::
+Specifies the name of a JDBC driver to use to connect to the database. 
++
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_URL[`JAKARTA_JDBC_URL`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_USER[`JAKARTA_JDBC_USER`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_PASSWORD[`JAKARTA_JDBC_PASSWORD`] to specify how to connect to the database. 
+
++
+When connections are obtained from a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`], use either link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JTA_DATASOURCE[`JAKARTA_JTA_DATASOURCE`] or link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_NON_JTA_DATASOURCE[`JAKARTA_NON_JTA_DATASOURCE`] instead. 
+
++
+See section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.jdbc.password]]
+`*jakarta.persistence.jdbc.password*`::
+Specifies the password to use when connecting via JDBC. 
++
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_DRIVER[`JAKARTA_JDBC_DRIVER`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_URL[`JAKARTA_JDBC_URL`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_USER[`JAKARTA_JDBC_USER`] to specify how to connect to the database. 
+
++
+See JPA 2 section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.jdbc.url]]
+`*jakarta.persistence.jdbc.url*`::
+Specifies the JDBC connection URL to use to connect to the database. 
++
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_DRIVER[`JAKARTA_JDBC_DRIVER`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_USER[`JAKARTA_JDBC_USER`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_PASSWORD[`JAKARTA_JDBC_PASSWORD`] to specify how to connect to the database. 
+
++
+When connections are obtained from a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`], use either link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JTA_DATASOURCE[`JAKARTA_JTA_DATASOURCE`] or link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_NON_JTA_DATASOURCE[`JAKARTA_NON_JTA_DATASOURCE`] instead. 
+
++
+See section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.jdbc.user]]
+`*jakarta.persistence.jdbc.user*`::
+Specifies the database user to use when connecting via JDBC. 
++
+Used in conjunction with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_DRIVER[`JAKARTA_JDBC_DRIVER`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_URL[`JAKARTA_JDBC_URL`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_PASSWORD[`JAKARTA_JDBC_PASSWORD`] to specify how to connect to the database. 
+
++
+Depending on the configured link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`], the specified username might be used to: 
++
+
+  *  create a JDBC connection using link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/DriverManager.html?is-external=true#getConnection(java.lang.String,java.util.Properties)[`DriverManager.getConnection(String,java.util.Properties)`] or link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Driver.html?is-external=true#connect(java.lang.String,java.util.Properties)[`Driver.connect(String,java.util.Properties)`], or  
+  *  obtain a JDBC connection from a datasource, using link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true#getConnection(java.lang.String,java.lang.String)[`DataSource.getConnection(String, String)`].   
++
+See section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.jtaDataSource]]
+`*jakarta.persistence.jtaDataSource*`::
+Specifies a JTA link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`] to use for Connections. Hibernate allows either 
++
+
+  *  an instance of link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`]  
+  *  a JNDI name under which to obtain the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`]; see also link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#JNDI_URL[`EnvironmentSettings.JNDI_URL`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#JNDI_CLASS[`EnvironmentSettings.JNDI_CLASS`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#JNDI_PREFIX[`EnvironmentSettings.JNDI_PREFIX`]   
++
+See JPA 2 sections 9.4.3 and 8.2.1.5
+
+
+
+'''
+[[settings-jakarta.persistence.nonJtaDataSource]]
+`*jakarta.persistence.nonJtaDataSource*`::
+Specifies a non-JTA link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`] to use for Connections. Hibernate allows either 
++
+
+  *  an instance of link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`]  
+  *  a JNDI name under which to obtain the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/javax/sql/DataSource.html?is-external=true[`DataSource`]; see also link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#JNDI_URL[`EnvironmentSettings.JNDI_URL`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#JNDI_CLASS[`EnvironmentSettings.JNDI_CLASS`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#JNDI_PREFIX[`EnvironmentSettings.JNDI_PREFIX`]   
++
+See JPA 2 sections 9.4.3 and 8.2.1.5
+
+
+
+'''
+[[settings-jakarta.persistence.schema-generation-connection]]
+`*jakarta.persistence.schema-generation-connection*`::
+Allows passing a specific link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Connection.html?is-external=true[`Connection`] instance to be used by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/spi/SchemaManagementTool.html[`SchemaManagementTool`] for the purpose of determining the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`], and for performing link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DATABASE_ACTION[`database actions`] if requested. 
++
+For `Dialect` resolution, link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_NAME["jakarta.persistence.database-product-name"] and, optionally, link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_VERSION["jakarta.persistence.database-product-version"], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_MAJOR_VERSION["jakarta.persistence.database-major-version"], and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_MINOR_VERSION["jakarta.persistence.database-minor-version"] can be used instead
+
+
+
+'''
+[[settings-hibernate.connection]]
+`*hibernate.connection*`::
+A prefix for properties specifying arbitrary JDBC connection properties. These properties are simply passed along to the provider when creating a connection. 
++
+For example, declaring `hibernate.connection.foo=bar` tells Hibernate to append `foo=bar` to the JDBC connection URL.
+
+
+
+'''
+[[settings-hibernate.connection.autocommit]]
+`*hibernate.connection.autocommit*`::
+Controls the autocommit mode of JDBC connections obtained from any link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] implementation which respects this setting, which the built-in implementations do, except for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html[`DatasourceConnectionProviderImpl`].
+
+
+'''
+[[settings-hibernate.connection.handling_mode]]
+`*hibernate.connection.handling_mode*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#CONNECTION_HANDLING[JdbcSettings.CONNECTION_HANDLING]
+
+*_Since:_* _5.2_
+
+****
++
+Specifies how Hibernate should manage JDBC connections in terms of acquisition and release, either: 
++
+
+  * an instance of the enumeration link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../resource/jdbc/spi/PhysicalConnectionHandlingMode.html[`PhysicalConnectionHandlingMode`], or 
+  * the name of one of its instances.  
++
+The default is `DELAYED_ACQUISITION_AND_RELEASE_AFTER_TRANSACTION`.
+
+
+
+'''
+[[settings-hibernate.connection.isolation]]
+`*hibernate.connection.isolation*`::
+Specified the JDBC transaction isolation level.
+
+
+'''
+[[settings-hibernate.connection.pool_size]]
+`*hibernate.connection.pool_size*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#POOL_SIZE[JdbcSettings.POOL_SIZE]
+
+*_Default Value:_* 20
+
+
+****
++
+Specifies the maximum number of inactive connections for the built-in link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/internal/DriverManagerConnectionProviderImpl.html[connection pool].
+
+
+'''
+[[settings-hibernate.connection.provider_class]]
+`*hibernate.connection.provider_class*`::
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] to use for obtaining JDBC connections, either: 
++
+
+  * an instance of `ConnectionProvider`, 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing a class that implements `ConnectionProvider`, or 
+  * the name of a class that implements `ConnectionProvider`.  
++
+The term `"class"` appears in the setting name due to legacy reasons; however it can accept instances.
+
+
+
+'''
+[[settings-hibernate.connection.provider_disables_autocommit]]
+`*hibernate.connection.provider_disables_autocommit*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT[JdbcSettings.CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT]
+
+*_Since:_* _5.2.10_
+
+*_Default Value:_* `false`
+
+
+By default, Hibernate calls Connection.setAutoCommit(boolean) on newly-obtained connections. This setting allows to circumvent that call (as well as other operations) in the interest of performance.
+
+****
++
+Indicates that Connections obtained from the configured link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] have auto-commit already disabled when they are acquired. 
++
+It is inappropriate to set this value to `true` when the Connections returned by the provider do not, in fact, have auto-commit disabled. Doing so may lead to Hibernate executing SQL operations outside the scope of any transaction.
+
+
+
+'''
+[[settings-hibernate.dialect]]
+`*hibernate.dialect*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#DIALECT[JdbcSettings.DIALECT]
+
+As of Hibernate 6, this property should not be explicitly specified, except when using a custom user-written implementation of Dialect. Instead, applications should allow Hibernate to select the Dialect automatically.
+
+****
++
+Specifies the Hibernate link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[SQL dialect], either 
++
+
+  * an instance of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`], 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing a class that extends `Dialect`, or 
+  * the name of a class that extends `Dialect`.  
++
+By default, Hibernate will attempt to automatically determine the dialect from the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#URL[JDBC URL] and JDBC metadata, so this setting is not usually necessary.
+
+
+
+'''
+[[settings-hibernate.dialect.native_param_markers]]
+`*hibernate.dialect.native_param_markers*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#DIALECT_NATIVE_PARAM_MARKERS[JdbcSettings.DIALECT_NATIVE_PARAM_MARKERS]
+
+*_Since:_* _6.2_
+
+****
++
+Controls whether to use JDBC markers (`?`) or dialect native markers for parameters within link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html?is-external=true[preparable] SQL statements.
+
+
+'''
+[[settings-hibernate.dialect_resolvers]]
+`*hibernate.dialect_resolvers*`::
+Specifies additional link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/dialect/spi/DialectResolver.html[`DialectResolver`] implementations to register with the standard link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/dialect/spi/DialectFactory.html[`DialectFactory`].
+
+
+'''
+[[settings-hibernate.format_sql]]
+`*hibernate.format_sql*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#FORMAT_SQL[JdbcSettings.FORMAT_SQL]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enables formatting of SQL logged to the console.
+
+
+'''
+[[settings-hibernate.highlight_sql]]
+`*hibernate.highlight_sql*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#HIGHLIGHT_SQL[JdbcSettings.HIGHLIGHT_SQL]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enables highlighting of SQL logged to the console using ANSI escape codes.
+
+
+'''
+[[settings-hibernate.jdbc.fetch_size]]
+`*hibernate.jdbc.fetch_size*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#STATEMENT_FETCH_SIZE[JdbcSettings.STATEMENT_FETCH_SIZE]
+
+*_Default Value:_* `0`
+
+
+****
++
+Gives the JDBC driver a hint as to the number of rows that should be fetched from the database when more rows are needed. If `0`, the JDBC driver's default settings will be used.
+
+
+'''
+[[settings-hibernate.jdbc.lob.non_contextual_creation]]
+`*hibernate.jdbc.lob.non_contextual_creation*`::
+When enabled, specifies that Hibernate should not use contextual LOB creation.
+
+
+'''
+[[settings-hibernate.jdbc.log.warnings]]
+`*hibernate.jdbc.log.warnings*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#LOG_JDBC_WARNINGS[JdbcSettings.LOG_JDBC_WARNINGS]
+
+*_Since:_* _5.1_
+
+****
++
+When enabled, specifies that JDBC statement warnings should be logged. 
++
+The default is determined by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html#isJdbcLogWarningsEnabledByDefault()[`Dialect.isJdbcLogWarningsEnabledByDefault()`].
+
+
+
+'''
+[[settings-hibernate.jdbc.time_zone]]
+`*hibernate.jdbc.time_zone*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JDBC_TIME_ZONE[JdbcSettings.JDBC_TIME_ZONE]
+
+*_Since:_* _5.2.3_
+
+****
++
+Specifies the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TimeZone.html?is-external=true[time zone] to use in the JDBC driver, which is supposed to match the database timezone. 
++
+This is the timezone what will be passed to link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html?is-external=true#setTimestamp(int,java.sql.Timestamp,java.util.Calendar)[`PreparedStatement.setTimestamp(int, java.sql.Timestamp, java.util.Calendar)`] link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html?is-external=true#setTime(int,java.sql.Time,java.util.Calendar)[`PreparedStatement.setTime(int, java.sql.Time, java.util.Calendar)`], link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true#getTimestamp(int,java.util.Calendar)[`ResultSet.getTimestamp(int, Calendar)`], and link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true#getTime(int,java.util.Calendar)[`ResultSet.getTime(int, Calendar)`] when binding parameters. 
+
++
+The time zone may be given as: 
++
+
+  * an instance of link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TimeZone.html?is-external=true[`TimeZone`], 
+  * an instance of link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html?is-external=true[`ZoneId`], or 
+  * a time zone ID string to be passed to link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZoneId.html?is-external=true#of(java.lang.String)[`ZoneId.of(String)`].  
++
+By default, the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TimeZone.html?is-external=true#getDefault()[JVM default time zone] is assumed by the JDBC driver.
+
+
+
+'''
+[[settings-hibernate.jdbc.use_get_generated_keys]]
+`*hibernate.jdbc.use_get_generated_keys*`::
+Specifies that generated primary keys may be retrieved using the JDBC 3 link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Statement.html?is-external=true#getGeneratedKeys()[`Statement.getGeneratedKeys()`] operation. 
++
+Usually, performance will be improved if this behavior is enabled, assuming the JDBC driver supports `getGeneratedKeys()`.
+
+
+
+'''
+[[settings-hibernate.jdbc.use_scrollable_resultset]]
+`*hibernate.jdbc.use_scrollable_resultset*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#USE_SCROLLABLE_RESULTSET[JdbcSettings.USE_SCROLLABLE_RESULTSET]
+
+*_Default Value:_* `true` if the underlying driver supports scrollable results
+
+
+****
++
+Controls how Hibernate should handle scrollable results - 
++
+
+  *  `true` indicates that link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true#TYPE_SCROLL_INSENSITIVE[insensitive] scrolling can be used  
+  *  `false` indicates that link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html?is-external=true#TYPE_SCROLL_SENSITIVE[sensitive] scrolling must be used  
+
+
+'''
+[[settings-hibernate.log_slow_query]]
+`*hibernate.log_slow_query*`::
+Specifies a duration in milliseconds defining the minimum query execution time that characterizes a "slow" query. Any SQL query which takes longer than this amount of time to execute will be logged. 
++
+A value of `0`, the default, disables logging of "slow" queries.
+
+
+
+'''
+[[settings-hibernate.session_factory.statement_inspector]]
+`*hibernate.session_factory.statement_inspector*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#STATEMENT_INSPECTOR[JdbcSettings.STATEMENT_INSPECTOR]
+
+*_Since:_* _5.0_
+
+****
++
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../resource/jdbc/spi/StatementInspector.html[`StatementInspector`] implementation associated with the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactory.html[`SessionFactory`], either: 
++
+
+  * an instance of `StatementInspector`, 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing an class that implements `StatementInspector`, or 
+  * the name of a class that implements `StatementInspector`. 
+
+
+'''
+[[settings-hibernate.show_sql]]
+`*hibernate.show_sql*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#SHOW_SQL[JdbcSettings.SHOW_SQL]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enables logging of generated SQL to the console.
+
+
+'''
+[[settings-hibernate.use_sql_comments]]
+`*hibernate.use_sql_comments*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#USE_SQL_COMMENTS[JdbcSettings.USE_SQL_COMMENTS]
+
+*_Default Value:_* `false`
+
+
+****
++
+Specifies that comments should be added to the generated SQL.
+
+
+'''
+
+[[settings-c3p0]]
+=== C3P0 Connection Pool Settings
+
+[[settings-hibernate.c3p0]]
+`*hibernate.c3p0*`::
+A setting prefix used to indicate settings that target the hibernate-c3p0 integration
+
+
+'''
+[[settings-hibernate.c3p0.acquire_increment]]
+`*hibernate.c3p0.acquire_increment*`::
+Number of connections acquired when pool is exhausted
+
+
+'''
+[[settings-hibernate.c3p0.idle_test_period]]
+`*hibernate.c3p0.idle_test_period*`::
+Idle time before a C3P0 pooled connection is validated
+
+
+'''
+[[settings-hibernate.c3p0.max_size]]
+`*hibernate.c3p0.max_size*`::
+Maximum size of C3P0 connection pool
+
+
+'''
+[[settings-hibernate.c3p0.max_statements]]
+`*hibernate.c3p0.max_statements*`::
+Maximum size of C3P0 statement cache
+
+
+'''
+[[settings-hibernate.c3p0.min_size]]
+`*hibernate.c3p0.min_size*`::
+Minimum size of C3P0 connection pool
+
+
+'''
+[[settings-hibernate.c3p0.timeout]]
+`*hibernate.c3p0.timeout*`::
+Maximum idle time for C3P0 connection pool
+
+
+'''
+
+[[settings-proxool]]
+=== Proxool Connection Pool Settings
+
+[[settings-hibernate.proxool]]
+`*hibernate.proxool*`::
+A setting prefix used to indicate settings that target the hibernate-proxool integration
+
+
+'''
+[[settings-hibernate.proxool.existing_pool]]
+`*hibernate.proxool.existing_pool*`::
+Proxool property to configure the Proxool Provider from an already existing pool (`true` / `false`)
+
+
+'''
+[[settings-hibernate.proxool.pool_alias]]
+`*hibernate.proxool.pool_alias*`::
+Proxool property with the Proxool pool alias to use (Required for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/ProxoolSettings.html#PROXOOL_EXISTING_POOL[`PROXOOL_EXISTING_POOL`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/ProxoolSettings.html#PROXOOL_PROPERTIES[`PROXOOL_PROPERTIES`], or link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/ProxoolSettings.html#PROXOOL_XML[`PROXOOL_XML`])
+
+
+'''
+[[settings-hibernate.proxool.properties]]
+`*hibernate.proxool.properties*`::
+Proxool property to configure the Proxool provider using a properties file (`/path/to/proxool.properties`)
+
+
+'''
+[[settings-hibernate.proxool.xml]]
+`*hibernate.proxool.xml*`::
+Proxool property to configure the Proxool provider using an XML (`/path/to/file.xml`)
+
+
+'''
+
+[[settings-mapping]]
+=== Domain Mapping Settings
+
+[[settings-hibernate.auto_quote_keyword]]
+`*hibernate.auto_quote_keyword*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#KEYWORD_AUTO_QUOTING_ENABLED[MappingSettings.KEYWORD_AUTO_QUOTING_ENABLED]
+
+*_Since:_* _5.0_
+
+*_Default Value:_* `false` - auto-quoting of SQL keywords is disabled by default.
+
+
+****
++
+Specifies whether to automatically quote any names that are deemed keywords on the underlying database.
+
+
+'''
+[[settings-hibernate.column_ordering_strategy]]
+`*hibernate.column_ordering_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#COLUMN_ORDERING_STRATEGY[MappingSettings.COLUMN_ORDERING_STRATEGY]
+
+*_Since:_* _6.2_
+
+*_Default Value:_* `"default"`
+
+
+****
++
+Used to specify the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/relational/ColumnOrderingStrategy.html[`ColumnOrderingStrategy`] class to use. The following shortcut names are defined for this setting: 
++
+
+  * `"default"` is an abbreviations for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/relational/ColumnOrderingStrategyStandard.html[`ColumnOrderingStrategyStandard`] 
+  * `"legacy"` is an abbreviation for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/relational/ColumnOrderingStrategyLegacy.html[`ColumnOrderingStrategyLegacy`] 
+
+
+'''
+[[settings-hibernate.create_empty_composites.enabled]]
+`[.line-through]#hibernate.create_empty_composites.enabled#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#CREATE_EMPTY_COMPOSITES_ENABLED[MappingSettings.CREATE_EMPTY_COMPOSITES_ENABLED]
+
+WARNING: *_This setting is considered deprecated_*
+
+*_Since:_* _5.1_
+
+This is an experimental feature that has known issues. It should not be used in production until it is stabilized. See Hibernate JIRA issue HHH-11936 for details.
+
+****
++
+Enable instantiation of composite/embedded objects when all attribute values are `null`. The default (and historical) behavior is that a `null` reference will be used to represent the composite value when all of its attributes are `null`.
+
+
+'''
+[[settings-hibernate.default_catalog]]
+`*hibernate.default_catalog*`::
+A default database catalog name to use for unqualified database object (table, sequence, ...) names
+
+
+'''
+[[settings-hibernate.default_schema]]
+`*hibernate.default_schema*`::
+A default database schema (owner) name to use for unqualified database object (table, sequence, ...) names
+
+
+'''
+[[settings-hibernate.discriminator.ignore_explicit_for_joined]]
+`*hibernate.discriminator.ignore_explicit_for_joined*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#IGNORE_EXPLICIT_DISCRIMINATOR_COLUMNS_FOR_JOINED_SUBCLASS[MappingSettings.IGNORE_EXPLICIT_DISCRIMINATOR_COLUMNS_FOR_JOINED_SUBCLASS]
+
+*_Default Value:_* `false`
+
+
+****
++
+Controls whether Hibernate should ignore explicit discriminator metadata with joined inheritance. 
++
+Hibernate does not need a discriminator with joined inheritance. Historically it simply ignored discriminator metadata. When enabled (`true`), any discriminator metadata (link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/DiscriminatorColumn.html?is-external=true[`DiscriminatorColumn`], e.g.) is ignored allowing for backwards compatibility.
+
+
+
+'''
+[[settings-hibernate.discriminator.implicit_for_joined]]
+`*hibernate.discriminator.implicit_for_joined*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#IMPLICIT_DISCRIMINATOR_COLUMNS_FOR_JOINED_SUBCLASS[MappingSettings.IMPLICIT_DISCRIMINATOR_COLUMNS_FOR_JOINED_SUBCLASS]
+
+*_Default Value:_* `false`
+
+
+****
++
+Controls whether Hibernate should infer a discriminator for entity hierarchies defined with joined inheritance. 
++
+Hibernate does not need a discriminator with joined inheritance. Therefore, its legacy behavior is to not infer a discriminator. However, some JPA providers do require discriminators with joined inheritance, so in the interest of portability this option has been added to Hibernate. When enabled (`true`), Hibernate will treat the absence of discriminator metadata as an indication to use the JPA defined defaults for discriminators.
+
+
+
+'''
+[[settings-hibernate.globally_quoted_identifiers]]
+`*hibernate.globally_quoted_identifiers*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#GLOBALLY_QUOTED_IDENTIFIERS[MappingSettings.GLOBALLY_QUOTED_IDENTIFIERS]
+
+*_Default Value:_* `false`
+
+
+****
++
+When enabled, all database identifiers are quoted. 
++
+Corollary to the JPA `<delimited-identifiers/>` element within the `orm.xml` `<persistence-unit-defaults/>` element, but offered as a global flag.
+
+
+
+'''
+[[settings-hibernate.globally_quoted_identifiers_skip_column_definitions]]
+`*hibernate.globally_quoted_identifiers_skip_column_definitions*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#GLOBALLY_QUOTED_IDENTIFIERS_SKIP_COLUMN_DEFINITIONS[MappingSettings.GLOBALLY_QUOTED_IDENTIFIERS_SKIP_COLUMN_DEFINITIONS]
+
+*_Default Value:_* `false` to avoid the potential problems quoting non-trivial column-definitions.
+
+
+****
++
+Controls whether column-definitions (link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Column.html?is-external=true#columnDefinition()[`Column.columnDefinition()`], link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/JoinColumn.html?is-external=true#columnDefinition()[`JoinColumn.columnDefinition()`], etc.) should be auto-quoted as part of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#GLOBALLY_QUOTED_IDENTIFIERS[global quoting]. 
++
+When link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#GLOBALLY_QUOTED_IDENTIFIERS[global quoting] is enabled, JPA link:https://jakarta.ee/specifications/persistence/3.1/jakarta-persistence-spec-3.1.html#a988[states] that column-definitions are subject to quoting. However, this can lead to problems with definitions such as `@Column(..., columnDefinition="INTEGER DEFAULT 20")`.
+
+
+
+'''
+[[settings-hibernate.id.db_structure_naming_strategy]]
+`*hibernate.id.db_structure_naming_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#ID_DB_STRUCTURE_NAMING_STRATEGY[MappingSettings.ID_DB_STRUCTURE_NAMING_STRATEGY]
+
+*_Since:_* _6_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/enhanced/StandardNamingStrategy.html[`StandardNamingStrategy`]
+
+
+****
++
+An implicit naming strategy for database structures (tables, sequences) related to identifier generators. 
++
+Resolution uses the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/registry/selector/spi/StrategySelector.html[`StrategySelector`] service and accepts any of the forms discussed on link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/registry/selector/spi/StrategySelector.html#resolveDefaultableStrategy(java.lang.Class,java.lang.Object,java.util.concurrent.Callable)[`StrategySelector.resolveDefaultableStrategy(Class, Object, java.util.concurrent.Callable)`]. 
+
++
+The recognized short names being:
++
+
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/enhanced/SingleNamingStrategy.html#STRATEGY_NAME["single"] 
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/enhanced/LegacyNamingStrategy.html#STRATEGY_NAME["legacy"] 
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/enhanced/StandardNamingStrategy.html#STRATEGY_NAME["standard"] 
+
+
+'''
+[[settings-hibernate.id.generator.stored_last_used]]
+`*hibernate.id.generator.stored_last_used*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#TABLE_GENERATOR_STORE_LAST_USED[MappingSettings.TABLE_GENERATOR_STORE_LAST_USED]
+
+*_Since:_* _5.3_
+
+*_Default Value:_* The value stored in the database table is the last generated value
+
+
+****
++
+Determines if the identifier value stored in the database table backing a link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/TableGenerator.html?is-external=true[table generator] is the last value returned by the identifier generator, or the next value to be returned.
+
+
+'''
+[[settings-hibernate.id.optimizer.pooled.preferred]]
+`*hibernate.id.optimizer.pooled.preferred*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#PREFERRED_POOLED_OPTIMIZER[MappingSettings.PREFERRED_POOLED_OPTIMIZER]
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/enhanced/StandardOptimizerDescriptor.html#POOLED[`StandardOptimizerDescriptor.POOLED`]
+
+
+****
++
+When a generator specifies an increment-size and an optimizer was not explicitly specified, which of the "pooled" optimizers should be preferred? Can specify an optimizer short name or the name of a class which implements link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/enhanced/Optimizer.html[`Optimizer`].
+
+
+'''
+[[settings-hibernate.id.sequence.increment_size_mismatch_strategy]]
+`*hibernate.id.sequence.increment_size_mismatch_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#SEQUENCE_INCREMENT_SIZE_MISMATCH_STRATEGY[MappingSettings.SEQUENCE_INCREMENT_SIZE_MISMATCH_STRATEGY]
+
+*_Since:_* _5.4_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/SequenceMismatchStrategy.html#EXCEPTION[`SequenceMismatchStrategy.EXCEPTION`], meaning that an exception is thrown when such a conflict is detected.
+
+
+****
++
+This setting defines the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/SequenceMismatchStrategy.html[`SequenceMismatchStrategy`] used when Hibernate detects a mismatch between a sequence configuration in an entity mapping and its database sequence object counterpart. 
++
+Possible values are link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/SequenceMismatchStrategy.html#EXCEPTION[`SequenceMismatchStrategy.EXCEPTION`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/SequenceMismatchStrategy.html#LOG[`SequenceMismatchStrategy.LOG`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/SequenceMismatchStrategy.html#FIX[`SequenceMismatchStrategy.FIX`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../id/SequenceMismatchStrategy.html#NONE[`SequenceMismatchStrategy.NONE`].
+
+
+
+'''
+[[settings-hibernate.implicit_naming_strategy]]
+`*hibernate.implicit_naming_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#IMPLICIT_NAMING_STRATEGY[MappingSettings.IMPLICIT_NAMING_STRATEGY]
+
+*_Since:_* _5.0_
+
+*_Default Value:_* `"default"`
+
+
+****
++
+Used to specify the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/ImplicitNamingStrategy.html[`ImplicitNamingStrategy`] class to use. The following shortcut names are defined for this setting: 
++
+
+  * `"default"` and `"jpa"` are an abbreviations for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/ImplicitNamingStrategyJpaCompliantImpl.html[`ImplicitNamingStrategyJpaCompliantImpl`] 
+  * `"legacy-jpa"` is an abbreviation for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/ImplicitNamingStrategyLegacyJpaImpl.html[`ImplicitNamingStrategyLegacyJpaImpl`] 
+  * `"legacy-hbm"` is an abbreviation for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/ImplicitNamingStrategyLegacyHbmImpl.html[`ImplicitNamingStrategyLegacyHbmImpl`] 
+  * `"component-path"` is an abbreviation for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/ImplicitNamingStrategyComponentPathImpl.html[`ImplicitNamingStrategyComponentPathImpl`] 
+
+
+'''
+[[settings-hibernate.jpa.metamodel.population]]
+`*hibernate.jpa.metamodel.population*`::
+Setting that indicates whether to build the JPA types, either:
++
+
+  *  **enabled** - Do the build  
+  *  **disabled** - Do not do the build  
+  *  **ignoreUnsupported** - Do the build, but ignore any non-JPA features that would otherwise result in a failure.  
+
+
+'''
+[[settings-hibernate.jpa.static_metamodel.population]]
+`*hibernate.jpa.static_metamodel.population*`::
+Setting that controls whether we seek out JPA "static metamodel" classes and populate them, either:
++
+
+  *  **enabled** - Do the population  
+  *  **disabled** - Do not do the population  
+  *  **skipUnsupported** - Do the population, but ignore any non-JPA features that would otherwise result in the population failing.  
+
+
+'''
+[[settings-hibernate.mapping.default_list_semantics]]
+`*hibernate.mapping.default_list_semantics*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#DEFAULT_LIST_SEMANTICS[MappingSettings.DEFAULT_LIST_SEMANTICS]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../metamodel/CollectionClassification.html#BAG[`CollectionClassification.BAG`]
+
+
+****
++
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../metamodel/CollectionClassification.html[`CollectionClassification`] to use for a plural attribute typed as link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true[`List`] with no explicit list index details (link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/OrderColumn.html?is-external=true[`OrderColumn`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/ListIndexBase.html[`ListIndexBase`], etc.). 
++
+Accepts any of: 
++
+
+  * an instance of `CollectionClassification` 
+  * the (case insensitive) name of a `CollectionClassification` (list e.g.) 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing either link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html?is-external=true[`List`] or link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true[`Collection`] 
+
+
+'''
+[[settings-hibernate.mapping.precedence]]
+`[.line-through]#hibernate.mapping.precedence#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#ARTIFACT_PROCESSING_ORDER[MappingSettings.ARTIFACT_PROCESSING_ORDER]
+
+WARNING: *_This setting is considered deprecated_*
+
+*_Default Value:_* `"hbm,class"`, which indicates that `hbm.xml` files should be processed first, followed by annotations and `orm.xml` files.
+
+
+****
++
+Specifies the order in which metadata sources should be processed, is a delimited list of values defined by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MetadataSourceType.html[`MetadataSourceType`].
+
+
+'''
+[[settings-hibernate.physical_naming_strategy]]
+`*hibernate.physical_naming_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#PHYSICAL_NAMING_STRATEGY[MappingSettings.PHYSICAL_NAMING_STRATEGY]
+
+*_Since:_* _5.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/PhysicalNamingStrategyStandardImpl.html[`PhysicalNamingStrategyStandardImpl`], in which case physical names are taken to be identical to logical names.
+
+
+****
++
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/model/naming/PhysicalNamingStrategy.html[`PhysicalNamingStrategy`] to use.
+
+
+'''
+[[settings-hibernate.timezone.default_storage]]
+`*hibernate.timezone.default_storage*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#TIMEZONE_DEFAULT_STORAGE[MappingSettings.TIMEZONE_DEFAULT_STORAGE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/TimeZoneStorageType.html#DEFAULT[`DEFAULT`], which guarantees that the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/OffsetDateTime.html?is-external=true#toInstant()[instant] represented by a zoned datetime type is preserved by a round trip to the database. It does **not** guarantee that the time zone or offset is preserved.
+
+
+For backward compatibility with older versions of Hibernate, set this property to NORMALIZE.
+
+****
++
+Specifies the default strategy for storage of the timezone information for the zoned datetime types link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/OffsetDateTime.html?is-external=true[`OffsetDateTime`] and link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html?is-external=true[`ZonedDateTime`]. The possible options for this setting are enumerated by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/TimeZoneStorageType.html[`TimeZoneStorageType`].
+
+
+'''
+[[settings-hibernate.transform_hbm_xml.enabled]]
+`*hibernate.transform_hbm_xml.enabled*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#TRANSFORM_HBM_XML[MappingSettings.TRANSFORM_HBM_XML]
+
+*_Since:_* _6.1_
+
+*_Default Value:_* `false` (opt-in).
+
+
+****
++
+Enables processing `hbm.xml` mappings by transforming them to `mapping.xml` and using that processor.
+
+
+'''
+[[settings-hibernate.transform_hbm_xml.unsupported_feature_handling]]
+`*hibernate.transform_hbm_xml.unsupported_feature_handling*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#TRANSFORM_HBM_XML_FEATURE_HANDLING[MappingSettings.TRANSFORM_HBM_XML_FEATURE_HANDLING]
+
+*_Since:_* _6.1_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/jaxb/hbm/transform/UnsupportedFeatureHandling.html#ERROR[`UnsupportedFeatureHandling.ERROR`]
+
+
+****
++
+How features in a `hbm.xml` file which are not supported for transformation should be handled. Valid values are defined by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/jaxb/hbm/transform/UnsupportedFeatureHandling.html[`UnsupportedFeatureHandling`]
+
+
+'''
+[[settings-hibernate.type.json_format_mapper]]
+`*hibernate.type.json_format_mapper*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#JSON_FORMAT_MAPPER[MappingSettings.JSON_FORMAT_MAPPER]
+
+*_Since:_* _6.0_
+
+****
++
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/format/FormatMapper.html[`FormatMapper`] used for JSON serialization and deserialization, either: 
++
+
+  * an instance of `FormatMapper`, 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing a class that implements `FormatMapper`, 
+  * the name of a class that implements `FormatMapper`, or 
+  * one of the shorthand constants `jackson` or `jsonb`.  
++
+By default, the first of the possible providers that is available at runtime is used, according to the listing order.
+
+
+
+'''
+[[settings-hibernate.type.preferred_boolean_jdbc_type]]
+`*hibernate.type.preferred_boolean_jdbc_type*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#PREFERRED_BOOLEAN_JDBC_TYPE[MappingSettings.PREFERRED_BOOLEAN_JDBC_TYPE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html#getPreferredSqlTypeCodeForBoolean()[dialect-specific type code]
+
+
+****
++
+Specifies the preferred JDBC type for storing boolean values. 
++
+Can be overridden locally using link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcType.html[`JdbcType`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcTypeCode.html[`JdbcTypeCode`], and friends. 
+
++
+Can also specify the name of the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html[`SqlTypes`] constant field, for example, `hibernate.type.preferred_boolean_jdbc_type=BIT`.
+
+
+
+'''
+[[settings-hibernate.type.preferred_duration_jdbc_type]]
+`*hibernate.type.preferred_duration_jdbc_type*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#PREFERRED_DURATION_JDBC_TYPE[MappingSettings.PREFERRED_DURATION_JDBC_TYPE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html#NUMERIC[`SqlTypes.NUMERIC`]
+
+
+****
++
+The preferred JDBC type to use for storing link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html?is-external=true[`Duration`] values. 
++
+Can be overridden locally using link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcType.html[`JdbcType`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcTypeCode.html[`JdbcTypeCode`], and friends. 
+
++
+Can also specify the name of the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html[`SqlTypes`] constant field, for example, `hibernate.type.preferred_duration_jdbc_type=INTERVAL_SECOND`.
+
+
+
+'''
+[[settings-hibernate.type.preferred_instant_jdbc_type]]
+`*hibernate.type.preferred_instant_jdbc_type*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#PREFERRED_INSTANT_JDBC_TYPE[MappingSettings.PREFERRED_INSTANT_JDBC_TYPE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html#TIMESTAMP_UTC[`SqlTypes.TIMESTAMP_UTC`].
+
+
+****
++
+Specifies the preferred JDBC type for storing link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Instant.html?is-external=true[`Instant`] values. 
++
+Can be overridden locally using link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcType.html[`JdbcType`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcTypeCode.html[`JdbcTypeCode`], and friends. 
+
++
+Can also specify the name of the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html[`SqlTypes`] constant field, for example, `hibernate.type.preferred_instant_jdbc_type=TIMESTAMP`.
+
+
+
+'''
+[[settings-hibernate.type.preferred_uuid_jdbc_type]]
+`*hibernate.type.preferred_uuid_jdbc_type*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#PREFERRED_UUID_JDBC_TYPE[MappingSettings.PREFERRED_UUID_JDBC_TYPE]
+
+*_Since:_* _6.0_
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html#UUID[`SqlTypes.UUID`].
+
+
+****
++
+The preferred JDBC type to use for storing link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/UUID.html?is-external=true[`UUID`] values. 
++
+Can be overridden locally using link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcType.html[`JdbcType`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/JdbcTypeCode.html[`JdbcTypeCode`], and friends. 
+
++
+Can also specify the name of the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/SqlTypes.html[`SqlTypes`] constant field, for example, `hibernate.type.preferred_uuid_jdbc_type=CHAR`.
+
+
+
+'''
+[[settings-hibernate.type.wrapper_array_handling]]
+`*hibernate.type.wrapper_array_handling*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#WRAPPER_ARRAY_HANDLING[MappingSettings.WRAPPER_ARRAY_HANDLING]
+
+*_Since:_* _6.2_
+
+****
++
+Configurable control over how to handle `Byte[]` and `Character[]` types encountered in the application domain model. Allowable semantics are defined by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/WrapperArrayHandling.html[`WrapperArrayHandling`]. Accepted values include:
++
+
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/WrapperArrayHandling.html[`WrapperArrayHandling`] instance 
+  * case-insensitive name of a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/WrapperArrayHandling.html[`WrapperArrayHandling`] instance (e.g. `allow`) 
+
+
+'''
+[[settings-hibernate.type.xml_format_mapper]]
+`*hibernate.type.xml_format_mapper*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#XML_FORMAT_MAPPER[MappingSettings.XML_FORMAT_MAPPER]
+
+*_Since:_* _6.0.1_
+
+****
++
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../type/format/FormatMapper.html[`FormatMapper`] used for XML serialization and deserialization, either: 
++
+
+  * an instance of `FormatMapper`, 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] representing a class that implements `FormatMapper`, 
+  * the name of a class that implements `FormatMapper`, or 
+  * one of the shorthand constants `jackson` or `jaxb`.  
++
+By default, the first of the possible providers that is available at runtime is used, according to the listing order.
+
+
+
+'''
+[[settings-hibernate.use_entity_where_clause_for_collections]]
+`[.line-through]#hibernate.use_entity_where_clause_for_collections#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#USE_ENTITY_WHERE_CLAUSE_FOR_COLLECTIONS[MappingSettings.USE_ENTITY_WHERE_CLAUSE_FOR_COLLECTIONS]
+
+WARNING: *_This setting is considered deprecated_*
+
+The setting is very misnamed - it applies across all entity associations, not only to collections.
+
+****
++
+The link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/Where.html[`@Where`] annotation specifies a restriction on the table rows which are visible as entity class instances or collection elements. 
++
+This setting controls whether the restriction applied to an entity should be applied to association fetches (for one-to-one, many-to-one, one-to-many, and many-to-many associations) which target the entity.
+
+
+
+'''
+[[settings-hibernate.use_nationalized_character_data]]
+`*hibernate.use_nationalized_character_data*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#USE_NATIONALIZED_CHARACTER_DATA[MappingSettings.USE_NATIONALIZED_CHARACTER_DATA]
+
+*_Default Value:_* `false` (disabled)
+
+
+This is a global setting applying to all mappings associated with a given SessionFactory. The Nationalized annotation may be used to selectively enable nationalized character support for specific columns.
+
+****
++
+By default, Hibernate maps character data represented by link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html?is-external=true[`String`]s and link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Clob.html?is-external=true[`Clob`]s to the JDBC types link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Types.html?is-external=true#VARCHAR[`Types.VARCHAR`] and link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Types.html?is-external=true#CLOB[`Types.CLOB`]. This setting, when enabled, turns on the use of explicit nationalized character support for mappings involving character data, specifying that the JDBC types link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Types.html?is-external=true#NVARCHAR[`Types.NVARCHAR`] and link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/Types.html?is-external=true#NCLOB[`Types.NCLOB`] should be used instead. 
++
+This setting is relevant for use with databases with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/NationalizationSupport.html#EXPLICIT[explicit nationalization support], and it is not needed for databases whose native `varchar` and `clob` types support Unicode data. (If you're not sure how your database handles Unicode, check out the implementation of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html#getNationalizationSupport()[`Dialect.getNationalizationSupport()`] for its SQL dialect.) 
+
++
+Enabling this setting has two effects: 
++
+
+  * when interacting with JDBC, Hibernate uses operations like link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html?is-external=true#setNString(int,java.lang.String)[`PreparedStatement.setNString(int, String)`] link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html?is-external=true#setNClob(int,java.sql.NClob)[`PreparedStatement.setNClob(int, java.sql.NClob)`] to pass character data, and 
+  * when generating DDL, the schema export tool uses `nchar`, `nvarchar`, or `nclob` as the generated column type when no column type is explicitly specified using link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Column.html?is-external=true#columnDefinition()[`Column.columnDefinition()`]. 
+
+
+'''
+[[settings-hibernate.validate_xml]]
+`*hibernate.validate_xml*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#VALIDATE_XML[MappingSettings.VALIDATE_XML]
+
+*_Since:_* _6.1_
+
+*_Default Value:_* `true`
+
+
+****
++
+Whether XML should be validated against their schema as Hibernate reads them.
+
+
+'''
+[[settings-hibernate.xml_mapping_enabled]]
+`*hibernate.xml_mapping_enabled*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/MappingSettings.html#XML_MAPPING_ENABLED[MappingSettings.XML_MAPPING_ENABLED]
+
+*_Since:_* _5.4.1_
+
+*_Default Value:_* `true` - XML mappings are processed
+
+
+This is a performance optimization appropriate when mapping details are defined exclusively using annotations.
+
+****
++
+Whether XML mappings should be processed.
+
+
+'''
+
+[[settings-bytecode]]
+=== Bytecode Manipulation Settings
+
+[[settings-hibernate.bytecode.provider]]
+`*hibernate.bytecode.provider*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/BytecodeSettings.html#BYTECODE_PROVIDER[BytecodeSettings.BYTECODE_PROVIDER]
+
+*_Default Value:_* `"bytebuddy"`
+
+
+****
++
+Selects a bytecode enhancement library. 
++
+At present only bytebuddy is supported, bytebuddy being the default since version 5.3.
+
+
+
+'''
+[[settings-hibernate.enhancer.enableAssociationManagement]]
+`*hibernate.enhancer.enableAssociationManagement*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/BytecodeSettings.html#ENHANCER_ENABLE_ASSOCIATION_MANAGEMENT[BytecodeSettings.ENHANCER_ENABLE_ASSOCIATION_MANAGEMENT]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enable association management feature in runtime bytecode enhancement
+
+
+'''
+
+[[settings-cache]]
+=== Second-level Cache Settings
+
+[[settings-jakarta.persistence.cache.retrieveMode]]
+`*jakarta.persistence.cache.retrieveMode*`::
+Set a default value for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/SpecHints.html#HINT_SPEC_CACHE_RETRIEVE_MODE[`SpecHints.HINT_SPEC_CACHE_RETRIEVE_MODE`], used when the hint is not explicitly specified. 
++
+It does not usually make sense to change the default from link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/CacheRetrieveMode.html?is-external=true#USE[`CacheRetrieveMode.USE`].
+
+
+
+'''
+[[settings-jakarta.persistence.cache.storeMode]]
+`*jakarta.persistence.cache.storeMode*`::
+Set a default value for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/SpecHints.html#HINT_SPEC_CACHE_STORE_MODE[`SpecHints.HINT_SPEC_CACHE_STORE_MODE`], used when the hint is not explicitly specified. 
++
+It does not usually make sense to change the default from link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/CacheStoreMode.html?is-external=true#USE[`CacheStoreMode.USE`].
+
+
+
+'''
+[[settings-jakarta.persistence.sharedCache.mode]]
+`*jakarta.persistence.sharedCache.mode*`::
+When enabled, specifies that the second-level cache (which JPA calls the "shared" cache) may be used, as per the rules defined in JPA 2 section 3.1.7. 
++
+See JPA 2 sections 9.4.3 and 8.2.1.7
+
+
+
+'''
+[[settings-hibernate.cache.auto_evict_collection_cache]]
+`*hibernate.cache.auto_evict_collection_cache*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#AUTO_EVICT_COLLECTION_CACHE[CacheSettings.AUTO_EVICT_COLLECTION_CACHE]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enables the automatic eviction of a bidirectional association's collection cache when an element in the link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/ManyToOne.html?is-external=true[`ManyToOne`] collection is added, updated, or removed without properly managing the change on the link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/OneToMany.html?is-external=true[`OneToMany`] side.
+
+
+'''
+[[settings-hibernate.cache.default_cache_concurrency_strategy]]
+`*hibernate.cache.default_cache_concurrency_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#DEFAULT_CACHE_CONCURRENCY_STRATEGY[CacheSettings.DEFAULT_CACHE_CONCURRENCY_STRATEGY]
+
+*_Default Value:_* The cache provider's default strategy
+
+
+****
++
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/CacheConcurrencyStrategy.html[`CacheConcurrencyStrategy`] to use by default when an entity is marked link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Cacheable.html?is-external=true[`@Cacheable`], but no concurrency strategy is explicitly specified via the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/Cache.html[`Cache`] annotation. 
++
+An explicit strategy may be specified using link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/Cache.html#usage()[`@Cache(usage=...)`].
+
+
+
+'''
+[[settings-hibernate.cache.keys_factory]]
+`[.line-through]#hibernate.cache.keys_factory#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#CACHE_KEYS_FACTORY[CacheSettings.CACHE_KEYS_FACTORY]
+
+WARNING: *_This setting is considered deprecated_*
+
+*_Since:_* _5.2_
+
+****
++
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/CacheKeysFactory.html[`CacheKeysFactory`] to use, either: 
++
+
+  * an instance of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/CacheKeysFactory.html[`CacheKeysFactory`], 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] implementing link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/CacheKeysFactory.html[`CacheKeysFactory`], 
+  * the name of a class implementing link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/CacheKeysFactory.html[`CacheKeysFactory`], 
+  * `"default"` as a short name for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/internal/DefaultCacheKeysFactory.html[`DefaultCacheKeysFactory`], or 
+  * `"simple"` as a short name for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/internal/SimpleCacheKeysFactory.html[`SimpleCacheKeysFactory`]. 
+
+
+'''
+[[settings-hibernate.cache.query_cache_factory]]
+`*hibernate.cache.query_cache_factory*`::
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/TimestampsCacheFactory.html[`TimestampsCacheFactory`] to use.
+
+
+'''
+[[settings-hibernate.cache.region.factory_class]]
+`*hibernate.cache.region.factory_class*`::
+The link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/RegionFactory.html[`RegionFactory`] implementation, either: 
++
+
+  * an instance of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/RegionFactory.html[`RegionFactory`], 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] implementing link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/RegionFactory.html[`RegionFactory`], or 
+  * he name of a class implementing link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/RegionFactory.html[`RegionFactory`].  
++
+Defaults to link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/internal/NoCachingRegionFactory.html[`NoCachingRegionFactory`], so that caching is disabled.
+
+
+
+'''
+[[settings-hibernate.cache.region_prefix]]
+`*hibernate.cache.region_prefix*`::
+The `CacheProvider` region name prefix
+
+
+'''
+[[settings-hibernate.cache.use_minimal_puts]]
+`*hibernate.cache.use_minimal_puts*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#USE_MINIMAL_PUTS[CacheSettings.USE_MINIMAL_PUTS]
+
+*_Default Value:_* The cache provider's default
+
+
+****
++
+Optimize interaction with the second-level cache to minimize writes, at the cost of an additional read before each write. This setting is useful if writes to the cache are much more expensive than reads from the cache, for example, if the cache is a distributed cache. 
++
+It's not usually necessary to set this explicitly because, by default, it's set to a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../boot/SessionFactoryBuilder.html#applyMinimalPutsForCaching(boolean)[sensible value] by the second-level cache implementation.
+
+
+
+'''
+[[settings-hibernate.cache.use_query_cache]]
+`*hibernate.cache.use_query_cache*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#USE_QUERY_CACHE[CacheSettings.USE_QUERY_CACHE]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enable the query results cache
+
+
+'''
+[[settings-hibernate.cache.use_reference_entries]]
+`*hibernate.cache.use_reference_entries*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#USE_DIRECT_REFERENCE_CACHE_ENTRIES[CacheSettings.USE_DIRECT_REFERENCE_CACHE_ENTRIES]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enable direct storage of entity references into the second level cache when applicable. This is appropriate only for immutable entities. 
++
+By default, entities are always stored in a "disassembled" form, that is, as a tuple of attribute values.
+
+
+
+'''
+[[settings-hibernate.cache.use_second_level_cache]]
+`*hibernate.cache.use_second_level_cache*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#USE_SECOND_LEVEL_CACHE[CacheSettings.USE_SECOND_LEVEL_CACHE]
+
+*_Default Value:_* `true` when a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#CACHE_REGION_FACTORY[provider] is specified; `false` otherwise.
+
+
+****
++
+When enabled, specifies that the second-level cache may be used. 
++
+By default, if the configured link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/spi/RegionFactory.html[`RegionFactory`] is not the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../cache/internal/NoCachingRegionFactory.html[`NoCachingRegionFactory`], then the second-level cache is enabled. Otherwise, the second-level cache is disabled.
+
+
+
+'''
+[[settings-hibernate.cache.use_structured_entries]]
+`*hibernate.cache.use_structured_entries*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#USE_STRUCTURED_CACHE[CacheSettings.USE_STRUCTURED_CACHE]
+
+*_Default Value:_* `false`
+
+
+****
++
+Enables the use of structured second-level cache entries. This makes the cache entries human-readable, but carries a performance cost.
+
+
+'''
+[[settings-hibernate.classcache]]
+`*hibernate.classcache*`::
+Entity cache configuration properties follow the pattern `hibernate.classcache.packagename.ClassName usage[, region]` where `usage` is the cache strategy used and `region` the cache region name
+
+
+'''
+[[settings-hibernate.collectioncache]]
+`*hibernate.collectioncache*`::
+Collection cache configuration properties follow the pattern `hibernate.collectioncache.packagename.ClassName.role usage[, region]` where `usage` is the cache strategy used and `region` the cache region name
+
+
+'''
+[[settings-hibernate.javax.cache.cache_manager]]
+`*hibernate.javax.cache.cache_manager*`::
+Allows providing `hibernate-jcache` with a custom JCache link:https://www.javadoc.io/doc/javax.cache/cache-api/1.0.0/javax/cache/CacheManager.html?is-external=true[`CacheManager`].
+
+
+'''
+[[settings-hibernate.javax.cache.missing_cache_strategy]]
+`*hibernate.javax.cache.missing_cache_strategy*`::
+Define the behavior of the region factory when a cache is missing, i.e. when the cache was not created by the cache manager as it started. See link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cache/jcache/MissingCacheStrategy.html[`MissingCacheStrategy`] for the various possible values. Default value is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cache/jcache/MissingCacheStrategy.html#FAIL[`MissingCacheStrategy.FAIL`].
+
+
+'''
+[[settings-hibernate.javax.cache.provider]]
+`*hibernate.javax.cache.provider*`::
+Allows providing `hibernate-jcache` with a custom JCache link:https://www.javadoc.io/doc/javax.cache/cache-api/1.0.0/javax/cache/spi/CachingProvider.html?is-external=true[`CachingProvider`].
+
+
+'''
+[[settings-hibernate.javax.cache.uri]]
+`*hibernate.javax.cache.uri*`::
+Designates the URI for a specific JCache link:https://www.javadoc.io/doc/javax.cache/cache-api/1.0.0/javax/cache/CacheManager.html?is-external=true[`CacheManager`] JCacheRegionFactory should ask the link:https://www.javadoc.io/doc/javax.cache/cache-api/1.0.0/javax/cache/spi/CachingProvider.html?is-external=true[`CachingProvider`] for
+
+
+'''
+[[settings-javax.persistence.sharedCache.mode]]
+`[.line-through]#javax.persistence.sharedCache.mode#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/CacheSettings.html#JPA_SHARED_CACHE_MODE[CacheSettings.JPA_SHARED_CACHE_MODE]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Used to indicate whether second-level (what JPA terms shared cache) caching is enabled as per the rules defined in JPA 2 section 3.1.7. 
++
+See JPA 2 sections 9.4.3 and 8.2.1.7
+
+
+
+'''
+
+[[settings-envers]]
+=== Audit/History Settings
+
+[[settings-org.hibernate.envers.allow_identifier_reuse]]
+`*org.hibernate.envers.allow_identifier_reuse*`::
+Guarantees proper validity audit strategy behavior when application reuses identifiers of deleted entities. Exactly one row with `null` end date exists for each identifier.
+
+
+'''
+[[settings-org.hibernate.envers.audit_strategy]]
+`*org.hibernate.envers.audit_strategy*`::
+Audit strategy. Defaults to link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/../strategy/DefaultAuditStrategy.html[`DefaultAuditStrategy`].
+
+
+'''
+[[settings-org.hibernate.envers.audit_strategy_validity_end_rev_field_name]]
+`*org.hibernate.envers.audit_strategy_validity_end_rev_field_name*`::
+Column name that will hold the end revision number in audit entities. Defaults to REVEND.
+
+
+'''
+[[settings-org.hibernate.envers.audit_strategy_validity_revend_timestamp_field_name]]
+`*org.hibernate.envers.audit_strategy_validity_revend_timestamp_field_name*`::
+Column name of the timestamp of the end revision until which the data was valid. Defaults to REVEND_TSTMP.
+
+
+'''
+[[settings-org.hibernate.envers.audit_strategy_validity_revend_timestamp_legacy_placement]]
+`*org.hibernate.envers.audit_strategy_validity_revend_timestamp_legacy_placement*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/EnversSettings.html#AUDIT_STRATEGY_VALIDITY_REVEND_TIMESTAMP_LEGACY_PLACEMENT[EnversSettings.AUDIT_STRATEGY_VALIDITY_REVEND_TIMESTAMP_LEGACY_PLACEMENT]
+
+*_Since:_* _6.0_
+
+****
++
+Whether to use legacy validity audit strategy revision end timestamp behavior where the field is not included as part of the joined entity inheritance subclass audit tables. Defaults to `true`.
+
+
+'''
+[[settings-org.hibernate.envers.audit_strategy_validity_revend_timestamp_numeric]]
+`*org.hibernate.envers.audit_strategy_validity_revend_timestamp_numeric*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/EnversSettings.html#AUDIT_STRATEGY_VALIDITY_REVEND_TIMESTAMP_NUMERIC[EnversSettings.AUDIT_STRATEGY_VALIDITY_REVEND_TIMESTAMP_NUMERIC]
+
+*_Since:_* _6.0_
+
+****
++
+Determines whether the timestamp of the end revision is stored as a numeric data type. Defaults to false.
+
+
+'''
+[[settings-org.hibernate.envers.audit_strategy_validity_store_revend_timestamp]]
+`*org.hibernate.envers.audit_strategy_validity_store_revend_timestamp*`::
+Store the timestamp of the end revision, until which the data was valid, in addition to the end revision itself. Defaults to `false`.
+
+
+'''
+[[settings-org.hibernate.envers.audit_table_prefix]]
+`*org.hibernate.envers.audit_table_prefix*`::
+Audit table prefix. Empty by default.
+
+
+'''
+[[settings-org.hibernate.envers.audit_table_suffix]]
+`*org.hibernate.envers.audit_table_suffix*`::
+Audit table suffix. Defaults to _AUD.
+
+
+'''
+[[settings-org.hibernate.envers.cascade_delete_revision]]
+`*org.hibernate.envers.cascade_delete_revision*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/EnversSettings.html#CASCADE_DELETE_REVISION[EnversSettings.CASCADE_DELETE_REVISION]
+
+*_Since:_* _4.3.0_
+
+****
++
+Deletion of a revision entity will cause a foreign key constraint database error when at least one audit record exists for that revision. By enabling this feature, deletion of the revision entity will also force all audit records associated to that revision to be deleted via cascade. Defaults to false.
+
+
+'''
+[[settings-org.hibernate.envers.default_catalog]]
+`*org.hibernate.envers.default_catalog*`::
+Default name of the catalog containing audit tables.
+
+
+'''
+[[settings-org.hibernate.envers.default_schema]]
+`*org.hibernate.envers.default_schema*`::
+Default name of the schema containing audit tables.
+
+
+'''
+[[settings-org.hibernate.envers.do_not_audit_optimistic_locking_field]]
+`*org.hibernate.envers.do_not_audit_optimistic_locking_field*`::
+Treats optimistic locking properties as unversioned. Defaults to `true`.
+
+
+'''
+[[settings-org.hibernate.envers.embeddable_set_ordinal_field_name]]
+`*org.hibernate.envers.embeddable_set_ordinal_field_name*`::
+Name of column used for storing ordinal of the change in sets of embeddable elements. Defaults to SETORDINAL.
+
+
+'''
+[[settings-org.hibernate.envers.find_by_revision_exact_match]]
+`*org.hibernate.envers.find_by_revision_exact_match*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/EnversSettings.html#FIND_BY_REVISION_EXACT_MATCH[EnversSettings.FIND_BY_REVISION_EXACT_MATCH]
+
+*_Since:_* _5.4.4_
+
+****
++
+Forces `AuditReader#find` implementations that accept a revision-number argument to perform an exact match against the supplied revision number rather than potentially returning hits that are less-than or equal-to the supplied revision number. This option is meant to maintain backward compatibility while attempting to correct a bug in behavior without impacting existing users who may use the current behavior. Defaults to false.
+
+
+'''
+[[settings-org.hibernate.envers.global_relation_not_found_legacy_flag]]
+`*org.hibernate.envers.global_relation_not_found_legacy_flag*`::
+Globally defines whether legacy relation not-found behavior should be used or not. Defaults to `true`. By specifying `true`, any `EntityNotFoundException` will be thrown unless the containing class or property explicitly specifies that use case to be ignored. Conversely, when specifying the value `false`, the inverse applies and requires explicitly specifying the use case as error so that the exception is thrown.
+
+
+'''
+[[settings-org.hibernate.envers.global_with_modified_flag]]
+`*org.hibernate.envers.global_with_modified_flag*`::
+Globally activates modified properties flag feature. Defaults to `false`.
+
+
+'''
+[[settings-org.hibernate.envers.modified_column_naming_strategy]]
+`*org.hibernate.envers.modified_column_naming_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/EnversSettings.html#MODIFIED_COLUMN_NAMING_STRATEGY[EnversSettings.MODIFIED_COLUMN_NAMING_STRATEGY]
+
+*_Since:_* _5.4.7_
+
+****
++
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/../boot/spi/ModifiedColumnNamingStrategy.html[`ModifiedColumnNamingStrategy`] to use Defaults to link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/envers/configuration/../boot/internal/LegacyModifiedColumnNamingStrategy.html[`LegacyModifiedColumnNamingStrategy`].
+
+
+'''
+[[settings-org.hibernate.envers.modified_flag_suffix]]
+`*org.hibernate.envers.modified_flag_suffix*`::
+Suffix of modified flag columns. Defaults to _MOD.
+
+
+'''
+[[settings-org.hibernate.envers.original_id_prop_name]]
+`*org.hibernate.envers.original_id_prop_name*`::
+Original id property name name. Defaults to originalId.
+
+
+'''
+[[settings-org.hibernate.envers.revision_field_name]]
+`*org.hibernate.envers.revision_field_name*`::
+Revision field name. Defaults to REV.
+
+
+'''
+[[settings-org.hibernate.envers.revision_listener]]
+`*org.hibernate.envers.revision_listener*`::
+Fully qualified class name of user defined revision listener.
+
+
+'''
+[[settings-org.hibernate.envers.revision_on_collection_change]]
+`*org.hibernate.envers.revision_on_collection_change*`::
+Triggers revision generation when not-owned relation field changes. Defaults to `true`.
+
+
+'''
+[[settings-org.hibernate.envers.revision_sequence_nocache]]
+`*org.hibernate.envers.revision_sequence_nocache*`::
+Whether to apply a nocache configuration for the revision sequence. This is mostly interesting for testing.
+
+
+'''
+[[settings-org.hibernate.envers.revision_type_field_name]]
+`*org.hibernate.envers.revision_type_field_name*`::
+Revision type field name. Defaults to REVTYPE.
+
+
+'''
+[[settings-org.hibernate.envers.store_data_at_delete]]
+`*org.hibernate.envers.store_data_at_delete*`::
+Indicates whether entity data should be stored during removal. Defaults to `false`.
+
+
+'''
+[[settings-org.hibernate.envers.track_entities_changed_in_revision]]
+`*org.hibernate.envers.track_entities_changed_in_revision*`::
+Track entity names that have been changed during each revision. Defaults to `false`.
+
+
+'''
+[[settings-org.hibernate.envers.use_revision_entity_with_native_id]]
+`*org.hibernate.envers.use_revision_entity_with_native_id*`::
+Use revision entity with native identifier generator. Defaults to `true` for backward compatibility.
+
+
+'''
+
+[[settings-environment]]
+=== Runtime Environment Settings
+
+[[settings-hibernate.classLoader.tccl_lookup_precedence]]
+`*hibernate.classLoader.tccl_lookup_precedence*`::
+Specifies how the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html?is-external=true#getContextClassLoader()[thread context] link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true[class loader] must be used for class lookup.
+
+
+'''
+[[settings-hibernate.classLoaders]]
+`*hibernate.classLoaders*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/EnvironmentSettings.html#CLASSLOADERS[EnvironmentSettings.CLASSLOADERS]
+
+*_Since:_* _5.0_
+
+****
++
+Specifies a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html?is-external=true[`collection`] of the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassLoader.html?is-external=true[`ClassLoader`] instances Hibernate should use for classloading and resource loading.
+
+
+'''
+[[settings-hibernate.jndi]]
+`*hibernate.jndi*`::
+A prefix for properties specifying arbitrary JNDI link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/InitialContext.html?is-external=true[`InitialContext`] properties. These properties are simply passed along to the constructor link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/InitialContext.html?is-external=true#%3Cinit%3E(java.util.Hashtable)[`InitialContext(java.util.Hashtable)`].
+
+
+'''
+[[settings-hibernate.jndi.class]]
+`*hibernate.jndi.class*`::
+Specifies the JNDI link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/spi/InitialContextFactory.html?is-external=true[`InitialContextFactory`] implementation class to use. Passed along to link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/InitialContext.html?is-external=true#%3Cinit%3E(java.util.Hashtable)[`InitialContext(Hashtable)`] as link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/Context.html?is-external=true#INITIAL_CONTEXT_FACTORY["java.naming.factory.initial"].
+
+
+'''
+[[settings-hibernate.jndi.url]]
+`*hibernate.jndi.url*`::
+Specifies the JNDI provider/connection URL. Passed along to link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/InitialContext.html?is-external=true#%3Cinit%3E(java.util.Hashtable)[`InitialContext(Hashtable)`] as link:https://docs.oracle.com/en/java/javase/11/docs/api/java.naming/javax/naming/Context.html?is-external=true#PROVIDER_URL["java.naming.provider.url"].
+
+
+'''
+
+[[settings-misc]]
+=== Miscellaneous Settings
+
+[[settings-jakarta.persistence.lock.scope]]
+`*jakarta.persistence.lock.scope*`::
+Set a default value for the hint link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/SpecHints.html#HINT_SPEC_LOCK_SCOPE[`SpecHints.HINT_SPEC_LOCK_SCOPE`], used when the hint is not explicitly specified. 
++
+See JPA 2 sections 8.2.1.9 and 3.4.4.3
+
+
+
+'''
+[[settings-jakarta.persistence.lock.timeout]]
+`*jakarta.persistence.lock.timeout*`::
+Set a default value for the hint link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/SpecHints.html#HINT_SPEC_LOCK_TIMEOUT[`SpecHints.HINT_SPEC_LOCK_TIMEOUT`], used when the hint is not explicitly specified. 
++
+See JPA 2 sections 8.2.1.9 and 3.4.4.3
+
+
+
+'''
+[[settings-hibernate.allow_refresh_detached_entity]]
+`*hibernate.allow_refresh_detached_entity*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/AvailableSettings.html#ALLOW_REFRESH_DETACHED_ENTITY[AvailableSettings.ALLOW_REFRESH_DETACHED_ENTITY]
+
+*_Since:_* _5.2_
+
+****
++
+When enabled, allows calls to link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#refresh(java.lang.Object)[`EntityManager.refresh(Object)`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../Session.html#refresh(java.lang.Object)[`Session.refresh(Object)`] on a detached entity instance. 
++
+Values are `true`, which allows refreshing a detached instance and `false`, which does not. When refreshing is disallowed, an link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html?is-external=true[`IllegalArgumentException`] is thrown. 
+
++
+The default behavior is to allow refreshing a detached instance unless Hibernate is bootstrapped via JPA.
+
+
+
+'''
+[[settings-hibernate.current_session_context_class]]
+`*hibernate.current_session_context_class*`::
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../context/spi/CurrentSessionContext.html[`CurrentSessionContext`] for scoping the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactory.html#getCurrentSession()[current session], either: 
++
+
+  * `jta`, `thread`, or `managed`, or 
+  * the name of a class implementing `org.hibernate.context.spi.CurrentSessionContext`.  If this property is not set, but JTA support is enabled, then link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../context/internal/JTASessionContext.html[`JTASessionContext`] is used by default.
+
+
+'''
+[[settings-hibernate.discard_pc_on_close]]
+`*hibernate.discard_pc_on_close*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/AvailableSettings.html#DISCARD_PC_ON_CLOSE[AvailableSettings.DISCARD_PC_ON_CLOSE]
+
+*_Default Value:_* `false` (not discarded) per the JPA specification.
+
+
+****
++
+When enabled, specifies that the persistent context should be discarded when either link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SharedSessionContract.html#close()[`SharedSessionContract.close()`] or link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#close()[`EntityManager.close()`] is called.
+
+
+'''
+[[settings-hibernate.entity_dirtiness_strategy]]
+`*hibernate.entity_dirtiness_strategy*`::
+Setting to identify a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../CustomEntityDirtinessStrategy.html[`CustomEntityDirtinessStrategy`] to use. May specify either a class name or an instance.
+
+
+'''
+[[settings-hibernate.event.listener]]
+`*hibernate.event.listener*`::
+Event listener configuration properties follow the pattern `hibernate.event.listener.eventType packageName.ClassName1, packageName.ClassName2`
+
+
+'''
+[[settings-hibernate.event.merge.entity_copy_observer]]
+`*hibernate.event.merge.entity_copy_observer*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/AvailableSettings.html#MERGE_ENTITY_COPY_OBSERVER[AvailableSettings.MERGE_ENTITY_COPY_OBSERVER]
+
+*_Since:_* _4.3_
+
+****
++
+Setting that specifies how Hibernate will respond when multiple representations of the same persistent entity ("entity copy") are detected while merging. 
++
+The possible values are: 
++
+
+  * disallow (the default): throws link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalStateException.html?is-external=true[`IllegalStateException`] if an entity copy is detected 
+  * allow: performs the merge operation on each entity copy that is detected 
+  * log: (provided for testing only) performs the merge operation on each entity copy that is detected and logs information about the entity copies. This setting requires DEBUG logging be enabled for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../event/internal/EntityCopyAllowedLoggedObserver.html[`EntityCopyAllowedLoggedObserver`].  
++
+Alternatively, the application may customize the behavior by providing an implementation of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../event/spi/EntityCopyObserver.html[`EntityCopyObserver`] and setting the property "hibernate.event.merge.entity_copy_observer" to the class name. 
+
++
+When this property is set to `allow` or `log`, Hibernate will merge each entity copy detected while cascading the merge operation. In the process of merging each entity copy, Hibernate will cascade the merge operation from each entity copy to its associations with link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/CascadeType.html?is-external=true#MERGE[`CascadeType.MERGE`] or link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/CascadeType.html?is-external=true#ALL[`CascadeType.ALL`]. The entity state resulting from merging an entity copy will be overwritten when another entity copy is merged.
+
+
+
+'''
+[[settings-hibernate.identifier_generator_strategy_provider]]
+`[.line-through]#hibernate.identifier_generator_strategy_provider#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/AvailableSettings.html#IDENTIFIER_GENERATOR_STRATEGY_PROVIDER[AvailableSettings.IDENTIFIER_GENERATOR_STRATEGY_PROVIDER]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Specifies a class which implements link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../jpa/spi/IdentifierGeneratorStrategyProvider.html[`IdentifierGeneratorStrategyProvider`], and has a constructor with no parameters.
+
+
+'''
+[[settings-hibernate.loader.delay_entity_loader_creations]]
+`*hibernate.loader.delay_entity_loader_creations*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/AvailableSettings.html#DELAY_ENTITY_LOADER_CREATIONS[AvailableSettings.DELAY_ENTITY_LOADER_CREATIONS]
+
+*_Since:_* _5.3_
+
+****
++
+Controls how link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../loader/ast/spi/Loader.html[entity loaders] are created. 
++
+When `true`, the default, the loaders are only created on first access; this ensures that all access patterns which are not useful to the application are never instantiated, possibly saving a substantial amount of memory for applications having many entities. The only exception is the loader for link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../LockMode.html#NONE[`LockMode.NONE`], which will always be eagerly initialized; this is necessary to detect mapping errors. 
+
++
+`false` indicates that all loaders should be created up front; this will consume more memory but ensures all necessary memory is allocated right away.
+
+
+
+'''
+[[settings-hibernate.use_identifier_rollback]]
+`*hibernate.use_identifier_rollback*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/AvailableSettings.html#USE_IDENTIFIER_ROLLBACK[AvailableSettings.USE_IDENTIFIER_ROLLBACK]
+
+*_Default Value:_* `false` - generated identifiers are not unset
+
+
+****
++
+When enabled, specifies that the generated identifier of an entity is unset when the entity is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../Session.html#remove(java.lang.Object)[deleted].
+
+
+'''
+
+[[settings-query]]
+=== Query Settings
+
+[[settings-hibernate.criteria.copy_tree]]
+`*hibernate.criteria.copy_tree*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#CRITERIA_COPY_TREE[QuerySettings.CRITERIA_COPY_TREE]
+
+*_Since:_* _6.0_
+
+****
++
+When enabled, specifies that link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/Query.html[queries] created via link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#createQuery(jakarta.persistence.criteria.CriteriaQuery)[`EntityManager.createQuery(CriteriaQuery)`], link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#createQuery(jakarta.persistence.criteria.CriteriaUpdate)[`EntityManager.createQuery(CriteriaUpdate)`] or link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html?is-external=true#createQuery(jakarta.persistence.criteria.CriteriaDelete)[`EntityManager.createQuery(CriteriaDelete)`] must create a copy of the passed criteria query object such that the resulting link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Query.html?is-external=true[`Query`] object is not affected by mutation of the original link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/criteria/CriteriaQuery.html?is-external=true[criteria query]. 
++
+If disabled, it's assumed that the client does not mutate the criteria query after calling `createQuery()`. Thus, in the interest of performance, no copy is created. 
+
++
+The default behavior depends on how Hibernate is bootstrapped: 
++
+
+  * When bootstrapping Hibernate through the native bootstrap APIs, this setting is disabled, that is, no copy of the criteria query object is made. 
+  * When bootstrapping Hibernate through the JPA SPI, this setting is enabled so that criteria query objects are copied, as required by the JPA specification. 
+
+
+'''
+[[settings-hibernate.criteria.value_handling_mode]]
+`*hibernate.criteria.value_handling_mode*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#CRITERIA_VALUE_HANDLING_MODE[QuerySettings.CRITERIA_VALUE_HANDLING_MODE]
+
+*_Since:_* _6.0.0_
+
+****
++
+By default, a link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/criteria/CriteriaBuilder.html?is-external=true[criteria query] produces SQL with a JDBC bind parameter for any value specified via the criteria query API, except when the value is passed via link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/criteria/CriteriaBuilder.html?is-external=true#literal(T)[`CriteriaBuilder.literal(Object)`], in which case the value is "inlined" as a SQL literal. 
++
+This setting may be used to override this default behavior: 
++
+
+  * the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/criteria/ValueHandlingMode.html#BIND[`"bind"`] mode uses bind parameters to pass such values to JDBC, but 
+  * the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/criteria/ValueHandlingMode.html#INLINE[`"inline"`] mode inlines values as SQL literals.  
++
+In both modes: 
++
+
+  * values specified using `literal()` are inlined, and 
+  * values specified using link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/criteria/CriteriaBuilder.html?is-external=true#parameter(java.lang.Class)[`CriteriaBuilder.parameter(Class)`] to create a link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/criteria/ParameterExpression.html?is-external=true[`criteria parameter`] and link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Query.html?is-external=true#setParameter(jakarta.persistence.Parameter,T)[`Query.setParameter(jakarta.persistence.Parameter,Object)`] to specify its argument are passed to JDBC using a bind parameter.  
++
+The default mode is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/criteria/ValueHandlingMode.html#BIND[`ValueHandlingMode.BIND`].
+
+
+
+'''
+[[settings-hibernate.order_by.default_null_ordering]]
+`*hibernate.order_by.default_null_ordering*`::
+Specifies the default link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/NullPrecedence.html[precedence of null values] in the HQL `ORDER BY` clause, either `none`, `first`, or `last`. 
++
+The default is `none`.
+
+
+
+'''
+[[settings-hibernate.query.fail_on_pagination_over_collection_fetch]]
+`*hibernate.query.fail_on_pagination_over_collection_fetch*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#FAIL_ON_PAGINATION_OVER_COLLECTION_FETCH[QuerySettings.FAIL_ON_PAGINATION_OVER_COLLECTION_FETCH]
+
+*_Since:_* _5.2.13_
+
+****
++
+When link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/Query.html#setMaxResults(int)[pagination] is used in combination with a `fetch join` applied to a collection or many-valued association, the limit must be applied in-memory instead of on the database. This typically has terrible performance characteristics, and should be avoided. 
++
+When enabled, this setting specifies that an exception should be thrown for any query which would result in the limit being applied in-memory. 
+
++
+By default, the exception is **disabled**, and the possibility of terrible performance is left as a problem for the client to avoid.
+
+
+
+'''
+[[settings-hibernate.query.hql.translator]]
+`*hibernate.query.hql.translator*`::
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/hql/HqlTranslator.html[`HqlTranslator`] to use for HQL query translation.
+
+
+'''
+[[settings-hibernate.query.immutable_entity_update_query_handling_mode]]
+`*hibernate.query.immutable_entity_update_query_handling_mode*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#IMMUTABLE_ENTITY_UPDATE_QUERY_HANDLING_MODE[QuerySettings.IMMUTABLE_ENTITY_UPDATE_QUERY_HANDLING_MODE]
+
+*_Since:_* _5.2.17_
+
+****
++
+This setting defines how link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/Immutable.html[`Immutable`] entities are handled when executing a bulk update query. Valid options are enumerated by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/ImmutableEntityUpdateQueryHandlingMode.html[`ImmutableEntityUpdateQueryHandlingMode`]: 
++
+
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/ImmutableEntityUpdateQueryHandlingMode.html#WARNING[`"warning"`] specifies that a warning log message is issued when an link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../annotations/Immutable.html[immutable] entity is to be updated via a bulk update statement, and 
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/ImmutableEntityUpdateQueryHandlingMode.html#EXCEPTION[`"exception"`] specifies that a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../HibernateException.html[`HibernateException`] should be thrown.  
++
+By default, a warning is logged.
+
+
+
+'''
+[[settings-hibernate.query.in_clause_parameter_padding]]
+`*hibernate.query.in_clause_parameter_padding*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#IN_CLAUSE_PARAMETER_PADDING[QuerySettings.IN_CLAUSE_PARAMETER_PADDING]
+
+*_Since:_* _5.2.17_
+
+****
++
+Determines how parameters occurring in a SQL `IN` predicate are expanded. By default, the `IN` predicate expands to include sufficient bind parameters to accommodate the specified arguments. 
++
+However, for database systems supporting execution plan caching, there's a better chance of hitting the cache if the number of possible `IN` clause parameter list lengths is smaller. 
+
++
+When this setting is enabled, we expand the number of bind parameters to an integer power of two: 4, 8, 16, 32, 64. Thus, if 5, 6, or 7 arguments are bound to a parameter, a SQL statement with 8 bind parameters in the `IN` clause will be used, and null will be bound to the left-over parameters.
+
+
+
+'''
+[[settings-hibernate.query.insert_strategy]]
+`*hibernate.query.insert_strategy*`::
+Defines the "global" strategy to use for handling HQL and Criteria insert queries. Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/sqm/mutation/spi/SqmMultiTableInsertStrategy.html[`SqmMultiTableInsertStrategy`].
+
+
+'''
+[[settings-hibernate.query.mutation_strategy]]
+`*hibernate.query.mutation_strategy*`::
+Defines the "global" strategy to use for handling HQL and Criteria mutation queries. Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/sqm/mutation/spi/SqmMultiTableMutationStrategy.html[`SqmMultiTableMutationStrategy`]..
+
+
+'''
+[[settings-hibernate.query.native.ignore_jdbc_parameters]]
+`*hibernate.query.native.ignore_jdbc_parameters*`::
+When set to true, indicates that ordinal parameters (represented by the '?' placeholder) in native queries will be ignored. 
++
+By default, this is set to false, i.e. native queries will be checked for ordinal placeholders. 
+
++
+
+
+
+
+'''
+[[settings-hibernate.query.plan_cache_enabled]]
+`*hibernate.query.plan_cache_enabled*`::
+When enabled, specifies that link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/spi/QueryPlan.html[query plans] should be link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/spi/QueryInterpretationCache.html[cached]. 
++
+By default, the query plan cache is disabled, unless one of the configuration properties link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#QUERY_PLAN_CACHE_MAX_SIZE["hibernate.query.plan_cache_max_size"] or link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE["hibernate.query.plan_parameter_metadata_max_size"] is set.
+
+
+
+'''
+[[settings-hibernate.query.plan_cache_max_size]]
+`*hibernate.query.plan_cache_max_size*`::
+The maximum number of entries in the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/spi/QueryInterpretationCache.html[query interpretation cache]. 
++
+The default maximum is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/spi/QueryEngine.html#DEFAULT_QUERY_PLAN_MAX_COUNT[2048].
+
+
+
+'''
+[[settings-hibernate.query.plan_parameter_metadata_max_size]]
+`[.line-through]#hibernate.query.plan_parameter_metadata_max_size#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE[QuerySettings.QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+The maximum number of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/ParameterMetadata.html[`ParameterMetadata`] instances maintained by the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/spi/QueryInterpretationCache.html[`QueryInterpretationCache`]. 
++
+
+
+
+
+'''
+[[settings-hibernate.query.proc.callable_named_params_enabled]]
+`*hibernate.query.proc.callable_named_params_enabled*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/QuerySettings.html#CALLABLE_NAMED_PARAMS_ENABLED[QuerySettings.CALLABLE_NAMED_PARAMS_ENABLED]
+
+*_Since:_* _6.0_
+
+****
++
+When enabled, specifies that Hibernate should attempt to map parameter names given in a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../procedure/ProcedureCall.html[`ProcedureCall`] or link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/StoredProcedureQuery.html?is-external=true[`StoredProcedureQuery`] to named parameters of the JDBC link:https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/CallableStatement.html?is-external=true[`CallableStatement`].
+
+
+'''
+[[settings-hibernate.query.sqm.translator]]
+`*hibernate.query.sqm.translator*`::
+Specifies a link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../query/sqm/sql/SqmTranslatorFactory.html[`SqmTranslatorFactory`] to use for HQL query translation.
+
+
+'''
+[[settings-hibernate.query.startup_check]]
+`*hibernate.query.startup_check*`::
+When enabled, specifies that named queries be checked during startup. 
++
+By default, named queries are checked at startup. 
+
++
+Mainly intended for use in test environments.
+
+
+
+'''
+
+[[settings-schema]]
+=== Schema Tooling Settings
+
+[[settings-jakarta.persistence.create-database-schemas]]
+`*jakarta.persistence.create-database-schemas*`::
+The JPA variant of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_NAMESPACES[`HBM2DDL_CREATE_NAMESPACES`] used to specify whether database schemas used in the mapping model should be created on export in addition to creating the tables, sequences, etc. 
++
+The default is `false`, meaning to not create schemas
+
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.create-script-source]]
+`*jakarta.persistence.schema-generation.create-script-source*`::
+Specifies the CREATE script file as either a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Reader.html?is-external=true[`Reader`] configured for reading the DDL script file or a string designating a file link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true[`URL`] for the DDL script. 
++
+Hibernate historically also accepted link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES[`HBM2DDL_IMPORT_FILES`] for a similar purpose. This setting is now preferred.
+
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.create-source]]
+`*jakarta.persistence.schema-generation.create-source*`::
+Specifies whether schema generation commands for schema creation are to be determined based on object/relational mapping metadata, DDL scripts, or a combination of the two. See link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/SourceType.html[`SourceType`] for the list of legal values. 
++
+If no value is specified, a default is inferred as follows: 
++
+
+  * if source scripts are specified via link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE["jakarta.persistence.schema-generation.create-script-source"], then link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/SourceType.html#SCRIPT[`"script"`] is assumed, or 
+  * otherwise, link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/SourceType.html#SCRIPT[`"metadata"`] is assumed. 
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.database.action]]
+`*jakarta.persistence.schema-generation.database.action*`::
+Specifies what type of schema tooling action should be performed against the database specified using either link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_CONNECTION["jakarta.persistence.schema-generation-connection"] or the configured link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] for the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactory.html[`SessionFactory`]. 
++
+Valid options are enumerated by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/Action.html[`Action`]. 
+
++
+This setting takes precedence over link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_AUTO["hibernate.hbm2ddl.auto"]. 
+
++
+If no value is specified, the default is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/Action.html#NONE[`"none"`].
+
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.drop-script-source]]
+`*jakarta.persistence.schema-generation.drop-script-source*`::
+Specifies the DROP script file as either a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Reader.html?is-external=true[`Reader`] configured for reading the DDL script file or a string designating a file link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true[`URL`] for the DDL script.
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.drop-source]]
+`*jakarta.persistence.schema-generation.drop-source*`::
+Specifies whether schema generation commands for schema dropping are to be determined based on object/relational mapping metadata, DDL scripts, or a combination of the two. See link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/SourceType.html[`SourceType`] for the list of legal values. 
++
+If no value is specified, a default is inferred as follows: 
++
+
+  * if source scripts are specified via link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DROP_SCRIPT_SOURCE["jakarta.persistence.schema-generation.drop-script-source"], then link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/SourceType.html#SCRIPT["script"] is assumed, or 
+  * otherwise, link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/SourceType.html#SCRIPT["metadata"] is assumed. 
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.scripts.action]]
+`*jakarta.persistence.schema-generation.scripts.action*`::
+Specifies what type of schema tooling action should be written to script files. 
++
+Valid options are enumerated by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/Action.html[`Action`]. 
+
++
+The script file is identified using link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_CREATE_TARGET["jakarta.persistence.schema-generation.scripts.create-target"]. 
+
++
+If no value is specified, the default is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/Action.html#NONE[`"none"`].
+
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.scripts.create-target]]
+`*jakarta.persistence.schema-generation.scripts.create-target*`::
+For cases where link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_ACTION["jakarta.persistence.schema-generation.scripts.action"] indicates that schema creation commands should be written to a script file, this setting specifies either a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html?is-external=true[`Writer`] configured for output of the DDL script or a string specifying the file URL for the DDL script.
+
+
+'''
+[[settings-jakarta.persistence.schema-generation.scripts.drop-target]]
+`*jakarta.persistence.schema-generation.scripts.drop-target*`::
+For cases where link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_ACTION["jakarta.persistence.schema-generation.scripts.action"] indicates that schema drop commands should be written to a script file, this setting specifies either a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Writer.html?is-external=true[`Writer`] configured for output of the DDL script or a string specifying the file URL for the DDL script.
+
+
+'''
+[[settings-jakarta.persistence.sql-load-script-source]]
+`*jakarta.persistence.sql-load-script-source*`::
+JPA-standard variant of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES[`HBM2DDL_IMPORT_FILES`] for specifying a database initialization script to be run as part of schema-export 
++
+Specifies a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Reader.html?is-external=true[`Reader`] configured for reading of the SQL load script or a string designating the link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html?is-external=true[`URL`] for the SQL load script.
+
+
+
+'''
+[[settings-hibernate.dialect.storage_engine]]
+`*hibernate.dialect.storage_engine*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#STORAGE_ENGINE[SchemaToolingSettings.STORAGE_ENGINE]
+
+*_Since:_* _5.2.9_
+
+****
++
+Specifies the default storage engine for a relational databases that supports multiple storage engines. This property must be set either as an link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/Environment.html[`Environment`] variable or JVM System Property, since the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/Dialect.html[`Dialect`] is instantiated before Hibernate property resolution.
+
+
+'''
+[[settings-hibernate.hbm2ddl.auto]]
+`*hibernate.hbm2ddl.auto*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_AUTO[SchemaToolingSettings.HBM2DDL_AUTO]
+
+*_Default Value:_* `"none"`
+
+
+****
++
+Setting to perform link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/spi/SchemaManagementTool.html[`SchemaManagementTool`] actions automatically as part of the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../SessionFactory.html[`SessionFactory`] lifecycle. Valid options are enumerated by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/Action.html[`Action`]. 
++
+Interpreted in combination with link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DATABASE_ACTION[`JAKARTA_HBM2DDL_DATABASE_ACTION`] and link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_ACTION[`JAKARTA_HBM2DDL_SCRIPTS_ACTION`]. If no value is specified, the default is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/Action.html#NONE["none"].
+
+
+
+'''
+[[settings-hibernate.hbm2ddl.charset_name]]
+`*hibernate.hbm2ddl.charset_name*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CHARSET_NAME[SchemaToolingSettings.HBM2DDL_CHARSET_NAME]
+
+*_Since:_* _5.2.3_
+
+****
++
+The name of the charset used by the schema generation resource. 
++
+By default, the JVM default charset is used.
+
+
+
+'''
+[[settings-hibernate.hbm2ddl.create_namespaces]]
+`[.line-through]#hibernate.hbm2ddl.create_namespaces#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_NAMESPACES[SchemaToolingSettings.HBM2DDL_CREATE_NAMESPACES]
+
+WARNING: *_This setting is considered deprecated_*
+
+*_Since:_* _5.0_
+
+****
++
+Specifies whether to automatically create also the database schema/catalog. The default is false.
+
+
+'''
+[[settings-hibernate.hbm2ddl.default_constraint_mode]]
+`*hibernate.hbm2ddl.default_constraint_mode*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DEFAULT_CONSTRAINT_MODE[SchemaToolingSettings.HBM2DDL_DEFAULT_CONSTRAINT_MODE]
+
+*_Since:_* _5.4_
+
+*_Default Value:_* link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/ConstraintMode.html?is-external=true#CONSTRAINT[`ConstraintMode.CONSTRAINT`].
+
+
+****
++
+Used with the link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/ConstraintMode.html?is-external=true#PROVIDER_DEFAULT[`ConstraintMode.PROVIDER_DEFAULT`] strategy for foreign key mapping. 
++
+Valid values are link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/ConstraintMode.html?is-external=true#CONSTRAINT[`ConstraintMode.CONSTRAINT`] and link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/ConstraintMode.html?is-external=true#NO_CONSTRAINT[`ConstraintMode.NO_CONSTRAINT`].
+
+
+
+'''
+[[settings-hibernate.hbm2ddl.delimiter]]
+`*hibernate.hbm2ddl.delimiter*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DELIMITER[SchemaToolingSettings.HBM2DDL_DELIMITER]
+
+*_Default Value:_* `;`
+
+
+****
++
+Identifies the delimiter to use to separate schema management statements in script outputs.
+
+
+'''
+[[settings-hibernate.hbm2ddl.extra_physical_table_types]]
+`*hibernate.hbm2ddl.extra_physical_table_types*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#EXTRA_PHYSICAL_TABLE_TYPES[SchemaToolingSettings.EXTRA_PHYSICAL_TABLE_TYPES]
+
+*_Since:_* _5.0_
+
+****
++
+Specifies a comma-separated list of extra table types, in addition to the default types `"TABLE"` and `"VIEW"`, to recognize as physical tables when performing schema update, creation and validation.
+
+
+'''
+[[settings-hibernate.hbm2ddl.halt_on_error]]
+`*hibernate.hbm2ddl.halt_on_error*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_HALT_ON_ERROR[SchemaToolingSettings.HBM2DDL_HALT_ON_ERROR]
+
+*_Since:_* _5.2.4_
+
+*_Default Value:_* `false`
+
+
+****
++
+When enabled, specifies that the schema migration tool should halt on any error, terminating the bootstrap process.
+
+
+'''
+[[settings-hibernate.hbm2ddl.import_files]]
+`[.line-through]#hibernate.hbm2ddl.import_files#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES[SchemaToolingSettings.HBM2DDL_IMPORT_FILES]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Specifies a comma-separated list of file names of scripts containing SQL DML statements that should be executed after schema export completes. The order of the scripts is significant, with the first script in the list being executed first. 
++
+The scripts are only executed if the schema is created by Hibernate, that is, if link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_AUTO["hibernate.hbm2ddl.auto"] is set to `create` or `create-drop`. 
+
++
+The default value is `/import.sql`.
+
+
+
+'''
+[[settings-hibernate.hbm2ddl.import_files_sql_extractor]]
+`*hibernate.hbm2ddl.import_files_sql_extractor*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES_SQL_EXTRACTOR[SchemaToolingSettings.HBM2DDL_IMPORT_FILES_SQL_EXTRACTOR]
+
+*_Default Value:_* `org.hibernate.tool.schema.internal.script.SingleLineSqlScriptExtractor`.
+
+
+****
++
+The link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/spi/SqlScriptCommandExtractor.html[`SqlScriptCommandExtractor`] implementation to use for parsing source/import files specified by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE[`JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE`], link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DROP_SCRIPT_SOURCE[`JAKARTA_HBM2DDL_DROP_SCRIPT_SOURCE`] or link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES[`HBM2DDL_IMPORT_FILES`]. Either: 
++
+
+  * an instance of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/spi/SqlScriptCommandExtractor.html[`SqlScriptCommandExtractor`], 
+  * a link:https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html?is-external=true[`Class`] object representing a class that implements `SqlScriptCommandExtractor`, or 
+  * the name of a class that implements `SqlScriptCommandExtractor`.  
++
+The correct extractor to use depends on the format of the SQL script: 
++
+
+  * if the script has one complete SQL statement per line, use link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/internal/script/SingleLineSqlScriptExtractor.html[`SingleLineSqlScriptExtractor`], or 
+  * if a script contains statements spread over multiple lines, use link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/internal/script/MultiLineSqlScriptExtractor.html[`MultiLineSqlScriptExtractor`]. 
+
+
+'''
+[[settings-hibernate.hbm2ddl.jdbc_metadata_extraction_strategy]]
+`*hibernate.hbm2ddl.jdbc_metadata_extraction_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_JDBC_METADATA_EXTRACTOR_STRATEGY[SchemaToolingSettings.HBM2DDL_JDBC_METADATA_EXTRACTOR_STRATEGY]
+
+*_Default Value:_* Grouped, unless link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#ENABLE_SYNONYMS["hibernate.synonyms"] is enabled
+
+
+****
++
+Setting to choose the strategy used to access the JDBC Metadata. 
++
+Valid options are defined by link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/JdbcMetadaAccessStrategy.html[`JdbcMetadaAccessStrategy`]. link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/JdbcMetadaAccessStrategy.html#GROUPED[`JdbcMetadaAccessStrategy.GROUPED`] is the default.
+
+
+
+'''
+[[settings-hibernate.hbm2ddl.schema-generation.script.append]]
+`*hibernate.hbm2ddl.schema-generation.script.append*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_CREATE_APPEND[SchemaToolingSettings.HBM2DDL_SCRIPTS_CREATE_APPEND]
+
+*_Default Value:_* `true`
+
+
+****
++
+For cases where the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_ACTION["jakarta.persistence.schema-generation.scripts.action"] value indicates that schema commands should be written to DDL script file, specifies if schema commands should be appended to the end of the file rather than written at the beginning of the file. 
++
+Values are: `true` for appending schema commands to the end of the file, `false` for writing schema commands at the beginning.
+
+
+
+'''
+[[settings-hibernate.hbm2ddl.schema_filter_provider]]
+`*hibernate.hbm2ddl.schema_filter_provider*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_FILTER_PROVIDER[SchemaToolingSettings.HBM2DDL_FILTER_PROVIDER]
+
+*_Since:_* _5.1_
+
+****
++
+Used to specify the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/spi/SchemaFilterProvider.html[`SchemaFilterProvider`] to be used by create, drop, migrate and validate operations on the database schema. A `SchemaFilterProvider` provides filters that can be used to limit the scope of these operations to specific namespaces, tables and sequences. All objects are included by default.
+
+
+'''
+[[settings-hibernate.query.mutation_strategy.global_temporary.create_tables]]
+`[.line-through]#hibernate.query.mutation_strategy.global_temporary.create_tables#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_GLOBAL_TEMPORARY_CREATE_TABLES[SchemaToolingSettings.BULK_ID_STRATEGY_GLOBAL_TEMPORARY_CREATE_TABLES]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Allows creation of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/temptable/TemporaryTableKind.html#GLOBAL[global] temporary tables at application startup to be disabled. By default, table creation is enabled.
+
+
+'''
+[[settings-hibernate.query.mutation_strategy.global_temporary.drop_tables]]
+`[.line-through]#hibernate.query.mutation_strategy.global_temporary.drop_tables#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_GLOBAL_TEMPORARY_DROP_TABLES[SchemaToolingSettings.BULK_ID_STRATEGY_GLOBAL_TEMPORARY_DROP_TABLES]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Allows dropping of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/temptable/TemporaryTableKind.html#GLOBAL[global] temporary tables at application shutdown to be disabled. By default, table dropping is enabled.
+
+
+'''
+[[settings-hibernate.query.mutation_strategy.local_temporary.drop_tables]]
+`[.line-through]#hibernate.query.mutation_strategy.local_temporary.drop_tables#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_LOCAL_TEMPORARY_DROP_TABLES[SchemaToolingSettings.BULK_ID_STRATEGY_LOCAL_TEMPORARY_DROP_TABLES]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Allows dropping of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/temptable/TemporaryTableKind.html#LOCAL[local] temporary tables at transaction commit to be enabled. By default, table dropping is disabled, and the database will drop the temporary tables automatically.
+
+
+'''
+[[settings-hibernate.query.mutation_strategy.persistent.create_tables]]
+`[.line-through]#hibernate.query.mutation_strategy.persistent.create_tables#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_CREATE_TABLES[SchemaToolingSettings.BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_CREATE_TABLES]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Allows creation of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/temptable/TemporaryTableKind.html#PERSISTENT[persistent] temporary tables at application startup to be disabled. By default, table creation is enabled.
+
+
+'''
+[[settings-hibernate.query.mutation_strategy.persistent.drop_tables]]
+`[.line-through]#hibernate.query.mutation_strategy.persistent.drop_tables#`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_DROP_TABLES[SchemaToolingSettings.BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_DROP_TABLES]
+
+WARNING: *_This setting is considered deprecated_*
+
+****
++
+Allows dropping of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../dialect/temptable/TemporaryTableKind.html#PERSISTENT[persistent] temporary tables at application shutdown to be disabled. By default, table dropping is enabled.
+
+
+'''
+[[settings-hibernate.schema_management_tool]]
+`*hibernate.schema_management_tool*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#SCHEMA_MANAGEMENT_TOOL[SchemaToolingSettings.SCHEMA_MANAGEMENT_TOOL]
+
+*_Since:_* _5.0_
+
+****
++
+Specifies the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/spi/SchemaManagementTool.html[`SchemaManagementTool`] to use for performing schema management. 
++
+By default, link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/internal/HibernateSchemaManagementTool.html[`HibernateSchemaManagementTool`] is used.
+
+
+
+'''
+[[settings-hibernate.schema_update.unique_constraint_strategy]]
+`*hibernate.schema_update.unique_constraint_strategy*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#UNIQUE_CONSTRAINT_SCHEMA_UPDATE_STRATEGY[SchemaToolingSettings.UNIQUE_CONSTRAINT_SCHEMA_UPDATE_STRATEGY]
+
+*_Default Value:_* link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/UniqueConstraintSchemaUpdateStrategy.html#DROP_RECREATE_QUIETLY[DROP_RECREATE_QUIETLY]
+
+
+****
++
+Unique columns and unique keys both use unique constraints in most dialects. The schema exporter must create these constraints, but database support for finding existing constraints is extremely inconsistent. Worse, unique constraints without explicit names are assigned names with randomly generated characters. 
++
+Therefore, select from these strategies: 
++
+
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/UniqueConstraintSchemaUpdateStrategy.html#DROP_RECREATE_QUIETLY[DROP_RECREATE_QUIETLY]: Attempt to drop, then (re-)create each unique constraint, ignoring any exceptions thrown. This is the default. 
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/UniqueConstraintSchemaUpdateStrategy.html#RECREATE_QUIETLY[RECREATE_QUIETLY]: Attempt to (re-)create unique constraints, ignoring exceptions thrown if the constraint already existed. 
+  * link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../tool/schema/UniqueConstraintSchemaUpdateStrategy.html#SKIP[SKIP]: Do not attempt to create unique constraints on a schema update. 
+
+
+'''
+[[settings-hibernate.synonyms]]
+`*hibernate.synonyms*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/SchemaToolingSettings.html#ENABLE_SYNONYMS[SchemaToolingSettings.ENABLE_SYNONYMS]
+
+*_Default Value:_* `false`
+
+
+****
++
+If enabled, allows schema update and validation to support synonyms. Due to the possibility that this would return duplicate tables (especially in Oracle), this is disabled by default.
+
+
+'''
+
+[[settings-spatial]]
+=== Hibernate Spatial Settings
+
+[[settings-hibernate.integration.spatial.enabled]]
+`*hibernate.integration.spatial.enabled*`::
+The name of the configuration setting used to control whether the spatial integration is enabled. Default is true
+
+
+'''
+[[settings-hibernate.spatial.connection_finder]]
+`*hibernate.spatial.connection_finder*`::
+The canonical class name of the Oracle ConnectionFinder implementation that will be used by the Oracle spatial dialects
+
+
+'''
+[[settings-hibernate.spatial.db2.srid]]
+`*hibernate.spatial.db2.srid*`::
+SRID to use for the DB2 Spatial Dialects.
+
+
+'''
+
+[[settings-stats]]
+=== Statistics Settings
+
+[[settings-hibernate.generate_statistics]]
+`*hibernate.generate_statistics*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/StatisticsSettings.html#GENERATE_STATISTICS[StatisticsSettings.GENERATE_STATISTICS]
+
+*_Default Value:_* `false`
+
+
+****
++
+When enabled, specifies that link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../stat/Statistics.html[statistics] should be collected.
+
+
+'''
+[[settings-hibernate.statistics.query_max_size]]
+`*hibernate.statistics.query_max_size*`::
++
+****
+**See:** https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/StatisticsSettings.html#QUERY_STATISTICS_MAX_SIZE[StatisticsSettings.QUERY_STATISTICS_MAX_SIZE]
+
+*_Since:_* _5.4_
+
+****
++
+This setting controls the number of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../stat/QueryStatistics.html[`QueryStatistics`] entries that will be stored by the Hibernate link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../stat/Statistics.html[`Statistics`] object. 
++
+The default value is link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../stat/Statistics.html#DEFAULT_QUERY_STATISTICS_MAX_SIZE[5000].
+
+
+
+'''
+[[settings-hibernate.stats.factory]]
+`*hibernate.stats.factory*`::
+When statistics are link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/StatisticsSettings.html#GENERATE_STATISTICS[enabled], names the link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../stat/spi/StatisticsFactory.html[`StatisticsFactory`] to use. Recognizes a class name as well as an instance of link:https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/cfg/../stat/spi/StatisticsFactory.html[`StatisticsFactory`]. 
++
+
+ Allows customization of how the Hibernate Statistics are collected.
+
+
+'''
+
+[[settings-validation]]
+=== Jakarta Validation Integeration Settings
+
+[[settings-jakarta.persistence.validation.factory]]
+`*jakarta.persistence.validation.factory*`::
+Used to pass along any discovered link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/validation/ValidatorFactory.html?is-external=true[`ValidatorFactory`].
+
+
+'''
+[[settings-jakarta.persistence.validation.group.pre-persist]]
+`*jakarta.persistence.validation.group.pre-persist*`::
+Used to coordinate with bean validators. 
++
+See JPA 2 section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.validation.group.pre-remove]]
+`*jakarta.persistence.validation.group.pre-remove*`::
+Used to coordinate with bean validators. 
++
+See JPA 2 section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.validation.group.pre-update]]
+`*jakarta.persistence.validation.group.pre-update*`::
+Used to coordinate with bean validators. 
++
+See JPA 2 section 8.2.1.9
+
+
+
+'''
+[[settings-jakarta.persistence.validation.mode]]
+`*jakarta.persistence.validation.mode*`::
+Indicates which link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/ValidationMode.html?is-external=true[form of automatic validation] is in effect as per the rules defined in JPA 2 section 3.6.1.1. 
++
+See JPA 2 sections 9.4.3 and 8.2.1.8
+
+
+
+'''
+[[settings-hibernate.check_nullability]]
+`*hibernate.check_nullability*`::
+Enable nullability checking, raises an exception if an attribute marked as link:https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Basic.html?is-external=true#optional()[not null] is null at runtime. 
++
+Defaults to disabled if Bean Validation is present in the classpath and annotations are used, or enabled otherwise.
+
+
+
+'''
+

@@ -1,0 +1,322 @@
+= Hibernate logging
+
+[[subsystems]]
+== Sub-system logging
+
+[[MutationQueryLogging_MUTATION_QUERY_LOGGER_NAME]]
+`MutationQueryLogging.MUTATION_QUERY_LOGGER_NAME`::
+    * Logging class-name = `MutationQueryLogging`
+    * Description = Logging for multi-table mutation queries
+[[envers_boot]]
+`org.hibernate.envers.boot`::
+    * Logging class-name = `EnversBootLogger`
+    * Description = Logging related to bootstrapping an Envers (currently just its in-flight generation of `hbm.xml` mappings for Hibernate ORM to process)
+    * ValidIdRange = <<HHH90005601,HHH90005601 - HHH90005700>>
+[[beans]]
+`org.hibernate.orm.beans`::
+    * Logging class-name = `BeansMessageLogger`
+    * Description = Logging related to Hibernate's support for managed beans (CDI, etc)
+    * ValidIdRange = <<HHH10005001,HHH10005001 - HHH10010000>>
+[[boot]]
+`org.hibernate.orm.boot`::
+    * Logging class-name = `LobCreationLogging`
+    * Description = Logging related to 
+    * ValidIdRange = <<HHH10010001,HHH10010001 - HHH10010050>>
+[[boot_jaxb]]
+`org.hibernate.orm.boot.jaxb`::
+    * Logging class-name = `JaxbLogger`
+    * Description = Logging related to JAXB processing
+    * ValidIdRange = <<HHH90005501,HHH90005501 - HHH90005600>>
+[[boot_query]]
+`org.hibernate.orm.boot.query`::
+    * Logging class-name = `BootQueryLogging`
+    * Description = Logging related to processing of named-queries
+[[cache]]
+`org.hibernate.orm.cache`::
+    * Logging class-name = `SecondLevelCacheLogger`
+    * Description = Logging related to Hibernate second-level caching
+    * ValidIdRange = <<HHH90001001,HHH90001001 - HHH90002000>>
+[[connections_access]]
+`org.hibernate.orm.connections.access`::
+    * Logging class-name = `ConnectionAccessLogger`
+    * Description = Used to log details around use of `JdbcConnectionAccess`
+    * ValidIdRange = <<HHH10001501,HHH10001501 - HHH10002000>>
+[[connections_pooling]]
+`org.hibernate.orm.connections.pooling`::
+    * Logging class-name = `ConnectionPoolingLogger`
+    * Description = Logging related to connection pooling
+    * ValidIdRange = <<HHH10001001,HHH10001001 - HHH10001500>>
+[[connections_pooling_c3p0]]
+`org.hibernate.orm.connections.pooling.c3p0`::
+    * Logging class-name = `C3P0MessageLogger`
+    * Description = Logging related to the C3P0 connection pool
+    * ValidIdRange = <<HHH010001,HHH010001 - HHH015000>>
+[[connections_pooling_proxool]]
+`org.hibernate.orm.connections.pooling.proxool`::
+    * Logging class-name = `ProxoolMessageLogger`
+    * Description = Logs details related to Proxool connection pooling
+    * ValidIdRange = <<HHH030001,HHH030001 - HHH035000>>
+[[deprecation]]
+`org.hibernate.orm.deprecation`::
+    * Logging class-name = `DeprecationLogger`
+    * Description = Logging related to uses of deprecated features
+    * ValidIdRange = <<HHH90000001,HHH90000001 - HHH90001000>>
+[[dialect]]
+`org.hibernate.orm.dialect`::
+    * Logging class-name = `DialectLogging`
+    * Description = Logging related to the dialects of SQL implemented by particular RDBMS
+    * ValidIdRange = <<HHH035001,HHH035001 - HHH036000>>
+[[graph_parsing]]
+`org.hibernate.orm.graph.parsing`::
+    * Logging class-name = `GraphParserLogging`
+    * Description = Logging related to Hibernate's `GraphParser` for parsing entity-graphs from String representations
+[[idgen_factory]]
+`org.hibernate.orm.idgen.factory`::
+    * Logging class-name = `IdGenFactoryLogging`
+    * Description = Logging related to creation of IdentifierGenerator instances
+[[jdbc]]
+`org.hibernate.orm.jdbc`::
+    * Logging class-name = `JdbcLogging`
+    * Description = Logging related to JDBC interactions
+    * ValidIdRange = <<HHH100001,HHH100001 - HHH100500>>
+[[jdbc_batch]]
+`org.hibernate.orm.jdbc.batch`::
+    * Logging class-name = `JdbcBatchLogging`
+    * Description = Logging related to JDBC batch execution
+    * ValidIdRange = <<HHH100501,HHH100501 - HHH101000>>
+[[jdbc_bind]]
+`org.hibernate.orm.jdbc.bind`::
+    * Logging class-name = `JdbcBindingLogging`
+    * Description = Logging of JDBC parameter value binding
+[[jdbc_extract]]
+`org.hibernate.orm.jdbc.extract`::
+    * Logging class-name = `JdbcExtractingLogging`
+    * Description = Logging of JDBC value extraction
+[[jdbc_mutation]]
+`org.hibernate.orm.jdbc.mutation`::
+    * Logging class-name = `ModelMutationLogging`
+    * Description = Logging related to entity and collection mutations stemming from persistence-context events
+[[loader]]
+`org.hibernate.orm.loader`::
+    * Logging class-name = `LoaderLogging`
+    * Description = Logging related to loaders of domain model references (`org.hibernate.loader.ast.spi.Loader`); see also `org.hibernate.orm.results`
+[[loader_multi]]
+`org.hibernate.orm.loader.multi`::
+    * Logging class-name = `MultiKeyLoadLogging`
+    * Description = Logging related to multi-key loading of entity and collection references
+[[mapping_natural_id]]
+`org.hibernate.orm.mapping.natural_id`::
+    * Logging class-name = `NaturalIdLogging`
+    * Description = Logging related to handling of natural-id mappings
+[[model_mapping_creation]]
+`org.hibernate.orm.model.mapping.creation`::
+    * Logging class-name = `MappingModelCreationLogging`
+    * Description = Logging related to building of Hibernate's runtime metamodel descriptors of the domain model
+    * ValidIdRange = <<HHH90005701,HHH90005701 - HHH90005800>>
+[[query]]
+`org.hibernate.orm.query`::
+    * Logging class-name = `QueryLogging`
+    * Description = Logging related to Query processing
+    * ValidIdRange = <<HHH90003001,HHH90003001 - HHH90003500>>
+[[query_hql]]
+`org.hibernate.orm.query.hql`::
+    * Logging class-name = `HqlLogging`
+    * Description = Logging related to HQL parsing
+    * ValidIdRange = <<HHH90003501,HHH90003501 - HHH90004000>>
+[[results]]
+`org.hibernate.orm.results`::
+    * Logging class-name = `ResultsLogger`
+    * Description = Logging related to `DomainResult` graphs which build individual parts of the domain model from JDBC or from cache
+    * ValidIdRange = <<HHH90005001,HHH90005001 - HHH90005100>>
+[[results_graph_AST]]
+`org.hibernate.orm.results.graph.AST`::
+    * Logging class-name = `Logging`
+    * Description = Logging of `DomainResult` graphs
+[[results_loading]]
+`org.hibernate.orm.results.loading`::
+    * Logging class-name = `LoadingLogger`
+    * Description = Logging related to building parts of the domain model from JDBC or from cache
+    * ValidIdRange = <<HHH90005801,HHH90005801 - HHH90005900>>
+[[results_loading_collection]]
+`org.hibernate.orm.results.loading.collection`::
+    * Logging class-name = `CollectionLoadingLogger`
+    * Description = Logging related to collection loading
+[[results_loading_embeddable]]
+`org.hibernate.orm.results.loading.embeddable`::
+    * Logging class-name = `EntityLoadingLogging`
+    * Description = Logging related to entity loading
+    * ValidIdRange = <<HHH90005301,HHH90005301 - HHH90005400>>
+[[sql_ast_create]]
+`org.hibernate.orm.sql.ast.create`::
+    * Logging class-name = `SqlTreeCreationLogger`
+    * Description = Logging related to the creation of SQL AST trees
+[[sql_ast_tree]]
+`org.hibernate.orm.sql.ast.tree`::
+    * Logging class-name = `SqlAstTreeLogger`
+    * Description = Logging related to the processing of SQL AST trees
+    * ValidIdRange = <<HHH90005401,HHH90005401 - HHH90005500>>
+[[sql_exec]]
+`org.hibernate.orm.sql.exec`::
+    * Logging class-name = `SqlExecLogger`
+    * Description = Logging related to the execution of SQL statements
+    * ValidIdRange = <<HHH90004001,HHH90004001 - HHH90005000>>
+[[url]]
+`org.hibernate.orm.url`::
+    * Logging class-name = `UrlMessageBundle`
+    * Description = Logging related to URL handling
+    * ValidIdRange = <<HHH10000001,HHH10000001 - HHH10001000>>
+[[ormbytecode]]
+`org.hibernate.ormbytecode`::
+    * Logging class-name = `BytecodeLogging`
+    * Description = Logging related to bytecode handling
+[[ormbytecode_interceptor]]
+`org.hibernate.ormbytecode.interceptor`::
+    * Logging class-name = `BytecodeInterceptorLogging`
+    * Description = Logging related to bytecode-based interception
+    * ValidIdRange = <<HHH90005901,HHH90005901 - HHH90006000>>
+[[spatial]]
+`org.hibernate.spatial`::
+    * Logging class-name = `HSMessageLogger`
+    * Description = Base logging for Hibernate Spatial
+    * ValidIdRange = <<HHH80000001,HHH80000001 - HHH80001000>>
+
+
+[[id-ranges]]
+== Message Id Ranges
+
+[[HHH000001]]
+`HHH000001 - HHH010000`::
+    * ValidIdRange = HHH000001 - HHH010000 (explicit)
+    * MessageLogger = `CoreMessageLogger`
+[[HHH010001]]
+`HHH010001 - HHH015000`::
+    * ValidIdRange = HHH010001 - HHH015000 (explicit)
+    * MessageLogger = `C3P0MessageLogger`
+    * SubSystem = <<connections_pooling_c3p0,org.hibernate.orm.connections.pooling.c3p0>>
+[[HHH015001]]
+`HHH015001 - HHH020000`::
+    * ValidIdRange = HHH015001 - HHH020000 (explicit)
+    * MessageLogger = `EntityManagerMessageLogger`
+[[HHH025001]]
+`HHH025001 - HHH030000`::
+    * ValidIdRange = HHH025001 - HHH030000 (explicit)
+    * MessageLogger = `EnversMessageLogger`
+[[HHH030001]]
+`HHH030001 - HHH035000`::
+    * ValidIdRange = HHH030001 - HHH035000 (explicit)
+    * MessageLogger = `ProxoolMessageLogger`
+    * SubSystem = <<connections_pooling_proxool,org.hibernate.orm.connections.pooling.proxool>>
+[[HHH035001]]
+`HHH035001 - HHH036000`::
+    * ValidIdRange = HHH035001 - HHH036000 (explicit)
+    * MessageLogger = `DialectLogging`
+    * SubSystem = <<dialect,org.hibernate.orm.dialect>>
+[[HHH100001]]
+`HHH100001 - HHH100500`::
+    * ValidIdRange = HHH100001 - HHH100500 (explicit)
+    * MessageLogger = `JdbcLogging`
+    * SubSystem = <<jdbc,org.hibernate.orm.jdbc>>
+[[HHH100501]]
+`HHH100501 - HHH101000`::
+    * ValidIdRange = HHH100501 - HHH101000 (explicit)
+    * MessageLogger = `JdbcBatchLogging`
+    * SubSystem = <<jdbc_batch,org.hibernate.orm.jdbc.batch>>
+[[HHH10000001]]
+`HHH10000001 - HHH10001000`::
+    * ValidIdRange = HHH10000001 - HHH10001000 (explicit)
+    * MessageLogger = `UrlMessageBundle`
+    * SubSystem = <<url,org.hibernate.orm.url>>
+[[HHH10001001]]
+`HHH10001001 - HHH10001500`::
+    * ValidIdRange = HHH10001001 - HHH10001500 (explicit)
+    * MessageLogger = `ConnectionPoolingLogger`
+    * SubSystem = <<connections_pooling,org.hibernate.orm.connections.pooling>>
+[[HHH10001501]]
+`HHH10001501 - HHH10002000`::
+    * ValidIdRange = HHH10001501 - HHH10002000 (explicit)
+    * MessageLogger = `ConnectionAccessLogger`
+    * SubSystem = <<connections_access,org.hibernate.orm.connections.access>>
+[[HHH10005001]]
+`HHH10005001 - HHH10010000`::
+    * ValidIdRange = HHH10005001 - HHH10010000 (explicit)
+    * MessageLogger = `BeansMessageLogger`
+    * SubSystem = <<beans,org.hibernate.orm.beans>>
+[[HHH10010001]]
+`HHH10010001 - HHH10010050`::
+    * ValidIdRange = HHH10010001 - HHH10010050 (explicit)
+    * MessageLogger = `LobCreationLogging`
+    * SubSystem = <<boot,org.hibernate.orm.boot>>
+[[HHH80000001]]
+`HHH80000001 - HHH80001000`::
+    * ValidIdRange = HHH80000001 - HHH80001000 (explicit)
+    * MessageLogger = `HSMessageLogger`
+    * SubSystem = <<spatial,org.hibernate.spatial>>
+[[HHH90000001]]
+`HHH90000001 - HHH90001000`::
+    * ValidIdRange = HHH90000001 - HHH90001000 (explicit)
+    * MessageLogger = `DeprecationLogger`
+    * SubSystem = <<deprecation,org.hibernate.orm.deprecation>>
+[[HHH90001001]]
+`HHH90001001 - HHH90002000`::
+    * ValidIdRange = HHH90001001 - HHH90002000 (explicit)
+    * MessageLogger = `SecondLevelCacheLogger`
+    * SubSystem = <<cache,org.hibernate.orm.cache>>
+[[HHH90003001]]
+`HHH90003001 - HHH90003500`::
+    * ValidIdRange = HHH90003001 - HHH90003500 (explicit)
+    * MessageLogger = `QueryLogging`
+    * SubSystem = <<query,org.hibernate.orm.query>>
+[[HHH90003501]]
+`HHH90003501 - HHH90004000`::
+    * ValidIdRange = HHH90003501 - HHH90004000 (explicit)
+    * MessageLogger = `HqlLogging`
+    * SubSystem = <<query_hql,org.hibernate.orm.query.hql>>
+[[HHH90004001]]
+`HHH90004001 - HHH90005000`::
+    * ValidIdRange = HHH90004001 - HHH90005000 (explicit)
+    * MessageLogger = `SqlExecLogger`
+    * SubSystem = <<sql_exec,org.hibernate.orm.sql.exec>>
+[[HHH90005001]]
+`HHH90005001 - HHH90005100`::
+    * ValidIdRange = HHH90005001 - HHH90005100 (explicit)
+    * MessageLogger = `ResultsLogger`
+    * SubSystem = <<results,org.hibernate.orm.results>>
+[[HHH90005301]]
+`HHH90005301 - HHH90005400`::
+    * ValidIdRange = HHH90005301 - HHH90005400 (explicit)
+    * MessageLogger = `EmbeddableLoadingLogger`
+    * SubSystem = <<results_loading_embeddable,org.hibernate.orm.results.loading.embeddable>>
+[[HHH90005401]]
+`HHH90005401 - HHH90005500`::
+    * ValidIdRange = HHH90005401 - HHH90005500 (explicit)
+    * MessageLogger = `SqlAstTreeLogger`
+    * SubSystem = <<sql_ast_tree,org.hibernate.orm.sql.ast.tree>>
+[[HHH90005501]]
+`HHH90005501 - HHH90005600`::
+    * ValidIdRange = HHH90005501 - HHH90005600 (explicit)
+    * MessageLogger = `JaxbLogger`
+    * SubSystem = <<boot_jaxb,org.hibernate.orm.boot.jaxb>>
+[[HHH90005601]]
+`HHH90005601 - HHH90005700`::
+    * ValidIdRange = HHH90005601 - HHH90005700 (explicit)
+    * MessageLogger = `EnversBootLogger`
+    * SubSystem = <<envers_boot,org.hibernate.envers.boot>>
+[[HHH90005701]]
+`HHH90005701 - HHH90005800`::
+    * ValidIdRange = HHH90005701 - HHH90005800 (explicit)
+    * MessageLogger = `MappingModelCreationLogging`
+    * SubSystem = <<model_mapping_creation,org.hibernate.orm.model.mapping.creation>>
+[[HHH90005801]]
+`HHH90005801 - HHH90005900`::
+    * ValidIdRange = HHH90005801 - HHH90005900 (explicit)
+    * MessageLogger = `LoadingLogger`
+    * SubSystem = <<results_loading,org.hibernate.orm.results.loading>>
+[[HHH90005901]]
+`HHH90005901 - HHH90006000`::
+    * ValidIdRange = HHH90005901 - HHH90006000 (explicit)
+    * MessageLogger = `BytecodeInterceptorLogging`
+    * SubSystem = <<ormbytecode_interceptor,org.hibernate.ormbytecode.interceptor>>
+[[HHH90006001]]
+`HHH90006001 - HHH90007000`::
+    * ValidIdRange = HHH90006001 - HHH90007000 (explicit)
+    * MessageLogger = `IncubationLogger`
