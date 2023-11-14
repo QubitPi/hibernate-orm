@@ -10,10 +10,12 @@ on:
   push:
     branches:
       - 'main'
+      - 'master'
   pull_request:
     branches:
       - 'main'
-      
+      - 'master'
+
 permissions: {} # none
 
 # See https://github.com/hibernate/hibernate-orm/pull/4615 for a description of the behavior we're getting.
