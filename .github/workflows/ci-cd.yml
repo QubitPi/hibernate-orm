@@ -21,24 +21,41 @@ name: Documentation CI/CD
       - master
 
 jobs:
+  cancel-previous:
+    name: Cancel Previous Runs In Order to Allocate Action Resources Immediately for Current Run
+    if: github.ref != 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel previous
+        uses: styfle/cancel-workflow-action@0.10.1
+        with:
+          access_token: ${{ github.token }}
   documentation-ci-cd:
     name: Build and Deploys Documentations to GitHub Pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Java 11
-        uses: actions/setup-java@v3
+
+      # copy-n-pasted from ci.yml
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '11'
+            distribution: 'temurin'
+            java-version: '17'
+
+      # export command copy-n-pasted from build.sh
       - name: Generate Javadoc
-        run: ./gradlew buildDocs
+        run: |
+          export GRADLE_OPTS=-Dorg.gradle.jvmargs='-Dlog4j2.disableJmx -Xmx4g -XX:MaxMetaspaceSize=768m -XX:+HeapDumpOnOutOfMemoryError -Duser.language=en -Duser.country=US -Duser.timezone=UTC -Dfile.encoding=UTF-8'
+          ./gradlew buildDocs
+      - name: Load CNAME
+        run: echo
       - name: Deploy documentation (including Javadoc) to GitHub Pages
-        if: github.ref == 'refs/heads/master'
+        # if: github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: documentation/target
           enable_jekyll: true
-          user_name: ${{ env.USER }}
-          user_email: ${{ env.EMAIL }}
+          user_name: QubitPi
+          user_email: jack20220723@gmail.com
