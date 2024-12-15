@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <title>A Guide to Hibernate Query Language</title>
 <link rel="stylesheet" href="./css/hibernate.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./rouge-github.css">
 </head>
 <body class="book">
 <div id="header">
 <h1>A Guide to Hibernate Query Language</h1>
 <div class="details">
-<span id="revnumber">version 6.4.0-SNAPSHOT</span>
+<span id="revnumber">version 7.0.0-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -87,22 +88,26 @@
 <li><a href="#functions-numeric">2.6.5. Numeric functions</a></li>
 <li><a href="#functions-collections">2.6.6. Functions for dealing with collections</a></li>
 <li><a href="#functions-model">2.6.7. Functions for working with ids and versions</a></li>
-<li><a href="#user-defined-functions">2.6.8. Native and user-defined functions</a></li>
-<li><a href="#function-sql">2.6.9. Embedding native SQL in HQL</a></li>
+<li><a href="#array-functions">2.6.8. Array, XML, and JSON functions</a></li>
 </ul>
 </li>
-<li><a href="#conditional-expressions">2.7. Predicates</a>
+<li><a href="#functions-hash">2.7. Hash functions</a>
 <ul class="sectlevel3">
-<li><a href="#relational-comparisons">2.7.1. Comparison operators</a></li>
-<li><a href="#between-predicate">2.7.2. The <code>between</code> predicate</a></li>
-<li><a href="#null-predicate">2.7.3. Operators for dealing with null</a></li>
-<li><a href="#boolean-predicate">2.7.4. Operators for dealing with boolean values</a></li>
-<li><a href="#collection-operators">2.7.5. Collection predicates</a></li>
-<li><a href="#like-predicate">2.7.6. String pattern matching</a></li>
-<li><a href="#in-predicate">2.7.7. The <code>in</code> predicate</a></li>
-<li><a href="#relational-comparisons-subqueries">2.7.8. Comparison operators and subqueries</a></li>
-<li><a href="#exists-predicate">2.7.9. The <code>exists</code> predicate</a></li>
-<li><a href="#logical-operators">2.7.10. Logical operators</a></li>
+<li><a href="#embedding-sql">2.7.1. Embedding SQL expressions</a></li>
+</ul>
+</li>
+<li><a href="#conditional-expressions">2.8. Predicates</a>
+<ul class="sectlevel3">
+<li><a href="#relational-comparisons">2.8.1. Comparison operators</a></li>
+<li><a href="#between-predicate">2.8.2. The <code>between</code> predicate</a></li>
+<li><a href="#null-predicate">2.8.3. Operators for dealing with null</a></li>
+<li><a href="#boolean-predicate">2.8.4. Operators for dealing with boolean values</a></li>
+<li><a href="#collection-operators">2.8.5. Collection predicates</a></li>
+<li><a href="#like-predicate">2.8.6. String pattern matching</a></li>
+<li><a href="#in-predicate">2.8.7. The <code>in</code> predicate</a></li>
+<li><a href="#relational-comparisons-subqueries">2.8.8. Comparison operators and subqueries</a></li>
+<li><a href="#exists-predicate">2.8.9. The <code>exists</code> predicate</a></li>
+<li><a href="#logical-operators">2.8.10. Logical operators</a></li>
 </ul>
 </li>
 </ul>
@@ -178,21 +183,20 @@
 <h2 id="preface">Preface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Hibernate 6 is a major redesign of the world&#8217;s most popular and feature-rich ORM solution.
-The redesign has touched almost every subsystem of Hibernate, including the APIs, mapping annotations, and, above all else, the query language.</p>
+<p>Hibernate 6 was a major redesign of the world&#8217;s most popular and feature-rich ORM solution.
+The redesign touched almost every subsystem of Hibernate, including the APIs, mapping annotations, and, above all else, the query language.
+This was the second time Hibernate Query Language had been completely reimplemented from scratch, but the first time in more than fifteen years.
+Hibernate 7 rests on this foundation.</p>
 </div>
 <div class="paragraph">
-<p>This is the second time Hibernate Query Language has been completely reimplemented from scratch, but the first time in more than fifteen years.
-In this new incarnation, HQL is far more powerful, and the HQL compiler much more robust.</p>
+<p>In this new incarnation, HQL is far more powerful, and the HQL compiler much more robust.
+Today, HQL has a feature set to match that of modern dialects of SQL, and is able to take full advantage of the power of modern SQL databases.</p>
 </div>
 <div class="paragraph">
-<p>At long last, HQL has a feature set to match that of modern dialects of SQL, and is able to take full advantage of the power of modern SQL databases.</p>
+<p>This document is a reference guide to the full feature set of the language, and is the only up-to-date source for those who wish to learn how to write HQL effectively in Hibernate 6 and Hibernate 7.</p>
 </div>
 <div class="paragraph">
-<p>This document is a reference guide to the full feature set of the language, and is the only up-to-date source for those who wish to learn how to write HQL effectively in Hibernate 6.</p>
-</div>
-<div class="paragraph">
-<p>If you are unfamiliar with Hibernate, be sure to first read  <a href="https://docs.jboss.org/hibernate/orm/6.4/introduction/html_single/Hibernate_Introduction.html">Introduction to Hibernate</a> or check out the <a href="https://docs.jboss.org/hibernate/orm/6.4/quickstart/html_single/">Quick Start</a>.</p>
+<p>If you are unfamiliar with Hibernate, be sure to first read the <a href="https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html">Short Guide to Hibernate</a>.</p>
 </div>
 </div>
 </div>
@@ -725,7 +729,17 @@ In this case, the update count returned by Hibernate might not be exactly the sa
 </div>
 </div>
 <div class="paragraph">
-<p>Unfortunately, an <code>update</code> statement may not directly join other entities, not even using an <a href="#implicit-join">implicit join</a>, but it may have subqueries in its <code>set</code> clause, or in the <code>where</code> clause, which may contain joins.</p>
+<p>An <code>update</code> statement may not directly <code>join</code> other entities, but it may:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>have an <a href="#implicit-join">implicit join</a>, or</p>
+</li>
+<li>
+<p>have subqueries in its <code>set</code> clause, or in its <code>where</code> clause, and the subqueries may contain joins.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -744,7 +758,7 @@ In this case, the update count returned by Hibernate might not be exactly the sa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="hql"><span class="k">delete</span> <span class="n">Author</span> <span class="n">author</span> <span class="k">where</span> <span class="k">is</span> <span class="n">empty</span> <span class="n">author</span><span class="p">.</span><span class="n">books</span></code></pre>
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">delete</span> <span class="n">Author</span> <span class="n">author</span> <span class="k">where</span> <span class="n">author</span><span class="p">.</span><span class="n">books</span> <span class="k">is</span> <span class="n">empty</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -761,7 +775,17 @@ Therefore, a single HQL <code>delete</code> statement might result in multiple S
 <p>The integer value returned by <code>executeUpdate()</code> indicates the number of entity instances affected by the operation.</p>
 </div>
 <div class="paragraph">
-<p>A <code>delete</code> statement may not directly join other entities, but it may have subqueries in the <code>where</code> clause, which may contain joins.</p>
+<p>A <code>delete</code> statement may not directly <code>join</code> other entities, but it may:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>have an <a href="#implicit-join">implicit join</a>, or</p>
+</li>
+<li>
+<p>have subqueries in its <code>where</code> clause, and the subqueries may contain joins.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -821,7 +845,9 @@ It&#8217;s usually better to just use <code>persist()</code>.</p>
 <div id="insert-bnf-example" class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="antlrv4">insertStatement
-    : "INSERT" "INTO"? targetEntity targetFields (queryExpression | valuesList)
+    : "INSERT" "INTO"? targetEntity targetFields
+      (queryExpression | valuesList)
+      conflictClause?
 
 targetEntity
 	: entityName variable?
@@ -889,7 +915,7 @@ Attributes declared by subclasses may not occur.</p>
 <div class="paragraph">
 <p>This is checked during query compilation rather than allowing the type check to delegate to the database.
 This may cause problems when two Java types map to the same database type.
-For example, an attribute of type <code>LocalDateTime</code> and an attribute or type <code>Timestamp</code> both map to the SQL type <code>timestamp</code>, but are not considered assignable by the query compiler.</p>
+For example, an attribute of type <code>LocalDateTime</code> and an attribute of type <code>Timestamp</code> both map to the SQL type <code>timestamp</code>, but are not considered assignable by the query compiler.</p>
 </div>
 </td>
 </tr>
@@ -915,6 +941,34 @@ It&#8217;s not available for entities whose id generator is implemented in Java,
 <div class="paragraph">
 <p>The same two options are available for a <code>@Version</code> attribute.
 When no version is explicitly specified, the version for a new entity instance is used.</p>
+</div>
+<div class="paragraph">
+<p>The <code>on conflict</code> clause lets us specify what action should be taken when the database already contains the record we&#8217;re attempting to insert.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="antlrv4">conflictClause
+	: ON CONFLICT conflictTarget? "DO" conflictAction
+
+conflictTarget
+	: ON CONSTRAINT identifier
+	| "(" simplePath ("," simplePath)* ")"
+
+conflictAction
+	: "NOTHING"
+	| "UPDATE" setClause whereClause?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the <code>on constraint</code> variant accepting the name of a unique constraint only works on certain databases, or when just a single row is being inserted.</p>
+</div>
+<div id="onconflict-example" class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">insert</span> <span class="n">Person</span> <span class="p">(</span><span class="n">ssn</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">phone</span><span class="p">)</span>
+    <span class="k">values</span> <span class="p">(</span><span class="s1">'116-76-1234'</span><span class="p">,</span> <span class="s1">'Jane Doe'</span><span class="p">,</span> <span class="s1">'404 888 4319'</span><span class="p">)</span>
+    <span class="k">on</span> <span class="n">conflict</span> <span class="p">(</span><span class="n">ssn</span><span class="p">)</span> <span class="n">do</span> <span class="k">update</span>
+        <span class="k">set</span> <span class="n">phone</span> <span class="o">=</span> <span class="n">excluded</span><span class="p">.</span><span class="n">phone</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Like <code>update</code> and <code>delete</code> statements, an <code>insert</code> statement must be executed by calling <code>Query.executeUpdate()</code>.</p>
@@ -1158,7 +1212,7 @@ Indeed, a fairly innocent-looking HQL query can easily translate to a SQL statem
 <div class="paragraph">
 <p>We need to be a <em>bit</em> careful about that, but actually it&#8217;s usually a good thing.
 HQL makes it very easy to fetch all the data we need in a single trip to the database, and that&#8217;s absolutely key to achieving high performance in data access code.
-Typically, it&#8217;s much worse to fetch exactly the data we need, but in many round trips to the database server, than it is to fetch just a bit more data than what we&#8217;re going to need, all a single SQL query.</p>
+Typically, it&#8217;s much worse to fetch exactly the data we need, but in many round trips to the database server, than it is to fetch just a bit more data than what we&#8217;re going to need, all in a single SQL query.</p>
 </div>
 </td>
 </tr>
@@ -1206,7 +1260,7 @@ The fundamental problem for Java is that it doesn&#8217;t have tuple types.</p>
 Sure, often a column holds whole entity objects, but we&#8217;re not restricted to returning a single entity, and we often write queries that return multiple entities in each result, or which return things which aren&#8217;t entities.</p>
 </div>
 <div class="paragraph">
-<p>So we&#8217;re faced with the problem if representing such result sets, and, we&#8217;re sad to say, there&#8217;s no fully general and completely satisfying solution.</p>
+<p>So we&#8217;re faced with the problem of representing such result sets, and, we&#8217;re sad to say, there&#8217;s no fully general and completely satisfying solution.</p>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s begin with the easy case.</p>
@@ -1239,12 +1293,12 @@ We&#8217;re not even sure what to call those.</p>
 <div id="select-clause-projection-example" class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="n">results</span> <span class="o">=</span>
-        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title, left(book.text, 200) from Book"</span><span class="o">,</span>
+        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title, left(text, 200) from Book"</span><span class="o">,</span>
                                   <span class="nc">Object</span><span class="o">[].</span><span class="na">class</span><span class="o">)</span>
             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">var</span> <span class="n">result</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
-	<span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">result</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-	<span class="nc">String</span> <span class="n">preamble</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">result</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
+    <span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">result</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+    <span class="nc">String</span> <span class="n">preamble</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">result</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
 <span class="o">}</span></code></pre>
 </div>
 </div>
@@ -1258,7 +1312,7 @@ All we have to do is pass the class <code>Tuple</code> to <code>createQuery()</c
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Tuple</span><span class="o">&gt;</span> <span class="n">tuples</span> <span class="o">=</span>
-        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title as title, left(book.text, 200) as preamble from Book"</span><span class="o">,</span>
+        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title as title, left(text, 200) as preamble from Book"</span><span class="o">,</span>
                                   <span class="nc">Tuple</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
 <span class="k">for</span> <span class="o">(</span><span class="nc">Tuple</span> <span class="n">tuple</span> <span class="o">:</span> <span class="n">tuples</span><span class="o">)</span> <span class="o">{</span>
@@ -1277,7 +1331,7 @@ If no aliases are specified, the elements may be accessed by their position in t
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kt">var</span> <span class="n">results</span> <span class="o">=</span>
-        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title as title, left(book.text, 200) as preamble from Book"</span><span class="o">,</span>
+        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title as title, left(text, 200) as preamble from Book"</span><span class="o">,</span>
                                   <span class="nc">Map</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">var</span> <span class="n">map</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
@@ -1289,7 +1343,7 @@ If no aliases are specified, the elements may be accessed by their position in t
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="java"><span class="kt">var</span> <span class="n">results</span> <span class="o">=</span>
-        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title, left(book.text, 200) from Book"</span><span class="o">,</span>
+        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title, left(text, 200) from Book"</span><span class="o">,</span>
                                   <span class="nc">List</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">var</span> <span class="n">list</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
@@ -1300,7 +1354,7 @@ If no aliases are specified, the elements may be accessed by their position in t
 </div>
 <div class="paragraph">
 <p>Unfortunately, not one of the types <code>Object[]</code>, <code>List</code>, <code>Map</code>, nor <code>Tuple</code> lets us access an individual item in a result tuple without a type cast.
-Sure <code>Tuple</code> does the type cast for us when we pass a class object to <code>get()</code>, but it&#8217;s logically identical.
+Sure, <code>Tuple</code> does the type cast for us when we pass a class object to <code>get()</code>, but it&#8217;s logically identical.
 Fortunately there&#8217;s one more option, as we&#8217;re about to see.</p>
 </div>
 <div class="admonitionblock note">
@@ -1326,7 +1380,7 @@ This works extremely nicely with <code>record</code> types.</p>
 <pre class="rouge highlight"><code data-lang="java"><span class="n">record</span> <span class="nf">BookSummary</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">summary</span><span class="o">)</span> <span class="o">{}</span>
 
 <span class="nc">List</span><span class="o">&lt;</span><span class="nc">BookSummary</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span>
-        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title, left(book.text, 200) from Book"</span><span class="o">,</span>
+        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select title, left(text, 200) from Book"</span><span class="o">,</span>
                                   <span class="nc">BookSummary</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">var</span> <span class="n">result</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
@@ -1410,7 +1464,7 @@ But at least we don&#8217;t have to write them explicitly.</p>
 <pre class="rouge highlight"><code data-lang="java"><span class="n">record</span> <span class="nf">BookSummary</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">summary</span><span class="o">)</span> <span class="o">{}</span>
 
 <span class="nc">List</span><span class="o">&lt;</span><span class="nc">BookSummary</span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">=</span>
-        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select new BookSummary(title, left(book.text, 200)) from Book"</span><span class="o">,</span>
+        <span class="n">entityManager</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select new BookSummary(title, left(text, 200)) from Book"</span><span class="o">,</span>
                                   <span class="nc">BookSummary</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
             <span class="o">.</span><span class="na">getResultList</span><span class="o">();</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">var</span> <span class="n">result</span> <span class="o">:</span> <span class="n">results</span><span class="o">)</span> <span class="o">{</span>
@@ -1795,8 +1849,13 @@ Always use <code>java.time</code> types in new code.</p>
 <div class="paragraph">
 <p>Literal duration expressions are of form <code>n unit</code>, for example <code>1 day</code> or <code>10 year</code> or <code>100 nanosecond</code>.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="k">start</span><span class="p">,</span> <span class="k">end</span><span class="p">,</span> <span class="k">start</span> <span class="o">-</span> <span class="mi">30</span> <span class="k">minute</span> <span class="k">from</span> <span class="n">Event</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>The unit may be: <code>day</code>, <code>month</code>, <code>quarter</code>, <code>year</code>, <code>second</code>, <code>minute</code>, <code>hour</code>, or <code>nanosecond</code>.</p>
+<p>The unit may be: <code>day</code>, <code>week</code>, <code>month</code>, <code>quarter</code>, <code>year</code>, <code>second</code>, <code>minute</code>, <code>hour</code>, or <code>nanosecond</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1839,8 +1898,34 @@ Always use <code>java.time</code> types in new code.</p>
 <pre class="rouge highlight"><code data-lang="hql"><span class="k">from</span> <span class="n">Book</span> <span class="k">where</span> <span class="n">status</span> <span class="o">&lt;&gt;</span> <span class="n">OUT_OF_PRINT</span></code></pre>
 </div>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">from</span> <span class="n">Book</span> <span class="k">where</span> <span class="n">type</span> <span class="k">in</span> <span class="p">(</span><span class="n">BOOK</span><span class="p">,</span> <span class="n">MAGAZINE</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">update</span> <span class="n">Book</span> <span class="k">set</span> <span class="n">status</span> <span class="o">=</span> <span class="n">OUT_OF_PRINT</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Here, the enum class is inferred from the type of the expression on the left of the comparison operator.</p>
+<p>In the examples above, the enum class is inferred from the type of the expression on the left of the comparison, assignment operator, or
+<code>in</code> predicate.</p>
+</div>
+<div id="enum-case-example" class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">from</span> <span class="n">Book</span>
+<span class="k">order</span> <span class="k">by</span>
+    <span class="k">case</span> <span class="n">type</span>
+    <span class="k">when</span> <span class="n">BOOK</span> <span class="k">then</span> <span class="mi">1</span>
+    <span class="k">when</span> <span class="n">MAGAZINE</span> <span class="k">then</span> <span class="mi">2</span>
+    <span class="k">when</span> <span class="n">JOURNAL</span> <span class="k">then</span> <span class="mi">3</span>
+    <span class="k">else</span> <span class="mi">4</span>
+    <span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example the enum class is inferred from the type of the <code>case</code> expression.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1920,7 +2005,7 @@ But when the query has multiple identification variables it makes the query much
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">treat</span><span class="p">(</span><span class="k">order</span><span class="p">.</span><span class="n">payment</span> <span class="k">as</span> <span class="n">CreditCardPayment</span><span class="p">).</span><span class="n">creditCardNumber</span> <span class="k">from</span> <span class="k">Order</span> <span class="k">order</span></code></pre>
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">treat</span><span class="p">(</span><span class="k">order</span><span class="p">.</span><span class="n">payment</span> <span class="k">as</span> <span class="n">CreditCardPayment</span><span class="p">).</span><span class="n">cardNumber</span> <span class="k">from</span> <span class="k">Order</span> <span class="k">order</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2078,7 +2163,7 @@ But when the query has multiple identification variables it makes the query much
 <div class="sect3">
 <h4 id="concatenation">2.3.1. String concatenation</h4>
 <div class="paragraph">
-<p>HQL defines two ways to concatenate strings:</p>
+<p>JPQL defines two ways to concatenate strings:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2086,7 +2171,7 @@ But when the query has multiple identification variables it makes the query much
 <p>the SQL-style concatenation operator, <code>||</code>, and</p>
 </li>
 <li>
-<p>the JPQL-standard <code>concat()</code> function.</p>
+<p>the standard <code>concat()</code> function.</p>
 </li>
 </ul>
 </div>
@@ -2129,14 +2214,30 @@ But when the query has multiple identification variables it makes the query much
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Thus, <code>3/2</code> performs integer division and evaluates to <code>1</code>.</p>
+<p>By default, the semantics of integer division depend on the database:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>On most databases, division of an integer by an integer evaluates to an integer, just like in Java.
+Thus, <code>3/2</code> evaluates to <code>1</code>.</p>
+</li>
+<li>
+<p>But on some databases, including Oracle, MySQL, and MariaDB, integer division may result in a non-integral value.
+So <code>3/2</code> evaluates to <code>1.5</code> on these databases.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This default behavior may be changed using configuration property <code>hibernate.query.hql.portable_integer_division</code>.
+Setting this property to <code>true</code> instructs Hibernate to produce SQL that emulates Java-style integer division (that is, <code>3/2 = 1</code>) on platforms where that is not the native semantics.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When the operands are of different type, one of the operands is implicitly converted to <em>wider</em> type, with wideness given, in decreasing order, by the list below:</p>
+<p>When the operands are of different types, one of the operands is implicitly converted to <em>wider</em> type, with wideness given, in decreasing order, by the list below:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2179,7 +2280,7 @@ Among the issues to consider are:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>There&#8217;s two kinds of duration: year-day, and week-nanosecond durations.
+<p>There are two kinds of duration: year-day, and week-nanosecond durations.
 The first is a difference between dates; the second is a difference between datetimes.</p>
 </li>
 <li>
@@ -2393,6 +2494,15 @@ as described below in <a href="#functions-null">Functions for working with null 
 <div class="paragraph">
 <p>This syntax may be used even when the underlying SQL dialect does <em>not</em> support so-called "row value" constructors.</p>
 </div>
+<div class="paragraph">
+<p>A tuple value may be compared to an embedded field:</p>
+</div>
+<div id="tuple-embeddable" class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">from</span> <span class="n">Person</span>
+<span class="k">where</span> <span class="n">address</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'1600 Pennsylvania Avenue, NW'</span><span class="p">,</span> <span class="s1">'Washington'</span><span class="p">,</span> <span class="s1">'DC'</span><span class="p">,</span> <span class="mi">20500</span><span class="p">,</span> <span class="s1">'USA'</span><span class="p">)</span></code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="exp-functions">2.6. Functions</h3>
@@ -2461,13 +2571,13 @@ This syntax is inspired by standard ANSI SQL, and we promise you&#8217;ll get us
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type()</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The (concrete) entity name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The (concrete) entity or embeddable type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>type(e)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>treat()</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Narrow an entity type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Narrow an entity or embeddable type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>treat(e as Entity)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
 </tr>
@@ -2475,12 +2585,18 @@ This syntax is inspired by standard ANSI SQL, and we promise you&#8217;ll get us
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cast()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Narrow a basic type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>cast(x as Type)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>str()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cast to a string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>str(x)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ordinal()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Get the ordinal value of an enum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ordinal(x)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
 </tr>
 </tbody>
@@ -2490,7 +2606,7 @@ This syntax is inspired by standard ANSI SQL, and we promise you&#8217;ll get us
 </div>
 <h5 id="function-type" class="discrete">Evaluating an entity type</h5>
 <div class="paragraph">
-<p>The function <code>type()</code>, applied to an identification variable, evaluates to the entity name of the referenced entity.
+<p>The function <code>type()</code>, applied to an identification variable or to an entity-valued or embeddable-valued path expression, evaluates to the concrete type, that is, the Java <code>Class</code>, of the referenced entity or embeddable.
 This is mainly useful when dealing with entity inheritance hierarchies.</p>
 </div>
 <div id="entity-type-exp-example" class="listingblock">
@@ -2503,7 +2619,7 @@ This is mainly useful when dealing with entity inheritance hierarchies.</p>
 <h5 id="function-treat" class="discrete">Narrowing an entity type</h5>
 <div class="paragraph">
 <p>The function <code>treat()</code> may be used to narrow the type of an identification variable.
-This is useful when dealing with entity inheritance hierarchies.</p>
+This is useful when dealing with entity or embeddable inheritance hierarchies.</p>
 </div>
 <div id="treat-example" class="listingblock">
 <div class="content">
@@ -2557,6 +2673,16 @@ This allows the attribute <code>cardNumber</code> declared by the subtype <code>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">str</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">from</span> <span class="k">Order</span></code></pre>
+</div>
+</div>
+<h5 id="function-ordinal" class="discrete">Extracting the ordinal value of an enum</h5>
+<div class="paragraph">
+<p>The function <code>ordinal(x)</code> extracts the ordinal value of an enum.
+It supports both enum fields mapped as <code>ORDINAL</code> and <code>STRING</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">ordinal</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">type</span><span class="p">)</span> <span class="k">from</span> <span class="n">Phone</span> <span class="n">p</span></code></pre>
 </div>
 </div>
 </div>
@@ -2691,8 +2817,170 @@ This allows the attribute <code>cardNumber</code> declared by the subtype <code>
 </ul>
 </div>
 <div class="paragraph">
-<p>Field types include: <code>day</code>, <code>month</code>, <code>year</code>, <code>second</code>, <code>minute</code>, <code>hour</code>, <code>day of week</code>, <code>day of month</code>, <code>week of year</code>, <code>date</code>, <code>time</code>, <code>epoch</code> and more.
-For a full list of field types, see the Javadoc for <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/query/TemporalUnit.html"><code>TemporalUnit</code></a>.</p>
+<p>Recognized Field types are listed below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 10%;">
+<col>
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-center valign-top">Type</th>
+<th class="tableblock halign-center valign-top">Range</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+<th class="tableblock halign-center valign-top">JPA standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>day</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calendar day of month</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>month</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-12</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>year</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>week</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO-8601 week number (different to <code>week of year</code>)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quarter</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quarter defined as 3 months</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hour</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0-23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standard 24-hour time</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>minute</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0-59</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>second</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Float</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0-59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes fractional seconds</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nanosecond</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Long</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Granularity varies by database</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>day of week</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-7</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>day of month</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Synonym for <code>day</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>day of year</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-365</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>week of month</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-5</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>week of year</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1-53</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>epoch</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Long</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elapsed seconds since January 1, 1970</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>LocalDate</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date part of a datetime</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>time</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>LocalTime</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time part of a datetime</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>ZoneOffset</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timezone offset</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset hour</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hours of offset</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>offset minute</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>Integer</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0-59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minutes of offset</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For a full list of field types, see the Javadoc for <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/query/TemporalUnit.html"><code>TemporalUnit</code></a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2738,17 +3026,17 @@ For a full list of field types, see the Javadoc for <a href="https://docs.jboss.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>hour(x)</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extract(year from x)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extract(hour from x)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>minute(x)</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extract(year from x)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extract(minute from x)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>second(x)</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extract(year from x)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>extract(second from x)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
 </tr>
 </tbody>
@@ -2787,8 +3075,13 @@ These abbreviations aren&#8217;t part of the JPQL standard, but on the other han
 <div class="paragraph">
 <p>The pattern must be written in a subset of the pattern language defined by Java&#8217;s <code>java.time.format.DateTimeFormatter</code>.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="k">format</span><span class="p">(</span><span class="k">local</span> <span class="k">datetime</span> <span class="k">as</span> <span class="s1">'yyyy-MM-dd HH:mm:ss'</span><span class="p">)</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>For a full list of <code>format()</code> pattern elements, see the Javadoc for <a href="https://docs.jboss.org/hibernate/orm/6.4/javadocs/org/hibernate/dialect/Dialect.html#appendDatetimeFormat"><code>Dialect.appendDatetimeFormat</code></a>.</p>
+<p>For a full list of <code>format()</code> pattern elements, see the Javadoc for <a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/dialect/Dialect.html#appendDatetimeFormat"><code>Dialect.appendDatetimeFormat</code></a>.</p>
 </div>
 <h5 id="function-trunc-datetime" class="discrete">Truncating a date or time type</h5>
 <div class="paragraph">
@@ -2807,9 +3100,14 @@ These abbreviations aren&#8217;t part of the JPQL standard, but on the other han
 <div class="paragraph">
 <p>Supported temporal units are: <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code> or <code>second</code>.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="k">trunc</span><span class="p">(</span><span class="k">local</span> <span class="k">datetime</span><span class="p">,</span> <span class="k">hour</span><span class="p">)</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>Truncating a date, time or datetime value means obtaining a value of the same type in which all temporal units smaller than <code>field</code> have been pruned.
-For hours, minutes and second this means setting them to <code>00</code>. For months and days, this means setting them to <code>01</code>.</p>
+For hours, minutes, and seconds this means setting them to <code>00</code>. For months and days, this means setting them to <code>01</code>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2887,7 +3185,10 @@ For hours, minutes and second this means setting them to <code>00</code>. For mo
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>trim()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Trim characters from string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>trim(str)</code>,<br>
+<code>trim(leading from str)</code>,<br>
+<code>trim(trailing from str)</code>, or<br>
+<code>trim(leading char from str)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✔ / ✔</p></td>
 </tr>
 <tr>
@@ -2910,30 +3211,36 @@ For hours, minutes and second this means setting them to <code>00</code>. For mo
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>left()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The leftmost characters of a string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>left(str, len)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✖ / ✖</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔ / ✖</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>right()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The rightmost characters of a string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>right(str, len)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✖ / ✖</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔ / ✖</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>replace()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Replace every occurrence of a pattern in a string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>replace(str, patt, rep)</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✖ / ✖</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔ / ✖</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>repeat()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Concatenate a string with itself multiple times</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>replace(str, times)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>repeat(str, times)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖ / ✖</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>collate()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select a collation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>collate(p.name as collation)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖ / ✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hex()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Encode a binary value as a hexadecimal string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hex(image.bytes)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖ / ✖</p></td>
 </tr>
 </tbody>
@@ -3018,6 +3325,19 @@ For hours, minutes and second this means setting them to <code>00</code>. For mo
 <span class="k">select</span> <span class="k">substring</span><span class="p">(</span><span class="n">title</span> <span class="k">from</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">position</span><span class="p">(</span><span class="s1">' for Dummies'</span> <span class="k">in</span> <span class="n">title</span><span class="p">))</span> <span class="k">from</span> <span class="n">Book</span>  <span class="cm">/* ANSI SQL-style */</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Alternatively, slicing may be performed using an operator, which is just syntax sugar for the <code>substring()</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">title</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">position</span><span class="p">(</span><span class="s1">' for Dummies'</span> <span class="k">in</span> <span class="n">title</span><span class="p">)]</span> <span class="k">from</span> <span class="n">Book</span>         <span class="cm">/* Operator-style */</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">name</span><span class="p">.</span><span class="k">first</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">||</span><span class="n">name</span><span class="p">.</span><span class="k">last</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">as</span> <span class="n">initials</span> <span class="k">from</span> <span class="n">Author</span></code></pre>
+</div>
+</div>
 <h5 id="_trimming_strings" class="discrete">Trimming strings</h5>
 <div class="paragraph">
 <p>The <code>trim()</code> function follows the syntax and semantics of ANSI SQL.
@@ -3062,9 +3382,9 @@ It may be used to trim <code>leading</code> characters, <code>trailing</code> ch
 <pre class="rouge highlight"><code data-lang="antlrv4">"PAD" "(" expression "WITH" expression ("LEADING" | "TRAILING") padCharacter? ")"</code></pre>
 </div>
 </div>
-<h5 id="_collations" class="discrete">Collations</h5>
+<h5 id="collations" class="discrete">Collations</h5>
 <div class="paragraph">
-<p>Selects a collation to be used for its string-valued argument.
+<p>The <code>collate()</code> function selects a collation to be used for its string-valued argument.
 Collations are useful for <a href="#relational-comparisons">binary comparisons</a> with <code>&lt;</code> or <code>&gt;</code>, and in the <a href="#order-by">order by clause</a>.</p>
 </div>
 <div class="paragraph">
@@ -3078,6 +3398,30 @@ Collations are useful for <a href="#relational-comparisons">binary comparisons</
 </td>
 <td class="content">
 Collations aren&#8217;t very portable between databases.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Some PostgreSQL collation names must be quoted with backticks, for example, <code>collate(name as `zh_TW.UTF-8`)</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>@Collate</code> annotation may be used to specify the collation of a column, which is usually more convenient than using the <code>collate()</code> function.
 </td>
 </tr>
 </table>
@@ -3232,6 +3576,12 @@ Collations aren&#8217;t very portable between databases.
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>greatest(x, y, z)</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bitand()</code>, <code>bitor()</code>, <code>bitxor()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bitwise functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bitand(x,y)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -3317,9 +3667,6 @@ Collations aren&#8217;t very portable between databases.
 <p>The next group of functions always accept a compound path referring to a collection or many-valued association of an entity.
 They&#8217;re interpreted as referring to the collection as a whole.</p>
 </div>
-<div class="paragraph">
-<p>Application of one of these function produces implicit subquery.</p>
-</div>
 <table id="collective-collection-functions" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 15%;">
@@ -3363,6 +3710,9 @@ They&#8217;re interpreted as referring to the collection as a whole.</p>
 </tbody>
 </table>
 <div class="paragraph">
+<p>Application of one of these functions produces an implicit subquery or implicit join.</p>
+</div>
+<div class="paragraph">
 <p>This query has an implicit join:</p>
 </div>
 <div id="elements-join-example" class="listingblock">
@@ -3377,6 +3727,19 @@ They&#8217;re interpreted as referring to the collection as a whole.</p>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">title</span> <span class="k">from</span> <span class="n">Book</span> <span class="k">where</span> <span class="s1">'hibernate'</span> <span class="k">in</span> <span class="n">elements</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span></code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It never makes sense to apply the functions <code>elements()</code>, <code>indices()</code>, <code>keys()</code>, or <code>values()</code> to an identification variable or single-valued path expression.
+These functions must be applied to a reference to a many-valued path expression.
+</td>
+</tr>
+</table>
 </div>
 <h5 id="_collection_sizes" class="discrete">Collection sizes</h5>
 <div class="paragraph">
@@ -3534,12 +3897,12 @@ The second query produces a row per book, with <code>max()</code> taken over the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>id()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The value of the entity <code>@Id</code> attribute.</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>version()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The value of the entity <code>@Version</code> attribute.</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>naturalid()</code></p></td>
@@ -3556,7 +3919,189 @@ Useful with associations annotated <code>@NotFound</code>.</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="user-defined-functions">2.6.8. Native and user-defined functions</h4>
+<h4 id="array-functions">2.6.8. Array, XML, and JSON functions</h4>
+<div class="paragraph">
+<p>On supported platforms, HQL provides a rich suite of functions for working with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.jboss.org/hibernate/orm/7.0/userguide/html_single/Hibernate_User_Guide.html#hql-functions-arrays">SQL arrays</a>,</p>
+</li>
+<li>
+<p><a href="https://docs.jboss.org/hibernate/orm/7.0/userguide/html_single/Hibernate_User_Guide.html#hql-functions-json">JSON</a>, and</p>
+</li>
+<li>
+<p><a href="https://docs.jboss.org/hibernate/orm/7.0/userguide/html_single/Hibernate_User_Guide.html#hql-functions-xml">XML</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The use of these functions is outside the scope of this guide.
+However, we note that the following language constructs work with arrays, and are implemented as syntactic sugar for the underlying functions:</p>
+</div>
+<table id="array-syntax-sugar" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Syntax</th>
+<th class="tableblock halign-left valign-top">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[1, 2]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instantiate an array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>array[1]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array element</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>array[1:2]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Array slice</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>length(array)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Length of an array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>position(element in array)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of an element within an array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cast(array as String)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typecast array to string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>element in array</code> or <code>array contains element</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determine if an element belongs to an array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>array includes subarray</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determine if the elements of one array include all the elements of a second array</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="functions-hash">2.7. Hash functions</h3>
+<div class="paragraph">
+<p>The following functions work on most supported platforms:</p>
+</div>
+<table id="hash-functions" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12%;">
+<col>
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-center valign-top">JPA standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sha()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SHA256 hash of a string.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>md5()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The MD5 hash of a string.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>These functions accept a string and return <code>byte[]</code>.
+The return value is compatible with the byte array produced by Java&#8217;s <code>MessageDigest</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="embedding-sql">2.7.1. Embedding SQL expressions</h4>
+<div class="paragraph">
+<p>The following special functions let us embed a call to a native SQL function, refer directly to a column, or evaluate an expression written in native SQL.</p>
+</div>
+<table id="sql-embedding-functions" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12%;">
+<col>
+<col style="width: 35%;">
+<col style="width: 15%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Signature</th>
+<th class="tableblock halign-center valign-top">JPA standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>function()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Call a SQL function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>function('fun', arg1, arg2)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✔</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>function()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Call a SQL function</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>function(fun, arg1, arg2)</code>,<br>
+<code>function(fun as Type, arg1, arg2)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>column()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A column value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>column(entity.column)</code>,<br>
+<code>column(entity.column as Type)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sql()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Evaluate a SQL expression</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sql('text', arg1, arg2)</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Before using one of these functions, ask yourself if it might be better to just write the whole query in native SQL.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="column-references">Direct column references</h5>
+<div class="paragraph">
+<p>The <code>column()</code> function lets us refer to an unmapped column of a table.
+The column name must be qualified by an identification variable or path expression.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="k">column</span><span class="p">(</span><span class="k">log</span><span class="p">.</span><span class="n">ctid</span> <span class="k">as</span> <span class="nb">String</span><span class="p">)</span>
+<span class="k">from</span> <span class="k">Log</span> <span class="k">log</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Of course, the table itself must be mapped by an entity class.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="user-defined-functions">Native and user-defined functions</h5>
 <div class="paragraph">
 <p>The functions we&#8217;ve described above are the functions abstracted by HQL and made portable across databases.
 But, of course, HQL can&#8217;t abstract every function in your database.</p>
@@ -3567,7 +4112,7 @@ But, of course, HQL can&#8217;t abstract every function in your database.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A native or user-defined function may be called using JPQL&#8217;s <code>function</code> syntax, for example, <code>function('sinh', phi)</code>.
+<p>A native or user-defined function may be called using JPQL&#8217;s <code>function</code> syntax, for example, <code>function('sinh', phi)</code>, or HQL&#8217;s extension to that syntax, for example <code>function(sinh as Double, phi)</code>.
 (This is the easiest way, but not the best way.)</p>
 </li>
 <li>
@@ -3614,8 +4159,8 @@ Then at startup Hibernate will log a list of type signatures of all registered f
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="function-sql">2.6.9. Embedding native SQL in HQL</h4>
+<div class="sect4">
+<h5 id="function-sql">Embedding native SQL in HQL</h5>
 <div class="paragraph">
 <p>The special function <code>sql()</code> allows the use of native SQL fragments inside an HQL query.</p>
 </div>
@@ -3658,8 +4203,9 @@ Occurrences of <code>?</code> in the pattern are replaced with the remaining arg
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="conditional-expressions">2.7. Predicates</h3>
+<h3 id="conditional-expressions">2.8. Predicates</h3>
 <div class="paragraph">
 <p>A predicate is an operator which, when applied to some argument, evaluates to <code>true</code> or <code>false</code>.
 In the world of SQL-style ternary logic, we must expand this definition to encompass the possibility that the predicate evaluates to <code>null</code>.
@@ -3669,7 +4215,7 @@ Typically, a predicate evaluates to <code>null</code> when one of its arguments 
 <p>Predicates occur in the <code>where</code> clause, the <code>having</code> clause and in searched case expressions.</p>
 </div>
 <div class="sect3">
-<h4 id="relational-comparisons">2.7.1. Comparison operators</h4>
+<h4 id="relational-comparisons">2.8.1. Comparison operators</h4>
 <div class="paragraph">
 <p>The binary comparison operators are borrowed from SQL: <code>=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&lt;&gt;</code>.</p>
 </div>
@@ -3712,7 +4258,7 @@ If you prefer, HQL treats <code>!=</code> as a synonym for <code>&lt;&gt;</code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="between-predicate">2.7.2. The <code>between</code> predicate</h4>
+<h4 id="between-predicate">2.8.2. The <code>between</code> predicate</h4>
 <div class="paragraph">
 <p>The ternary <code>between</code> operator, and its negation, <code>not between</code>, determine if a value falls within a range.</p>
 </div>
@@ -3726,7 +4272,7 @@ If you prefer, HQL treats <code>!=</code> as a synonym for <code>&lt;&gt;</code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="null-predicate">2.7.3. Operators for dealing with null</h4>
+<h4 id="null-predicate">2.8.3. Operators for dealing with null</h4>
 <div class="paragraph">
 <p>The following operators make it easier to deal with null values.
 These predicates never evaluate to <code>null</code>.</p>
@@ -3768,7 +4314,7 @@ These predicates never evaluate to <code>null</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="boolean-predicate">2.7.4. Operators for dealing with boolean values</h4>
+<h4 id="boolean-predicate">2.8.4. Operators for dealing with boolean values</h4>
 <div class="paragraph">
 <p>These operators perform comparisons on values of type <code>boolean</code>.
 These predicates never evaluate to <code>null</code>.</p>
@@ -3827,7 +4373,7 @@ These predicates never evaluate to <code>null</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="collection-operators">2.7.5. Collection predicates</h4>
+<h4 id="collection-operators">2.8.5. Collection predicates</h4>
 <div class="paragraph">
 <p>The following operators apply to collection-valued attributes and to-many associations.</p>
 </div>
@@ -3875,7 +4421,7 @@ These predicates never evaluate to <code>null</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="like-predicate">2.7.6. String pattern matching</h4>
+<h4 id="like-predicate">2.8.6. String pattern matching</h4>
 <div class="paragraph">
 <p>The <code>like</code> operator performs pattern matching on strings.
 Its friend <code>ilike</code> performs case-insensitive matching.</p>
@@ -3917,7 +4463,7 @@ Its friend <code>ilike</code> performs case-insensitive matching.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="in-predicate">2.7.7. The <code>in</code> predicate</h4>
+<h4 id="in-predicate">2.8.7. The <code>in</code> predicate</h4>
 <div class="paragraph">
 <p>The <code>in</code> predicates evaluates to true if the value to its left is in &#8230;&#8203; well, whatever it finds to its right.</p>
 </div>
@@ -3932,7 +4478,8 @@ inList
 	: collectionQuantifier "(" simplePath ")"
 	| "(" (expression ("," expression)*)? ")"
 	| "(" subquery ")"
-	| parameter</code></pre>
+	| parameter
+	| expression</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3947,10 +4494,13 @@ inList
 <p>a subquery,</p>
 </li>
 <li>
-<p>one of the collection-handling functions defined <a href="#elements-indices">above</a>, or</p>
+<p>one of the collection-handling functions defined <a href="#elements-indices">above</a>,</p>
 </li>
 <li>
-<p>a query parameter,</p>
+<p>a query parameter, or</p>
+</li>
+<li>
+<p>an expression evaluating to a <a href="https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#arrays">SQL array</a>.</p>
 </li>
 </ul>
 </div>
@@ -4040,7 +4590,7 @@ Even embedded attributes are allowed, although that feature depends on the level
 </div>
 </div>
 <div class="sect3">
-<h4 id="relational-comparisons-subqueries">2.7.8. Comparison operators and subqueries</h4>
+<h4 id="relational-comparisons-subqueries">2.8.8. Comparison operators and subqueries</h4>
 <div class="paragraph">
 <p>The binary comparisons we met <a href="#relational-comparisons">above</a> may involve a quantifier, either:</p>
 </div>
@@ -4095,7 +4645,7 @@ Even embedded attributes are allowed, although that feature depends on the level
 </div>
 </div>
 <div class="sect3">
-<h4 id="exists-predicate">2.7.9. The <code>exists</code> predicate</h4>
+<h4 id="exists-predicate">2.8.9. The <code>exists</code> predicate</h4>
 <div class="paragraph">
 <p>The unary prefix <code>exists</code> operator evaluates to true if the thing to its right is nonempty.</p>
 </div>
@@ -4131,7 +4681,7 @@ Even embedded attributes are allowed, although that feature depends on the level
 </div>
 </div>
 <div class="sect3">
-<h4 id="logical-operators">2.7.10. Logical operators</h4>
+<h4 id="logical-operators">2.8.10. Logical operators</h4>
 <div class="paragraph">
 <p>The logical operators are binary infix <code>and</code> and <code>or</code>, and unary prefix <code>not</code>.</p>
 </div>
@@ -4308,7 +4858,7 @@ Instances of all these entities are returned by the query.</p>
 <span class="k">from</span> <span class="p">(</span>
     <span class="k">select</span> <span class="n">ord</span><span class="p">.</span><span class="n">id</span> <span class="k">as</span> <span class="n">id</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">book</span><span class="p">.</span><span class="n">price</span> <span class="o">*</span> <span class="n">item</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">total</span>
     <span class="k">from</span> <span class="k">Order</span> <span class="k">as</span> <span class="n">ord</span>
-        <span class="k">join</span> <span class="n">Item</span> <span class="k">as</span> <span class="n">item</span>
+        <span class="k">join</span> <span class="n">ord</span><span class="p">.</span><span class="k">items</span> <span class="k">as</span> <span class="n">item</span>
     <span class="k">group</span> <span class="k">by</span> <span class="n">ord</span>
 <span class="p">)</span>
 <span class="k">where</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">.</span><span class="mi">0</span></code></pre>
@@ -4323,7 +4873,7 @@ Instances of all these entities are returned by the query.</p>
 <span class="k">from</span> <span class="p">(</span>
     <span class="k">select</span> <span class="n">ord</span><span class="p">.</span><span class="n">id</span> <span class="k">as</span> <span class="n">id</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">book</span><span class="p">.</span><span class="n">price</span> <span class="o">*</span> <span class="n">item</span><span class="p">.</span><span class="n">quantity</span><span class="p">)</span> <span class="k">as</span> <span class="n">total</span>
     <span class="k">from</span> <span class="k">Order</span> <span class="k">as</span> <span class="n">ord</span>
-        <span class="k">join</span> <span class="n">Item</span> <span class="k">as</span> <span class="n">item</span>
+        <span class="k">join</span> <span class="n">ord</span><span class="p">.</span><span class="k">items</span> <span class="k">as</span> <span class="n">item</span>
     <span class="k">group</span> <span class="k">by</span> <span class="n">ord</span>
 <span class="p">)</span> <span class="k">as</span> <span class="n">stuff</span>
 <span class="k">where</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">.</span><span class="mi">0</span></code></pre>
@@ -4438,7 +4988,7 @@ The specified attribute:</p>
 <p>is usually a <code>@OneToMany</code>, <code>@ManyToMany</code>, <code>@OneToOne</code>, or <code>@ManyToOne</code> association, but</p>
 </li>
 <li>
-<p>it could be an <code>@ElementCollection</code>, and</p>
+<p>it could be an <code>@ElementCollection</code>, or even just a <a href="https://docs.jboss.org/hibernate/orm/7.0/introduction/html_single/Hibernate_Introduction.html#arrays">SQL array</a>, and</p>
 </li>
 <li>
 <p>it might even be an attribute of embeddable type.</p>
@@ -4623,9 +5173,9 @@ This includes:</p>
 <div id="join-treat-example" class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="hql"><span class="k">from</span> <span class="k">Order</span> <span class="k">as</span> <span class="n">ord</span>
-    <span class="k">join</span> <span class="n">treat</span><span class="p">(</span><span class="n">ord</span><span class="p">.</span><span class="n">payments</span> <span class="k">as</span> <span class="n">CreditCardPayment</span><span class="p">)</span> <span class="k">as</span> <span class="n">creditCardPayment</span>
-<span class="k">where</span> <span class="k">length</span><span class="p">(</span><span class="n">creditCardPayment</span><span class="p">.</span><span class="n">cardNumber</span><span class="p">)</span> <span class="k">between</span> <span class="mi">16</span> <span class="k">and</span> <span class="mi">20</span>
-<span class="k">select</span> <span class="n">ord</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">creditCardPayment</span><span class="p">.</span><span class="n">cardNumber</span><span class="p">,</span> <span class="n">creditCardPayment</span><span class="p">.</span><span class="n">amount</span></code></pre>
+    <span class="k">join</span> <span class="n">treat</span><span class="p">(</span><span class="n">ord</span><span class="p">.</span><span class="n">payments</span> <span class="k">as</span> <span class="n">CreditCardPayment</span><span class="p">)</span> <span class="k">as</span> <span class="n">ccp</span>
+<span class="k">where</span> <span class="k">length</span><span class="p">(</span><span class="n">ccp</span><span class="p">.</span><span class="n">cardNumber</span><span class="p">)</span> <span class="k">between</span> <span class="mi">16</span> <span class="k">and</span> <span class="mi">20</span>
+<span class="k">select</span> <span class="n">ord</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ccp</span><span class="p">.</span><span class="n">cardNumber</span><span class="p">,</span> <span class="n">ccp</span><span class="p">.</span><span class="n">amount</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4844,7 +5394,7 @@ However, they always affect the <code>from</code> clause of the SQL query.</p>
 <pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">publisher</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">author</span><span class="p">.</span><span class="n">name</span>
 <span class="k">from</span> <span class="n">Publisher</span> <span class="k">as</span> <span class="n">publisher</span>
     <span class="k">join</span> <span class="n">publisher</span><span class="p">.</span><span class="n">books</span> <span class="k">as</span> <span class="n">book</span>
-    <span class="k">join</span> <span class="n">book</span><span class="p">.</span><span class="n">authors</span> <span class="n">author</span>
+    <span class="k">join</span> <span class="n">book</span><span class="p">.</span><span class="n">authors</span> <span class="k">as</span> <span class="n">author</span>
 <span class="k">where</span> <span class="n">author</span><span class="p">.</span><span class="n">name</span> <span class="k">like</span> <span class="p">:</span><span class="n">namePattern</span></code></pre>
 </div>
 </div>
@@ -4887,7 +5437,7 @@ These functions may be applied to the identification variable declared in a coll
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>key()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Any <code>Map</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The key of the entry in the list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The key of the entry in the map</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If the key is of entity type, it may be further navigated.</p></td>
 </tr>
 <tr>
@@ -4913,7 +5463,7 @@ These functions may be applied to the identification variable declared in a coll
 <pre class="rouge highlight"><code data-lang="hql"><span class="k">select</span> <span class="n">publisher</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">leadAuthor</span><span class="p">.</span><span class="n">name</span>
 <span class="k">from</span> <span class="n">Publisher</span> <span class="k">as</span> <span class="n">publisher</span>
     <span class="k">join</span> <span class="n">publisher</span><span class="p">.</span><span class="n">books</span> <span class="k">as</span> <span class="n">book</span>
-    <span class="k">join</span> <span class="n">book</span><span class="p">.</span><span class="n">authors</span> <span class="n">leadAuthor</span>
+    <span class="k">join</span> <span class="n">book</span><span class="p">.</span><span class="n">authors</span> <span class="k">as</span> <span class="n">leadAuthor</span>
 <span class="k">where</span> <span class="n">leadAuthor</span><span class="p">.</span><span class="n">name</span> <span class="k">like</span> <span class="p">:</span><span class="n">namePattern</span>
   <span class="k">and</span> <span class="k">index</span><span class="p">(</span><span class="n">leadAuthor</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code></pre>
 </div>
@@ -5148,7 +5698,7 @@ But it&#8217;s better to specify the projection explicitly, except in the simple
 <h4 id="distinct">4.3.1. Duplicate removal</h4>
 <div class="paragraph">
 <p>The <code>distinct</code> keyword helps remove duplicate results from the query result list.
-It&#8217;s only effect is to add <code>distinct</code> to the generated SQL.</p>
+Its only effect is to add <code>distinct</code> to the generated SQL.</p>
 </div>
 <div id="distinct-projection-query-example" class="listingblock">
 <div class="content">
@@ -5336,13 +5886,13 @@ Aggregate functions are special functions that reduce the size of the result set
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>any()</code> or <code>some()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical predicate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>every()</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>every()</code> or <code>all()</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical predicate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Boolean</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">✖</p></td>
@@ -6550,10 +7100,9 @@ searchSpecification
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 6.4.0-SNAPSHOT<br>
-Last updated 2023-11-14 07:06:51 UTC
+Version 7.0.0-SNAPSHOT<br>
+Last updated 2024-12-15 15:19:10 UTC
 </div>
 </div>
-<link rel="stylesheet" href="./rouge-github.css">
 </body>
 </html>

@@ -15,7 +15,7 @@
 [[beans]]
 `org.hibernate.orm.beans`::
     * Logging class-name = `BeansMessageLogger`
-    * Description = Logging related to Hibernate's support for managed beans (CDI, etc)
+    * Description = Logging related to managed beans and the BeanContainer (CDI, etc)
     * ValidIdRange = <<HHH10005001,HHH10005001 - HHH10010000>>
 [[boot]]
 `org.hibernate.orm.boot`::
@@ -43,7 +43,7 @@
     * ValidIdRange = <<HHH10001501,HHH10001501 - HHH10002000>>
 [[connections_pooling]]
 `org.hibernate.orm.connections.pooling`::
-    * Logging class-name = `ConnectionPoolingLogger`
+    * Logging class-name = `ConnectionInfoLogger`
     * Description = Logging related to connection pooling
     * ValidIdRange = <<HHH10001001,HHH10001001 - HHH10001500>>
 [[connections_pooling_c3p0]]
@@ -51,11 +51,6 @@
     * Logging class-name = `C3P0MessageLogger`
     * Description = Logging related to the C3P0 connection pool
     * ValidIdRange = <<HHH010001,HHH010001 - HHH015000>>
-[[connections_pooling_proxool]]
-`org.hibernate.orm.connections.pooling.proxool`::
-    * Logging class-name = `ProxoolMessageLogger`
-    * Description = Logs details related to Proxool connection pooling
-    * ValidIdRange = <<HHH030001,HHH030001 - HHH035000>>
 [[deprecation]]
 `org.hibernate.orm.deprecation`::
     * Logging class-name = `DeprecationLogger`
@@ -66,14 +61,15 @@
     * Logging class-name = `DialectLogging`
     * Description = Logging related to the dialects of SQL implemented by particular RDBMS
     * ValidIdRange = <<HHH035001,HHH035001 - HHH036000>>
+[[factoryRegistry]]
+`org.hibernate.orm.factoryRegistry`::
+    * Logging class-name = `SessionFactoryRegistryMessageLogger`
+    * Description = Logging related to session factory registry
+    * ValidIdRange = <<HHH020100,HHH020100 - HHH020400>>
 [[graph_parsing]]
 `org.hibernate.orm.graph.parsing`::
     * Logging class-name = `GraphParserLogging`
     * Description = Logging related to Hibernate's `GraphParser` for parsing entity-graphs from String representations
-[[idgen_factory]]
-`org.hibernate.orm.idgen.factory`::
-    * Logging class-name = `IdGenFactoryLogging`
-    * Description = Logging related to creation of IdentifierGenerator instances
 [[jdbc]]
 `org.hibernate.orm.jdbc`::
     * Logging class-name = `JdbcLogging`
@@ -184,28 +180,24 @@
 [[id-ranges]]
 == Message Id Ranges
 
-[[HHH000001]]
-`HHH000001 - HHH010000`::
-    * ValidIdRange = HHH000001 - HHH010000 (explicit)
+[[HHH000002]]
+`HHH000002 - HHH020000`::
+    * ValidIdRange = HHH000002 - HHH020000 (explicit)
     * MessageLogger = `CoreMessageLogger`
 [[HHH010001]]
 `HHH010001 - HHH015000`::
     * ValidIdRange = HHH010001 - HHH015000 (explicit)
     * MessageLogger = `C3P0MessageLogger`
     * SubSystem = <<connections_pooling_c3p0,org.hibernate.orm.connections.pooling.c3p0>>
-[[HHH015001]]
-`HHH015001 - HHH020000`::
-    * ValidIdRange = HHH015001 - HHH020000 (explicit)
-    * MessageLogger = `EntityManagerMessageLogger`
+[[HHH020100]]
+`HHH020100 - HHH020400`::
+    * ValidIdRange = HHH020100 - HHH020400 (explicit)
+    * MessageLogger = `SessionFactoryRegistryMessageLogger`
+    * SubSystem = <<factoryRegistry,org.hibernate.orm.factoryRegistry>>
 [[HHH025001]]
 `HHH025001 - HHH030000`::
     * ValidIdRange = HHH025001 - HHH030000 (explicit)
     * MessageLogger = `EnversMessageLogger`
-[[HHH030001]]
-`HHH030001 - HHH035000`::
-    * ValidIdRange = HHH030001 - HHH035000 (explicit)
-    * MessageLogger = `ProxoolMessageLogger`
-    * SubSystem = <<connections_pooling_proxool,org.hibernate.orm.connections.pooling.proxool>>
 [[HHH035001]]
 `HHH035001 - HHH036000`::
     * ValidIdRange = HHH035001 - HHH036000 (explicit)
@@ -229,7 +221,7 @@
 [[HHH10001001]]
 `HHH10001001 - HHH10001500`::
     * ValidIdRange = HHH10001001 - HHH10001500 (explicit)
-    * MessageLogger = `ConnectionPoolingLogger`
+    * MessageLogger = `ConnectionInfoLogger`
     * SubSystem = <<connections_pooling,org.hibernate.orm.connections.pooling>>
 [[HHH10001501]]
 `HHH10001501 - HHH10002000`::

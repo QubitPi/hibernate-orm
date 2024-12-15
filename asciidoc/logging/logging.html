@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <title>Hibernate logging</title>
 <link rel="stylesheet" href="./css/hibernate.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,7 +13,7 @@
 <div id="header">
 <h1>Hibernate logging</h1>
 <div class="details">
-<span id="revnumber">version 6.4.0-SNAPSHOT</span>
+<span id="revnumber">version 7.0.0-SNAPSHOT</span>
 </div>
 </div>
 <div id="content">
@@ -67,7 +67,7 @@
 <p>Logging class-name = <code>BeansMessageLogger</code></p>
 </li>
 <li>
-<p>Description = Logging related to Hibernate&#8217;s support for managed beans (CDI, etc)</p>
+<p>Description = Logging related to managed beans and the BeanContainer (CDI, etc)</p>
 </li>
 <li>
 <p>ValidIdRange = <a href="#HHH10005001">HHH10005001 - HHH10010000</a></p>
@@ -181,7 +181,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Logging class-name = <code>ConnectionPoolingLogger</code></p>
+<p>Logging class-name = <code>ConnectionInfoLogger</code></p>
 </li>
 <li>
 <p>Description = Logging related to connection pooling</p>
@@ -208,26 +208,6 @@
 </li>
 <li>
 <p>ValidIdRange = <a href="#HHH010001">HHH010001 - HHH015000</a></p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-<div id="connections_pooling_proxool" class="dlist">
-<dl>
-<dt class="hdlist1"><code>org.hibernate.orm.connections.pooling.proxool</code></dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Logging class-name = <code>ProxoolMessageLogger</code></p>
-</li>
-<li>
-<p>Description = Logs details related to Proxool connection pooling</p>
-</li>
-<li>
-<p>ValidIdRange = <a href="#HHH030001">HHH030001 - HHH035000</a></p>
 </li>
 </ul>
 </div>
@@ -274,6 +254,26 @@
 </dd>
 </dl>
 </div>
+<div id="factoryRegistry" class="dlist">
+<dl>
+<dt class="hdlist1"><code>org.hibernate.orm.factoryRegistry</code></dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Logging class-name = <code>SessionFactoryRegistryMessageLogger</code></p>
+</li>
+<li>
+<p>Description = Logging related to session factory registry</p>
+</li>
+<li>
+<p>ValidIdRange = <a href="#HHH020100">HHH020100 - HHH020400</a></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
 <div id="graph_parsing" class="dlist">
 <dl>
 <dt class="hdlist1"><code>org.hibernate.orm.graph.parsing</code></dt>
@@ -285,23 +285,6 @@
 </li>
 <li>
 <p>Description = Logging related to Hibernate&#8217;s <code>GraphParser</code> for parsing entity-graphs from String representations</p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-<div id="idgen_factory" class="dlist">
-<dl>
-<dt class="hdlist1"><code>org.hibernate.orm.idgen.factory</code></dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>Logging class-name = <code>IdGenFactoryLogging</code></p>
-</li>
-<li>
-<p>Description = Logging related to creation of IdentifierGenerator instances</p>
 </li>
 </ul>
 </div>
@@ -743,14 +726,14 @@
 <div class="sect1">
 <h2 id="id-ranges">Message Id Ranges</h2>
 <div class="sectionbody">
-<div id="HHH000001" class="dlist">
+<div id="HHH000002" class="dlist">
 <dl>
-<dt class="hdlist1"><code>HHH000001 - HHH010000</code></dt>
+<dt class="hdlist1"><code>HHH000002 - HHH020000</code></dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p>ValidIdRange = HHH000001 - HHH010000 (explicit)</p>
+<p>ValidIdRange = HHH000002 - HHH020000 (explicit)</p>
 </li>
 <li>
 <p>MessageLogger = <code>CoreMessageLogger</code></p>
@@ -780,17 +763,20 @@
 </dd>
 </dl>
 </div>
-<div id="HHH015001" class="dlist">
+<div id="HHH020100" class="dlist">
 <dl>
-<dt class="hdlist1"><code>HHH015001 - HHH020000</code></dt>
+<dt class="hdlist1"><code>HHH020100 - HHH020400</code></dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p>ValidIdRange = HHH015001 - HHH020000 (explicit)</p>
+<p>ValidIdRange = HHH020100 - HHH020400 (explicit)</p>
 </li>
 <li>
-<p>MessageLogger = <code>EntityManagerMessageLogger</code></p>
+<p>MessageLogger = <code>SessionFactoryRegistryMessageLogger</code></p>
+</li>
+<li>
+<p>SubSystem = <a href="#factoryRegistry">org.hibernate.orm.factoryRegistry</a></p>
 </li>
 </ul>
 </div>
@@ -808,26 +794,6 @@
 </li>
 <li>
 <p>MessageLogger = <code>EnversMessageLogger</code></p>
-</li>
-</ul>
-</div>
-</dd>
-</dl>
-</div>
-<div id="HHH030001" class="dlist">
-<dl>
-<dt class="hdlist1"><code>HHH030001 - HHH035000</code></dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>ValidIdRange = HHH030001 - HHH035000 (explicit)</p>
-</li>
-<li>
-<p>MessageLogger = <code>ProxoolMessageLogger</code></p>
-</li>
-<li>
-<p>SubSystem = <a href="#connections_pooling_proxool">org.hibernate.orm.connections.pooling.proxool</a></p>
 </li>
 </ul>
 </div>
@@ -924,7 +890,7 @@
 <p>ValidIdRange = HHH10001001 - HHH10001500 (explicit)</p>
 </li>
 <li>
-<p>MessageLogger = <code>ConnectionPoolingLogger</code></p>
+<p>MessageLogger = <code>ConnectionInfoLogger</code></p>
 </li>
 <li>
 <p>SubSystem = <a href="#connections_pooling">org.hibernate.orm.connections.pooling</a></p>
@@ -1296,8 +1262,8 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 6.4.0-SNAPSHOT<br>
-Last updated 2023-11-14 07:11:53 UTC
+Version 7.0.0-SNAPSHOT<br>
+Last updated 2024-12-15 15:26:16 UTC
 </div>
 </div>
 </body>

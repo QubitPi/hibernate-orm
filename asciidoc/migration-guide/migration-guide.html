@@ -1,28 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
-<title>6.4 Migration Guide</title>
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>7.0 Migration Guide</title>
 <link rel="stylesheet" href="./css/hibernate.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./rouge-github.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>6.4 Migration Guide</h1>
+<h1>7.0 Migration Guide</h1>
 <div class="details">
-<span id="revnumber">version 6.4.0-SNAPSHOT</span>
+<span id="revnumber">version 7.0.0-SNAPSHOT</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#soft-delete">Soft Delete</a></li>
-<li><a href="#custom-tenant-identifier-type">Custom tenant identifier type</a></li>
-<li><a href="#IdGeneratorStrategyInterpreter">Removed IdGeneratorStrategyInterpreter</a></li>
-<li><a href="#function-rendering-support-deprecation">Deprecation of <code>FunctionRenderingSupport</code></a></li>
-<li><a href="#SupportedDialects">Supported Dialects</a></li>
+<li><a href="#jpa-32">Jakarta Persistence 3.2</a></li>
+<li><a href="#hibernate-models">Hibernate Models</a></li>
+<li><a href="#model-validation">Domain Model Validations</a>
+<ul class="sectlevel2">
+<li><a href="#PersistentAttributeType">PersistentAttributeType</a></li>
+<li><a href="#misplaced-annotations">Misplaced Annotations</a></li>
+<li><a href="#id-generators">Identifier Generators</a></li>
+<li><a href="#java-beans">JavaBean Conventions</a></li>
+</ul>
+</li>
+<li><a href="#envers-rev-types">Hibernate Envers and custom revision entities</a></li>
+<li><a href="#create-query">Queries with implicit <code>select</code> list and no explicit result type</a></li>
+<li><a href="#proxy-annotation">Replace <code>@Proxy</code></a></li>
+<li><a href="#flush-persist">Session flush and persist</a></li>
+<li><a href="#refresh-lock-deteached">Refreshing/locking detached entities</a></li>
+<li><a href="#auto-cascade-persist">Cascading persistence for <code>@Id</code> and <code>@MapsId</code> fields</a></li>
+<li><a href="#enum-checks">Enums and Check Constraints</a></li>
+<li><a href="#datetime-native">Date and time types returned by native queries</a></li>
+<li><a href="#ddl-implicit-datatype-timestamp">Default precision for <code>timestamp</code> on some databases</a></li>
+<li><a href="#array-mapping-changes-on-db2-sap-hana-sql-server-and-sybase-ase">Array mapping changes on DB2, SAP HANA, SQL Server and Sybase ASE</a></li>
+<li><a href="#array-mapping-changes-on-mysql-mariadb">Array mapping changes on MySQL/MariaDB</a></li>
+<li><a href="#xml-format-mapper-changes">XML FormatMapper changes</a></li>
+<li><a href="#sf-name">SessionFactory Name (and JNDI)</a></li>
+<li><a href="#configurable-generators">Configurable generators</a></li>
+<li><a href="#stateless-session-jdbc-batching">JDBC batching with <code>StatelessSession</code></a></li>
+<li><a href="#criteria-implicit-treat">Criteria API and inheritance subtypes attributes</a></li>
+<li><a href="#hbm-transform">hbm.xml Transformation</a></li>
+<li><a href="#mysql-varchar">Default DDL type for <code>char</code> and <code>Character</code> on MySQL</a></li>
+<li><a href="#unowned-order-column"><code>@OrderColumn</code> in unowned <code>@OneToMany</code> associations</a></li>
+<li><a href="#pools">Connection pools</a></li>
+<li><a href="#cleanup">Cleanup</a></li>
+<li><a href="#reorg">Reorganize Packages (for api/spi/internal, etc)</a></li>
+<li><a href="#todo">Todos (dev)</a></li>
 </ul>
 </div>
 </div>
@@ -30,129 +59,849 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide discusses migration to Hibernate ORM version 6.4. For migration from
+<p>This guide discusses migration to Hibernate ORM version 7.0. For migration from
 earlier versions, see any other pertinent migration guides as well.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jpa-32">Jakarta Persistence 3.2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>7.0 migrates to Jakarta Persistence 3.2 which is fairly disruptive, mainly around:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://docs.jboss.org/hibernate/orm/6.3/migration-guide/migration-guide.html">6.3 Migration guide</a></p>
+<p>type parameters</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Affects much of the Criteria API - especially roots, joins, paths</p>
 </li>
 <li>
-<p><a href="https://docs.jboss.org/hibernate/orm/6.2/migration-guide/migration-guide.html">6.2 Migration guide</a></p>
+<p>Affects much of the Graph API -</p>
+<div class="ulist">
+<ul>
+<li>
+<p>org.hibernate.graph.Graph.addAttributeNode(java.lang.String) defines a return while
+<code>jakarta.persistence.Graph.addAttributeNode(java.lang.String)</code> does not.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><a href="https://docs.jboss.org/hibernate/orm/6.1/migration-guide/migration-guide.html">6.1 Migration guide</a></p>
+<p>new JPA features colliding with previous Hibernate extension features</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Nulls</code> (JPA) v. <code>NullPrecedence</code> (Hibernate), including JPA&#8217;s new <code>Order#getNullPrecedence()</code> returning <code>Nulls</code>
+colliding with Hibernate&#8217;s <code>SqmSortSpecification#getNullPrecedence</code> returning <code>NullPrecedence</code>.  Hibernate&#8217;s form
+was renamed to <code>SqmSortSpecification#getHibernateNullPrecedence</code> to avoid the collision.</p>
 </li>
 <li>
-<p><a href="https://docs.jboss.org/hibernate/orm/6.0/migration-guide/migration-guide.html">6.0 Migration guide</a></p>
+<p><code>SchemaManager</code> is now also a JPA contract exposed as <code>EntityManagerFactory#getSchemaManager</code> which leads to type issues for
+Hibernate&#8217;s <code>SessionFactory#getSchemaManager</code>.  Hibernate&#8217;s <code>SchemaManager</code> now extends the new JPA <code>SchemaManager</code>.
+But that is a bytecode incompatibility.</p>
+</li>
+<li>
+<p>JPA has added support in its Graph API for things Hibernate has supported for some time.  Some of those are collisions
+requiring changes to the Hibernate API.</p>
+</li>
+<li>
+<p><code>Transaction#getTimeout</code>.  JPA 3.2 adds <code>#getTimeout</code> but uses <code>Integer</code> whereas Hibernate has historically used <code>int</code>.  Note that this raises the possibility of a <code>NullPointerException</code> during migration if, e.g., performing direct comparisons on the timeout value against an in (auto unboxing).</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See this <a href="https://in.relation.to/2024/04/01/jakarta-persistence-3/">blog post</a> for a good discussion of the changes in Jakarta Persistence 3.2.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hibernate-models">Hibernate Models</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For many years Hibernate has used the Hibernate Commons Annotations (HCANN) library for handling various low-level tasks
+related to understanding the structure of an application domain model, reading annotations and weaving in XML
+mapping documents.</p>
+</div>
+<div class="paragraph">
+<p>However, HCANN suffers from a number of limitations that continued to be problematic.  And given
+the use of HCANN across multiple projects, doing the needed refactoring was simply not possible.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://github.com/hibernate/hibernate-models">Hibernate Models</a> project was developed to be a better alternative
+to HCANN.  Hibernate Models is essentially an abstraction over reflection (<code>Type</code>, <code>Class</code>, <code>Member</code>, &#8230;&#8203;) and
+annotations.  Check out its project page for complete details.</p>
+</div>
+<div class="paragraph">
+<p>7.0 uses Hibernate Models in place of HCANN.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Currently, the <code>hibernate-envers</code> module still uses HCANN.  That will change during continued 7.x development.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="model-validation">Domain Model Validations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>7.0 adds many more checks about illegal use of annotations.</p>
+</div>
+<div class="sect2">
+<h3 id="PersistentAttributeType">PersistentAttributeType</h3>
+<div class="paragraph">
+<p>As of 7.0, Hibernate applies much better validation of an attribute specifying multiple PersistentAttributeTypes.
+Jakarta Persistence 3.2 has clarified this in the specification.  E.g., the following examples are all now illegal -</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Basic</span>
+<span class="nd">@ManyToOne</span>
+<span class="kd">private</span> <span class="nc">Employee</span> <span class="n">manager</span><span class="o">;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Lob</span>
+<span class="nd">@ManyToOne</span>
+<span class="kd">private</span> <span class="nc">Employee</span> <span class="n">manager</span><span class="o">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="misplaced-annotations">Misplaced Annotations</h3>
+<div class="paragraph">
+<p>7.0 does much more in-depth checking that annotations appear in the proper place.  While previous versions
+did not necessarily throw errors, in most cases these annotations were simply ignored.  E.g.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="kd">class</span> <span class="nc">Book</span> <span class="o">{</span>
+	<span class="c1">// defines FIELD access-type</span>
+    <span class="nd">@Id</span>
+    <span class="nc">Integer</span> <span class="n">id</span><span class="o">;</span>
+
+	<span class="c1">// previously ignored, this is an error now</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"category"</span><span class="o">)</span>
+    <span class="nc">String</span> <span class="nf">getType</span><span class="o">()</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="id-generators">Identifier Generators</h3>
+<div class="paragraph">
+<p>Starting in 7.0 it is no longer valid to combine <code>GenerationType#SEQUENCE</code> with anything other than
+<code>@SequenceGenerator</code> nor <code>GenerationType#TABLE</code> with anything other than <code>@TableGenerator</code>.  Previous
+versions did not validate this particularly well.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="java-beans">JavaBean Conventions</h3>
+<div class="paragraph">
+<p>Previous versions allowed some questionable (at best) attribute naming patterns.  These are no longer supported.  E.g.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Basic</span>
+<span class="nc">String</span> <span class="nf">isDefault</span><span class="o">();</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="envers-rev-types">Hibernate Envers and custom revision entities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Users that wanted to customize the <code>@RevisionEntity</code> used by Envers could do so by extending one on the four default revision entity types:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>org.hibernate.envers.DefaultRevisionEntity
+org.hibernate.envers.DefaultTrackingModifiedEntitiesRevisionEntity
+org.hibernate.envers.enhanced.SequenceIdRevisionEntity
+org.hibernate.envers.enhanced.SequenceIdTrackingModifiedEntitiesRevisionEntity</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These types are annotated with <code>@MappedSuperclass</code> to enable this custom extension. When no custom revision entity was specified, though,
+the same class was mapped as an entity type by Envers internals. This caused problems when dealing with the domain metamodel and static
+metamodel aspect of these types, so we chose to create <strong>new separate classes</strong> annotated <code>@MappedSuperclass</code> from which revision entities,
+meaning the default ones as well as yours, <strong>should extend from</strong>. These types are (in the same order):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>org.hibernate.envers.RevisionMapping
+org.hibernate.envers.TrackingModifiedEntitiesRevisionMapping
+org.hibernate.envers.enhanced.SequenceIdRevisionMapping
+org.hibernate.envers.enhanced.SequenceIdTrackingModifiedEntitiesRevisionMapping</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also, you can now write HQL queries using the simple class name of default revision entities to retrieve all revision information.
+Find out more in <a href="{user-guide-url}#envers-querying-revision-info">this user guide chapter</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-query">Queries with implicit <code>select</code> list and no explicit result type</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In previous versions, Hibernate allowed a query with no <code>select</code> list to be passed to the overload of <code>createQuery()</code> with no explicit result type parameter, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span> <span class="n">query</span> <span class="o">=</span>
+        <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"from X, Y"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">getResultList</span><span class="o">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span> <span class="n">query</span> <span class="o">=</span>
+        <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"from X join y"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">getResultList</span><span class="o">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The select list was inferred based on the <code>from</code> clause.</p>
+</div>
+<div class="paragraph">
+<p>In Hibernate 6 we decided to deprecate this overload of <code>createQuery()</code>, since:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>it returns a raw type, resulting in compiler warnings in client code, and</p>
+</li>
+<li>
+<p>the second query is truly ambiguous, with no obviously intuitive interpretation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As of Hibernate 7, the method is remains deprecated, and potentially-ambiguous queries <em>are no longer accepted</em>.
+Migration paths include:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>explicitly specify the <code>select</code> list,</p>
+</li>
+<li>
+<p>add <code>X.class</code> or <code>Object[].class</code> as a second argument, to disambiguate the interpretation of the query, or</p>
+</li>
+<li>
+<p>in the case where the query should return exactly one entity, explicitly assign the alias <code>this</code> to that entity.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For example, the queries above may be migrated via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="n">result</span> <span class="o">=</span>
+        <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"from X, Y"</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[].</span><span class="na">class</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">getResultList</span><span class="o">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">List</span><span class="o">&lt;</span><span class="no">X</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span>
+        <span class="n">session</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"from X join y"</span><span class="o">,</span> <span class="no">X</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">getResultList</span><span class="o">()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="proxy-annotation">Replace <code>@Proxy</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Applications will need to replace usages of the removed <code>@Proxy</code> annotation.</p>
+</div>
+<div class="paragraph">
+<p><code>@Proxy#proxyClass</code> has no direct replacement, but was also never needed/useful.</p>
+</div>
+<div class="paragraph">
+<p>Here we focus on <code>@Proxy#laxy</code> attribute which, again, was hardly ever useful.
+By default (true), Hibernate would proxy an entity when possible and when asked for.
+"Asked for" includes calls to <code>Session#getReference</code> and lazy associations.
+All such cases though are already controllable by the application.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Instead of <code>Session#getReference</code>, use <code>Session#find</code></p>
+</li>
+<li>
+<p>Use eager associations, using</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FetchType.EAGER</code> (the default for to-one associations anyway), possibly combined with <code>@Fetch</code></p>
+</li>
+<li>
+<p><code>EntityGraph</code></p>
+</li>
+<li>
+<p><code>@FetchProfiles</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The effect can also often be mitigated using Hibernate&#8217;s bytecode-based laziness (possibly combined with <code>@ConcreteProxy</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="flush-persist">Session flush and persist</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The removal of <code>CascadeType.SAVE_UPDATE</code> slightly changes the persist and flush behaviour to conform with Jakarta Persistence.</p>
+</div>
+<div class="paragraph">
+<p>Persisting a transient entity or flushing a manged entity with an associated detached entity having the association annotated with <code>cascade = CascadeType.ALL</code> or <code>cascade = CascadeType.PERSIST</code> throws now an <code>jakarta.persistence.EntityExistsException</code> if the detached entity has not been re-associated with the Session.</p>
+</div>
+<div class="paragraph">
+<p>To re-associate the detached entity with the Session the <code>Session#merge</code> method can be used.</p>
+</div>
+<div class="paragraph">
+<p>Consider the following model</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Entity</span>
+<span class="kd">class</span> <span class="nc">Parent</span> <span class="o">{</span>
+	<span class="o">...</span>
+
+	<span class="nd">@OneToMany</span><span class="o">(</span><span class="n">cascade</span> <span class="o">=</span> <span class="nc">CascadeType</span><span class="o">.</span><span class="na">ALL</span><span class="o">,</span> <span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"parent"</span><span class="o">,</span> <span class="n">orphanRemoval</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+	<span class="nd">@LazyCollection</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="nc">LazyCollectionOption</span><span class="o">.</span><span class="na">EXTRA</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Child</span><span class="o">&gt;</span> <span class="n">children</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">addChild</span><span class="o">(</span><span class="nc">Child</span> <span class="n">child</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">children</span><span class="o">.</span><span class="na">add</span><span class="o">(</span> <span class="n">child</span> <span class="o">);</span>
+		<span class="n">child</span><span class="o">.</span><span class="na">setParent</span><span class="o">(</span> <span class="k">this</span> <span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">class</span> <span class="nc">Child</span> <span class="o">{</span>
+	<span class="o">...</span>
+
+	<span class="nd">@ManyToOne</span>
+	<span class="kd">private</span> <span class="nc">Parent</span> <span class="n">parent</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Assuming we have <code>c1</code> as a detached <code>Child</code>, the following code will now result in <code>jakarta.persistence.EntityExistsException</code> being thrown at flush time:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Parent</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">get</span><span class="o">(</span> <span class="nc">Parent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">parentId</span> <span class="o">);</span>
+<span class="n">parent</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span> <span class="n">c1</span> <span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instead, <code>c1</code> must first be re-associated with the Session using merge:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Parent</span> <span class="n">parent</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">get</span><span class="o">(</span> <span class="nc">Parent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">parentId</span> <span class="o">);</span>
+<span class="nc">Child</span> <span class="n">merged</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span> <span class="n">c1</span> <span class="o">);</span>
+<span class="n">parent</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span> <span class="n">merged</span> <span class="o">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="refresh-lock-deteached">Refreshing/locking detached entities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traditionally, Hibernate allowed detached entities to be refreshed. However, Jakarta Persistence prohibits this practice and specifies that an <code>IllegalArgumentException</code> should be thrown instead. Hibernate now fully aligns with the JPA specification in this regard.</p>
+</div>
+<div class="paragraph">
+<p>Along the same line of thought, also acquiring a lock on a detached entity is no longer allowed.</p>
+</div>
+<div class="paragraph">
+<p>To this effect the <code>hibernate.allow_refresh_detached_entity</code>, which allowed Hibernate&#8217;s legacy refresh behaviour to be invoked, has been removed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="auto-cascade-persist">Cascading persistence for <code>@Id</code> and <code>@MapsId</code> fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Previously Hibernate automatically enabled <code>cascade=PERSIST</code> for association fields annotated <code>@Id</code> or <code>@MapsId</code>.
+This was undocumented and unexpected behavior, and arguably against the intent of the Persistence specification.</p>
+</div>
+<div class="paragraph">
+<p>Existing code which relies on this behavior should be modified by addition of explicit <code>cascade=PERSIST</code> to the association field.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enum-checks">Enums and Check Constraints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hibernate previously added support for generating check constraints for enums mapped using <code>@Enumerated</code>
+as part of schema generation.  7.0 adds the same capability for enums mapped using an <code>AttributeConverter</code>,
+by asking the converter to convert all the enum constants on start up.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="datetime-native">Date and time types returned by native queries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the absence of a <code>@SqlResultSetMapping</code>, previous versions of Hibernate used <code>java.sql</code> types (<code>Date</code>, <code>Time</code>, <code>Timestamp</code>) to represent date/time types returned by a native query.
+In 7.0, such queries return types defined by <code>java.time</code> (<code>LocalDate</code>, <code>LocalTime</code>, <code>LocalDateTime</code>) by default.
+The previous behavior may be recovered by setting <code>hibernate.query.native.prefer_jdbc_datetime_types</code> to <code>true</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ddl-implicit-datatype-timestamp">Default precision for <code>timestamp</code> on some databases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The default precision for Oracle timestamps was changed to 9 i.e. nanosecond precision.
+The default precision for SQL Server timestamps was changed to 7 i.e. 100 nanosecond precision.</p>
+</div>
+<div class="paragraph">
+<p>Note that these changes only affect DDL generation.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="array-mapping-changes-on-db2-sap-hana-sql-server-and-sybase-ase">Array mapping changes on DB2, SAP HANA, SQL Server and Sybase ASE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On DB2, SAP HANA, SQL Server and Sybase ASE, basic arrays now map to the <code>SqlTypes.XML_ARRAY</code> type code,
+whereas previously, the dialect mapped arrays to <code>SqlTypes.VARBINARY</code>.
+The <code>SqlTypes.XML_ARRAY</code> type uses the <code>xml</code> DDL type which enables using arrays in other features through the various XML functions.</p>
+</div>
+<div class="paragraph">
+<p>The migration requires to read data and re-save it. Note that XML support on Sybase ASE is not enabled by default
+and requires to run <code>sp_configure 'enable xml', 1</code>.</p>
+</div>
+<div class="paragraph">
+<p>To retain backwards compatibility, configure the setting <code>hibernate.type.preferred_array_jdbc_type</code> to <code>VARBINARY</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="array-mapping-changes-on-mysql-mariadb">Array mapping changes on MySQL/MariaDB</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On MySQL and MariaDB, basic arrays now map to the <code>SqlTypes.JSON_ARRAY</code> type code,
+whereas previously, the dialect mapped arrays to <code>SqlTypes.VARBINARY</code>.
+The <code>SqlTypes.JSON_ARRAY</code> type uses the <code>json</code> DDL type which enables using arrays in other features through the various JSON functions.</p>
+</div>
+<div class="paragraph">
+<p>The migration requires to read data and re-save it.</p>
+</div>
+<div class="paragraph">
+<p>To retain backwards compatibility, configure the setting <code>hibernate.type.preferred_array_jdbc_type</code> to <code>VARBINARY</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="xml-format-mapper-changes">XML FormatMapper changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Previous versions of Hibernate ORM used an undefined/provider-specific format for serialization/deserialization of
+collections, maps and byte arrays to/from XML, which is not portable.</p>
+</div>
+<div class="paragraph">
+<p>XML FormatMapper implementations were changed to now use a portable format for collections, maps and byte arrays.
+This change is necessary to allow mapping basic arrays as <code>SqlTypes.XML_ARRAY</code>.</p>
+</div>
+<div class="paragraph">
+<p>The migration requires to read data and re-save it.</p>
+</div>
+<div class="paragraph">
+<p>To retain backwards compatibility, configure the setting <code>hibernate.type.xml_format_mapper.legacy_format</code> to <code>true</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sf-name">SessionFactory Name (and JNDI)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hibernate defines <code>SessionFactory#getName</code> (specified via <code>cfg.xml</code> or  <code>hibernate.session_factory_name</code>) which is used to
+help with (de)serializing a <code>SessionFactory</code>.  It is also, unless <code>hibernate.session_factory_name_is_jndi</code> is set to <code>false</code>,
+used in biding the <code>SessionFactory</code> into JNDI.</p>
+</div>
+<div class="paragraph">
+<p>This <code>SessionFactory#getName</code> method pre-dates Jakarta Persistence (and JPA).  It now implements <code>EntityManagerFactory#getName</code>
+inherited from Jakarta Persistence, which states that this name should come from the persistence-unit name.
+To align with Jakarta Persistence (the 3.2 TCK tests this), Hibernate now considers the persistence-unit name if no
+<code>hibernate.session_factory_name</code> is specified.</p>
+</div>
+<div class="paragraph">
+<p>However, because <code>hibernate.session_factory_name</code> is also a trigger to attempt to bind the SessionFactory into JNDI,
+this change to consider persistence-unit name, means that each <code>SessionFactory</code> created through Jakarta Persistence now
+have a name and Hibernate attempted to bind these to JNDI.</p>
+</div>
+<div class="paragraph">
+<p>To work around this we have introduced a new <code>hibernate.session_factory_jndi_name</code> setting that can be used to explicitly
+specify a name for JNDI binding.  The new behavior is as follows (assuming <code>hibernate.session_factory_name_is_jndi</code> is not explicitly configured):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>hibernate.session_factory_jndi_name</code> is specified, the name is used to bind into JNDI</p>
+</li>
+<li>
+<p>If <code>hibernate.session_factory_name</code> is specified, the name is used to bind into JNDI</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hibernate can use the persistence-unit name for binding into JNDI as well, but <code>hibernate.session_factory_name_is_jndi</code>
+must be explicitly set to true.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configurable-generators">Configurable generators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The signature of the <code>Configurable#configure</code> method changed from accepting just a <code>ServiceRegistry</code> instance to the new <code>GeneratorCreationContext</code> interface, which exposes a lot more useful information when configuring the generator itself. The old signature has been deprecated for removal, so you should migrate any custom <code>Configurable</code> generator implementation to the new one.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="stateless-session-jdbc-batching">JDBC batching with <code>StatelessSession</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Automatic JDBC batching has the side effect of delaying the execution of the batched operation, and this undermines the synchronous nature of operations performed through a stateless session.
+In Hibernate 7, the configuration property <code>hibernate.jdbc.batch_size</code> now has no effect on a stateless session.
+Automatic batching may be enabled by explicitly calling <code>setJdbcBatchSize()</code>.
+However, the preferred approach is to explicitly batch operations via <code>insertMultiple()</code>, <code>updateMultiple()</code>, or <code>deleteMultiple()</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="criteria-implicit-treat">Criteria API and inheritance subtypes attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It was previously possible to use the string version of the <code>jakarta.persistence.criteria.Path#get</code> and <code>jakarta.persistence.criteria.From#join</code> methods with names of attributes defined in an inheritance subtype of the type represented by the path expression. This was handled internally by implicitly treating the path as the subtype which defines said attribute. Since Hibernate 7.0, aligning with the JPA specification, the Criteria API will no longer allow retrieving subtype attributes this way, and it&#8217;s going to require an explicit <code>jakarta.persistence.criteria.CriteriaBuilder#treat</code> to be called on the path first to downcast it to the subtype which defines the attribute.</p>
+</div>
+<div class="paragraph">
+<p>Implicit treats are still going to be applied when an HQL query dereferences a path belonging to an inheritance subtype.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hbm-transform">hbm.xml Transformation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hibernate&#8217;s legacy <code>hbm.xml</code> mapping schema has been deprecated for quite some time, replaced by a new <code>mapping.xml</code>
+schema.  In 7.0, this <code>mapping.xml</code> is stabilized and we now offer a transformation of <code>hbm.xml</code> files into <code>mapping.xml</code> files.</p>
+</div>
+<div class="paragraph">
+<p>This tool is available as both -</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>build-time transformation (currently only offered as a Gradle plugin)</p>
+</li>
+<li>
+<p>run-time transformation, using <code>hibernate.transform_hbm_xml.enabled=true</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Build-time transformation is preferred.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Initial versions of the transformation processed one file at a time.
+This is now done across the entire set of <code>hbm.xml</code> files at once.
+While most users will never see this change, it might impact integrations which tie-in to XML processing.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mysql-varchar">Default DDL type for <code>char</code> and <code>Character</code> on MySQL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Previously, <code>char</code> and <code>Character</code> fields were, by default, mapped to <code>char(1)</code> columns by the schema export tool.
+However, MySQL treats a <code>char(1)</code> containing a single space as an empty string, resulting in broken behavior for some HQL and SQL functions.
+Now, <code>varchar(1)</code> is used by default.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="unowned-order-column"><code>@OrderColumn</code> in unowned <code>@OneToMany</code> associations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In an unowned (<code>mappedBy</code>) one-to-many association, an <code>@OrderColumn</code> should, in principle, also be mapped by a field of the associated entity, and the value of the order column should be determined by the value of this field, not by the position in the list.</p>
+</div>
+<div class="paragraph">
+<p>Previously, since version 4.1, <a href="https://hibernate.atlassian.net/issues/HHH-18830">Hibernate would issue superfluous SQL <code>UPDATE</code> statements</a> to set the value of the order column based on the state of the unowned collection.
+This was incorrect according to the JPA specification, and inconsistent with the natural semantics of Hibernate.</p>
+</div>
+<div class="paragraph">
+<p>In Hibernate 7, these SQL <code>UPDATE</code> statements only occur if the <code>@OrderColumn</code> is <em>not</em> also mapped by a field of the entity.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pools">Connection pools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since Vibur and Proxool are no longer actively developed, support for these connection pools was removed.
+Use Agroal or HikariCP instead.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cleanup">Cleanup</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Annotations</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Removed <code>@Persister</code></p>
+</li>
+<li>
+<p>Removed <code>@Proxy</code> - see <a href="#proxy-annotation">Replace <code>@Proxy</code></a></p>
+</li>
+<li>
+<p>Removed <code>@SelectBeforeUpdate</code></p>
+</li>
+<li>
+<p>Removed <code>@DynamicInsert#value</code> and <code>@DynamicUpdate#value</code></p>
+</li>
+<li>
+<p>Removed <code>@Loader</code></p>
+</li>
+<li>
+<p>Removed <code>@Table</code> &#8594; use JPA <code>@Table</code></p>
+</li>
+<li>
+<p>Removed <code>@Where</code> and <code>@WhereJoinTable</code> &#8594; use <code>@SQLRestriction</code> or <code>@SQLJoinTableRestriction</code></p>
+</li>
+<li>
+<p>Removed <code>@OrderBy</code> &#8594; use <code>@SQLOrder</code> or JPA <code>@OrderBy</code></p>
+</li>
+<li>
+<p>Removed <code>@ForeignKey</code> &#8594; use JPA <code>@ForeignKey</code></p>
+</li>
+<li>
+<p>Removed <code>@Index</code> &#8594; use JPA <code>@Index</code></p>
+</li>
+<li>
+<p>Removed <code>@IndexColumn</code> &#8594; use JPA <code>@OrderColumn</code></p>
+</li>
+<li>
+<p>Removed <code>@GeneratorType</code> (and <code>GenerationTime</code>, etc)</p>
+</li>
+<li>
+<p>Removed <code>@LazyToOne</code></p>
+</li>
+<li>
+<p>Removed <code>@LazyCollection</code></p>
+</li>
+<li>
+<p>Replaced uses of <code>CacheModeType</code> with <code>CacheMode</code></p>
+</li>
+<li>
+<p>Removed <code>@TestForIssue</code> (for testing purposes) &#8594; use <code>org.hibernate.testing.orm.junit.JiraKey</code> and <code>org.hibernate.testing.orm.junit.JiraKeyGroup</code></p>
+</li>
+<li>
+<p>Removed <code>@Cache.include</code> &#8594; use <code>@Cache.includeLazy</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Classes/interfaces</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Removed <code>SqmQualifiedJoin</code> (all joins are qualified)</p>
+</li>
+<li>
+<p>Removed <code>AdditionalJaxbMappingProducer</code> &#8594; <code>AdditionalMappingContributor</code></p>
+</li>
+<li>
+<p>Removed <code>MetadataContributor</code> &#8594; <code>AdditionalMappingContributor</code></p>
+</li>
+<li>
+<p>Removed <code>EmptyInterceptor</code> &#8594; implement <code>org.hibernate.Interceptor</code> directly</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Behavior</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Removed <code>org.hibernate.Session#save</code> in favor of <code>org.hibernate.Session#persist</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Session#saveOrUpdate</code> in favor <code>#persist</code> if the entity is transient or <code>#merge</code> if the entity is detached.</p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Session#update</code> in favor of <code>org.hibernate.Session.merge</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.annotations.CascadeType.SAVE_UPDATE</code> in favor of <code>org.hibernate.annotations.CascadeType.PERSIST</code> + <code>org.hibernate.annotations.CascadeType.MERGE</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Session#delete</code> in favor of <code>org.hibernate.Session#remove</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.annotations.CascadeType.DELETE</code> in favor of <code>org.hibernate.annotations.CascadeType#REMOVE</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Session#refresh(String entityName, Object object)</code> in favor of <code>org.hibernate.Session#refresh(Object object)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Session#refresh(String entityName, Object object, LockOptions lockOptions)</code> in favor of <code>org.hibernate.Session#refresh(Object object, LockOptions lockOptions)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.integrator.spi.Integrator#integrate(Metadata,SessionFactoryImplementor,SessionFactoryServiceRegistry)</code> in favor of <code>org.hibernate.integrator.spi.Integrator#integrate(Metadata,BootstrapContext,SessionFactoryImplementor)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onLoad(Object, Serializable, Object[] , String[] , Type[] )</code> in favour of <code>org.hibernate.Interceptor#onLoad(Object, Object, Object[], String[], Type[] )</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onFlushDirty(Object, Serializable, Object[] , Object[], String[] , Type[] )</code> in favour of <code>org.hibernate.Interceptor#onLoad(Object, Object, Object[], Object[], String[] , Type[] )</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onSave(Object, Serializable, Object[], String[], Type[])</code> in favour of <code>org.hibernate.Interceptor#onSave(Object, Object, Object[], String[], Type[])</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onDelete(Object, Serializable, Object[], String[], Type[])</code> in favour of <code>org.hibernate.Interceptor#onDelete(Object, Serializable, Object[], String[], Type[])</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onCollectionRecreate(Object, Serializable)</code> in favour of <code>org.hibernate.Interceptor#onCollectionRecreate(Object, Object)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onCollectionRemove(Object, Serializable)</code> in favour of <code>org.hibernate.Interceptor#onCollectionRemove(Object, Object)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#onCollectionUpdate(Object, Serializable)</code> in favour of <code>org.hibernate.Interceptor#onCollectionUpdate(Object, Object)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#findDirty(Object, Serializable, Object[], Object[], String[], Type[])</code> in favour of <code>org.hibernate.Interceptor#findDirty(Object, Object, Object[], Object[], String[], Type[])</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Interceptor#getEntity(String, Serializable)</code> in favour of <code>org.hibernate.Interceptor#getEntity(String, Serializable)</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.metamodel.spi.MetamodelImplementor</code> in favor of <code>org.hibernate.metamodela.MappingMetmodel</code> or <code>org.hibernate.metamodel.model.domain.JpaMetamodel</code></p>
+</li>
+<li>
+<p>Removed <code>org.hibernate.Metamodel</code> in favor of <code>org.hibernate.metamodel.model.domain.JpaMetamodel</code></p>
+</li>
+<li>
+<p>Removed <code>NaturalIdLoadAccess.using(Map)</code> and <code>NaturalIdMultiLoadAccess.compoundValue()</code> in favor of <code>Map.of()</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Settings</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Removed <code>hibernate.mapping.precedence</code> and friends</p>
+</li>
+<li>
+<p>Removed <code>hibernate.allow_refresh_detached_entity</code></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="soft-delete">Soft Delete</h2>
+<h2 id="reorg">Reorganize Packages (for api/spi/internal, etc)</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>6.4 adds support for soft deletes, using the new <code>@SoftDelete</code> annotation.
-See the <a href="https://docs.jboss.org/hibernate/orm/6.4/userguide/html_single/Hibernate_User_Guide.html#soft-delete">User Guide</a> for details.</p>
-</div>
-<div class="paragraph">
-<p>In previous versions, support for soft-deletes was somewhat implementable using
-a combination of any or all of event-listeners, filters, <code>@Where</code>, etc.
-Applications using such implementations are encouraged to switch.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="custom-tenant-identifier-type">Custom tenant identifier type</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <code>CurrentTenantIdentifierResolver</code> and <code>MultiTenantConnectionProvider</code> SPIs were generified to support custom tenant identifier types.
-Both types now accept a type parameter that represents the tenant identifier type.
-Methods that were accepting or returning a tenant identifier value of type <code>String</code> were changed to use the type variable.</p>
-</div>
-<div class="paragraph">
-<p>Applications can migrate by specifying the type parameter <code>&lt;String&gt;</code> when extending <code>CurrentTenantIdentifierResolver</code>
-or one of the <code>MultiTenantConnectionProvider</code> subtypes.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="IdGeneratorStrategyInterpreter">Removed IdGeneratorStrategyInterpreter</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><code>IdGeneratorStrategyInterpreter</code> has been deprecated since 6.0 and has been removed to simplify id generator internals.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="function-rendering-support-deprecation">Deprecation of <code>FunctionRenderingSupport</code></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The <code>FunctionRenderingSupport</code> interface was deprecated for removal in favor of the new <code>FunctionRenderer</code> interface.
-<code>FunctionRenderer</code> extends <code>FunctionRenderingSupport</code>, so switching to the new type should not be a big deal.
-Classes the previously implemented the <code>FunctionRenderingSupport</code> interface should switch to implement <code>FunctionRenderer</code>
-and the signature of the implemented <code>render(SqlAppender, List, SqlAstTranslator)</code> method has to be changed to
-<code>render(SqlAppender, List, ReturnableType, SqlAstTranslator)</code> i.e. add <code>ReturnableType</code> as second last argument.</p>
-</div>
-<div class="paragraph">
-<p>The newly passed <code>ReturnableType</code> argument allows the rendering process to consider the resolved function result type
-during rendering, which is common for certain array specific functions, especially for Oracle.</p>
-</div>
-<div class="paragraph">
-<p>Note that the deprecation also affects some methods/constructors of the <code>SelfRenderingSqlAstExpression</code> type hierarchy,
-which were previously accepting/returning a <code>FunctionRenderingSupport</code>. Constructors that accept a <code>FunctionRenderer</code>
-have been added to:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SelfRenderingSqmFunction</code></p>
-</li>
-<li>
-<p><code>SelfRenderingSqmWindowFunction</code></p>
-</li>
-<li>
-<p><code>SelfRenderingSqmAggregateFunction</code></p>
-</li>
-<li>
-<p><code>SelfRenderingSqmOrderedSetAggregateFunction</code></p>
-</li>
-<li>
-<p><code>SelfRenderingFunctionSqlAstExpression</code></p>
-</li>
-<li>
-<p><code>SelfRenderingWindowFunctionSqlAstExpression</code></p>
-</li>
-<li>
-<p><code>SelfRenderingAggregateFunctionSqlAstExpression</code></p>
-</li>
-<li>
-<p><code>SelfRenderingOrderedSetAggregateFunctionSqlAstExpression</code></p>
+<p>Re-organized the <code>org.hibernate.query.results</code> package</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>In addition, the <code>SelfRenderingSqmFunction.getRenderingSupport()</code> method was deprecated in favor of the new <code>SelfRenderingSqmFunction.getFunctionRenderer()</code> method.
-Finally, the <code>SelfRenderingFunctionSqlAstExpression.getRenderer()</code> method was deprecated in favor of the new <code>SelfRenderingFunctionSqlAstExpression.getFunctionRenderer()</code> method.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="SupportedDialects">Supported Dialects</h2>
+<h2 id="todo">Todos (dev)</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Please also do have a look at the <a href="https://docs.jboss.org/hibernate/orm/6.4/dialect/dialect.html">Supported Dialects</a> document to check for potential upgrades to the minimum version of the databases underpinning the dialects that Hibernate currently supports.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Look for <code>todo (jpa 3.2)</code> comments</p>
+</li>
+<li>
+<p>Look for <code>todo (7.0)</code> comments</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 6.4.0-SNAPSHOT<br>
-Last updated 2023-11-14 07:09:52 UTC
+Version 7.0.0-SNAPSHOT<br>
+Last updated 2024-12-15 15:21:17 UTC
 </div>
 </div>
 </body>

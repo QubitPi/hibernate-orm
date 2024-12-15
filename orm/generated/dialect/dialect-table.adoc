@@ -1,17 +1,16 @@
 [cols="a,a", options="header"]
 |===
 |Dialect |Minimum Database Version
+|AzureSQLServerDialect|11.0
 |CockroachDialect|22.2
 |DB2Dialect|10.5
 |DB2iDialect|7.1
 |DB2zDialect|12.1
-|DerbyDialect|10.15.2
 |GenericDialect|0.0
 |H2Dialect|2.1.214
-|HANAColumnStoreDialect|0.0
-|HANARowStoreDialect|0.0
+|HANADialect|2.0.50
 |HSQLDialect|2.6.1
-|MariaDBDialect|10.4
+|MariaDBDialect|10.5
 |MySQLDialect|8.0
 |OracleDialect|19.0
 |PostgreSQLDialect|12.0
