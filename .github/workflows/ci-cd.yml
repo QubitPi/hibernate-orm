@@ -49,7 +49,7 @@ jobs:
           export GRADLE_OPTS=-Dorg.gradle.jvmargs='-Dlog4j2.disableJmx -Xmx4g -XX:MaxMetaspaceSize=768m -XX:+HeapDumpOnOutOfMemoryError -Duser.language=en -Duser.country=US -Duser.timezone=UTC -Dfile.encoding=UTF-8'
           ./gradlew buildDocs
       - name: Load CNAME
-        run: echo
+        run: echo hibernate.qubitpi.org > documentation/target/CNAME
       - name: Deploy documentation (including Javadoc) to GitHub Pages
         # if: github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
