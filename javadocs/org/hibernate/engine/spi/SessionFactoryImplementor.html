@@ -219,7 +219,10 @@ extends <a href="../../type/MappingContext.html" title="interface in org.hiberna
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getWrapperOptions()" class="member-name-link">getWrapperOptions</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Return an instance of <a href="../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor"><code>WrapperOptions</code></a> which is not backed by a session,
+ and whose functionality is therefore incomplete.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#openSession()" class="member-name-link">openSession</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
@@ -381,13 +384,8 @@ extends <a href="../../type/MappingContext.html" title="interface in org.hiberna
 <li>
 <section class="detail" id="openTemporarySession()">
 <h3>openTemporarySession</h3>
-<div class="member-signature"><span class="return-type"><a href="SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a></span>&nbsp;<span class="element-name">openTemporarySession</span>()
-                                 throws <span class="exceptions"><a href="../../HibernateException.html" title="class in org.hibernate">HibernateException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a></span>&nbsp;<span class="element-name">openTemporarySession</span>()</div>
 <div class="block">Get a non-transactional "current" session (used by hibernate-envers)</div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="../../HibernateException.html" title="class in org.hibernate">HibernateException</a></code></dd>
-</dl>
 </section>
 </li>
 <li>
@@ -510,7 +508,7 @@ extends <a href="../../type/MappingContext.html" title="interface in org.hiberna
 <div class="member-signature"><span class="return-type"><a href="../../internal/FastSessionServices.html" title="class in org.hibernate.internal">FastSessionServices</a></span>&nbsp;<span class="element-name">getFastSessionServices</span>()</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>the <a href="../../internal/FastSessionServices.html" title="class in org.hibernate.internal"><code>FastSessionServices</code></a> instance associated with this SessionFactory</dd>
+<dd>the <a href="../../internal/FastSessionServices.html" title="class in org.hibernate.internal"><code>FastSessionServices</code></a> instance associated with this factory</dd>
 </dl>
 </section>
 </li>
@@ -518,6 +516,12 @@ extends <a href="../../type/MappingContext.html" title="interface in org.hiberna
 <section class="detail" id="getWrapperOptions()">
 <h3>getWrapperOptions</h3>
 <div class="member-signature"><span class="return-type"><a href="../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></span>&nbsp;<span class="element-name">getWrapperOptions</span>()</div>
+<div class="block">Return an instance of <a href="../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor"><code>WrapperOptions</code></a> which is not backed by a session,
+ and whose functionality is therefore incomplete.</div>
+<dl class="notes">
+<dt>API Note:</dt>
+<dd>Avoid using this operation.</dd>
+</dl>
 </section>
 </li>
 <li>

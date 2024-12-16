@@ -147,9 +147,9 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
  used in a sophisticated way by libraries or frameworks to implement generic
  concerns involving entity classes.
  <p>
- When the Metamodel Generator is used, elements of this metamodel may also
- be obtained in a typesafe way, via the generated metamodel classes. For
- an entity class <code>Book</code>, the generated <code>Book_</code> class has:
+ When Hibernate Processor is used, elements of this metamodel may also be
+ obtained in a typesafe way, via the generated metamodel classes. For an
+ entity class <code>Book</code>, the generated <code>Book_</code> class has:
  <ul>
  <li>a single member named <code>class_</code> of type
      <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/metamodel/EntityType.html" title="class or interface in jakarta.persistence.metamodel" class="external-link"><code>EntityType&lt;Book&gt;</code></a>,
@@ -182,7 +182,8 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
  underlying <code>SessionFactory</code>.
  <p>
  The very simplest way to obtain a new <code>SessionFactory</code> is using a
- <a href="cfg/Configuration.html" title="class in org.hibernate.cfg"><code>Configuration</code></a>.</div>
+ <a href="cfg/Configuration.html" title="class in org.hibernate.cfg"><code>Configuration</code></a> or
+ <a href="jpa/HibernatePersistenceConfiguration.html" title="class in org.hibernate.jpa"><code>HibernatePersistenceConfiguration</code></a>.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -316,7 +317,7 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJndiName()" class="member-name-link">getJndiName</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">The JNDI name, used to bind the SessionFactory to JNDI</div>
+<div class="block">The JNDI name, used to bind the <code>SessionFactory</code> to JNDI.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="relational/SchemaManager.html" title="interface in org.hibernate.relational">SchemaManager</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSchemaManager()" class="member-name-link">getSchemaManager</a>()</code></div>
@@ -416,7 +417,7 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
 <section class="detail" id="getJndiName()">
 <h3>getJndiName</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getJndiName</span>()</div>
-<div class="block">The JNDI name, used to bind the SessionFactory to JNDI</div>
+<div class="block">The JNDI name, used to bind the <code>SessionFactory</code> to JNDI.</div>
 </section>
 </li>
 <li>
@@ -505,7 +506,7 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
 <div class="block">Open a new stateless session.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>The created stateless session.</dd>
+<dd>The new stateless session.</dd>
 </dl>
 </section>
 </li>
@@ -519,7 +520,7 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
 <dt>Parameters:</dt>
 <dd><code>connection</code> - Connection provided by the application.</dd>
 <dt>Returns:</dt>
-<dd>The created stateless session.</dd>
+<dd>The new stateless session.</dd>
 </dl>
 </section>
 </li>

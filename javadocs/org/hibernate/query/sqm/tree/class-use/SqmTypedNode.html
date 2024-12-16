@@ -983,26 +983,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Resolve the return type for a function given its arguments to this call.</div>
 </div>
 <div class="col-first even-row-color"><code>default void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ArgumentsValidator.</span><code><a href="../../produce/function/ArgumentsValidator.html#validate(java.util.List,java.lang.String,org.hibernate.query.spi.QueryEngine)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree">SqmTypedNode</a>&lt;?&gt;&gt;&nbsp;arguments,
+<div class="col-second even-row-color"><span class="type-name-label">ArgumentsValidator.</span><code><a href="../../produce/function/ArgumentsValidator.html#validate(java.util.List,java.lang.String,org.hibernate.type.spi.TypeConfiguration)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree">SqmTypedNode</a>&lt;?&gt;&gt;&nbsp;arguments,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
- <a href="../../../spi/QueryEngine.html" title="interface in org.hibernate.query.spi">QueryEngine</a>&nbsp;queryEngine)</code></div>
+ <a href="../../../../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a>&nbsp;typeConfiguration)</code></div>
 <div class="col-last even-row-color">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">Use <a href="../../produce/function/ArgumentsValidator.html#validate(java.util.List,java.lang.String,org.hibernate.type.spi.TypeConfiguration)"><code>ArgumentsValidator.validate(List, String, TypeConfiguration)</code></a></div>
+<div class="block">Perform validation that may be done using the <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree"><code>SqmTypedNode</code></a> tree and assigned Java types.</div>
 </div>
-</div>
-<div class="col-first odd-row-color"><code>default void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ArgumentsValidator.</span><code><a href="../../produce/function/ArgumentsValidator.html#validate(java.util.List,java.lang.String,org.hibernate.type.spi.TypeConfiguration)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree">SqmTypedNode</a>&lt;?&gt;&gt;&nbsp;arguments,
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ArgumentTypesValidator.</span><code><a href="../../produce/function/ArgumentTypesValidator.html#validate(java.util.List,java.lang.String,org.hibernate.type.spi.TypeConfiguration)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree">SqmTypedNode</a>&lt;?&gt;&gt;&nbsp;arguments,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
  <a href="../../../../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a>&nbsp;typeConfiguration)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Perform validation that may be done using the <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree"><code>SqmTypedNode</code></a> tree and assigned Java types.</div>
-</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ArgumentTypesValidator.</span><code><a href="../../produce/function/ArgumentTypesValidator.html#validate(java.util.List,java.lang.String,org.hibernate.type.spi.TypeConfiguration)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../SqmTypedNode.html" title="interface in org.hibernate.query.sqm.tree">SqmTypedNode</a>&lt;?&gt;&gt;&nbsp;arguments,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;functionName,
- <a href="../../../../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a>&nbsp;typeConfiguration)</code></div>
-<div class="col-last even-row-color">
 <div class="block">We do an initial validation phase with just the SQM tree, even though we don't
  have all typing information available here (in particular, we don't have the
  final JDBC type codes for things with converters) because this is the phase

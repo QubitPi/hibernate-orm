@@ -126,16 +126,14 @@ loadScripts(document, 'script');</script>
      }
 
      &#64;Override
-     public Period nullSafeGet(ResultSet rs, int position,
-                               SharedSessionContractImplementor session)
+     public Period nullSafeGet(ResultSet rs, int position, WrapperOptions options)
                  throws SQLException {
          String string = rs.getString(position);
          return rs.wasNull() ? null : Period.parse(string);
      }
 
      &#64;Override
-     public void nullSafeSet(PreparedStatement st, Period value, int index,
-                             SharedSessionContractImplementor session)
+     public void nullSafeSet(PreparedStatement st, Period value, int index, WrapperOptions options)
                  throws SQLException {
          if ( value == null ) {
              st.setNull(index, VARCHAR);
@@ -232,16 +230,14 @@ loadScripts(document, 'script');</script>
      }
 
      &#64;Override
-     public BitSet nullSafeGet(ResultSet rs, int position,
-                               SharedSessionContractImplementor session)
+     public BitSet nullSafeGet(ResultSet rs, int position, WrapperOptions options)
                  throws SQLException {
          String string = rs.getString(position);
          return rs.wasNull()? null : parseBitSet(columnValue);
      }
 
      &#64;Override
-     public void nullSafeSet(PreparedStatement st, BitSet bitSet, int index,
-                             SharedSessionContractImplementor session)
+     public void nullSafeSet(PreparedStatement st, BitSet bitSet, int index, WrapperOptions options)
                  throws SQLException {
          if (bitSet == null) {
              st.setNull(index, VARCHAR);
@@ -401,45 +397,55 @@ loadScripts(document, 'script');</script>
 <div class="block">Are instances of the Java class mapped by this custom type
  mutable or immutable?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="UserType.html" title="type parameter in UserType">J</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
- int&nbsp;position,
- <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Read an instance of the Java class mapped by this custom type
- from the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="UserType.html" title="type parameter in UserType">J</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default <a href="UserType.html" title="type parameter in UserType">J</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
  int&nbsp;position,
  <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">Implement <a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>nullSafeGet(ResultSet, int, SharedSessionContractImplementor)</code></a></div>
+<div class="deprecation-comment">Implement <a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)"><code>nullSafeGet(ResultSet, int, WrapperOptions)</code></a></div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="UserType.html" title="type parameter in UserType">J</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
+ int&nbsp;position,
+ <a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;options)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Read an instance of the Java class mapped by this custom type
+ from the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code>default void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6"><code><a href="#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;value,
  int&nbsp;position,
  <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5 method-summary-table-tab6">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Implement <a href="#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)"><code>nullSafeSet(PreparedStatement, Object, int, WrapperOptions)</code></a></div>
+</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+ <a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;value,
+ int&nbsp;position,
+ <a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;options)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Write an instance of the Java class mapped by this custom type
  to the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="UserType.html" title="type parameter in UserType">J</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#replace(J,J,java.lang.Object)" class="member-name-link">replace</a><wbr>(<a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;detached,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="UserType.html" title="type parameter in UserType">J</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#replace(J,J,java.lang.Object)" class="member-name-link">replace</a><wbr>(<a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;detached,
  <a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;managed,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">During merge, replace the existing (target) value in the
  managed entity we are merging to with a new (original) value
  from the detached entity we are merging.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="UserType.html" title="type parameter in UserType">J</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#returnedClass()" class="member-name-link">returnedClass</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;<a href="UserType.html" title="type parameter in UserType">J</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#returnedClass()" class="member-name-link">returnedClass</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">The class returned by <code>nullSafeGet()</code>.</div>
 </div>
 </div>
@@ -527,7 +533,7 @@ loadScripts(document, 'script');</script>
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
 <div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">Implement <a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>nullSafeGet(ResultSet, int, SharedSessionContractImplementor)</code></a></div>
+<div class="deprecation-comment">Implement <a href="#nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)"><code>nullSafeGet(ResultSet, int, WrapperOptions)</code></a></div>
 </div>
 <div class="block">Read an instance of the Java class mapped by this custom type
  from the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>. Implementors must handle
@@ -541,11 +547,11 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<section class="detail" id="nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)">
 <h3>nullSafeGet</h3>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="UserType.html" title="type parameter in UserType">J</a></span>&nbsp;<span class="element-name">nullSafeGet</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
  int&nbsp;position,
- <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span>
+ <a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;options)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
 <div class="block">Read an instance of the Java class mapped by this custom type
  from the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>. Implementors must handle
@@ -564,10 +570,38 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3 id="nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)">nullSafeSet</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nullSafeSet</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="7",
+            <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true)
+</span><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nullSafeSet</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;value,
  int&nbsp;position,
  <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Implement <a href="#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)"><code>nullSafeSet(PreparedStatement, Object, int, WrapperOptions)</code></a></div>
+</div>
+<div class="block">Write an instance of the Java class mapped by this custom type
+ to the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>. Implementors must
+ handle null values of the Java class. A multi-column type should
+ be written to parameters starting from <code>index</code>.</div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></code></dd>
+<dt>Implementation Note:</dt>
+<dd>The default implementation calls
+           <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html#setObject(int,java.lang.Object,int)" title="class or interface in java.sql" class="external-link"><code>PreparedStatement.setObject(int, Object, int)</code></a>
+           with the given <code>position</code> and <code>value</code> and
+           with the <a href="#getSqlType()">SQL type</a>.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)">
+<h3 id="nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.type.descriptor.WrapperOptions)">nullSafeSet</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">nullSafeSet</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+ <a href="UserType.html" title="type parameter in UserType">J</a>&nbsp;value,
+ int&nbsp;position,
+ <a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;options)</span>
                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
 <div class="block">Write an instance of the Java class mapped by this custom type
  to the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>. Implementors must

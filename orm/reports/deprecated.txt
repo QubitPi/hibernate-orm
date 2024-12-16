@@ -7,8 +7,6 @@ org.hibernate.Interceptor#onDelete
 org.hibernate.Interceptor#onSave
 org.hibernate.LockOptions#SKIP_LOCKED
 org.hibernate.LockOptions#getAliasLockIterator
-org.hibernate.LockOptions#getScope
-org.hibernate.LockOptions#setScope
 org.hibernate.MultiIdentifierLoadAccess#with
 org.hibernate.NaturalIdMultiLoadAccess#with
 org.hibernate.QueryException#<init>
@@ -88,6 +86,7 @@ org.hibernate.cfg.CacheSettings#CACHE_KEYS_FACTORY
 org.hibernate.cfg.CacheSettings#JPA_SHARED_CACHE_MODE
 org.hibernate.cfg.CacheSettings#JPA_SHARED_CACHE_RETRIEVE_MODE
 org.hibernate.cfg.CacheSettings#JPA_SHARED_CACHE_STORE_MODE
+org.hibernate.cfg.JdbcSettings#CONNECTION_PREFIX
 org.hibernate.cfg.JdbcSettings#DATASOURCE
 org.hibernate.cfg.JdbcSettings#DIALECT_DB_MAJOR_VERSION
 org.hibernate.cfg.JdbcSettings#DIALECT_DB_MINOR_VERSION
@@ -133,7 +132,6 @@ org.hibernate.cfg.ValidationSettings#JPA_REMOVE_VALIDATION_GROUP
 org.hibernate.cfg.ValidationSettings#JPA_UPDATE_VALIDATION_GROUP
 org.hibernate.cfg.ValidationSettings#JPA_VALIDATION_FACTORY
 org.hibernate.cfg.ValidationSettings#JPA_VALIDATION_MODE
-org.hibernate.classic.Lifecycle#onLoad
 org.hibernate.dialect.DatabaseVersion#makeCopy
 org.hibernate.dialect.Dialect#<init>
 org.hibernate.dialect.Dialect#getCheckCondition
@@ -255,8 +253,6 @@ org.hibernate.id.enhanced.TableStructure#getAllSqlForTests
 org.hibernate.id.enhanced.TableStructure#prepare
 org.hibernate.id.insert.InsertGeneratedIdentifierDelegate
 org.hibernate.internal.AbstractSharedSessionContract#addResultType
-org.hibernate.internal.FastSessionServices#getDefaultTimeZoneStorageStrategy
-org.hibernate.internal.FastSessionServices#getMutationExecutorService
 org.hibernate.internal.SessionFactoryImpl#configuredInterceptor
 org.hibernate.internal.SessionFactoryImpl#getGenerator
 org.hibernate.internal.SessionFactoryImpl$SessionBuilderImpl#tenantIdentifier
@@ -290,11 +286,8 @@ org.hibernate.loader.ast.spi.Loadable#isAffectedByEnabledFilters
 org.hibernate.loader.ast.spi.Loadable#isAffectedByInfluencers
 org.hibernate.mapping.CheckConstraint#constraintString
 org.hibernate.mapping.Collection#validate
-org.hibernate.mapping.Column#checkConstraint
-org.hibernate.mapping.Column#getCheckConstraint
 org.hibernate.mapping.Column#getColumnSize
 org.hibernate.mapping.Column#getSqlType
-org.hibernate.mapping.Column#setCheckConstraint
 org.hibernate.mapping.Index#getColumnOrderMap
 org.hibernate.mapping.Index#getColumns
 org.hibernate.mapping.IndexedCollection#validate
@@ -306,8 +299,6 @@ org.hibernate.mapping.RootClass#setPolymorphic
 org.hibernate.mapping.Selectable#getAlias
 org.hibernate.mapping.SimpleValue#DEFAULT_ID_GEN_STRATEGY
 org.hibernate.mapping.SimpleValue#createGenerator
-org.hibernate.mapping.SimpleValue#isCascadeDeleteEnabled
-org.hibernate.mapping.SimpleValue#setCascadeDeleteEnabled
 org.hibernate.mapping.Table#<init>
 org.hibernate.mapping.Table#addCheckConstraint
 org.hibernate.mapping.Table#addInitCommand
@@ -454,7 +445,6 @@ org.hibernate.query.sqm.SqmPathSource#getSubPathSource
 org.hibernate.query.sqm.SqmSelectionQuery#setHibernateFlushMode
 org.hibernate.query.sqm.function.FunctionRenderer#render
 org.hibernate.query.sqm.internal.SqmUtil#isFkOptimizationAllowed
-org.hibernate.query.sqm.produce.function.ArgumentsValidator#validate
 org.hibernate.query.sqm.produce.function.FunctionArgumentTypeResolver#resolveFunctionArgumentType
 org.hibernate.query.sqm.produce.function.FunctionReturnTypeResolver#resolveFunctionReturnType
 org.hibernate.query.sqm.tree.select.SqmSortSpecification#<init>
@@ -543,3 +533,4 @@ org.hibernate.type.spi.TypeConfiguration#getMetadataBuildingContext
 org.hibernate.type.spi.TypeConfiguration#getServiceRegistry
 org.hibernate.type.spi.TypeConfiguration#getSessionFactory
 org.hibernate.usertype.UserType#nullSafeGet
+org.hibernate.usertype.UserType#nullSafeSet

@@ -94,7 +94,7 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
  depending on how Hibernate is configured.
  <p>
  Every resource-local transaction is associated with a <a href="Session.html" title="interface in org.hibernate"><code>Session</code></a> and begins with
- an explicit call to <a href="SharedSessionContract.html#beginTransaction()"><code>SharedSessionContract.beginTransaction()</code></a>, or, equivalently, with
+ an explicit call to <a href="SharedSessionContract.html#beginTransaction()"><code>SharedSessionContract.beginTransaction()</code></a>, or, almost equivalently, with
  <code>session.getTransaction().begin()</code>, and ends with a call to <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html#commit()" title="class or interface in jakarta.persistence" class="external-link"><code>EntityTransaction.commit()</code></a>
  or <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html#rollback()" title="class or interface in jakarta.persistence" class="external-link"><code>EntityTransaction.rollback()</code></a>.
  <p>
@@ -114,6 +114,10 @@ extends <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/pe
 <li><a href="SharedSessionContract.html#beginTransaction()"><code>SharedSessionContract.beginTransaction()</code></a></li>
 </ul>
 </dd>
+<dt>API Note:</dt>
+<dd>JPA doesn't allow an <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html" title="class or interface in jakarta.persistence" class="external-link"><code>EntityTransaction</code></a> to represent a JTA transaction.
+ But when <a href="jpa/spi/JpaCompliance.html#isJpaTransactionComplianceEnabled()">strict JPA transaction compliance</a> is disabled, as it is by default, Hibernate allows an
+ instance of this interface to represent the current JTA transaction context.</dd>
 </dl>
 </section>
 <section class="summary">

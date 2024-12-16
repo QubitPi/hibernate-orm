@@ -118,7 +118,11 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT" class="member-name-link">FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Specifies that Hibernate should always restrict by discriminator values in
+ SQL <code>select</code> statements, even when querying the root entity of an
+ entity inheritance hierarchy.</div>
+</div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#GLOBALLY_QUOTED_IDENTIFIERS" class="member-name-link">GLOBALLY_QUOTED_IDENTIFIERS</a></code></div>
 <div class="col-last odd-row-color">
@@ -1121,11 +1125,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT">
 <h3>FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT</span></div>
+<div class="block">Specifies that Hibernate should always restrict by discriminator values in
+ SQL <code>select</code> statements, even when querying the root entity of an
+ entity inheritance hierarchy.
+ <p>
+ By default, Hibernate only restricts by discriminator values when querying
+ a subtype, or when the root entity is explicitly annotated
+ <a href="../annotations/DiscriminatorOptions.html#force()"><code>DiscriminatorOptions(force=true)</code></a>.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
 <ul class="see-list-long">
 <li><a href="../boot/MetadataBuilder.html#enableImplicitForcingOfDiscriminatorsInSelect(boolean)"><code>MetadataBuilder.enableImplicitForcingOfDiscriminatorsInSelect(boolean)</code></a></li>
+<li><a href="../annotations/DiscriminatorOptions.html#force()"><code>DiscriminatorOptions.force()</code></a></li>
 <li><a href="../../../constant-values.html#org.hibernate.cfg.MappingSettings.FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT">Constant Field Values</a></li>
 </ul>
 </dd>

@@ -1616,16 +1616,6 @@ loadScripts(document, 'script');</script>
  <a href="../EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../../../event/spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DefaultDeleteEventListener.</span><code><a href="../../../event/internal/DefaultDeleteEventListener.html#invokeDeleteLifecycle(org.hibernate.event.spi.EventSource,java.lang.Object,org.hibernate.persister.entity.EntityPersister)" class="member-name-link">invokeDeleteLifecycle</a><wbr>(<a href="../../../event/spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="../EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../../event/internal/AbstractSaveEventListener.html#invokeSaveLifecycle(java.lang.Object,org.hibernate.persister.entity.EntityPersister,org.hibernate.event.spi.EventSource)" class="member-name-link">invokeSaveLifecycle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="../EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
- <a href="../../../event/spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">DefaultLoadEventListener.</span><code><a href="../../../event/internal/DefaultLoadEventListener.html#loadFromDatasource(org.hibernate.event.spi.LoadEvent,org.hibernate.persister.entity.EntityPersister)" class="member-name-link">loadFromDatasource</a><wbr>(<a href="../../../event/spi/LoadEvent.html" title="class in org.hibernate.event.spi">LoadEvent</a>&nbsp;event,
  <a href="../EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister)</code></div>
@@ -1985,10 +1975,10 @@ loadScripts(document, 'script');</script>
  <a href="../../../generator/values/GeneratedValuesMutationDelegate.html" title="interface in org.hibernate.generator.values"><code>delegates</code></a> when they are instantiated.</div>
 </div>
 <div class="col-first odd-row-color"><code>static <a href="../../../generator/values/GeneratedValues.html" title="interface in org.hibernate.generator.values">GeneratedValues</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">GeneratedValuesHelper.</span><code><a href="../../../generator/values/internal/GeneratedValuesHelper.html#getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">getGeneratedValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;resultSet,
+<div class="col-second odd-row-color"><span class="type-name-label">GeneratedValuesHelper.</span><code><a href="../../../generator/values/internal/GeneratedValuesHelper.html#getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">getGeneratedValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;resultSet,
  <a href="../EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../../../generator/EventType.html" title="enum class in org.hibernate.generator">EventType</a>&nbsp;timing,
- <a href="../../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;wrapperOptions)</code></div>
+ <a href="../../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Reads the <a href="../EntityPersister.html#getGeneratedProperties(org.hibernate.generator.EventType)"><code>generated values</code></a>
  for the specified <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>

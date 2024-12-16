@@ -81,10 +81,18 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="annotations"><a href="../../service/JavaServiceLoadable.html" title="annotation interface in org.hibernate.service">@JavaServiceLoadable</a>
 <a href="../../Incubating.html" title="annotation interface in org.hibernate">@Incubating</a>
 </span><span class="modifiers">public interface </span><span class="element-name type-name-label">EventManager</span></div>
-<div class="block">Defines the contract for monitoring low-level events
- involving interactions between the <a href="../../Session.html" title="interface in org.hibernate">Session</a>
- and the database or second-level cache.</div>
+<div class="block">Defines a contract for reporting and monitoring low-level events
+ involving interactions between the <a href="../../Session.html" title="interface in org.hibernate">session</a> and the database or second-level cache.
+ <p>
+ For example, this interface is implemented by Hibernate JFR to report
+ events to Java Flight Recorder.
+ <p>
+ Note that event reporting is different to aggregate <em>metrics</em>,
+ which Hibernate exposes via the <a href="../../stat/Statistics.html" title="interface in org.hibernate.stat"><code>Statistics</code></a>
+ interface.</div>
 <dl class="notes">
+<dt>Since:</dt>
+<dd>6.4</dd>
 <dt>API Note:</dt>
 <dd>This an incubating API, subject to change.</dd>
 </dl>
@@ -124,7 +132,31 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginCachePutEvent()" class="member-name-link">beginCachePutEvent</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginDirtyCalculationEvent()" class="member-name-link">beginDirtyCalculationEvent</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginCollectionRecreateEvent()" class="member-name-link">beginCollectionRecreateEvent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginCollectionRemoveEvent()" class="member-name-link">beginCollectionRemoveEvent</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginCollectionUpdateEvent()" class="member-name-link">beginCollectionUpdateEvent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginDirtyCalculationEvent()" class="member-name-link">beginDirtyCalculationEvent</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginEntityDeleteEvent()" class="member-name-link">beginEntityDeleteEvent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginEntityInsertEvent()" class="member-name-link">beginEntityInsertEvent</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginEntityLockEvent()" class="member-name-link">beginEntityLockEvent</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginEntityUpdateEvent()" class="member-name-link">beginEntityUpdateEvent</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginEntityUpsertEvent()" class="member-name-link">beginEntityUpsertEvent</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#beginFlushEvent()" class="member-name-link">beginFlushEvent</a>()</code></div>
@@ -210,11 +242,68 @@ loadScripts(document, 'script');</script>
  <a href="EventManager.CacheActionDescription.html" title="enum class in org.hibernate.event.spi">EventManager.CacheActionDescription</a>&nbsp;description)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeDirtyCalculationEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.EntityEntry,int%5B%5D)" class="member-name-link">completeDirtyCalculationEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;dirtyCalculationEvent,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeCollectionRecreateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionRecreateEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeCollectionRemoveEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionRemoveEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeCollectionUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionUpdateEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeDirtyCalculationEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.EntityEntry,int%5B%5D)" class="member-name-link">completeDirtyCalculationEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;dirtyCalculationEvent,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../../engine/spi/EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  int[]&nbsp;dirtyProperties)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeEntityDeleteEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityDeleteEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeEntityInsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityInsertEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeEntityLockEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,org.hibernate.LockMode,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityLockEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ <a href="../../LockMode.html" title="enum class in org.hibernate">LockMode</a>&nbsp;lockMode,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeEntityUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityUpdateEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeEntityUpsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityUpsertEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#completeFlushEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.event.spi.FlushEvent)" class="member-name-link">completeFlushEvent</a><wbr>(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;flushEvent,
@@ -516,6 +605,135 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="completePrePartialFlush(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>completePrePartialFlush</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completePrePartialFlush</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;prePartialFlush,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginEntityInsertEvent()">
+<h3>beginEntityInsertEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginEntityInsertEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeEntityInsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeEntityInsertEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeEntityInsertEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginEntityUpdateEvent()">
+<h3>beginEntityUpdateEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginEntityUpdateEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeEntityUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeEntityUpdateEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeEntityUpdateEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginEntityUpsertEvent()">
+<h3>beginEntityUpsertEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginEntityUpsertEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeEntityUpsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeEntityUpsertEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeEntityUpsertEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginEntityDeleteEvent()">
+<h3>beginEntityDeleteEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginEntityDeleteEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeEntityDeleteEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeEntityDeleteEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeEntityDeleteEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginEntityLockEvent()">
+<h3>beginEntityLockEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginEntityLockEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeEntityLockEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,org.hibernate.LockMode,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeEntityLockEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeEntityLockEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ <a href="../../LockMode.html" title="enum class in org.hibernate">LockMode</a>&nbsp;lockMode,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginCollectionRecreateEvent()">
+<h3>beginCollectionRecreateEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginCollectionRecreateEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeCollectionRecreateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeCollectionRecreateEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeCollectionRecreateEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginCollectionUpdateEvent()">
+<h3>beginCollectionUpdateEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginCollectionUpdateEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeCollectionUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeCollectionUpdateEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeCollectionUpdateEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="beginCollectionRemoveEvent()">
+<h3>beginCollectionRemoveEvent</h3>
+<div class="member-signature"><span class="return-type"><a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a></span>&nbsp;<span class="element-name">beginCollectionRemoveEvent</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="completeCollectionRemoveEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)">
+<h3>completeCollectionRemoveEvent</h3>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">completeCollectionRemoveEvent</span><wbr><span class="parameters">(<a href="HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span></div>
 </section>
 </li>

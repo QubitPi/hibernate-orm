@@ -1776,22 +1776,6 @@ loadScripts(document, 'script');</script>
 </ul>
 <ul class="block-list">
 <li>
-<div class="caption"><span>org.hibernate.classic.<a href="org/hibernate/classic/Lifecycle.html" title="interface in org.hibernate.classic">Lifecycle</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Constant Field</div>
-<div class="table-header col-last">Value</div>
-<div class="col-first even-row-color"><code id="org.hibernate.classic.Lifecycle.NO_VETO">public&nbsp;static&nbsp;final&nbsp;boolean</code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/classic/Lifecycle.html#NO_VETO">NO_VETO</a></code></div>
-<div class="col-last even-row-color"><code>false</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.classic.Lifecycle.VETO">public&nbsp;static&nbsp;final&nbsp;boolean</code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/classic/Lifecycle.html#VETO">VETO</a></code></div>
-<div class="col-last odd-row-color"><code>true</code></div>
-</div>
-</li>
-</ul>
-<ul class="block-list">
-<li>
 <div class="caption"><span>org.hibernate.dialect.<a href="org/hibernate/dialect/DatabaseVersion.html" title="interface in org.hibernate.dialect">DatabaseVersion</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -6654,87 +6638,90 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.NULLABLE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#NULLABLE">NULLABLE</a></code></div>
 <div class="col-last even-row-color"><code>"jakarta.annotation.Nullable"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.ONE_TO_MANY">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#ONE_TO_MANY">ONE_TO_MANY</a></code></div>
-<div class="col-last odd-row-color"><code>"jakarta.persistence.OneToMany"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.ONE_TO_ONE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#ONE_TO_ONE">ONE_TO_ONE</a></code></div>
-<div class="col-last even-row-color"><code>"jakarta.persistence.OneToOne"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.OPTIONAL">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#OPTIONAL">OPTIONAL</a></code></div>
-<div class="col-last odd-row-color"><code>"java.util.Optional"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_ORM_ENTITY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_ORM_ENTITY_BASE">PANACHE_ORM_ENTITY_BASE</a></code></div>
-<div class="col-last even-row-color"><code>"io.quarkus.hibernate.orm.panache.PanacheEntityBase"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_ORM_REPOSITORY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_ORM_REPOSITORY_BASE">PANACHE_ORM_REPOSITORY_BASE</a></code></div>
-<div class="col-last odd-row-color"><code>"io.quarkus.hibernate.orm.panache.PanacheRepositoryBase"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_REACTIVE_ENTITY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_REACTIVE_ENTITY_BASE">PANACHE_REACTIVE_ENTITY_BASE</a></code></div>
-<div class="col-last even-row-color"><code>"io.quarkus.hibernate.reactive.panache.PanacheEntityBase"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_REACTIVE_REPOSITORY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_REACTIVE_REPOSITORY_BASE">PANACHE_REACTIVE_REPOSITORY_BASE</a></code></div>
-<div class="col-last odd-row-color"><code>"io.quarkus.hibernate.reactive.panache.PanacheRepositoryBase"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.PATTERN">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PATTERN">PATTERN</a></code></div>
-<div class="col-last even-row-color"><code>"org.hibernate.annotations.processing.Pattern"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.QUARKUS_SESSION_OPERATIONS">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#QUARKUS_SESSION_OPERATIONS">QUARKUS_SESSION_OPERATIONS</a></code></div>
-<div class="col-last odd-row-color"><code>"io.quarkus.hibernate.reactive.panache.common.runtime.SessionOperations"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.QUERY">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#QUERY">QUERY</a></code></div>
-<div class="col-last even-row-color"><code>"jakarta.persistence.Query"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.SET">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SET">SET</a></code></div>
-<div class="col-last odd-row-color"><code>"java.util.Set"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.SET_ATTRIBUTE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SET_ATTRIBUTE">SET_ATTRIBUTE</a></code></div>
-<div class="col-last even-row-color"><code>"jakarta.persistence.metamodel.SetAttribute"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.SINGULAR_ATTRIBUTE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SINGULAR_ATTRIBUTE">SINGULAR_ATTRIBUTE</a></code></div>
-<div class="col-last odd-row-color"><code>"jakarta.persistence.metamodel.SingularAttribute"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.SQL">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SQL">SQL</a></code></div>
-<div class="col-last even-row-color"><code>"org.hibernate.annotations.processing.SQL"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.SQL_RESULT_SET_MAPPING">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SQL_RESULT_SET_MAPPING">SQL_RESULT_SET_MAPPING</a></code></div>
-<div class="col-last odd-row-color"><code>"jakarta.persistence.SqlResultSetMapping"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.SQL_RESULT_SET_MAPPINGS">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SQL_RESULT_SET_MAPPINGS">SQL_RESULT_SET_MAPPINGS</a></code></div>
-<div class="col-last even-row-color"><code>"jakarta.persistence.SqlResultSetMappings"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.STREAM">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#STREAM">STREAM</a></code></div>
-<div class="col-last odd-row-color"><code>"java.util.stream.Stream"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.TRANSIENT">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TRANSIENT">TRANSIENT</a></code></div>
-<div class="col-last even-row-color"><code>"jakarta.persistence.Transient"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.TUPLE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TUPLE">TUPLE</a></code></div>
-<div class="col-last odd-row-color"><code>"jakarta.persistence.Tuple"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.TYPED_QUERY">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TYPED_QUERY">TYPED_QUERY</a></code></div>
-<div class="col-last even-row-color"><code>"jakarta.persistence.TypedQuery"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.TYPED_QUERY_REFERENCE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TYPED_QUERY_REFERENCE">TYPED_QUERY_REFERENCE</a></code></div>
-<div class="col-last odd-row-color"><code>"jakarta.persistence.TypedQueryReference"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.UNI">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI">UNI</a></code></div>
-<div class="col-last even-row-color"><code>"io.smallrye.mutiny.Uni"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.UNI_BOOLEAN">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_BOOLEAN">UNI_BOOLEAN</a></code></div>
-<div class="col-last odd-row-color"><code>"io.smallrye.mutiny.Uni&lt;java.lang.Boolean&gt;"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.UNI_INTEGER">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_INTEGER">UNI_INTEGER</a></code></div>
-<div class="col-last even-row-color"><code>"io.smallrye.mutiny.Uni&lt;java.lang.Integer&gt;"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.UNI_MUTINY_SESSION">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_MUTINY_SESSION">UNI_MUTINY_SESSION</a></code></div>
-<div class="col-last odd-row-color"><code>"io.smallrye.mutiny.Uni&lt;org.hibernate.reactive.mutiny.Mutiny.Session&gt;"</code></div>
-<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.UNI_MUTINY_STATELESS_SESSION">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_MUTINY_STATELESS_SESSION">UNI_MUTINY_STATELESS_SESSION</a></code></div>
-<div class="col-last even-row-color"><code>"io.smallrye.mutiny.Uni&lt;org.hibernate.reactive.mutiny.Mutiny.StatelessSession&gt;"</code></div>
-<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.UNI_VOID">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_VOID">UNI_VOID</a></code></div>
-<div class="col-last odd-row-color"><code>"io.smallrye.mutiny.Uni&lt;java.lang.Void&gt;"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.OBJECTS">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#OBJECTS">OBJECTS</a></code></div>
+<div class="col-last odd-row-color"><code>"java.util.Objects"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.ONE_TO_MANY">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#ONE_TO_MANY">ONE_TO_MANY</a></code></div>
+<div class="col-last even-row-color"><code>"jakarta.persistence.OneToMany"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.ONE_TO_ONE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#ONE_TO_ONE">ONE_TO_ONE</a></code></div>
+<div class="col-last odd-row-color"><code>"jakarta.persistence.OneToOne"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.OPTIONAL">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#OPTIONAL">OPTIONAL</a></code></div>
+<div class="col-last even-row-color"><code>"java.util.Optional"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_ORM_ENTITY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_ORM_ENTITY_BASE">PANACHE_ORM_ENTITY_BASE</a></code></div>
+<div class="col-last odd-row-color"><code>"io.quarkus.hibernate.orm.panache.PanacheEntityBase"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_ORM_REPOSITORY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_ORM_REPOSITORY_BASE">PANACHE_ORM_REPOSITORY_BASE</a></code></div>
+<div class="col-last even-row-color"><code>"io.quarkus.hibernate.orm.panache.PanacheRepositoryBase"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_REACTIVE_ENTITY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_REACTIVE_ENTITY_BASE">PANACHE_REACTIVE_ENTITY_BASE</a></code></div>
+<div class="col-last odd-row-color"><code>"io.quarkus.hibernate.reactive.panache.PanacheEntityBase"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.PANACHE_REACTIVE_REPOSITORY_BASE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PANACHE_REACTIVE_REPOSITORY_BASE">PANACHE_REACTIVE_REPOSITORY_BASE</a></code></div>
+<div class="col-last even-row-color"><code>"io.quarkus.hibernate.reactive.panache.PanacheRepositoryBase"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.PATTERN">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#PATTERN">PATTERN</a></code></div>
+<div class="col-last odd-row-color"><code>"org.hibernate.annotations.processing.Pattern"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.QUARKUS_SESSION_OPERATIONS">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#QUARKUS_SESSION_OPERATIONS">QUARKUS_SESSION_OPERATIONS</a></code></div>
+<div class="col-last even-row-color"><code>"io.quarkus.hibernate.reactive.panache.common.runtime.SessionOperations"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.QUERY">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#QUERY">QUERY</a></code></div>
+<div class="col-last odd-row-color"><code>"jakarta.persistence.Query"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.SET">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SET">SET</a></code></div>
+<div class="col-last even-row-color"><code>"java.util.Set"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.SET_ATTRIBUTE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SET_ATTRIBUTE">SET_ATTRIBUTE</a></code></div>
+<div class="col-last odd-row-color"><code>"jakarta.persistence.metamodel.SetAttribute"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.SINGULAR_ATTRIBUTE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SINGULAR_ATTRIBUTE">SINGULAR_ATTRIBUTE</a></code></div>
+<div class="col-last even-row-color"><code>"jakarta.persistence.metamodel.SingularAttribute"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.SQL">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SQL">SQL</a></code></div>
+<div class="col-last odd-row-color"><code>"org.hibernate.annotations.processing.SQL"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.SQL_RESULT_SET_MAPPING">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SQL_RESULT_SET_MAPPING">SQL_RESULT_SET_MAPPING</a></code></div>
+<div class="col-last even-row-color"><code>"jakarta.persistence.SqlResultSetMapping"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.SQL_RESULT_SET_MAPPINGS">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#SQL_RESULT_SET_MAPPINGS">SQL_RESULT_SET_MAPPINGS</a></code></div>
+<div class="col-last odd-row-color"><code>"jakarta.persistence.SqlResultSetMappings"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.STREAM">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#STREAM">STREAM</a></code></div>
+<div class="col-last even-row-color"><code>"java.util.stream.Stream"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.TRANSIENT">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TRANSIENT">TRANSIENT</a></code></div>
+<div class="col-last odd-row-color"><code>"jakarta.persistence.Transient"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.TUPLE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TUPLE">TUPLE</a></code></div>
+<div class="col-last even-row-color"><code>"jakarta.persistence.Tuple"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.TYPED_QUERY">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TYPED_QUERY">TYPED_QUERY</a></code></div>
+<div class="col-last odd-row-color"><code>"jakarta.persistence.TypedQuery"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.TYPED_QUERY_REFERENCE">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#TYPED_QUERY_REFERENCE">TYPED_QUERY_REFERENCE</a></code></div>
+<div class="col-last even-row-color"><code>"jakarta.persistence.TypedQueryReference"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.UNI">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI">UNI</a></code></div>
+<div class="col-last odd-row-color"><code>"io.smallrye.mutiny.Uni"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.UNI_BOOLEAN">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_BOOLEAN">UNI_BOOLEAN</a></code></div>
+<div class="col-last even-row-color"><code>"io.smallrye.mutiny.Uni&lt;java.lang.Boolean&gt;"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.UNI_INTEGER">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_INTEGER">UNI_INTEGER</a></code></div>
+<div class="col-last odd-row-color"><code>"io.smallrye.mutiny.Uni&lt;java.lang.Integer&gt;"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.UNI_MUTINY_SESSION">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_MUTINY_SESSION">UNI_MUTINY_SESSION</a></code></div>
+<div class="col-last even-row-color"><code>"io.smallrye.mutiny.Uni&lt;org.hibernate.reactive.mutiny.Mutiny.Session&gt;"</code></div>
+<div class="col-first odd-row-color"><code id="org.hibernate.processor.util.Constants.UNI_MUTINY_STATELESS_SESSION">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_MUTINY_STATELESS_SESSION">UNI_MUTINY_STATELESS_SESSION</a></code></div>
+<div class="col-last odd-row-color"><code>"io.smallrye.mutiny.Uni&lt;org.hibernate.reactive.mutiny.Mutiny.StatelessSession&gt;"</code></div>
+<div class="col-first even-row-color"><code id="org.hibernate.processor.util.Constants.UNI_VOID">public&nbsp;static&nbsp;final&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color"><code><a href="org/hibernate/processor/util/Constants.html#UNI_VOID">UNI_VOID</a></code></div>
+<div class="col-last even-row-color"><code>"io.smallrye.mutiny.Uni&lt;java.lang.Void&gt;"</code></div>
 </div>
 </li>
 <li>

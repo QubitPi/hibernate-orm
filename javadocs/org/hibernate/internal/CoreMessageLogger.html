@@ -299,7 +299,7 @@ extends org.jboss.logging.BasicLogger</span></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#logCannotUnsetUnexpectedSessionInCollection(java.lang.String)" class="member-name-link">logCannotUnsetUnexpectedSessionInCollection</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;msg)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#logStatistics(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)" class="member-name-link">logStatistics</a><wbr>(long&nbsp;startTime,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#logStatistics(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)" class="member-name-link">logStatistics</a><wbr>(long&nbsp;startTime,
  long&nbsp;sessionOpenCount,
  long&nbsp;sessionCloseCount,
  long&nbsp;transactionCount,
@@ -315,6 +315,7 @@ extends org.jboss.logging.BasicLogger</span></div>
  long&nbsp;entityLoadCount,
  long&nbsp;entityFetchCount,
  long&nbsp;entityUpdateCount,
+ long&nbsp;entityUpsertCount,
  long&nbsp;entityInsertCount,
  long&nbsp;entityDeleteCount,
  long&nbsp;collectionLoadCount,
@@ -2178,11 +2179,11 @@ extends org.jboss.logging.BasicLogger</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="logStatistics(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)">
+<section class="detail" id="logStatistics(long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long,long)">
 <h3>logStatistics</h3>
 <div class="member-signature"><span class="annotations">@LogMessage(level=INFO)
 @Message(id=400,
-         value="Logging statistics:\n\tStart time: %s\n\tSessions opened (closed): %s (%s)\n\tTransactions started (successful): %s (%s)\n\tOptimistic lock failures: %s\n\tFlushes: %s\n\tConnections obtained: %s\n\tStatements prepared (closed): %s (%s)\n\tSecond-level cache puts: %s\n\tSecond-level cache hits (misses): %s (%s)\n\tEntities loaded: %s\n\tEntities fetched: %s (minimize this)\n\tEntities updated, inserted, deleted: %s, %s, %s\n\tCollections loaded: %s\n\tCollections fetched: %s (minimize this)\n\tCollections updated, removed, recreated: %s, %s, %s\n\tNatural id queries executed on database: %s\n\tNatural id cache puts: %s\n\tNatural id cache hits (misses): %s (%s)\n\tMax natural id query execution time: %s ms\n\tQueries executed on database: %s\n\tQuery cache puts: %s\n\tQuery cache hits (misses): %s (%s)\n\tMax query execution time: %s ms\n\tUpdate timestamps cache puts: %s\n\tUpdate timestamps cache hits (misses): %s (%s)\n\tQuery plan cache hits (misses): %s (%s)\n")
+         value="Logging statistics:\n\tStart time: %s\n\tSessions opened (closed): %s (%s)\n\tTransactions started (successful): %s (%s)\n\tOptimistic lock failures: %s\n\tFlushes: %s\n\tConnections obtained: %s\n\tStatements prepared (closed): %s (%s)\n\tSecond-level cache puts: %s\n\tSecond-level cache hits (misses): %s (%s)\n\tEntities loaded: %s\n\tEntities fetched: %s (minimize this)\n\tEntities updated, upserted, inserted, deleted: %s, %s, %s, %s\n\tCollections loaded: %s\n\tCollections fetched: %s (minimize this)\n\tCollections updated, removed, recreated: %s, %s, %s\n\tNatural id queries executed on database: %s\n\tNatural id cache puts: %s\n\tNatural id cache hits (misses): %s (%s)\n\tMax natural id query execution time: %s ms\n\tQueries executed on database: %s\n\tQuery cache puts: %s\n\tQuery cache hits (misses): %s (%s)\n\tMax query execution time: %s ms\n\tUpdate timestamps cache puts: %s\n\tUpdate timestamps cache hits (misses): %s (%s)\n\tQuery plan cache hits (misses): %s (%s)\n")
 </span><span class="return-type">void</span>&nbsp;<span class="element-name">logStatistics</span><wbr><span class="parameters">(long&nbsp;startTime,
  long&nbsp;sessionOpenCount,
  long&nbsp;sessionCloseCount,
@@ -2199,6 +2200,7 @@ extends org.jboss.logging.BasicLogger</span></div>
  long&nbsp;entityLoadCount,
  long&nbsp;entityFetchCount,
  long&nbsp;entityUpdateCount,
+ long&nbsp;entityUpsertCount,
  long&nbsp;entityInsertCount,
  long&nbsp;entityDeleteCount,
  long&nbsp;collectionLoadCount,

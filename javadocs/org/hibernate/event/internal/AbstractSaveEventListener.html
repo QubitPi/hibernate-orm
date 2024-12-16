@@ -144,75 +144,70 @@ implements <a href="../../jpa/event/spi/CallbackRegistryConsumer.html" title="in
 <div class="block">Injection of the CallbackRegistry</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#invokeSaveLifecycle(java.lang.Object,org.hibernate.persister.entity.EntityPersister,org.hibernate.event.spi.EventSource)" class="member-name-link">invokeSaveLifecycle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
- <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionIncrementDisabled()" class="member-name-link">isVersionIncrementDisabled</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionIncrementDisabled()" class="member-name-link">isVersionIncrementDisabled</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">After the save, will te version number be incremented
  if the instance is modified?</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#performSave(java.lang.Object,java.lang.Object,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#performSave(java.lang.Object,java.lang.Object,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  boolean&nbsp;useIdentityColumn,
  <a href="AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source,
  boolean&nbsp;delayIdentityInserts)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prepares the save call by checking the session caches for a pre-existing
  entity and performing any lifecycle callbacks.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#performSaveOrReplicate(java.lang.Object,org.hibernate.engine.spi.EntityKey,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSaveOrReplicate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#performSaveOrReplicate(java.lang.Object,org.hibernate.engine.spi.EntityKey,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSaveOrReplicate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/EntityKey.html" title="class in org.hibernate.engine.spi">EntityKey</a>&nbsp;key,
  <a href="../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  boolean&nbsp;useIdentityColumn,
  <a href="AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source,
  boolean&nbsp;delayIdentityInserts)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Performs all the actual work needed to save an entity (well to get the save moved to
  the execution queue).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveWithGeneratedId(java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">saveWithGeneratedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveWithGeneratedId(java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">saveWithGeneratedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source,
  boolean&nbsp;requiresImmediateIdAccess)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prepares the save call using a newly generated id.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveWithRequestedId(java.lang.Object,java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource)" class="member-name-link">saveWithRequestedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveWithRequestedId(java.lang.Object,java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource)" class="member-name-link">saveWithRequestedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;requestedId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prepares the save call using the given requested id.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#substituteValuesIfNecessary(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.SessionImplementor)" class="member-name-link">substituteValuesIfNecessary</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#substituteValuesIfNecessary(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.SessionImplementor)" class="member-name-link">substituteValuesIfNecessary</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../../engine/spi/SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Perform any property value substitution that is necessary
  (interceptor callback, version initialization...)</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitCollectionsBeforeSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.type.Type%5B%5D,org.hibernate.event.spi.EventSource)" class="member-name-link">visitCollectionsBeforeSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitCollectionsBeforeSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.type.Type%5B%5D,org.hibernate.event.spi.EventSource)" class="member-name-link">visitCollectionsBeforeSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="../../type/Type.html" title="interface in org.hibernate.type">Type</a>[]&nbsp;types,
  <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -329,14 +324,6 @@ implements <a href="../../jpa/event/spi/CallbackRegistryConsumer.html" title="in
 <dd>The id used to save the entity; may be null depending on the
          type of id generator used and on delayIdentityInserts</dd>
 </dl>
-</section>
-</li>
-<li>
-<section class="detail" id="invokeSaveLifecycle(java.lang.Object,org.hibernate.persister.entity.EntityPersister,org.hibernate.event.spi.EventSource)">
-<h3>invokeSaveLifecycle</h3>
-<div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">invokeSaveLifecycle</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
- <a href="../spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</span></div>
 </section>
 </li>
 <li>

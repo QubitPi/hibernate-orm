@@ -84,7 +84,6 @@ org.hibernate.cache.spi.access
 org.hibernate.cache.spi.entry
 org.hibernate.cache.spi.support
 org.hibernate.cfg
-org.hibernate.classic
 org.hibernate.collection.internal
 org.hibernate.collection.spi
 org.hibernate.context

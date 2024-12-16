@@ -151,11 +151,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="DefaultPostLoadEventListener.html" title="class in org.hibernate.event.internal">DefaultPostLoadEventListener</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">We do two things here:
- 
- Call <a href="../../classic/Lifecycle.html" title="interface in org.hibernate.classic"><code>Lifecycle</code></a> interface if necessary
- Perform needed <a href="../../engine/spi/EntityEntry.html#getLockMode()"><code>EntityEntry.getLockMode()</code></a> related processing
- </div>
+<div class="block">Performs needed <a href="../../engine/spi/EntityEntry.html#getLockMode()"><code>EntityEntry.getLockMode()</code></a>-related processing.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="DefaultPreLoadEventListener.html" title="class in org.hibernate.event.internal">DefaultPreLoadEventListener</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
@@ -183,7 +179,9 @@ loadScripts(document, 'script');</script>
  If it's a new application-instantiated collection, return true.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="EmptyEventManager.html" title="class in org.hibernate.event.internal">EmptyEventManager</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">&nbsp;</div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">An <a href="../spi/EventManager.html" title="interface in org.hibernate.event.spi"><code>EventManager</code></a> that ignores all events.</div>
+</div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="EntityCopyAllowedLoggedObserver.html" title="class in org.hibernate.event.internal">EntityCopyAllowedLoggedObserver</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">An <a href="../spi/EntityCopyObserver.html" title="interface in org.hibernate.event.spi"><code>EntityCopyObserver</code></a> implementation that allows multiple representations of

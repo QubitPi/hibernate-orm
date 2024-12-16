@@ -121,10 +121,10 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getActualGeneratedModelPart(org.hibernate.metamodel.mapping.BasicValuedModelPart)" class="member-name-link">getActualGeneratedModelPart</a><wbr>(<a href="../../../metamodel/mapping/BasicValuedModelPart.html" title="interface in org.hibernate.metamodel.mapping">BasicValuedModelPart</a>&nbsp;modelPart)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../GeneratedValues.html" title="interface in org.hibernate.generator.values">GeneratedValues</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">getGeneratedValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;resultSet,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">getGeneratedValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;resultSet,
  <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../../EventType.html" title="enum class in org.hibernate.generator">EventType</a>&nbsp;timing,
- <a href="../../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;wrapperOptions)</code></div>
+ <a href="../../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Reads the <a href="../../../persister/entity/EntityPersister.html#getGeneratedProperties(org.hibernate.generator.EventType)"><code>generated values</code></a>
  for the specified <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
@@ -173,12 +173,12 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.type.descriptor.WrapperOptions)">
+<section class="detail" id="getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.engine.spi.SharedSessionContractImplementor)">
 <h3>getGeneratedValues</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../GeneratedValues.html" title="interface in org.hibernate.generator.values">GeneratedValues</a></span>&nbsp;<span class="element-name">getGeneratedValues</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;resultSet,
  <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../../EventType.html" title="enum class in org.hibernate.generator">EventType</a>&nbsp;timing,
- <a href="../../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a>&nbsp;wrapperOptions)</span>
+ <a href="../../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</span>
                                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/SQLException.html" title="class or interface in java.sql" class="external-link">SQLException</a></span></div>
 <div class="block">Reads the <a href="../../../persister/entity/EntityPersister.html#getGeneratedProperties(org.hibernate.generator.EventType)"><code>generated values</code></a>
  for the specified <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
@@ -186,7 +186,7 @@ loadScripts(document, 'script');</script>
 <dt>Parameters:</dt>
 <dd><code>resultSet</code> - The result set from which to extract the generated values</dd>
 <dd><code>persister</code> - The entity type which we're reading the generated values for</dd>
-<dd><code>wrapperOptions</code> - The session</dd>
+<dd><code>session</code> - The session</dd>
 <dt>Returns:</dt>
 <dd>The generated values</dd>
 <dt>Throws:</dt>

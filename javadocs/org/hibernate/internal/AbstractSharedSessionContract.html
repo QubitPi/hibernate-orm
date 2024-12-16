@@ -550,86 +550,96 @@ implements <a href="../engine/spi/SharedSessionContractImplementor.html" title="
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../engine/transaction/spi/TransactionImplementor.html" title="interface in org.hibernate.engine.transaction.spi">TransactionImplementor</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCurrentTransaction()" class="member-name-link">getCurrentTransaction</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Filter.html" title="interface in org.hibernate">Filter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEnabledFilter(java.lang.String)" class="member-name-link">getEnabledFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDialect()" class="member-name-link">getDialect</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtain the <a href="../dialect/Dialect.html" title="class in org.hibernate.dialect"><code>Dialect</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Filter.html" title="interface in org.hibernate">Filter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEnabledFilter(java.lang.String)" class="member-name-link">getEnabledFilter</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;filterName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve a currently enabled <a href="../Filter.html" title="interface in org.hibernate">filter</a> by name.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../graph/spi/RootGraphImplementor.html" title="interface in org.hibernate.graph.spi">RootGraphImplementor</a>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityGraph(java.lang.String)" class="member-name-link">getEntityGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;graphName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../graph/spi/RootGraphImplementor.html" title="interface in org.hibernate.graph.spi">RootGraphImplementor</a>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityGraph(java.lang.String)" class="member-name-link">getEntityGraph</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;graphName)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve the named <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityGraph.html" title="class or interface in jakarta.persistence" class="external-link"><code>EntityGraph</code></a> as an immutable graph,
  or return <code>null</code> if there is no graph with the given
  name.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityGraph.html" title="class or interface in jakarta.persistence" class="external-link">EntityGraph</a>&lt;? super T&gt;&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityGraphs(java.lang.Class)" class="member-name-link">getEntityGraphs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityGraph.html" title="class or interface in jakarta.persistence" class="external-link">EntityGraph</a>&lt;? super T&gt;&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityGraphs(java.lang.Class)" class="member-name-link">getEntityGraphs</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;entityClass)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve all named <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityGraph.html" title="class or interface in jakarta.persistence" class="external-link"><code>EntityGraph</code></a>s with the given type.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../EntityNameResolver.html" title="interface in org.hibernate">EntityNameResolver</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityNameResolver()" class="member-name-link">getEntityNameResolver</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/SessionEventListenerManager.html" title="interface in org.hibernate.engine.spi">SessionEventListenerManager</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventListenerManager()" class="member-name-link">getEventListenerManager</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../EntityNameResolver.html" title="interface in org.hibernate">EntityNameResolver</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEntityNameResolver()" class="member-name-link">getEntityNameResolver</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/SessionEventListenerManager.html" title="interface in org.hibernate.engine.spi">SessionEventListenerManager</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventListenerManager()" class="member-name-link">getEventListenerManager</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the <a href="../engine/spi/SessionEventListenerManager.html" title="interface in org.hibernate.engine.spi"><code>SessionEventListenerManager</code></a> associated with this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/spi/EventManager.html" title="interface in org.hibernate.event.spi">EventManager</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventManager()" class="member-name-link">getEventManager</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/ExceptionConverter.html" title="interface in org.hibernate.engine.spi">ExceptionConverter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExceptionConverter()" class="member-name-link">getExceptionConverter</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/spi/EventManager.html" title="interface in org.hibernate.event.spi">EventManager</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventManager()" class="member-name-link">getEventManager</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/ExceptionConverter.html" title="interface in org.hibernate.engine.spi">ExceptionConverter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExceptionConverter()" class="member-name-link">getExceptionConverter</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain an <a href="../engine/spi/ExceptionConverter.html" title="interface in org.hibernate.engine.spi"><code>ExceptionConverter</code></a> for reporting an error.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFactory()" class="member-name-link">getFactory</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFactory()" class="member-name-link">getFactory</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the <a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">factory</a> which created this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/FlushModeType.html" title="class or interface in jakarta.persistence" class="external-link">FlushModeType</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlushMode()" class="member-name-link">getFlushMode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/FlushModeType.html" title="class or interface in jakarta.persistence" class="external-link">FlushModeType</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getFlushMode()" class="member-name-link">getFlushMode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the current <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/FlushModeType.html" title="class or interface in jakarta.persistence" class="external-link"><code>FlushModeType</code></a> for this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../FlushMode.html" title="enum class in org.hibernate">FlushMode</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHibernateFlushMode()" class="member-name-link">getHibernateFlushMode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../FlushMode.html" title="enum class in org.hibernate">FlushMode</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getHibernateFlushMode()" class="member-name-link">getHibernateFlushMode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the current <a href="../FlushMode.html" title="enum class in org.hibernate"><code>FlushMode</code></a> for this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Interceptor.html" title="interface in org.hibernate">Interceptor</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInterceptor()" class="member-name-link">getInterceptor</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Interceptor.html" title="interface in org.hibernate">Interceptor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInterceptor()" class="member-name-link">getInterceptor</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieves the <a href="../Interceptor.html" title="interface in org.hibernate"><code>Interceptor</code></a> associated with this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcBatchSize()" class="member-name-link">getJdbcBatchSize</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcBatchSize()" class="member-name-link">getJdbcBatchSize</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the session-level JDBC batch size for the current session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/connections/spi/JdbcConnectionAccess.html" title="interface in org.hibernate.engine.jdbc.connections.spi">JdbcConnectionAccess</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcConnectionAccess()" class="member-name-link">getJdbcConnectionAccess</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/spi/JdbcCoordinator.html" title="interface in org.hibernate.engine.jdbc.spi">JdbcCoordinator</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcCoordinator()" class="member-name-link">getJdbcCoordinator</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/connections/spi/JdbcConnectionAccess.html" title="interface in org.hibernate.engine.jdbc.connections.spi">JdbcConnectionAccess</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcConnectionAccess()" class="member-name-link">getJdbcConnectionAccess</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/spi/JdbcCoordinator.html" title="interface in org.hibernate.engine.jdbc.spi">JdbcCoordinator</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcCoordinator()" class="member-name-link">getJdbcCoordinator</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the <a href="../engine/jdbc/spi/JdbcCoordinator.html" title="interface in org.hibernate.engine.jdbc.spi"><code>JdbcCoordinator</code></a> for this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/spi/JdbcServices.html" title="interface in org.hibernate.engine.jdbc.spi">JdbcServices</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcServices()" class="member-name-link">getJdbcServices</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/spi/JdbcServices.html" title="interface in org.hibernate.engine.jdbc.spi">JdbcServices</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcServices()" class="member-name-link">getJdbcServices</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the <a href="../engine/jdbc/spi/JdbcServices.html" title="interface in org.hibernate.engine.jdbc.spi"><code>JdbcServices</code></a> for the factory which created this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../resource/jdbc/spi/JdbcSessionContext.html" title="interface in org.hibernate.resource.jdbc.spi">JdbcSessionContext</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcSessionContext()" class="member-name-link">getJdbcSessionContext</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcTimeZone()" class="member-name-link">getJdbcTimeZone</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../resource/jdbc/spi/JdbcSessionContext.html" title="interface in org.hibernate.resource.jdbc.spi">JdbcSessionContext</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcSessionContext()" class="member-name-link">getJdbcSessionContext</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcTimeZone()" class="member-name-link">getJdbcTimeZone</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link"><code>TimeZone</code></a> used when writing a value of type <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Time.html" title="class or interface in java.sql" class="external-link"><code>Time</code></a>
  or <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Timestamp.html" title="class or interface in java.sql" class="external-link"><code>Timestamp</code></a> to a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>, or
  when reading from a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtain the JSON <a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
@@ -668,146 +678,161 @@ implements <a href="../engine/spi/SharedSessionContractImplementor.html" title="
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../query/named/NamedResultSetMappingMemento.html" title="interface in org.hibernate.query.named">NamedResultSetMappingMemento</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getResultSetMappingMemento(java.lang.String)" class="member-name-link">getResultSetMappingMemento</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resultSetMappingName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSessionIdentifier()" class="member-name-link">getSessionIdentifier</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSessionFactory()" class="member-name-link">getSessionFactory</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtain the <a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">factory</a> which created this session.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link">UUID</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSessionIdentifier()" class="member-name-link">getSessionIdentifier</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/UUID.html" title="class or interface in java.util" class="external-link"><code>UUID</code></a> which uniquely identifies this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSessionToken()" class="member-name-link">getSessionToken</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSessionToken()" class="member-name-link">getSessionToken</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain a "token" which uniquely identifies this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTenantIdentifier()" class="member-name-link">getTenantIdentifier</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTenantIdentifier()" class="member-name-link">getTenantIdentifier</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the tenant identifier associated with this session, as a string.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTenantIdentifierValue()" class="member-name-link">getTenantIdentifierValue</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTenantIdentifierValue()" class="member-name-link">getTenantIdentifierValue</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the tenant identifier associated with this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Transaction.html" title="interface in org.hibernate">Transaction</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransaction()" class="member-name-link">getTransaction</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Transaction.html" title="interface in org.hibernate">Transaction</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransaction()" class="member-name-link">getTransaction</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get the <a href="../Transaction.html" title="interface in org.hibernate"><code>Transaction</code></a> instance associated with this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../resource/transaction/spi/TransactionCoordinator.html" title="interface in org.hibernate.resource.transaction.spi">TransactionCoordinator</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransactionCoordinator()" class="member-name-link">getTransactionCoordinator</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../resource/transaction/spi/TransactionCoordinator.html" title="interface in org.hibernate.resource.transaction.spi">TransactionCoordinator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTransactionCoordinator()" class="member-name-link">getTransactionCoordinator</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Obtain the <a href="../resource/transaction/spi/TransactionCoordinator.html" title="interface in org.hibernate.resource.transaction.spi"><code>TransactionCoordinator</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;R&gt;&nbsp;<a href="../query/spi/HqlInterpretation.html" title="interface in org.hibernate.query.spi">HqlInterpretation</a>&lt;R&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#interpretHql(java.lang.String,java.lang.Class)" class="member-name-link">interpretHql</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hql,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isClosed()" class="member-name-link">isClosed</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTypeConfiguration()" class="member-name-link">getTypeConfiguration</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Determines whether the session is closed.</div>
+<div class="block">Obtain the <a href="../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi"><code>TypeConfiguration</code></a> for the factory which created this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConnected()" class="member-name-link">isConnected</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if the session is currently connected.</div>
+<div class="block">Obtain the XML <a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCriteriaCopyTreeEnabled()" class="member-name-link">isCriteriaCopyTreeEnabled</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected &lt;R&gt;&nbsp;<a href="../query/spi/HqlInterpretation.html" title="interface in org.hibernate.query.spi">HqlInterpretation</a>&lt;R&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#interpretHql(java.lang.String,java.lang.Class)" class="member-name-link">interpretHql</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;hql,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;R&gt;&nbsp;resultType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJoinedToTransaction()" class="member-name-link">isJoinedToTransaction</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isClosed()" class="member-name-link">isClosed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if the session is joined to the current transaction.</div>
+<div class="block">Determines whether the session is closed.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOpen()" class="member-name-link">isOpen</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConnected()" class="member-name-link">isConnected</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if the session is still open.</div>
+<div class="block">Check if the session is currently connected.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOpenOrWaitingForAutoClose()" class="member-name-link">isOpenOrWaitingForAutoClose</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCriteriaCopyTreeEnabled()" class="member-name-link">isCriteriaCopyTreeEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isJoinedToTransaction()" class="member-name-link">isJoinedToTransaction</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if the session is joined to the current transaction.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOpen()" class="member-name-link">isOpen</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Determines whether the session is open or is waiting for auto-close.</div>
+<div class="block">Check if the session is still open.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTransactionInProgress()" class="member-name-link">isTransactionInProgress</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isOpenOrWaitingForAutoClose()" class="member-name-link">isOpenOrWaitingForAutoClose</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Determines whether the session is open or is waiting for auto-close.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTransactionInProgress()" class="member-name-link">isTransactionInProgress</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Does this session have an active Hibernate transaction, or is it
  associated with a JTA transaction currently in progress?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinTransaction()" class="member-name-link">joinTransaction</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#joinTransaction()" class="member-name-link">joinTransaction</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Join the currently-active JTA transaction.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#markForRollbackOnly()" class="member-name-link">markForRollbackOnly</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#markForRollbackOnly()" class="member-name-link">markForRollbackOnly</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Marks current transaction, if any, for rollback only.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareForAutoClose()" class="member-name-link">prepareForAutoClose</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareForQueryExecution(boolean)" class="member-name-link">prepareForQueryExecution</a><wbr>(boolean&nbsp;requiresTxn)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareForAutoClose()" class="member-name-link">prepareForAutoClose</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareForQueryExecution(boolean)" class="member-name-link">prepareForQueryExecution</a><wbr>(boolean&nbsp;requiresTxn)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prepare for the execution of a <a href="../query/Query.html" title="interface in org.hibernate.query"><code>Query</code></a> or
  <a href="../procedure/ProcedureCall.html" title="interface in org.hibernate.procedure"><code>ProcedureCall</code></a></div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pulseTransactionCoordinator()" class="member-name-link">pulseTransactionCoordinator</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeSharedSessionTransactionObserver(org.hibernate.resource.transaction.spi.TransactionCoordinator)" class="member-name-link">removeSharedSessionTransactionObserver</a><wbr>(<a href="../resource/transaction/spi/TransactionCoordinator.html" title="interface in org.hibernate.resource.transaction.spi">TransactionCoordinator</a>&nbsp;transactionCoordinator)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#pulseTransactionCoordinator()" class="member-name-link">pulseTransactionCoordinator</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="../CacheMode.html" title="enum class in org.hibernate">CacheMode</a>&nbsp;cacheMode)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeSharedSessionTransactionObserver(org.hibernate.resource.transaction.spi.TransactionCoordinator)" class="member-name-link">removeSharedSessionTransactionObserver</a><wbr>(<a href="../resource/transaction/spi/TransactionCoordinator.html" title="interface in org.hibernate.resource.transaction.spi">TransactionCoordinator</a>&nbsp;transactionCoordinator)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCacheMode(org.hibernate.CacheMode)" class="member-name-link">setCacheMode</a><wbr>(<a href="../CacheMode.html" title="enum class in org.hibernate">CacheMode</a>&nbsp;cacheMode)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the current <a href="../CacheMode.html" title="enum class in org.hibernate"><code>CacheMode</code></a> for this session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setClosed()" class="member-name-link">setClosed</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCriteriaCopyTreeEnabled(boolean)" class="member-name-link">setCriteriaCopyTreeEnabled</a><wbr>(boolean&nbsp;jpaCriteriaCopyComplianceEnabled)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setClosed()" class="member-name-link">setClosed</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHibernateFlushMode(org.hibernate.FlushMode)" class="member-name-link">setHibernateFlushMode</a><wbr>(<a href="../FlushMode.html" title="enum class in org.hibernate">FlushMode</a>&nbsp;flushMode)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCriteriaCopyTreeEnabled(boolean)" class="member-name-link">setCriteriaCopyTreeEnabled</a><wbr>(boolean&nbsp;jpaCriteriaCopyComplianceEnabled)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setHibernateFlushMode(org.hibernate.FlushMode)" class="member-name-link">setHibernateFlushMode</a><wbr>(<a href="../FlushMode.html" title="enum class in org.hibernate">FlushMode</a>&nbsp;flushMode)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the current <a href="../FlushMode.html" title="enum class in org.hibernate"><code>FlushMode</code></a> for this session.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setJdbcBatchSize(java.lang.Integer)" class="member-name-link">setJdbcBatchSize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;jdbcBatchSize)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setJdbcBatchSize(java.lang.Integer)" class="member-name-link">setJdbcBatchSize</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;jdbcBatchSize)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the session-level JDBC batch size.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNativeJdbcParametersIgnored(boolean)" class="member-name-link">setNativeJdbcParametersIgnored</a><wbr>(boolean&nbsp;nativeJdbcParametersIgnored)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUpMultitenancy(org.hibernate.engine.spi.SessionFactoryImplementor,org.hibernate.engine.spi.LoadQueryInfluencers)" class="member-name-link">setUpMultitenancy</a><wbr>(<a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a>&nbsp;factory,
- <a href="../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNativeJdbcParametersIgnored(boolean)" class="member-name-link">setNativeJdbcParametersIgnored</a><wbr>(boolean&nbsp;nativeJdbcParametersIgnored)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldAutoJoinTransaction()" class="member-name-link">shouldAutoJoinTransaction</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected final void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUpMultitenancy(org.hibernate.engine.spi.SessionFactoryImplementor,org.hibernate.engine.spi.LoadQueryInfluencers)" class="member-name-link">setUpMultitenancy</a><wbr>(<a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a>&nbsp;factory,
+ <a href="../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldAutoJoinTransaction()" class="member-name-link">shouldAutoJoinTransaction</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Indicates whether an active transaction should be automatically joined.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldCloseJdbcCoordinatorOnClose(boolean)" class="member-name-link">shouldCloseJdbcCoordinatorOnClose</a><wbr>(boolean&nbsp;isTransactionCoordinatorShared)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTransactionBoundary()" class="member-name-link">startTransactionBoundary</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldCloseJdbcCoordinatorOnClose(boolean)" class="member-name-link">shouldCloseJdbcCoordinatorOnClose</a><wbr>(boolean&nbsp;isTransactionCoordinatorShared)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#startTransactionBoundary()" class="member-name-link">startTransactionBoundary</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Callback indicating recognition of entering into a transactional
  context whether that is explicitly via the Hibernate
  <a href="../Transaction.html" title="interface in org.hibernate"><code>Transaction</code></a> API or via registration
  of Hibernate's JTA Synchronization impl with a JTA Transaction</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useStreamForLobBinding()" class="member-name-link">useStreamForLobBinding</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useStreamForLobBinding()" class="member-name-link">useStreamForLobBinding</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determines whether streams should be used for binding LOB values.</div>
 </div>
 </div>
@@ -824,10 +849,7 @@ implements <a href="../engine/spi/SharedSessionContractImplementor.html" title="
 <code><a href="../engine/jdbc/LobCreationContext.html#fromContext(org.hibernate.engine.jdbc.LobCreationContext.Callback)">fromContext</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.engine.spi.SharedSessionContractImplementor">Methods inherited from interface&nbsp;org.hibernate.engine.spi.<a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></h3>
-<code><a href="../engine/spi/SharedSessionContractImplementor.html#afterOperation(boolean)">afterOperation</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#afterScrollOperation()">afterScrollOperation</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#asEventSource()">asEventSource</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#asSessionImplementor()">asSessionImplementor</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#asStatelessSession()">asStatelessSession</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#autoFlushIfRequired(java.util.Set)">autoFlushIfRequired</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#autoFlushIfRequired(java.util.Set,boolean)">autoFlushIfRequired</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#autoPreFlush()">autoPreFlush</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#bestGuessEntityName(java.lang.Object)">bestGuessEntityName</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#bestGuessEntityName(java.lang.Object,org.hibernate.engine.spi.EntityEntry)">bestGuessEntityName</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#checkOpen()">checkOpen</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#flush()">flush</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getContextEntityIdentifier(java.lang.Object)">getContextEntityIdentifier</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getEntityPersister(java.lang.String,java.lang.Object)">getEntityPersister</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getEntityUsingInterceptor(org.hibernate.engine.spi.EntityKey)">getEntityUsingInterceptor</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getLoadQueryInfluencers()">getLoadQueryInfluencers</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getPersistenceContext()">getPersistenceContext</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getPersistenceContextInternal()">getPersistenceContextInternal</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getSession()">getSession</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getSessionFactory()">getSessionFactory</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getTypeConfiguration()">getTypeConfiguration</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#guessEntityName(java.lang.Object)">guessEntityName</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#immediateLoad(java.lang.String,java.lang.Object)">immediateLoad</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#initializeCollection(org.hibernate.collection.spi.PersistentCollection,boolean)">initializeCollection</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#instantiate(java.lang.String,java.lang.Object)">instantiate</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#instantiate(org.hibernate.persister.entity.EntityPersister,java.lang.Object)">instantiate</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#internalLoad(java.lang.String,java.lang.Object,boolean,boolean)">internalLoad</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isAutoCloseSessionEnabled()">isAutoCloseSessionEnabled</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isDefaultReadOnly()">isDefaultReadOnly</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isEventSource()">isEventSource</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isSessionImplementor()">isSessionImplementor</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isStatelessSession()">isStatelessSession</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#setAutoClear(boolean)">setAutoClear</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#shouldAutoClose()">shouldAutoClose</a></code></div>
-<div class="inherited-list">
-<h3 id="methods-inherited-from-class-org.hibernate.type.descriptor.WrapperOptions">Methods inherited from interface&nbsp;org.hibernate.type.descriptor.<a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></h3>
-<code><a href="../type/descriptor/WrapperOptions.html#getDialect()">getDialect</a></code></div>
+<code><a href="../engine/spi/SharedSessionContractImplementor.html#afterOperation(boolean)">afterOperation</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#afterScrollOperation()">afterScrollOperation</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#asEventSource()">asEventSource</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#asSessionImplementor()">asSessionImplementor</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#asStatelessSession()">asStatelessSession</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#autoFlushIfRequired(java.util.Set)">autoFlushIfRequired</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#autoFlushIfRequired(java.util.Set,boolean)">autoFlushIfRequired</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#autoPreFlush()">autoPreFlush</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#bestGuessEntityName(java.lang.Object)">bestGuessEntityName</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#bestGuessEntityName(java.lang.Object,org.hibernate.engine.spi.EntityEntry)">bestGuessEntityName</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#checkOpen()">checkOpen</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#flush()">flush</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getContextEntityIdentifier(java.lang.Object)">getContextEntityIdentifier</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getEntityPersister(java.lang.String,java.lang.Object)">getEntityPersister</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getEntityUsingInterceptor(org.hibernate.engine.spi.EntityKey)">getEntityUsingInterceptor</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getLoadQueryInfluencers()">getLoadQueryInfluencers</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getPersistenceContext()">getPersistenceContext</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getPersistenceContextInternal()">getPersistenceContextInternal</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#getSession()">getSession</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#guessEntityName(java.lang.Object)">guessEntityName</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#immediateLoad(java.lang.String,java.lang.Object)">immediateLoad</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#initializeCollection(org.hibernate.collection.spi.PersistentCollection,boolean)">initializeCollection</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#instantiate(java.lang.String,java.lang.Object)">instantiate</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#instantiate(org.hibernate.persister.entity.EntityPersister,java.lang.Object)">instantiate</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#internalLoad(java.lang.String,java.lang.Object,boolean,boolean)">internalLoad</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isAutoCloseSessionEnabled()">isAutoCloseSessionEnabled</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isDefaultReadOnly()">isDefaultReadOnly</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isEventSource()">isEventSource</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isSessionImplementor()">isSessionImplementor</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#isStatelessSession()">isStatelessSession</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#setAutoClear(boolean)">setAutoClear</a>, <a href="../engine/spi/SharedSessionContractImplementor.html#shouldAutoClose()">shouldAutoClose</a></code></div>
 </section>
 </li>
 </ul>
@@ -1476,6 +1498,20 @@ implements <a href="../engine/spi/SharedSessionContractImplementor.html" title="
 </section>
 </li>
 <li>
+<section class="detail" id="getSessionFactory()">
+<h3>getSessionFactory</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></span>&nbsp;<span class="element-name">getSessionFactory</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../engine/spi/SharedSessionContractImplementor.html#getSessionFactory()">SharedSessionContractImplementor</a></code></span></div>
+<div class="block">Obtain the <a href="../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">factory</a> which created this session.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../engine/spi/SharedSessionContractImplementor.html#getSessionFactory()">getSessionFactory</a></code>&nbsp;in interface&nbsp;<code><a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="../type/descriptor/WrapperOptions.html#getSessionFactory()">getSessionFactory</a></code>&nbsp;in interface&nbsp;<code><a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="useStreamForLobBinding()">
 <h3>useStreamForLobBinding</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">useStreamForLobBinding</span>()</div>
@@ -1532,6 +1568,36 @@ implements <a href="../engine/spi/SharedSessionContractImplementor.html" title="
 <li><a href="../dialect/Dialect.html#getDefaultNonContextualLobCreation()"><code>Dialect.getDefaultNonContextualLobCreation()</code></a></li>
 </ul>
 </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getDialect()">
+<h3>getDialect</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a></span>&nbsp;<span class="element-name">getDialect</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../engine/spi/SharedSessionContractImplementor.html#getDialect()">SharedSessionContractImplementor</a></code></span></div>
+<div class="block">Obtain the <a href="../dialect/Dialect.html" title="class in org.hibernate.dialect"><code>Dialect</code></a>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../engine/spi/SharedSessionContractImplementor.html#getDialect()">getDialect</a></code>&nbsp;in interface&nbsp;<code><a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="../type/descriptor/WrapperOptions.html#getDialect()">getDialect</a></code>&nbsp;in interface&nbsp;<code><a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTypeConfiguration()">
+<h3>getTypeConfiguration</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a></span>&nbsp;<span class="element-name">getTypeConfiguration</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../engine/spi/SharedSessionContractImplementor.html#getTypeConfiguration()">SharedSessionContractImplementor</a></code></span></div>
+<div class="block">Obtain the <a href="../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi"><code>TypeConfiguration</code></a> for the factory which created this session.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../type/descriptor/java/JavaType.CoercionContext.html#getTypeConfiguration()">getTypeConfiguration</a></code>&nbsp;in interface&nbsp;<code><a href="../type/descriptor/java/JavaType.CoercionContext.html" title="interface in org.hibernate.type.descriptor.java">JavaType.CoercionContext</a></code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="../engine/spi/SharedSessionContractImplementor.html#getTypeConfiguration()">getTypeConfiguration</a></code>&nbsp;in interface&nbsp;<code><a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="../type/descriptor/WrapperOptions.html#getTypeConfiguration()">getTypeConfiguration</a></code>&nbsp;in interface&nbsp;<code><a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></code></dd>
 </dl>
 </section>
 </li>
@@ -2950,6 +3016,30 @@ implements <a href="../engine/spi/SharedSessionContractImplementor.html" title="
 <dd><code><a href="../SharedSessionContract.html#disableFilter(java.lang.String)">disableFilter</a></code>&nbsp;in interface&nbsp;<code><a href="../SharedSessionContract.html" title="interface in org.hibernate">SharedSessionContract</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>filterName</code> - the name of the filter to be disabled.</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getXmlFormatMapper()">
+<h3>getXmlFormatMapper</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span>&nbsp;<span class="element-name">getXmlFormatMapper</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../type/descriptor/WrapperOptions.html#getXmlFormatMapper()">WrapperOptions</a></code></span></div>
+<div class="block">Obtain the XML <a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../type/descriptor/WrapperOptions.html#getXmlFormatMapper()">getXmlFormatMapper</a></code>&nbsp;in interface&nbsp;<code><a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getJsonFormatMapper()">
+<h3>getJsonFormatMapper</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span>&nbsp;<span class="element-name">getJsonFormatMapper</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../type/descriptor/WrapperOptions.html#getJsonFormatMapper()">WrapperOptions</a></code></span></div>
+<div class="block">Obtain the JSON <a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../type/descriptor/WrapperOptions.html#getJsonFormatMapper()">getJsonFormatMapper</a></code>&nbsp;in interface&nbsp;<code><a href="../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor">WrapperOptions</a></code></dd>
 </dl>
 </section>
 </li>

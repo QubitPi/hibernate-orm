@@ -126,15 +126,22 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../type/BasicType.html" title="interface in org.hibernate.type">BasicType</a>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDiscriminatorType(org.hibernate.mapping.Component)" class="member-name-link">getDiscriminatorType</a><wbr>(<a href="../../mapping/Component.html" title="class in org.hibernate.mapping">Component</a>&nbsp;component)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDiscriminatorSQLValue(org.hibernate.mapping.PersistentClass,org.hibernate.dialect.Dialect)" class="member-name-link">getDiscriminatorSQLValue</a><wbr>(<a href="../../mapping/PersistentClass.html" title="class in org.hibernate.mapping">PersistentClass</a>&nbsp;persistentClass,
+ <a href="../../dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a>&nbsp;dialect)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="../../query/sqm/SqmExpressible.html" title="interface in org.hibernate.query.sqm">SqmExpressible</a>&lt;? super T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDiscriminatorType(org.hibernate.query.sqm.SqmPathSource,org.hibernate.query.sqm.NodeBuilder)" class="member-name-link">getDiscriminatorType</a><wbr>(<a href="../../query/sqm/SqmPathSource.html" title="interface in org.hibernate.query.sqm">SqmPathSource</a>&lt;T&gt;&nbsp;domainType,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="../../type/BasicType.html" title="interface in org.hibernate.type">BasicType</a>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDiscriminatorType(org.hibernate.mapping.Component)" class="member-name-link">getDiscriminatorType</a><wbr>(<a href="../../mapping/Component.html" title="class in org.hibernate.mapping">Component</a>&nbsp;component)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="../../query/sqm/SqmExpressible.html" title="interface in org.hibernate.query.sqm">SqmExpressible</a>&lt;? super T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDiscriminatorType(org.hibernate.query.sqm.SqmPathSource,org.hibernate.query.sqm.NodeBuilder)" class="member-name-link">getDiscriminatorType</a><wbr>(<a href="../../query/sqm/SqmPathSource.html" title="interface in org.hibernate.query.sqm">SqmPathSource</a>&lt;T&gt;&nbsp;domainType,
  <a href="../../query/sqm/NodeBuilder.html" title="interface in org.hibernate.query.sqm">NodeBuilder</a>&nbsp;nodeBuilder)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Utility that computes the node type used in entity or embeddable type literals.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getDiscriminatorValue(org.hibernate.mapping.PersistentClass)" class="member-name-link">getDiscriminatorValue</a><wbr>(<a href="../../mapping/PersistentClass.html" title="class in org.hibernate.mapping">PersistentClass</a>&nbsp;persistentClass)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#jdbcLiteral(T,org.hibernate.type.descriptor.jdbc.JdbcLiteralFormatter,org.hibernate.dialect.Dialect)" class="member-name-link">jdbcLiteral</a><wbr>(T&nbsp;value,
  <a href="../../type/descriptor/jdbc/JdbcLiteralFormatter.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcLiteralFormatter</a>&lt;T&gt;&nbsp;formatter,
@@ -195,6 +202,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getDiscriminatorType(org.hibernate.mapping.Component)">
 <h3>getDiscriminatorType</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="../../type/BasicType.html" title="interface in org.hibernate.type">BasicType</a>&lt;?&gt;</span>&nbsp;<span class="element-name">getDiscriminatorType</span><wbr><span class="parameters">(<a href="../../mapping/Component.html" title="class in org.hibernate.mapping">Component</a>&nbsp;component)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDiscriminatorSQLValue(org.hibernate.mapping.PersistentClass,org.hibernate.dialect.Dialect)">
+<h3>getDiscriminatorSQLValue</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getDiscriminatorSQLValue</span><wbr><span class="parameters">(<a href="../../mapping/PersistentClass.html" title="class in org.hibernate.mapping">PersistentClass</a>&nbsp;persistentClass,
+ <a href="../../dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a>&nbsp;dialect)</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="getDiscriminatorValue(org.hibernate.mapping.PersistentClass)">
+<h3>getDiscriminatorValue</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">getDiscriminatorValue</span><wbr><span class="parameters">(<a href="../../mapping/PersistentClass.html" title="class in org.hibernate.mapping">PersistentClass</a>&nbsp;persistentClass)</span></div>
 </section>
 </li>
 <li>

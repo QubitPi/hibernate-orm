@@ -825,15 +825,16 @@ loadScripts(document, 'script');</script>
  <a href="../JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcType</a>&nbsp;jdbcType)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">Dialect.</span><code><a href="../../../../dialect/Dialect.html#getCheckCondition(java.lang.String,java.util.Set,org.hibernate.type.descriptor.jdbc.JdbcType)" class="member-name-link">getCheckCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;?&gt;&nbsp;valueSet,
+<div class="col-second even-row-color"><span class="type-name-label">Dialect.</span><code><a href="../../../../dialect/Dialect.html#getCheckCondition(java.lang.String,java.util.Collection,org.hibernate.type.descriptor.jdbc.JdbcType)" class="member-name-link">getCheckCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;?&gt;&nbsp;valueSet,
  <a href="../JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcType</a>&nbsp;jdbcType)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Generate a check condition for column with the given set of values.</div>
+<div class="block">Generate a SQL <code>check</code> condition for the given column,
+ constraining to the given values.</div>
 </div>
 <div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DialectDelegateWrapper.</span><code><a href="../../../../dialect/DialectDelegateWrapper.html#getCheckCondition(java.lang.String,java.util.Set,org.hibernate.type.descriptor.jdbc.JdbcType)" class="member-name-link">getCheckCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;?&gt;&nbsp;valueSet,
+<div class="col-second odd-row-color"><span class="type-name-label">DialectDelegateWrapper.</span><code><a href="../../../../dialect/DialectDelegateWrapper.html#getCheckCondition(java.lang.String,java.util.Collection,org.hibernate.type.descriptor.jdbc.JdbcType)" class="member-name-link">getCheckCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;?&gt;&nbsp;valueSet,
  <a href="../JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcType</a>&nbsp;jdbcType)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code><a href="../../../../engine/jdbc/Size.html" title="class in org.hibernate.engine.jdbc">Size</a></code></div>
@@ -2688,7 +2689,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../../../internal/UserTypeSqlTypeAdapter.html" class="type-name-link" title="class in org.hibernate.type.internal">UserTypeSqlTypeAdapter</a>&lt;J&gt;</code></div>
 <div class="col-last even-row-color">
-<div class="block">Adapts UserType to the JdbcType contract</div>
+<div class="block">Adapts <a href="../../../../usertype/UserType.html" title="interface in org.hibernate.usertype"><code>UserType</code></a> to the <a href="../JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc"><code>JdbcType</code></a> contract</div>
 </div>
 </div>
 <div class="caption"><span>Methods in <a href="../../../internal/package-summary.html">org.hibernate.type.internal</a> that return <a href="../JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcType</a></span></div>

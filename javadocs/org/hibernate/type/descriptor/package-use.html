@@ -67,15 +67,15 @@ loadScripts(document, 'script');</script>
 <div class="block">This package defines some central internal SPI abstractions
  used throughout the implementation of Hibernate.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.envers.internal.entities.mapper.relation.lazy">org.hibernate.envers.internal.entities.mapper.relation.lazy</a></div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.envers.internal.entities">org.hibernate.envers.internal.entities</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><a href="#org.hibernate.event.spi">org.hibernate.event.spi</a></div>
-<div class="col-last even-row-color">
+<div class="col-first even-row-color"><a href="#org.hibernate.envers.internal.entities.mapper.relation.lazy">org.hibernate.envers.internal.entities.mapper.relation.lazy</a></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.event.spi">org.hibernate.event.spi</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Defines the event types and event listener interfaces for
  events produced by the stateful <a href="../../Session.html" title="interface in org.hibernate"><code>Session</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.generator.values.internal">org.hibernate.generator.values.internal</a></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><a href="#org.hibernate.internal">org.hibernate.internal</a></div>
 <div class="col-last even-row-color">
 <div class="block">An internal package containing implementations of central Hibernate APIs,
@@ -216,6 +216,19 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="org.hibernate.envers.internal.entities">
+<div class="caption"><span>Classes in <a href="package-summary.html">org.hibernate.type.descriptor</a> used by <a href="../../envers/internal/entities/package-summary.html">org.hibernate.envers.internal.entities</a></span></div>
+<div class="summary-table two-column-summary">
+<div class="table-header col-first">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><a href="class-use/WrapperOptions.html#org.hibernate.envers.internal.entities">WrapperOptions</a></div>
+<div class="col-last even-row-color">
+<div class="block">Options for <a href="ValueBinder.html#bind(java.sql.PreparedStatement,X,int,org.hibernate.type.descriptor.WrapperOptions)">binding values to</a> and <a href="ValueExtractor.html#extract(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)">extracting values from</a> JDBC prepared statements and result sets.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="org.hibernate.envers.internal.entities.mapper.relation.lazy">
 <div class="caption"><span>Classes in <a href="package-summary.html">org.hibernate.type.descriptor</a> used by <a href="../../envers/internal/entities/mapper/relation/lazy/package-summary.html">org.hibernate.envers.internal.entities.mapper.relation.lazy</a></span></div>
 <div class="summary-table two-column-summary">
@@ -235,19 +248,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><a href="class-use/WrapperOptions.html#org.hibernate.event.spi">WrapperOptions</a></div>
-<div class="col-last even-row-color">
-<div class="block">Options for <a href="ValueBinder.html#bind(java.sql.PreparedStatement,X,int,org.hibernate.type.descriptor.WrapperOptions)">binding values to</a> and <a href="ValueExtractor.html#extract(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)">extracting values from</a> JDBC prepared statements and result sets.</div>
-</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="org.hibernate.generator.values.internal">
-<div class="caption"><span>Classes in <a href="package-summary.html">org.hibernate.type.descriptor</a> used by <a href="../../generator/values/internal/package-summary.html">org.hibernate.generator.values.internal</a></span></div>
-<div class="summary-table two-column-summary">
-<div class="table-header col-first">Class</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><a href="class-use/WrapperOptions.html#org.hibernate.generator.values.internal">WrapperOptions</a></div>
 <div class="col-last even-row-color">
 <div class="block">Options for <a href="ValueBinder.html#bind(java.sql.PreparedStatement,X,int,org.hibernate.type.descriptor.WrapperOptions)">binding values to</a> and <a href="ValueExtractor.html#extract(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)">extracting values from</a> JDBC prepared statements and result sets.</div>
 </div>
@@ -317,10 +317,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Contract for extracting values from a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a> or
  from output the parameters of a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/CallableStatement.html" title="class or interface in java.sql" class="external-link"><code>CallableStatement</code></a>.</div>
-</div>
-<div class="col-first even-row-color"><a href="class-use/WrapperOptions.html#org.hibernate.persister.entity">WrapperOptions</a></div>
-<div class="col-last even-row-color">
-<div class="block">Options for <a href="ValueBinder.html#bind(java.sql.PreparedStatement,X,int,org.hibernate.type.descriptor.WrapperOptions)">binding values to</a> and <a href="ValueExtractor.html#extract(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)">extracting values from</a> JDBC prepared statements and result sets.</div>
 </div>
 </div>
 </section>
@@ -707,6 +703,10 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="block">Contract for extracting values from a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a> or
  from output the parameters of a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/CallableStatement.html" title="class or interface in java.sql" class="external-link"><code>CallableStatement</code></a>.</div>
+</div>
+<div class="col-first even-row-color"><a href="class-use/WrapperOptions.html#org.hibernate.usertype">WrapperOptions</a></div>
+<div class="col-last even-row-color">
+<div class="block">Options for <a href="ValueBinder.html#bind(java.sql.PreparedStatement,X,int,org.hibernate.type.descriptor.WrapperOptions)">binding values to</a> and <a href="ValueExtractor.html#extract(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)">extracting values from</a> JDBC prepared statements and result sets.</div>
 </div>
 </div>
 </section>

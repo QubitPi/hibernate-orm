@@ -300,13 +300,9 @@ implements <a href="KeyValue.html" title="interface in org.hibernate.mapping">Ke
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAlternateUniqueKey()" class="member-name-link">isAlternateUniqueKey</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#isCascadeDeleteEnabled()" class="member-name-link">isCascadeDeleteEnabled</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#getOnDeleteAction()"><code>getOnDeleteAction()</code></a></div>
-</div>
-</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCascadeDeleteEnabled()" class="member-name-link">isCascadeDeleteEnabled</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isColumnInsertable(int)" class="member-name-link">isColumnInsertable</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
@@ -385,78 +381,71 @@ implements <a href="KeyValue.html" title="interface in org.hibernate.mapping">Ke
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAttributeConverterDescriptor(org.hibernate.boot.model.convert.spi.ConverterDescriptor)" class="member-name-link">setAttributeConverterDescriptor</a><wbr>(<a href="../boot/model/convert/spi/ConverterDescriptor.html" title="interface in org.hibernate.boot.model.convert.spi">ConverterDescriptor</a>&nbsp;descriptor)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#setCascadeDeleteEnabled(boolean)" class="member-name-link">setCascadeDeleteEnabled</a><wbr>(boolean&nbsp;cascadeDeleteEnabled)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#setOnDeleteAction(org.hibernate.annotations.OnDeleteAction)"><code>setOnDeleteAction(OnDeleteAction)</code></a></div>
-</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColumnToIdentity()" class="member-name-link">setColumnToIdentity</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomIdGeneratorCreator(org.hibernate.mapping.GeneratorCreator)" class="member-name-link">setCustomIdGeneratorCreator</a><wbr>(<a href="GeneratorCreator.html" title="interface in org.hibernate.mapping">GeneratorCreator</a>&nbsp;customIdGeneratorCreator)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColumnToIdentity()" class="member-name-link">setColumnToIdentity</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setForeignKeyDefinition(java.lang.String)" class="member-name-link">setForeignKeyDefinition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;foreignKeyDefinition)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomIdGeneratorCreator(org.hibernate.mapping.GeneratorCreator)" class="member-name-link">setCustomIdGeneratorCreator</a><wbr>(<a href="GeneratorCreator.html" title="interface in org.hibernate.mapping">GeneratorCreator</a>&nbsp;customIdGeneratorCreator)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setForeignKeyName(java.lang.String)" class="member-name-link">setForeignKeyName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;foreignKeyName)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setForeignKeyDefinition(java.lang.String)" class="member-name-link">setForeignKeyDefinition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;foreignKeyDefinition)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setForeignKeyOptions(java.lang.String)" class="member-name-link">setForeignKeyOptions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;foreignKeyOptions)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setForeignKeyName(java.lang.String)" class="member-name-link">setForeignKeyName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;foreignKeyName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setJpaAttributeConverterDescriptor(org.hibernate.boot.model.convert.spi.ConverterDescriptor)" class="member-name-link">setJpaAttributeConverterDescriptor</a><wbr>(<a href="../boot/model/convert/spi/ConverterDescriptor.html" title="interface in org.hibernate.boot.model.convert.spi">ConverterDescriptor</a>&nbsp;descriptor)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setForeignKeyOptions(java.lang.String)" class="member-name-link">setForeignKeyOptions</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;foreignKeyOptions)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNullValue(java.lang.String)" class="member-name-link">setNullValue</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setJpaAttributeConverterDescriptor(org.hibernate.boot.model.convert.spi.ConverterDescriptor)" class="member-name-link">setJpaAttributeConverterDescriptor</a><wbr>(<a href="../boot/model/convert/spi/ConverterDescriptor.html" title="interface in org.hibernate.boot.model.convert.spi">ConverterDescriptor</a>&nbsp;descriptor)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNullValue(java.lang.String)" class="member-name-link">setNullValue</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nullValue)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the property or field value indicating that field
  or property has never been set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNullValueSemantic(org.hibernate.mapping.KeyValue.NullValueSemantic)" class="member-name-link">setNullValueSemantic</a><wbr>(<a href="KeyValue.NullValueSemantic.html" title="enum class in org.hibernate.mapping">KeyValue.NullValueSemantic</a>&nbsp;nullValueSemantic)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNullValueSemantic(org.hibernate.mapping.KeyValue.NullValueSemantic)" class="member-name-link">setNullValueSemantic</a><wbr>(<a href="KeyValue.NullValueSemantic.html" title="enum class in org.hibernate.mapping">KeyValue.NullValueSemantic</a>&nbsp;nullValueSemantic)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Specifies the rule for determining if the field or
  property has been set.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNullValueUndefined()" class="member-name-link">setNullValueUndefined</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNullValueUndefined()" class="member-name-link">setNullValueUndefined</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Specifies that there is no well-defined property or
  field value indicating that field or property has never
  been set.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOnDeleteAction(org.hibernate.annotations.OnDeleteAction)" class="member-name-link">setOnDeleteAction</a><wbr>(<a href="../annotations/OnDeleteAction.html" title="enum class in org.hibernate.annotations">OnDeleteAction</a>&nbsp;onDeleteAction)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPartitionKey(boolean)" class="member-name-link">setPartitionKey</a><wbr>(boolean&nbsp;partitionColumn)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setOnDeleteAction(org.hibernate.annotations.OnDeleteAction)" class="member-name-link">setOnDeleteAction</a><wbr>(<a href="../annotations/OnDeleteAction.html" title="enum class in org.hibernate.annotations">OnDeleteAction</a>&nbsp;onDeleteAction)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTable(org.hibernate.mapping.Table)" class="member-name-link">setTable</a><wbr>(<a href="Table.html" title="class in org.hibernate.mapping">Table</a>&nbsp;table)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPartitionKey(boolean)" class="member-name-link">setPartitionKey</a><wbr>(boolean&nbsp;partitionColumn)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeName(java.lang.String)" class="member-name-link">setTypeName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;typeName)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTable(org.hibernate.mapping.Table)" class="member-name-link">setTable</a><wbr>(<a href="Table.html" title="class in org.hibernate.mapping">Table</a>&nbsp;table)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeParameters(java.util.Map)" class="member-name-link">setTypeParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>?&gt;&nbsp;parameters)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeName(java.lang.String)" class="member-name-link">setTypeName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;typeName)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeParameters(java.util.Properties)" class="member-name-link">setTypeParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;parameterMap)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeParameters(java.util.Map)" class="member-name-link">setTypeParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>?&gt;&nbsp;parameters)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeUsingReflection(java.lang.String,java.lang.String)" class="member-name-link">setTypeUsingReflection</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;className,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeParameters(java.util.Properties)" class="member-name-link">setTypeParameters</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;parameterMap)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTypeUsingReflection(java.lang.String,java.lang.String)" class="member-name-link">setTypeUsingReflection</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;className,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sortColumns(int%5B%5D)" class="member-name-link">sortColumns</a><wbr>(int[]&nbsp;originalOrder)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sortColumns(int%5B%5D)" class="member-name-link">sortColumns</a><wbr>(int[]&nbsp;originalOrder)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -576,25 +565,11 @@ implements <a href="KeyValue.html" title="interface in org.hibernate.mapping">Ke
 <li>
 <section class="detail" id="isCascadeDeleteEnabled()">
 <h3>isCascadeDeleteEnabled</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="6.2")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCascadeDeleteEnabled</span>()</div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#getOnDeleteAction()"><code>getOnDeleteAction()</code></a></div>
-</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isCascadeDeleteEnabled</span>()</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="KeyValue.html#isCascadeDeleteEnabled()">isCascadeDeleteEnabled</a></code>&nbsp;in interface&nbsp;<code><a href="KeyValue.html" title="interface in org.hibernate.mapping">KeyValue</a></code></dd>
 </dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setCascadeDeleteEnabled(boolean)">
-<h3>setCascadeDeleteEnabled</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="6.2")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setCascadeDeleteEnabled</span><wbr><span class="parameters">(boolean&nbsp;cascadeDeleteEnabled)</span></div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
-<div class="deprecation-comment">use <a href="#setOnDeleteAction(org.hibernate.annotations.OnDeleteAction)"><code>setOnDeleteAction(OnDeleteAction)</code></a></div>
-</div>
 </section>
 </li>
 <li>

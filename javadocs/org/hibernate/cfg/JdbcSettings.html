@@ -107,7 +107,7 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <div class="col-last odd-row-color">
 <div class="block">Controls the autocommit mode of JDBC connections obtained from any
  <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> implementation which respects this setting,
- which includes the built-in implementations do, except for
+ including every built-in implementation except for
  <a href="../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DatasourceConnectionProviderImpl</code></a>.</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -124,13 +124,16 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#CONNECTION_PREFIX" class="member-name-link">CONNECTION_PREFIX</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A prefix for properties specifying arbitrary JDBC connection properties.</div>
+<div class="block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">This setting is only supported by <code>C3P0ConnectionProvider</code>
+ and <a href="../engine/jdbc/connections/internal/DriverManagerConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DriverManagerConnectionProviderImpl</code></a>.</div>
+</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#CONNECTION_PROVIDER" class="member-name-link">CONNECTION_PROVIDER</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Specifies a <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a>
- to use for obtaining JDBC connections, either:
+<div class="block">Specifies a <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> to use for obtaining JDBC connections,
+ either:
  
      an instance of <code>ConnectionProvider</code>,
      a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> representing a class that implements
@@ -140,7 +143,7 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT" class="member-name-link">CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Indicates that Connections obtained from the configured <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> have
+<div class="block">Indicates that connections obtained from the configured <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> have
  auto-commit already disabled when they are acquired.</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
@@ -229,7 +232,10 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <div class="col-first even-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color"><code><a href="#ISOLATION" class="member-name-link">ISOLATION</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Specified the JDBC transaction isolation level.</div>
+<div class="block">Specifies the JDBC transaction isolation level for connections obtained
+ from any <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> implementation which respects this
+ setting, including every built-in implementation except for
+ <a href="../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DatasourceConnectionProviderImpl</code></a>.</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#JAKARTA_HBM2DDL_CONNECTION" class="member-name-link">JAKARTA_HBM2DDL_CONNECTION</a></code></div>
@@ -780,17 +786,14 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <section class="detail" id="CONNECTION_PROVIDER">
 <h3>CONNECTION_PROVIDER</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CONNECTION_PROVIDER</span></div>
-<div class="block">Specifies a <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a>
- to use for obtaining JDBC connections, either:
+<div class="block">Specifies a <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> to use for obtaining JDBC connections,
+ either:
  <ul>
      <li>an instance of <code>ConnectionProvider</code>,
      <li>a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link"><code>Class</code></a> representing a class that implements
          <code>ConnectionProvider</code>, or
      <li>the name of a class that implements <code>ConnectionProvider</code>.
- </ul>
- <p>
- The term <code>"class"</code> appears in the setting name due to legacy reasons;
- however it can accept instances.</div>
+ </ul></div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -798,6 +801,9 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <li><a href="../../../constant-values.html#org.hibernate.cfg.JdbcSettings.CONNECTION_PROVIDER">Constant Field Values</a></li>
 </ul>
 </dd>
+<dt>API Note:</dt>
+<dd>The term <code>"class"</code> appears in the setting name due to legacy reasons;
+          however it can accept instances.</dd>
 </dl>
 </section>
 </li>
@@ -823,7 +829,17 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <section class="detail" id="ISOLATION">
 <h3>ISOLATION</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">ISOLATION</span></div>
-<div class="block">Specified the JDBC transaction isolation level.</div>
+<div class="block">Specifies the JDBC transaction isolation level for connections obtained
+ from any <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> implementation which respects this
+ setting, including every built-in implementation except for
+ <a href="../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DatasourceConnectionProviderImpl</code></a>.
+ <p>
+ Possible values are enumerated by <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html" title="class or interface in java.sql" class="external-link"><code>Connection</code></a>:
+ <code>NONE</code>, <code>READ_UNCOMMITTED</code>, <code>READ_COMMITTED</code>,
+ <code>REPEATABLE_READ</code>, <code>SERIALIZABLE</code>.
+ <p>
+ If this setting is not explicitly specified, Hibernate does not modify
+ the transaction isolation level of the JDBC connection.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -840,7 +856,7 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">AUTOCOMMIT</span></div>
 <div class="block">Controls the autocommit mode of JDBC connections obtained from any
  <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> implementation which respects this setting,
- which includes the built-in implementations do, except for
+ including every built-in implementation except for
  <a href="../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DatasourceConnectionProviderImpl</code></a>.</div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -858,11 +874,11 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <section class="detail" id="CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT">
 <h3>CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT</span></div>
-<div class="block">Indicates that Connections obtained from the configured <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> have
+<div class="block">Indicates that connections obtained from the configured <a href="../engine/jdbc/connections/spi/ConnectionProvider.html" title="interface in org.hibernate.engine.jdbc.connections.spi"><code>ConnectionProvider</code></a> have
  auto-commit already disabled when they are acquired.
  <p>
- It is inappropriate to set this value to <code>true</code> when the Connections returned by
- the provider do not, in fact, have auto-commit disabled.  Doing so may lead to Hibernate
+ It is inappropriate to set this value to <code>true</code> when the connections returned by
+ the provider do not, in fact, have auto-commit disabled. Doing so may lead to Hibernate
  executing SQL operations outside the scope of any transaction.</div>
 <dl class="notes">
 <dt>Since:</dt>
@@ -875,9 +891,9 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 </ul>
 </dd>
 <dt>API Note:</dt>
-<dd>By default, Hibernate calls <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html#setAutoCommit(boolean)" title="class or interface in java.sql" class="external-link"><code>Connection.setAutoCommit(boolean)</code></a> on
- newly-obtained connections.  This setting allows to circumvent that call (as well as other
- operations) in the interest of performance.</dd>
+<dd>By default, Hibernate calls <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html#setAutoCommit(boolean)" title="class or interface in java.sql" class="external-link"><code>Connection.setAutoCommit(boolean)</code></a>
+ on newly-obtained connections. With this setting enabled, that call is skipped, along
+ with some other operations, in the interest of performance.</dd>
 <dt>Default Value:</dt>
 <dd><code>false</code></dd>
 </dl>
@@ -886,7 +902,12 @@ extends <a href="C3p0Settings.html" title="interface in org.hibernate.cfg">C3p0S
 <li>
 <section class="detail" id="CONNECTION_PREFIX">
 <h3>CONNECTION_PREFIX</h3>
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CONNECTION_PREFIX</span></div>
+<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#since()" title="class or interface in java.lang" class="external-link">since</a>="7")
+</span><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">CONNECTION_PREFIX</span></div>
+<div class="deprecation-block"><span class="deprecated-label">Deprecated.</span>
+<div class="deprecation-comment">This setting is only supported by <code>C3P0ConnectionProvider</code>
+ and <a href="../engine/jdbc/connections/internal/DriverManagerConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DriverManagerConnectionProviderImpl</code></a>.</div>
+</div>
 <div class="block">A prefix for properties specifying arbitrary JDBC connection properties. These
  properties are simply passed along to the provider when creating a connection.
  <p>

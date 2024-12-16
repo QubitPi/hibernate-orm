@@ -79,7 +79,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../../envers/internal/entities/mapper/relation/lazy/AbstractDelegateSessionImplementor.html" title="class in org.hibernate.envers.internal.entities.mapper.relation.lazy">AbstractDelegateSessionImplementor</a></code>, <code><a href="../../engine/spi/AbstractDelegatingWrapperOptions.html" title="class in org.hibernate.engine.spi">AbstractDelegatingWrapperOptions</a></code>, <code><a href="../../internal/AbstractSharedSessionContract.html" title="class in org.hibernate.internal">AbstractSharedSessionContract</a></code>, <code><a href="../../engine/spi/LazySessionWrapperOptions.html" title="class in org.hibernate.engine.spi">LazySessionWrapperOptions</a></code>, <code><a href="../../engine/spi/SessionDelegatorBaseImpl.html" title="class in org.hibernate.engine.spi">SessionDelegatorBaseImpl</a></code>, <code><a href="../../persister/entity/SessionFactoryBasedWrapperOptions.html" title="class in org.hibernate.persister.entity">SessionFactoryBasedWrapperOptions</a></code>, <code><a href="../../internal/SessionImpl.html" title="class in org.hibernate.internal">SessionImpl</a></code>, <code><a href="../../engine/spi/SharedSessionDelegatorBaseImpl.html" title="class in org.hibernate.engine.spi">SharedSessionDelegatorBaseImpl</a></code>, <code><a href="../../internal/StatelessSessionImpl.html" title="class in org.hibernate.internal">StatelessSessionImpl</a></code>, <code><a href="../../envers/internal/entities/mapper/relation/lazy/ToOneDelegateSessionImplementor.html" title="class in org.hibernate.envers.internal.entities.mapper.relation.lazy">ToOneDelegateSessionImplementor</a></code>, <code><a href="../internal/TypeConfigurationWrapperOptions.html" title="class in org.hibernate.type.internal">TypeConfigurationWrapperOptions</a></code></dd>
+<dd><code><a href="../../envers/internal/entities/mapper/relation/lazy/AbstractDelegateSessionImplementor.html" title="class in org.hibernate.envers.internal.entities.mapper.relation.lazy">AbstractDelegateSessionImplementor</a></code>, <code><a href="../../internal/AbstractSharedSessionContract.html" title="class in org.hibernate.internal">AbstractSharedSessionContract</a></code>, <code><a href="../../engine/spi/SessionDelegatorBaseImpl.html" title="class in org.hibernate.engine.spi">SessionDelegatorBaseImpl</a></code>, <code><a href="../../internal/SessionImpl.html" title="class in org.hibernate.internal">SessionImpl</a></code>, <code><a href="../../engine/spi/SharedSessionDelegatorBaseImpl.html" title="class in org.hibernate.engine.spi">SharedSessionDelegatorBaseImpl</a></code>, <code><a href="../../internal/StatelessSessionImpl.html" title="class in org.hibernate.internal">StatelessSessionImpl</a></code>, <code><a href="../../envers/internal/entities/mapper/relation/lazy/ToOneDelegateSessionImplementor.html" title="class in org.hibernate.envers.internal.entities.mapper.relation.lazy">ToOneDelegateSessionImplementor</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">WrapperOptions</span></div>
@@ -112,36 +112,51 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Access to the current dialect.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJdbcTimeZone()" class="member-name-link">getJdbcTimeZone</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getJdbcTimeZone()" class="member-name-link">getJdbcTimeZone</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">The JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link"><code>TimeZone</code></a> used when writing a value of type <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Time.html" title="class or interface in java.sql" class="external-link"><code>Time</code></a>
  or <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Timestamp.html" title="class or interface in java.sql" class="external-link"><code>Timestamp</code></a> to a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>, or
  when reading from a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Obtain the JSON <a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Obtain access to the <a href="../../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc"><code>LobCreator</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPreferredSqlTypeCodeForBoolean()" class="member-name-link">getPreferredSqlTypeCodeForBoolean</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getPreferredSqlTypeCodeForBoolean()" class="member-name-link">getPreferredSqlTypeCodeForBoolean</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">The JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Types.html" title="class or interface in java.sql" class="external-link"><code>type code</code></a> used to bind a null boolean value.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSession()" class="member-name-link">getSession</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSession()" class="member-name-link">getSession</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Access to the current session.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getSessionFactory()" class="member-name-link">getSessionFactory</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getSessionFactory()" class="member-name-link">getSessionFactory</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Access to the current session factory.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#useStreamForLobBinding()" class="member-name-link">useStreamForLobBinding</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="../spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getTypeConfiguration()" class="member-name-link">getTypeConfiguration</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Obtain the <a href="../spi/TypeConfiguration.html" title="class in org.hibernate.type.spi"><code>TypeConfiguration</code></a>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Obtain the XML <a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#useStreamForLobBinding()" class="member-name-link">useStreamForLobBinding</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
 <div class="block">Determines whether streams should be used for binding LOB values.</div>
 </div>
 </div>
@@ -168,7 +183,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getSessionFactory()">
 <h3>getSessionFactory</h3>
-<div class="member-signature"><span class="return-type"><a href="../../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></span>&nbsp;<span class="element-name">getSessionFactory</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a></span>&nbsp;<span class="element-name">getSessionFactory</span>()</div>
 <div class="block">Access to the current session factory.</div>
 </section>
 </li>
@@ -182,7 +197,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="useStreamForLobBinding()">
 <h3>useStreamForLobBinding</h3>
-<div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">useStreamForLobBinding</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">useStreamForLobBinding</span>()</div>
 <div class="block">Determines whether streams should be used for binding LOB values.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -199,7 +214,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getPreferredSqlTypeCodeForBoolean()">
 <h3>getPreferredSqlTypeCodeForBoolean</h3>
-<div class="member-signature"><span class="return-type">int</span>&nbsp;<span class="element-name">getPreferredSqlTypeCodeForBoolean</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPreferredSqlTypeCodeForBoolean</span>()</div>
 <div class="block">The JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Types.html" title="class or interface in java.sql" class="external-link"><code>type code</code></a> used to bind a null boolean value.</div>
 <dl class="notes">
 <dt>See Also:</dt>
@@ -215,7 +230,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getLobCreator()">
 <h3>getLobCreator</h3>
-<div class="member-signature"><span class="return-type"><a href="../../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></span>&nbsp;<span class="element-name">getLobCreator</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></span>&nbsp;<span class="element-name">getLobCreator</span>()</div>
 <div class="block">Obtain access to the <a href="../../engine/jdbc/LobCreator.html" title="interface in org.hibernate.engine.jdbc"><code>LobCreator</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -233,7 +248,7 @@ loadScripts(document, 'script');</script>
 <li>
 <section class="detail" id="getJdbcTimeZone()">
 <h3>getJdbcTimeZone</h3>
-<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></span>&nbsp;<span class="element-name">getJdbcTimeZone</span>()</div>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></span>&nbsp;<span class="element-name">getJdbcTimeZone</span>()</div>
 <div class="block">The JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link"><code>TimeZone</code></a> used when writing a value of type <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Time.html" title="class or interface in java.sql" class="external-link"><code>Time</code></a>
  or <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Timestamp.html" title="class or interface in java.sql" class="external-link"><code>Timestamp</code></a> to a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>, or
  when reading from a JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.
@@ -260,6 +275,39 @@ loadScripts(document, 'script');</script>
 <li><a href="../../cfg/JdbcSettings.html#JDBC_TIME_ZONE"><code>JdbcSettings.JDBC_TIME_ZONE</code></a></li>
 </ul>
 </dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getTypeConfiguration()">
+<h3>getTypeConfiguration</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="../spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a></span>&nbsp;<span class="element-name">getTypeConfiguration</span>()</div>
+<div class="block">Obtain the <a href="../spi/TypeConfiguration.html" title="class in org.hibernate.type.spi"><code>TypeConfiguration</code></a>.</div>
+<dl class="notes">
+<dt>Since:</dt>
+<dd>7.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getXmlFormatMapper()">
+<h3>getXmlFormatMapper</h3>
+<div class="member-signature"><span class="return-type"><a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span>&nbsp;<span class="element-name">getXmlFormatMapper</span>()</div>
+<div class="block">Obtain the XML <a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+<dl class="notes">
+<dt>Since:</dt>
+<dd>7.0</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getJsonFormatMapper()">
+<h3>getJsonFormatMapper</h3>
+<div class="member-signature"><span class="return-type"><a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span>&nbsp;<span class="element-name">getJsonFormatMapper</span>()</div>
+<div class="block">Obtain the JSON <a href="../format/FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+<dl class="notes">
+<dt>Since:</dt>
+<dd>7.0</dd>
 </dl>
 </section>
 </li>

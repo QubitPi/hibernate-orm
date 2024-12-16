@@ -659,26 +659,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>protected <a href="../PersistContext.html" title="interface in org.hibernate.event.spi">PersistContext</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">AbstractFlushingEventListener.</span><code><a href="../../internal/AbstractFlushingEventListener.html#getContext(org.hibernate.event.spi.EventSource)" class="member-name-link">getContext</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DefaultDeleteEventListener.</span><code><a href="../../internal/DefaultDeleteEventListener.html#invokeDeleteLifecycle(org.hibernate.event.spi.EventSource,java.lang.Object,org.hibernate.persister.entity.EntityPersister)" class="member-name-link">invokeDeleteLifecycle</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister)</code></div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">DefaultAutoFlushEventListener.</span><code><a href="../../internal/DefaultAutoFlushEventListener.html#onAutoPreFlush(org.hibernate.event.spi.EventSource)" class="member-name-link">onAutoPreFlush</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DefaultPostLoadEventListener.</span><code><a href="../../internal/DefaultPostLoadEventListener.html#invokeLoadLifecycle(org.hibernate.event.spi.PostLoadEvent,org.hibernate.event.spi.EventSource)" class="member-name-link">invokeLoadLifecycle</a><wbr>(<a href="../PostLoadEvent.html" title="class in org.hibernate.event.spi">PostLoadEvent</a>&nbsp;event,
- <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#invokeSaveLifecycle(java.lang.Object,org.hibernate.persister.entity.EntityPersister,org.hibernate.event.spi.EventSource)" class="member-name-link">invokeSaveLifecycle</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
- <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">DefaultAutoFlushEventListener.</span><code><a href="../../internal/DefaultAutoFlushEventListener.html#onAutoPreFlush(org.hibernate.event.spi.EventSource)" class="member-name-link">onAutoPreFlush</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractFlushingEventListener.</span><code><a href="../../internal/AbstractFlushingEventListener.html#performExecutions(org.hibernate.event.spi.EventSource)" class="member-name-link">performExecutions</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractFlushingEventListener.</span><code><a href="../../internal/AbstractFlushingEventListener.html#performExecutions(org.hibernate.event.spi.EventSource)" class="member-name-link">performExecutions</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Execute all SQL (and second-level cache updates) in a special order so that foreign-key constraints cannot
  be violated: 
   Inserts, in the order they were performed
@@ -688,75 +674,75 @@ loadScripts(document, 'script');</script>
   Deletes, in the order they were performed
  </div>
 </div>
-<div class="col-first odd-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#performSave(java.lang.Object,java.lang.Object,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first even-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#performSave(java.lang.Object,java.lang.Object,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  boolean&nbsp;useIdentityColumn,
  <a href="../../internal/AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source,
  boolean&nbsp;delayIdentityInserts)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Prepares the save call by checking the session caches for a pre-existing
  entity and performing any lifecycle callbacks.</div>
 </div>
-<div class="col-first even-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#performSaveOrReplicate(java.lang.Object,org.hibernate.engine.spi.EntityKey,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSaveOrReplicate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#performSaveOrReplicate(java.lang.Object,org.hibernate.engine.spi.EntityKey,org.hibernate.persister.entity.EntityPersister,boolean,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">performSaveOrReplicate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../../engine/spi/EntityKey.html" title="class in org.hibernate.engine.spi">EntityKey</a>&nbsp;key,
  <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  boolean&nbsp;useIdentityColumn,
  <a href="../../internal/AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source,
  boolean&nbsp;delayIdentityInserts)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Performs all the actual work needed to save an entity (well to get the save moved to
  the execution queue).</div>
 </div>
-<div class="col-first odd-row-color"><code>protected void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractFlushingEventListener.</span><code><a href="../../internal/AbstractFlushingEventListener.html#preFlush(org.hibernate.event.spi.EventSource,org.hibernate.engine.spi.PersistenceContext)" class="member-name-link">preFlush</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session,
+<div class="col-first even-row-color"><code>protected void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractFlushingEventListener.</span><code><a href="../../internal/AbstractFlushingEventListener.html#preFlush(org.hibernate.event.spi.EventSource,org.hibernate.engine.spi.PersistenceContext)" class="member-name-link">preFlush</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session,
  <a href="../../../engine/spi/PersistenceContext.html" title="interface in org.hibernate.engine.spi">PersistenceContext</a>&nbsp;persistenceContext)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#saveWithGeneratedId(java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">saveWithGeneratedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#saveWithGeneratedId(java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource,boolean)" class="member-name-link">saveWithGeneratedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="../../internal/AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source,
  boolean&nbsp;requiresImmediateIdAccess)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last odd-row-color">
 <div class="block">Prepares the save call using a newly generated id.</div>
 </div>
-<div class="col-first odd-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#saveWithRequestedId(java.lang.Object,java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource)" class="member-name-link">saveWithRequestedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first even-row-color"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#saveWithRequestedId(java.lang.Object,java.lang.Object,java.lang.String,C,org.hibernate.event.spi.EventSource)" class="member-name-link">saveWithRequestedId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;requestedId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
  <a href="../../internal/AbstractSaveEventListener.html" title="type parameter in AbstractSaveEventListener">C</a>&nbsp;context,
  <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Prepares the save call using the given requested id.</div>
 </div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EntityCopyAllowedLoggedObserver.</span><code><a href="../../internal/EntityCopyAllowedLoggedObserver.html#topLevelMergeComplete(org.hibernate.event.spi.EventSource)" class="member-name-link">topLevelMergeComplete</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">EntityCopyAllowedLoggedObserver.</span><code><a href="../../internal/EntityCopyAllowedLoggedObserver.html#topLevelMergeComplete(org.hibernate.event.spi.EventSource)" class="member-name-link">topLevelMergeComplete</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EntityCopyAllowedObserver.</span><code><a href="../../internal/EntityCopyAllowedObserver.html#topLevelMergeComplete(org.hibernate.event.spi.EventSource)" class="member-name-link">topLevelMergeComplete</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EntityCopyAllowedObserver.</span><code><a href="../../internal/EntityCopyAllowedObserver.html#topLevelMergeComplete(org.hibernate.event.spi.EventSource)" class="member-name-link">topLevelMergeComplete</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">EntityCopyNotAllowedObserver.</span><code><a href="../../internal/EntityCopyNotAllowedObserver.html#topLevelMergeComplete(org.hibernate.event.spi.EventSource)" class="member-name-link">topLevelMergeComplete</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>protected boolean</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#visitCollectionsBeforeSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.type.Type%5B%5D,org.hibernate.event.spi.EventSource)" class="member-name-link">visitCollectionsBeforeSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
- <a href="../../../type/Type.html" title="interface in org.hibernate.type">Type</a>[]&nbsp;types,
- <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EntityCopyNotAllowedObserver.</span><code><a href="../../internal/EntityCopyNotAllowedObserver.html#topLevelMergeComplete(org.hibernate.event.spi.EventSource)" class="member-name-link">topLevelMergeComplete</a><wbr>(<a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>protected boolean</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">DefaultReplicateEventListener.</span><code><a href="../../internal/DefaultReplicateEventListener.html#visitCollectionsBeforeSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.type.Type%5B%5D,org.hibernate.event.spi.EventSource)" class="member-name-link">visitCollectionsBeforeSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-second even-row-color"><span class="type-name-label">AbstractSaveEventListener.</span><code><a href="../../internal/AbstractSaveEventListener.html#visitCollectionsBeforeSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.type.Type%5B%5D,org.hibernate.event.spi.EventSource)" class="member-name-link">visitCollectionsBeforeSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
  <a href="../../../type/Type.html" title="interface in org.hibernate.type">Type</a>[]&nbsp;types,
  <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
-<div class="col-last even-row-color">
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>protected boolean</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">DefaultReplicateEventListener.</span><code><a href="../../internal/DefaultReplicateEventListener.html#visitCollectionsBeforeSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.type.Type%5B%5D,org.hibernate.event.spi.EventSource)" class="member-name-link">visitCollectionsBeforeSave</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values,
+ <a href="../../../type/Type.html" title="interface in org.hibernate.type">Type</a>[]&nbsp;types,
+ <a href="../EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;source)</code></div>
+<div class="col-last odd-row-color">
 <div class="block"><span class="deprecated-label">Deprecated.</span></div>
 &nbsp;</div>
 </div>

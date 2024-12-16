@@ -149,10 +149,11 @@
 <li><a href="#stateless-sessions">7.14. Stateless sessions</a></li>
 <li><a href="#optimistic-and-pessimistic-locking">7.15. Optimistic and pessimistic locking</a></li>
 <li><a href="#statistics">7.16. Collecting statistics</a></li>
-<li><a href="#slow-queries">7.17. Tracking down slow queries</a></li>
-<li><a href="#indexes">7.18. Adding indexes</a></li>
-<li><a href="#denomalized-date">7.19. Dealing with denormalized data</a></li>
-<li><a href="#hibernate-reactive">7.20. Reactive programming with Hibernate</a></li>
+<li><a href="#jfr">7.17. Using Java Flight Recorder</a></li>
+<li><a href="#slow-queries">7.18. Tracking down slow queries</a></li>
+<li><a href="#indexes">7.19. Adding indexes</a></li>
+<li><a href="#denomalized-date">7.20. Dealing with denormalized data</a></li>
+<li><a href="#hibernate-reactive">7.21. Reactive programming with Hibernate</a></li>
 </ul>
 </li>
 <li><a href="#advanced">8. Advanced Topics</a>
@@ -1465,6 +1466,10 @@ or <code>org.eclipse:yasson</code></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#envers">Envers</a>, for auditing historical data</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate.orm:hibernate-envers</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jfr">Hibernate JFR</a>, for monitoring via Java Flight Recorder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.hibernate.orm:hibernate-jfr</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -10984,7 +10989,7 @@ But in case it helps, we often test Hibernate with the following configuration, 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.cache.region.factory_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/CacheSettings.html#CACHE_REGION_FACTORY"><code>hibernate.cache.region.factory_class</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>jcache</code></p></td>
 </tr>
 <tr>
@@ -11058,7 +11063,7 @@ If there are multiple implementations on the classpath, we must disambiguate usi
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.cache.region.factory_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/CacheSettings.html#CACHE_REGION_FACTORY"><code>hibernate.cache.region.factory_class</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>infinispan</code></p></td>
 </tr>
 <tr>
@@ -11106,7 +11111,7 @@ There&#8217;s more about using Infinispan with Hibernate <a href="https://infini
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.cache.use_second_level_cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/CacheSettings.html#USE_SECOND_LEVEL_CACHE"><code>hibernate.cache.use_second_level_cache</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> to enable caching, or <code>false</code> to disable it</p></td>
 </tr>
 </tbody>
@@ -11155,7 +11160,7 @@ Hibernate also has a way to cache the result sets of queries, though this is onl
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.cache.use_query_cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/CacheSettings.html#USE_QUERY_CACHE"><code>hibernate.cache.use_query_cache</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> to enable the query cache</p></td>
 </tr>
 </tbody>
@@ -11737,7 +11742,7 @@ Similarly, <code>LockModeType.WRITE</code> is a synonym for <code>OPTIMISTIC_FOR
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.generate_statistics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/StatisticsSettings.html#GENERATE_STATISTICS"><code>hibernate.generate_statistics</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> to enable collection of statistics</p></td>
 </tr>
 </tbody>
@@ -11763,7 +11768,20 @@ Both <a href="https://quarkus.io/guides/micrometer">Micrometer</a> and <a href="
 </div>
 </div>
 <div class="sect2">
-<h3 id="slow-queries">7.17. Tracking down slow queries</h3>
+<h3 id="jfr">7.17. Using Java Flight Recorder</h3>
+<div class="paragraph">
+<p>Hibernate JFR is a separate module which reports events to <a href="https://developers.redhat.com/blog/2020/08/25/get-started-with-jdk-flight-recorder-in-openjdk-8u">Java Flight Recorder</a>.
+This is different to reporting aggregated <a href="#statistics">metrics</a> via a tool like Micrometer, since JFR records information about the timing and duration of each discrete event, along with a stack trace.
+If anything, the information reported by JFR is a little <em>too</em> detailed to make it really useful for performance tuning&#8212;&#8203;it&#8217;s perhaps more useful for <em>troubleshooting</em>.</p>
+</div>
+<div class="paragraph">
+<p>No special configuration is required to use Hibernate JFR.
+Just include <code>org.hibernate.orm:hibernate-jfr</code> as a runtime dependency.
+In particular, you <em>don&#8217;t</em> need to enable <code>hibernate.generate_statistics</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="slow-queries">7.18. Tracking down slow queries</h3>
 <div class="paragraph">
 <p>When a poorly-performing SQL query is discovered in production, it can sometimes be hard to track down exactly where in the Java code the query originates.
 Hibernate offers two configuration properties that can make it easier to identify a slow query and find its source.</p>
@@ -11784,12 +11802,12 @@ Hibernate offers two configuration properties that can make it easier to identif
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.log_slow_query</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#LOG_SLOW_QUERY"><code>hibernate.log_slow_query</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Log slow queries at the <code>INFO</code> level</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The minimum execution time, in milliseconds, which characterizes a "slow" query</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hibernate.use_sql_comments</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#USE_SQL_COMMENTS"><code>hibernate.use_sql_comments</code></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prepend comments to the executed SQL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code> or <code>false</code></p></td>
 </tr>
@@ -11833,7 +11851,7 @@ So if you&#8217;re lucky enough to have a DBA about, you don&#8217;t need to Dun
 </div>
 </div>
 <div class="sect2">
-<h3 id="indexes">7.18. Adding indexes</h3>
+<h3 id="indexes">7.19. Adding indexes</h3>
 <div class="paragraph">
 <p>The <code>@Index</code> annotation may be used to add an index to a table:</p>
 </div>
@@ -11879,7 +11897,7 @@ So it might be better to keep the definition of indexes in a SQL DDL script that
 </div>
 </div>
 <div class="sect2">
-<h3 id="denomalized-date">7.19. Dealing with denormalized data</h3>
+<h3 id="denomalized-date">7.20. Dealing with denormalized data</h3>
 <div class="paragraph">
 <p>A typical relational database table in a well-normalized schema has a relatively small number of columns, and so there&#8217;s little to be gained by selectively querying columns and populating only certain fields of an entity class.</p>
 </div>
@@ -11927,7 +11945,7 @@ It&#8217;s much more typesafe to use one of the first two options.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="hibernate-reactive">7.20. Reactive programming with Hibernate</h3>
+<h3 id="hibernate-reactive">7.21. Reactive programming with Hibernate</h3>
 <div class="paragraph">
 <p>Finally, many systems which require high scalability now make use of reactive programming and reactive streams.
 <a href="https://hibernate.org/reactive/">Hibernate Reactive</a> brings O/R mapping to the world of reactive programming.
@@ -13858,7 +13876,7 @@ And in principle it even helps partially mitigate the <a href="#lazy-problem">pr
 <div id="footer">
 <div id="footer-text">
 Version 7.0.0-SNAPSHOT<br>
-Last updated 2024-12-16 02:15:30 UTC
+Last updated 2024-12-16 02:26:40 UTC
 </div>
 </div>
 </body>

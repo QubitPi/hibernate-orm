@@ -1447,538 +1447,533 @@ Y&gt;&nbsp;int</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Does this restrictable have a where restriction?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#implementsLifecycle()" class="member-name-link">implementsLifecycle</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Does the class implement the <a href="../../classic/Lifecycle.html" title="interface in org.hibernate.classic"><code>Lifecycle</code></a> interface?</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeEnhancedEntityUsedAsProxy(java.lang.Object,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">initializeEnhancedEntityUsedAsProxy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeEnhancedEntityUsedAsProxy(java.lang.Object,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">initializeEnhancedEntityUsedAsProxy</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nameOfAttributeBeingAccessed,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called from <a href="../../bytecode/enhance/spi/interceptor/EnhancementAsProxyLazinessInterceptor.html" title="class in org.hibernate.bytecode.enhance.spi.interceptor"><code>EnhancementAsProxyLazinessInterceptor</code></a> to trigger load of
  the entity's non-lazy state as well as the named attribute we are accessing
  if it is still uninitialized after fetching non-lazy state.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyPropertiesFromCache(java.lang.String,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.EntityEntry,org.hibernate.cache.spi.entry.CacheEntry)" class="member-name-link">initializeLazyPropertiesFromCache</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyPropertiesFromCache(java.lang.String,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.engine.spi.EntityEntry,org.hibernate.cache.spi.entry.CacheEntry)" class="member-name-link">initializeLazyPropertiesFromCache</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="../../engine/spi/EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  <a href="../../cache/spi/entry/CacheEntry.html" title="interface in org.hibernate.cache.spi.entry">CacheEntry</a>&nbsp;cacheEntry)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyPropertiesFromDatastore(java.lang.Object,java.lang.Object,org.hibernate.engine.spi.EntityEntry,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">initializeLazyPropertiesFromDatastore</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyPropertiesFromDatastore(java.lang.Object,java.lang.Object,org.hibernate.engine.spi.EntityEntry,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">initializeLazyPropertiesFromDatastore</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="../../engine/spi/EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyProperty(java.lang.String,java.lang.Object,org.hibernate.engine.spi.EntityEntry,int,java.lang.Object)" class="member-name-link">initializeLazyProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyProperty(java.lang.String,java.lang.Object,org.hibernate.engine.spi.EntityEntry,int,java.lang.Object)" class="member-name-link">initializeLazyProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  int&nbsp;index,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;propValue)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called by Hibernate Reactive</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyProperty(java.lang.String,java.lang.Object,org.hibernate.engine.spi.EntityEntry,org.hibernate.bytecode.enhance.spi.interceptor.LazyAttributeDescriptor,java.lang.Object)" class="member-name-link">initializeLazyProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyProperty(java.lang.String,java.lang.Object,org.hibernate.engine.spi.EntityEntry,org.hibernate.bytecode.enhance.spi.interceptor.LazyAttributeDescriptor,java.lang.Object)" class="member-name-link">initializeLazyProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  <a href="../../bytecode/enhance/spi/interceptor/LazyAttributeDescriptor.html" title="class in org.hibernate.bytecode.enhance.spi.interceptor">LazyAttributeDescriptor</a>&nbsp;fetchGroupAttributeDescriptor,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;propValue)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyProperty(java.lang.String,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">initializeLazyProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initializeLazyProperty(java.lang.String,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">initializeLazyProperty</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fieldName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Initialize the property, and return its new value.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../metamodel/mapping/ModelPart.html" title="interface in org.hibernate.metamodel.mapping">ModelPart</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initInsertGeneratedProperties(java.util.List)" class="member-name-link">initInsertGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;generatedAttributes)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initPropertyPaths(org.hibernate.boot.Metadata)" class="member-name-link">initPropertyPaths</a><wbr>(<a href="../../boot/Metadata.html" title="interface in org.hibernate.boot">Metadata</a>&nbsp;mapping)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../metamodel/mapping/ModelPart.html" title="interface in org.hibernate.metamodel.mapping">ModelPart</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initInsertGeneratedProperties(java.util.List)" class="member-name-link">initInsertGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;generatedAttributes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#initSubclassPropertyAliasesMap(org.hibernate.mapping.PersistentClass)" class="member-name-link">initSubclassPropertyAliasesMap</a><wbr>(<a href="../../mapping/PersistentClass.html" title="class in org.hibernate.mapping">PersistentClass</a>&nbsp;model)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initPropertyPaths(org.hibernate.boot.Metadata)" class="member-name-link">initPropertyPaths</a><wbr>(<a href="../../boot/Metadata.html" title="interface in org.hibernate.boot">Metadata</a>&nbsp;mapping)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#initSubclassPropertyAliasesMap(org.hibernate.mapping.PersistentClass)" class="member-name-link">initSubclassPropertyAliasesMap</a><wbr>(<a href="../../mapping/PersistentClass.html" title="class in org.hibernate.mapping">PersistentClass</a>&nbsp;model)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
 <div class="block"><span class="deprecated-label">Deprecated.</span>
 <div class="deprecation-comment">Hibernate no longer uses aliases to read from result sets</div>
 </div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../metamodel/mapping/ModelPart.html" title="interface in org.hibernate.metamodel.mapping">ModelPart</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initUpdateGeneratedProperties(java.util.List)" class="member-name-link">initUpdateGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;generatedAttributes)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#instantiate(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">instantiate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;? extends <a href="../../metamodel/mapping/ModelPart.html" title="interface in org.hibernate.metamodel.mapping">ModelPart</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#initUpdateGeneratedProperties(java.util.List)" class="member-name-link">initUpdateGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;generatedAttributes)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#instantiate(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">instantiate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Create a class instance initialized with the given identifier</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="../../query/sqm/mutation/spi/SqmMultiTableInsertStrategy.html" title="interface in org.hibernate.query.sqm.mutation.spi">SqmMultiTableInsertStrategy</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#interpretSqmMultiTableInsertStrategy(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">interpretSqmMultiTableInsertStrategy</a><wbr>(<a href="AbstractEntityPersister.html" title="class in org.hibernate.persister.entity">AbstractEntityPersister</a>&nbsp;entityMappingDescriptor,
- <a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="../../query/sqm/mutation/spi/SqmMultiTableMutationStrategy.html" title="interface in org.hibernate.query.sqm.mutation.spi">SqmMultiTableMutationStrategy</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#interpretSqmMultiTableStrategy(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">interpretSqmMultiTableStrategy</a><wbr>(<a href="AbstractEntityPersister.html" title="class in org.hibernate.persister.entity">AbstractEntityPersister</a>&nbsp;entityMappingDescriptor,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="../../query/sqm/mutation/spi/SqmMultiTableInsertStrategy.html" title="interface in org.hibernate.query.sqm.mutation.spi">SqmMultiTableInsertStrategy</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#interpretSqmMultiTableInsertStrategy(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">interpretSqmMultiTableInsertStrategy</a><wbr>(<a href="AbstractEntityPersister.html" title="class in org.hibernate.persister.entity">AbstractEntityPersister</a>&nbsp;entityMappingDescriptor,
  <a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAbstract()" class="member-name-link">isAbstract</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>protected static <a href="../../query/sqm/mutation/spi/SqmMultiTableMutationStrategy.html" title="interface in org.hibernate.query.sqm.mutation.spi">SqmMultiTableMutationStrategy</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#interpretSqmMultiTableStrategy(org.hibernate.persister.entity.AbstractEntityPersister,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">interpretSqmMultiTableStrategy</a><wbr>(<a href="AbstractEntityPersister.html" title="class in org.hibernate.persister.entity">AbstractEntityPersister</a>&nbsp;entityMappingDescriptor,
+ <a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAbstract()" class="member-name-link">isAbstract</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether this entity is defined as abstract using the Java <code>abstract</code> keyword</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAffectedByEnabledFetchProfiles(org.hibernate.engine.spi.LoadQueryInfluencers)" class="member-name-link">isAffectedByEnabledFetchProfiles</a><wbr>(<a href="../../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAffectedByEnabledFetchProfiles(org.hibernate.engine.spi.LoadQueryInfluencers)" class="member-name-link">isAffectedByEnabledFetchProfiles</a><wbr>(<a href="../../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether any of the <a href="../../engine/spi/LoadQueryInfluencers.html#getEnabledFetchProfileNames()">LoadQueryInfluencers.getEnabledFetchProfileNames()</a>
  apply to this loadable</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAffectedByEnabledFilters(org.hibernate.engine.spi.LoadQueryInfluencers,boolean)" class="member-name-link">isAffectedByEnabledFilters</a><wbr>(<a href="../../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAffectedByEnabledFilters(org.hibernate.engine.spi.LoadQueryInfluencers,boolean)" class="member-name-link">isAffectedByEnabledFilters</a><wbr>(<a href="../../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers,
  boolean&nbsp;onlyApplyForLoadByKeyFilters)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether any of the "influencers" affect this loadable.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAffectedByEntityGraph(org.hibernate.engine.spi.LoadQueryInfluencers)" class="member-name-link">isAffectedByEntityGraph</a><wbr>(<a href="../../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isAffectedByEntityGraph(org.hibernate.engine.spi.LoadQueryInfluencers)" class="member-name-link">isAffectedByEntityGraph</a><wbr>(<a href="../../engine/spi/LoadQueryInfluencers.html" title="class in org.hibernate.engine.spi">LoadQueryInfluencers</a>&nbsp;loadQueryInfluencers)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether the <a href="../../engine/spi/LoadQueryInfluencers.html#getEffectiveEntityGraph()">effective entity-graph</a>
  applies to this loadable</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCacheInvalidationRequired()" class="member-name-link">isCacheInvalidationRequired</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCacheInvalidationRequired()" class="member-name-link">isCacheInvalidationRequired</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">We can't immediately add to the cache if we have formulas
  which must be evaluated, or if we have the possibility of
  two concurrent updates to the same item being merged on
  the database.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isClassOrSuperclassJoin(int)" class="member-name-link">isClassOrSuperclassJoin</a><wbr>(int&nbsp;j)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isClassOrSuperclassTable(int)" class="member-name-link">isClassOrSuperclassTable</a><wbr>(int&nbsp;j)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConcreteProxy()" class="member-name-link">isConcreteProxy</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isClassOrSuperclassJoin(int)" class="member-name-link">isClassOrSuperclassJoin</a><wbr>(int&nbsp;j)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isClassOrSuperclassTable(int)" class="member-name-link">isClassOrSuperclassTable</a><wbr>(int&nbsp;j)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isConcreteProxy()" class="member-name-link">isConcreteProxy</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns <code>true</code> if this entity type's hierarchy is configured to return
  <a href="../../annotations/ConcreteProxy.html" title="annotation interface in org.hibernate.annotations">concrete-typed</a> proxies.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDiscriminatorFormula()" class="member-name-link">isDiscriminatorFormula</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isExplicitPolymorphism()" class="member-name-link">isExplicitPolymorphism</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isDiscriminatorFormula()" class="member-name-link">isDiscriminatorFormula</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isExplicitPolymorphism()" class="member-name-link">isExplicitPolymorphism</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Is this class explicit polymorphism only?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIdentifierAssignedByInsert()" class="member-name-link">isIdentifierAssignedByInsert</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isIdentifierAssignedByInsert()" class="member-name-link">isIdentifierAssignedByInsert</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Are identifiers of this entity assigned known before the insert execution?
  Or, are they generated (in the database) by the insert execution.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isIdentifierTable(java.lang.String)" class="member-name-link">isIdentifierTable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableExpression)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInherited()" class="member-name-link">isInherited</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isIdentifierTable(java.lang.String)" class="member-name-link">isIdentifierTable</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;tableExpression)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInherited()" class="member-name-link">isInherited</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determine whether the entity is inherited one or more other entities.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInstance(java.lang.Object)" class="member-name-link">isInstance</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInstance(java.lang.Object)" class="member-name-link">isInstance</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Is the given object an instance of this entity?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInstrumented()" class="member-name-link">isInstrumented</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInstrumented()" class="member-name-link">isInstrumented</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Has the class actually been bytecode instrumented?</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInverseTable(int)" class="member-name-link">isInverseTable</a><wbr>(int&nbsp;j)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLazyPropertiesCacheable()" class="member-name-link">isLazyPropertiesCacheable</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isInverseTable(int)" class="member-name-link">isInverseTable</a><wbr>(int&nbsp;j)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isLazyPropertiesCacheable()" class="member-name-link">isLazyPropertiesCacheable</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Should lazy properties of this entity be cached?</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMutable()" class="member-name-link">isMutable</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isMutable()" class="member-name-link">isMutable</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determine whether instances of this entity are considered mutable.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNullableSubclassTable(int)" class="member-name-link">isNullableSubclassTable</a><wbr>(int&nbsp;j)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNullableTable(int)" class="member-name-link">isNullableTable</a><wbr>(int&nbsp;j)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNullableSubclassTable(int)" class="member-name-link">isNullableSubclassTable</a><wbr>(int&nbsp;j)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPhysicalDiscriminator()" class="member-name-link">isPhysicalDiscriminator</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isPropertyOfTable(int,int)" class="member-name-link">isPropertyOfTable</a><wbr>(int&nbsp;property,
- int&nbsp;j)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPropertySelectable(int)" class="member-name-link">isPropertySelectable</a><wbr>(int&nbsp;propertyNumber)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNullableTable(int)" class="member-name-link">isNullableTable</a><wbr>(int&nbsp;j)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPhysicalDiscriminator()" class="member-name-link">isPhysicalDiscriminator</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isPropertyOfTable(int,int)" class="member-name-link">isPropertyOfTable</a><wbr>(int&nbsp;property,
+ int&nbsp;j)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelectBeforeUpdateRequired()" class="member-name-link">isSelectBeforeUpdateRequired</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isPropertySelectable(int)" class="member-name-link">isPropertySelectable</a><wbr>(int&nbsp;propertyNumber)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSelectBeforeUpdateRequired()" class="member-name-link">isSelectBeforeUpdateRequired</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Is select snapshot before update enabled?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSharedColumn(java.lang.String)" class="member-name-link">isSharedColumn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnExpression)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSubclassEntityName(java.lang.String)" class="member-name-link">isSubclassEntityName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSharedColumn(java.lang.String)" class="member-name-link">isSharedColumn</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnExpression)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSubclassEntityName(java.lang.String)" class="member-name-link">isSubclassEntityName</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determine whether the given name represents a subclass entity
  (or this entity itself) of the entity mapped by this persister.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSubclassTableIndicatedByTreatAsDeclarations(int,java.util.Set)" class="member-name-link">isSubclassTableIndicatedByTreatAsDeclarations</a><wbr>(int&nbsp;subclassTableNumber,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSubclassTableIndicatedByTreatAsDeclarations(int,java.util.Set)" class="member-name-link">isSubclassTableIndicatedByTreatAsDeclarations</a><wbr>(int&nbsp;subclassTableNumber,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;treatAsDeclarations)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isTableCascadeDeleteEnabled(int)" class="member-name-link">isTableCascadeDeleteEnabled</a><wbr>(int&nbsp;j)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTransient(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">isTransient</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#isTableCascadeDeleteEnabled(int)" class="member-name-link">isTableCascadeDeleteEnabled</a><wbr>(int&nbsp;j)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTransient(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">isTransient</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Is this a new transient instance?</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTypeOrSuperType(org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">isTypeOrSuperType</a><wbr>(<a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;targetType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isTypeOrSuperType(org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">isTypeOrSuperType</a><wbr>(<a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;targetType)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Whether the passed entity mapping is the same as or is a supertype of
  this entity mapping</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersioned()" class="member-name-link">isVersioned</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersioned()" class="member-name-link">isVersioned</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Determine whether optimistic locking by column is enabled for this
  entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionGeneratedBeforeExecution()" class="member-name-link">isVersionGeneratedBeforeExecution</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionGeneratedOnExecution()" class="member-name-link">isVersionGeneratedOnExecution</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionGeneratedBeforeExecution()" class="member-name-link">isVersionGeneratedBeforeExecution</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionPropertyGenerated()" class="member-name-link">isVersionPropertyGenerated</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionGeneratedOnExecution()" class="member-name-link">isVersionGeneratedOnExecution</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isVersionPropertyGenerated()" class="member-name-link">isVersionPropertyGenerated</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Does this entity contain a version property that is defined
  to be database generated?</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkToSession(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">linkToSession</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkToSession(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">linkToSession</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkWithSubType(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">linkWithSubType</a><wbr>(<a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;sub,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkWithSubType(org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">linkWithSubType</a><wbr>(<a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;sub,
  <a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Called from <a href="../../metamodel/mapping/internal/InFlightEntityMappingType.html#linkWithSuperType(org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)"><code>InFlightEntityMappingType.linkWithSuperType(org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkWithSuperType(org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">linkWithSuperType</a><wbr>(<a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#linkWithSuperType(org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">linkWithSuperType</a><wbr>(<a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Link an entity type with its super-type, if one.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.Object,java.lang.Object,org.hibernate.LockMode,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.Object,java.lang.Object,org.hibernate.LockMode,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;optionalObject,
  <a href="../../LockMode.html" title="enum class in org.hibernate">LockMode</a>&nbsp;lockMode,
+ <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Load an instance using either the <code>forUpdateLoader</code> or the outer joining <code>loader</code>,
+ depending upon the value of the <code>lock</code> parameter</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.Object,java.lang.Object,org.hibernate.LockOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;optionalObject,
+ <a href="../../LockOptions.html" title="class in org.hibernate">LockOptions</a>&nbsp;lockOptions,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Load an instance using either the <code>forUpdateLoader</code> or the outer joining <code>loader</code>,
  depending upon the value of the <code>lock</code> parameter</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.Object,java.lang.Object,org.hibernate.LockOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;optionalObject,
- <a href="../../LockOptions.html" title="class in org.hibernate">LockOptions</a>&nbsp;lockOptions,
- <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Load an instance using either the <code>forUpdateLoader</code> or the outer joining <code>loader</code>,
- depending upon the value of the <code>lock</code> parameter</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.Object,java.lang.Object,org.hibernate.LockOptions,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Boolean)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#load(java.lang.Object,java.lang.Object,org.hibernate.LockOptions,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Boolean)" class="member-name-link">load</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;optionalObject,
  <a href="../../LockOptions.html" title="class in org.hibernate">LockOptions</a>&nbsp;lockOptions,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;readOnly)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadByUniqueKey(java.lang.String,java.lang.Object,java.lang.Boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">loadByUniqueKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadByUniqueKey(java.lang.String,java.lang.Object,java.lang.Boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">loadByUniqueKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;uniqueKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a>&nbsp;readOnly,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadByUniqueKey(java.lang.String,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">loadByUniqueKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadByUniqueKey(java.lang.String,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">loadByUniqueKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;uniqueKey,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Load an instance of the persistent class, by a unique key other
  than the primary key.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadEntityIdByNaturalId(java.lang.Object%5B%5D,org.hibernate.LockOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">loadEntityIdByNaturalId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;naturalIdValues,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#loadEntityIdByNaturalId(java.lang.Object%5B%5D,org.hibernate.LockOptions,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">loadEntityIdByNaturalId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;naturalIdValues,
  <a href="../../LockOptions.html" title="class in org.hibernate">LockOptions</a>&nbsp;lockOptions,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Load the id for the entity based on the natural id.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lock(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.LockMode,org.hibernate.event.spi.EventSource)" class="member-name-link">lock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lock(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.LockMode,org.hibernate.event.spi.EventSource)" class="member-name-link">lock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;version,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  <a href="../../LockMode.html" title="enum class in org.hibernate">LockMode</a>&nbsp;lockMode,
  <a href="../../event/spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Do a version check (optional operation)</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lock(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.LockOptions,org.hibernate.event.spi.EventSource)" class="member-name-link">lock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#lock(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.LockOptions,org.hibernate.event.spi.EventSource)" class="member-name-link">lock</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;version,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  <a href="../../LockOptions.html" title="class in org.hibernate">LockOptions</a>&nbsp;lockOptions,
  <a href="../../event/spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Do a version check (optional operation)</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logStaticSQL()" class="member-name-link">logStaticSQL</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#managesColumns(java.lang.String%5B%5D)" class="member-name-link">managesColumns</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;columnNames)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#logStaticSQL()" class="member-name-link">logStaticSQL</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#multiLoad(java.lang.Object%5B%5D,org.hibernate.event.spi.EventSource,org.hibernate.loader.ast.spi.MultiIdLoadOptions)" class="member-name-link">multiLoad</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;ids,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#managesColumns(java.lang.String%5B%5D)" class="member-name-link">managesColumns</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;columnNames)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;?&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#multiLoad(java.lang.Object%5B%5D,org.hibernate.event.spi.EventSource,org.hibernate.loader.ast.spi.MultiIdLoadOptions)" class="member-name-link">multiLoad</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;ids,
  <a href="../../event/spi/EventSource.html" title="interface in org.hibernate.event.spi">EventSource</a>&nbsp;session,
  <a href="../../loader/ast/spi/MultiIdLoadOptions.html" title="interface in org.hibernate.loader.ast.spi">MultiIdLoadOptions</a>&nbsp;loadOptions)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Performs a load of multiple entities (of this type) by identifier simultaneously.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#needsDiscriminator()" class="member-name-link">needsDiscriminator</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../engine/OptimisticLockStyle.html" title="enum class in org.hibernate.engine">OptimisticLockStyle</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#optimisticLockStyle()" class="member-name-link">optimisticLockStyle</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>abstract boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#needsDiscriminator()" class="member-name-link">needsDiscriminator</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final <a href="../../engine/OptimisticLockStyle.html" title="enum class in org.hibernate.engine">OptimisticLockStyle</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#optimisticLockStyle()" class="member-name-link">optimisticLockStyle</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">The type of optimistic locking, if any, defined for this entity mapping</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#physicalTableNameForMutation(org.hibernate.metamodel.mapping.SelectableMapping)" class="member-name-link">physicalTableNameForMutation</a><wbr>(<a href="../../metamodel/mapping/SelectableMapping.html" title="interface in org.hibernate.metamodel.mapping">SelectableMapping</a>&nbsp;selectableMapping)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#physicalTableNameForMutation(org.hibernate.metamodel.mapping.SelectableMapping)" class="member-name-link">physicalTableNameForMutation</a><wbr>(<a href="../../metamodel/mapping/SelectableMapping.html" title="interface in org.hibernate.metamodel.mapping">SelectableMapping</a>&nbsp;selectableMapping)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Unfortunately we cannot directly use `SelectableMapping#getContainingTableExpression()`
  as that blows up for attributes declared on super-type for union-subclass mappings</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postConstruct(org.hibernate.boot.Metadata)" class="member-name-link">postConstruct</a><wbr>(<a href="../../boot/Metadata.html" title="interface in org.hibernate.boot">Metadata</a>&nbsp;mapping)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postConstruct(org.hibernate.boot.Metadata)" class="member-name-link">postConstruct</a><wbr>(<a href="../../boot/Metadata.html" title="interface in org.hibernate.boot">Metadata</a>&nbsp;mapping)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Post-construct is a callback for AbstractEntityPersister subclasses to call after they are all done with their
  constructor processing.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postInstantiate()" class="member-name-link">postInstantiate</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>final void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#postInstantiate()" class="member-name-link">postInstantiate</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Finish the initialization of this object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareLoaders()" class="member-name-link">prepareLoaders</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareLoaders()" class="member-name-link">prepareLoaders</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Prepare loaders associated with the persister.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareMappingModel(org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">prepareMappingModel</a><wbr>(<a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#prepareMappingModel(org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess)" class="member-name-link">prepareMappingModel</a><wbr>(<a href="../../metamodel/mapping/internal/MappingModelCreationProcess.html" title="class in org.hibernate.metamodel.mapping.internal">MappingModelCreationProcess</a>&nbsp;creationProcess)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">After all hierarchy types have been linked, this method is called to allow the
  mapping model to be prepared which generally includes creating attribute mapping
  descriptors, identifier mapping descriptor, etc.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInsertGeneratedProperties(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.generator.values.GeneratedValues,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">processInsertGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processInsertGeneratedProperties(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.generator.values.GeneratedValues,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">processInsertGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;state,
  <a href="../../generator/values/GeneratedValues.html" title="interface in org.hibernate.generator.values">GeneratedValues</a>&nbsp;generatedValues,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve the values of any insert generated properties through the provided
  <a href="../../generator/values/GeneratedValues.html" title="interface in org.hibernate.generator.values"><code>GeneratedValues</code></a> or, when that's not available, by selecting them
  back from the database, injecting these generated values into the
  given entity as well as writing this state to the
  <a href="../../engine/spi/PersistenceContext.html" title="interface in org.hibernate.engine.spi"><code>PersistenceContext</code></a>.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processUpdateGeneratedProperties(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.generator.values.GeneratedValues,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">processUpdateGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#processUpdateGeneratedProperties(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,org.hibernate.generator.values.GeneratedValues,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">processUpdateGeneratedProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;state,
  <a href="../../generator/values/GeneratedValues.html" title="interface in org.hibernate.generator.values">GeneratedValues</a>&nbsp;generatedValues,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieve the values of any update generated properties through the provided
  <a href="../../generator/values/GeneratedValues.html" title="interface in org.hibernate.generator.values"><code>GeneratedValues</code></a> or, when that's not available, by selecting them
  back from the database, injecting these generated values into the
  given entity as well as writing this state to the
  <a href="../../engine/spi/PersistenceContext.html" title="interface in org.hibernate.engine.spi"><code>PersistenceContext</code></a>.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAffectingFetchProfile(java.lang.String)" class="member-name-link">registerAffectingFetchProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fetchProfileName)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#registerAffectingFetchProfile(java.lang.String)" class="member-name-link">registerAffectingFetchProfile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;fetchProfileName)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Register the profile name with the entity/collection</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetIdentifier(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resetIdentifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resetIdentifier(java.lang.Object,java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resetIdentifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;currentId,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;currentVersion,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the identifier and version of the given instance back to its "unsaved"
  value, that is, the value it had before it was made persistent.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveAttributeIndexes(java.lang.String%5B%5D)" class="member-name-link">resolveAttributeIndexes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;attributeNames)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveAttributeIndexes(java.lang.String%5B%5D)" class="member-name-link">resolveAttributeIndexes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;attributeNames)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Converts an array of attribute names to a set of indexes, according to the entity metamodel</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveConcreteProxyTypeForId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resolveConcreteProxyTypeForId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveConcreteProxyTypeForId(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">resolveConcreteProxyTypeForId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">If this entity is configured to return <a href="../../annotations/ConcreteProxy.html" title="annotation interface in org.hibernate.annotations">concrete-typed</a>
  proxies, this method queries the entity table(s) do determine the concrete entity type
  associated with the provided id and returns its persister.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDirtyAttributeIndexes(java.lang.Object%5B%5D,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.engine.spi.SessionImplementor)" class="member-name-link">resolveDirtyAttributeIndexes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;currentState,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int[]</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDirtyAttributeIndexes(java.lang.Object%5B%5D,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.engine.spi.SessionImplementor)" class="member-name-link">resolveDirtyAttributeIndexes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;currentState,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;previousState,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;attributeNames,
  <a href="../../engine/spi/SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Like <a href="EntityPersister.html#resolveAttributeIndexes(java.lang.String%5B%5D)"><code>EntityPersister.resolveAttributeIndexes(String[])</code></a> but also always returns mutable attributes</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../metamodel/mapping/DiscriminatorType.html" title="interface in org.hibernate.metamodel.mapping">DiscriminatorType</a>&lt;?&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDiscriminatorType()" class="member-name-link">resolveDiscriminatorType</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectFragment(java.lang.String,java.lang.String)" class="member-name-link">selectFragment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;alias,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="../../metamodel/mapping/DiscriminatorType.html" title="interface in org.hibernate.metamodel.mapping">DiscriminatorType</a>&lt;?&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resolveDiscriminatorType()" class="member-name-link">resolveDiscriminatorType</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#selectFragment(java.lang.String,java.lang.String)" class="member-name-link">selectFragment</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;alias,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;suffix)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">All columns to select, when loading.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIdentifier(java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">setIdentifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIdentifier(java.lang.Object,java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">setIdentifier</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
  <a href="../../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Inject the identifier value into the given entity.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPropertyValue(java.lang.Object,int,java.lang.Object)" class="member-name-link">setPropertyValue</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPropertyValue(java.lang.Object,int,java.lang.Object)" class="member-name-link">setPropertyValue</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  int&nbsp;i,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the value of a particular property of the given instance.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPropertyValues(java.lang.Object,java.lang.Object%5B%5D)" class="member-name-link">setPropertyValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPropertyValues(java.lang.Object,java.lang.Object%5B%5D)" class="member-name-link">setPropertyValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>[]&nbsp;values)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set the given values to the mapped properties of the given object.</div>
 </div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldGetAllProperties(java.lang.Object)" class="member-name-link">shouldGetAllProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldGetAllProperties(java.lang.Object)" class="member-name-link">shouldGetAllProperties</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;entity)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldInnerJoinSubclassTable(int,java.util.Set)" class="member-name-link">shouldInnerJoinSubclassTable</a><wbr>(int&nbsp;subclassTableNumber,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;treatAsDeclarations)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldInnerJoinSubclassTable(int,java.util.Set)" class="member-name-link">shouldInnerJoinSubclassTable</a><wbr>(int&nbsp;subclassTableNumber,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&gt;&nbsp;treatAsDeclarations)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldProcessSuperMapping()" class="member-name-link">shouldProcessSuperMapping</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#storeDiscriminatorInShallowQueryCacheLayout()" class="member-name-link">storeDiscriminatorInShallowQueryCacheLayout</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#substituteBrackets(java.lang.String)" class="member-name-link">substituteBrackets</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sql)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toColumns(java.lang.String)" class="member-name-link">toColumns</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Given a property path, return the corresponding column name(s).</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="UniqueKeyEntry.html" title="class in org.hibernate.persister.entity">UniqueKeyEntry</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#uniqueKeyEntries()" class="member-name-link">uniqueKeyEntries</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shouldProcessSuperMapping()" class="member-name-link">shouldProcessSuperMapping</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useShallowQueryCacheLayout()" class="member-name-link">useShallowQueryCacheLayout</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#storeDiscriminatorInShallowQueryCacheLayout()" class="member-name-link">storeDiscriminatorInShallowQueryCacheLayout</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#verifyHasNaturalId()" class="member-name-link">verifyHasNaturalId</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#substituteBrackets(java.lang.String)" class="member-name-link">substituteBrackets</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;sql)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toColumns(java.lang.String)" class="member-name-link">toColumns</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;propertyName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Given a property path, return the corresponding column name(s).</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="UniqueKeyEntry.html" title="class in org.hibernate.persister.entity">UniqueKeyEntry</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#uniqueKeyEntries()" class="member-name-link">uniqueKeyEntries</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useShallowQueryCacheLayout()" class="member-name-link">useShallowQueryCacheLayout</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>protected void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#verifyHasNaturalId()" class="member-name-link">verifyHasNaturalId</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Visit the mappings, but limited to just attributes defined
  in the targetType or its super-type(s) if any.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitDeclaredAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitDeclaredAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitDeclaredAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitDeclaredAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Visit attributes defined on this class - do not visit attributes defined on the super</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitFetchables(java.util.function.Consumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitFetchables</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
- <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitFetchables(org.hibernate.internal.util.IndexedConsumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitFetchables</a><wbr>(<a href="../../internal/util/IndexedConsumer.html" title="interface in org.hibernate.internal.util">IndexedConsumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitFetchables(java.util.function.Consumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitFetchables</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
  <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitKeyFetchables(java.util.function.Consumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitKeyFetchables</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitFetchables(org.hibernate.internal.util.IndexedConsumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitFetchables</a><wbr>(<a href="../../internal/util/IndexedConsumer.html" title="interface in org.hibernate.internal.util">IndexedConsumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
  <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitKeyFetchables(org.hibernate.internal.util.IndexedConsumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitKeyFetchables</a><wbr>(<a href="../../internal/util/IndexedConsumer.html" title="interface in org.hibernate.internal.util">IndexedConsumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitKeyFetchables(java.util.function.Consumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitKeyFetchables</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
  <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#visitMutabilityOrderedTables(org.hibernate.persister.entity.AbstractEntityPersister.MutabilityOrderedTableConsumer)" class="member-name-link">visitMutabilityOrderedTables</a><wbr>(org.hibernate.persister.entity.AbstractEntityPersister.MutabilityOrderedTableConsumer&nbsp;consumer)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitKeyFetchables(org.hibernate.internal.util.IndexedConsumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitKeyFetchables</a><wbr>(<a href="../../internal/util/IndexedConsumer.html" title="interface in org.hibernate.internal.util">IndexedConsumer</a>&lt;? super <a href="../../sql/results/graph/Fetchable.html" title="interface in org.hibernate.sql.results.graph">Fetchable</a>&gt;&nbsp;fetchableConsumer,
+ <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>protected abstract void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#visitMutabilityOrderedTables(org.hibernate.persister.entity.AbstractEntityPersister.MutabilityOrderedTableConsumer)" class="member-name-link">visitMutabilityOrderedTables</a><wbr>(org.hibernate.persister.entity.AbstractEntityPersister.MutabilityOrderedTableConsumer&nbsp;consumer)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Visit details about each table for this entity, using "mutability ordering".</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitSubParts(java.util.function.Consumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitSubParts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../metamodel/mapping/ModelPart.html" title="interface in org.hibernate.metamodel.mapping">ModelPart</a>&gt;&nbsp;consumer,
- <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitSubTypeAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitSubTypeAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitSubParts(java.util.function.Consumer,org.hibernate.metamodel.mapping.EntityMappingType)" class="member-name-link">visitSubParts</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;<a href="../../metamodel/mapping/ModelPart.html" title="interface in org.hibernate.metamodel.mapping">ModelPart</a>&gt;&nbsp;consumer,
+ <a href="../../metamodel/mapping/EntityMappingType.html" title="interface in org.hibernate.metamodel.mapping">EntityMappingType</a>&nbsp;treatTargetType)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitSubTypeAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitSubTypeAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Walk this type's attributes as well as its sub-type's</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitSuperTypeAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitSuperTypeAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#visitSuperTypeAttributeMappings(java.util.function.Consumer)" class="member-name-link">visitSuperTypeAttributeMappings</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Consumer.html" title="class or interface in java.util.function" class="external-link">Consumer</a>&lt;? super <a href="../../metamodel/mapping/AttributeMapping.html" title="interface in org.hibernate.metamodel.mapping">AttributeMapping</a>&gt;&nbsp;action)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Walk this type's attributes as well as its super-type's</div>
 </div>
 </div>
@@ -4959,18 +4954,6 @@ Y&gt;&nbsp;int</code></div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="EntityPersister.html#getMappedClass()">getMappedClass</a></code>&nbsp;in interface&nbsp;<code><a href="EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="implementsLifecycle()">
-<h3>implementsLifecycle</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">implementsLifecycle</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="EntityPersister.html#implementsLifecycle()">EntityPersister</a></code></span></div>
-<div class="block">Does the class implement the <a href="../../classic/Lifecycle.html" title="interface in org.hibernate.classic"><code>Lifecycle</code></a> interface?</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="EntityPersister.html#implementsLifecycle()">implementsLifecycle</a></code>&nbsp;in interface&nbsp;<code><a href="EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a></code></dd>
 </dl>
 </section>
 </li>

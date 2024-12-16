@@ -224,8 +224,20 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color"><code>final <a href="../engine/jdbc/spi/JdbcServices.html" title="interface in org.hibernate.engine.jdbc.spi">JdbcServices</a></code></div>
 <div class="col-second even-row-color"><code><a href="#jdbcServices" class="member-name-link">jdbcServices</a></code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final <a href="../sql/ast/spi/ParameterMarkerStrategy.html" title="interface in org.hibernate.sql.ast.spi">ParameterMarkerStrategy</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#parameterMarkerStrategy" class="member-name-link">parameterMarkerStrategy</a></code></div>
+<div class="col-first odd-row-color"><code>final <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#jdbcTimeZone" class="member-name-link">jdbcTimeZone</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="../sql/ast/spi/ParameterMarkerStrategy.html" title="interface in org.hibernate.sql.ast.spi">ParameterMarkerStrategy</a></code></div>
+<div class="col-second even-row-color"><code><a href="#parameterMarkerStrategy" class="member-name-link">parameterMarkerStrategy</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final int</code></div>
+<div class="col-second odd-row-color"><code><a href="#preferredSqlTypeCodeForBoolean" class="member-name-link">preferredSqlTypeCodeForBoolean</a></code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>final <a href="../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a></code></div>
+<div class="col-second even-row-color"><code><a href="#typeConfiguration" class="member-name-link">typeConfiguration</a></code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final boolean</code></div>
+<div class="col-second odd-row-color"><code><a href="#useStreamForLobBinding" class="member-name-link">useStreamForLobBinding</a></code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
@@ -235,7 +247,7 @@ loadScripts(document, 'script');</script>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
 <div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button><button id="method-summary-table-tab6" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab6', 3)" class="table-tab">Deprecated Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">Instance Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -244,34 +256,15 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#firePostLoadEvent(org.hibernate.event.spi.PostLoadEvent)" class="member-name-link">firePostLoadEvent</a><wbr>(<a href="../event/spi/PostLoadEvent.html" title="class in org.hibernate.event.spi">PostLoadEvent</a>&nbsp;postLoadEvent)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../TimeZoneStorageStrategy.html" title="enum class in org.hibernate">TimeZoneStorageStrategy</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getDefaultTimeZoneStorageStrategy()" class="member-name-link">getDefaultTimeZoneStorageStrategy</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../event/spi/EventManager.html" title="interface in org.hibernate.event.spi">EventManager</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEventManager()" class="member-name-link">getEventManager</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../sql/results/jdbc/spi/JdbcValuesMappingProducerProvider.html" title="interface in org.hibernate.sql.results.jdbc.spi">JdbcValuesMappingProducerProvider</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJdbcValuesMappingProducerProvider()" class="member-name-link">getJdbcValuesMappingProducerProvider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="../engine/jdbc/mutation/spi/MutationExecutorService.html" title="interface in org.hibernate.engine.jdbc.mutation.spi">MutationExecutorService</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6"><code><a href="#getMutationExecutorService()" class="member-name-link">getMutationExecutorService</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4 method-summary-table-tab6">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPreferredSqlTypeCodeForBoolean()" class="member-name-link">getPreferredSqlTypeCodeForBoolean</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#useStreamForLobBinding()" class="member-name-link">useStreamForLobBinding</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
@@ -500,9 +493,39 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="dialect">
+<h3>dialect</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a></span>&nbsp;<span class="element-name">dialect</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="typeConfiguration">
+<h3>typeConfiguration</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../type/spi/TypeConfiguration.html" title="class in org.hibernate.type.spi">TypeConfiguration</a></span>&nbsp;<span class="element-name">typeConfiguration</span></div>
+</section>
+</li>
+<li>
 <section class="detail" id="jdbcServices">
 <h3>jdbcServices</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../engine/jdbc/spi/JdbcServices.html" title="interface in org.hibernate.engine.jdbc.spi">JdbcServices</a></span>&nbsp;<span class="element-name">jdbcServices</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="useStreamForLobBinding">
+<h3>useStreamForLobBinding</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">useStreamForLobBinding</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="preferredSqlTypeCodeForBoolean">
+<h3>preferredSqlTypeCodeForBoolean</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">preferredSqlTypeCodeForBoolean</span></div>
+</section>
+</li>
+<li>
+<section class="detail" id="jdbcTimeZone">
+<h3>jdbcTimeZone</h3>
+<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TimeZone.html" title="class or interface in java.util" class="external-link">TimeZone</a></span>&nbsp;<span class="element-name">jdbcTimeZone</span></div>
 </section>
 </li>
 <li>
@@ -515,12 +538,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="batchBuilder">
 <h3>batchBuilder</h3>
 <div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../engine/jdbc/batch/spi/BatchBuilder.html" title="interface in org.hibernate.engine.jdbc.batch.spi">BatchBuilder</a></span>&nbsp;<span class="element-name">batchBuilder</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="dialect">
-<h3>dialect</h3>
-<div class="member-signature"><span class="modifiers">public final</span>&nbsp;<span class="return-type"><a href="../dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a></span>&nbsp;<span class="element-name">dialect</span></div>
 </section>
 </li>
 <li>
@@ -544,35 +561,9 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="getEventManager()">
-<h3>getEventManager</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../event/spi/EventManager.html" title="interface in org.hibernate.event.spi">EventManager</a></span>&nbsp;<span class="element-name">getEventManager</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="useStreamForLobBinding()">
-<h3>useStreamForLobBinding</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">useStreamForLobBinding</span>()</div>
-</section>
-</li>
-<li>
 <section class="detail" id="firePostLoadEvent(org.hibernate.event.spi.PostLoadEvent)">
 <h3>firePostLoadEvent</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">firePostLoadEvent</span><wbr><span class="parameters">(<a href="../event/spi/PostLoadEvent.html" title="class in org.hibernate.event.spi">PostLoadEvent</a>&nbsp;postLoadEvent)</span></div>
-</section>
-</li>
-<li>
-<section class="detail" id="getPreferredSqlTypeCodeForBoolean()">
-<h3>getPreferredSqlTypeCodeForBoolean</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getPreferredSqlTypeCodeForBoolean</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getDefaultTimeZoneStorageStrategy()">
-<h3>getDefaultTimeZoneStorageStrategy</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true)
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../TimeZoneStorageStrategy.html" title="enum class in org.hibernate">TimeZoneStorageStrategy</a></span>&nbsp;<span class="element-name">getDefaultTimeZoneStorageStrategy</span>()</div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </section>
 </li>
 <li>
@@ -585,14 +576,6 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="getXmlFormatMapper()">
 <h3>getXmlFormatMapper</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../type/format/FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span>&nbsp;<span class="element-name">getXmlFormatMapper</span>()</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getMutationExecutorService()">
-<h3>getMutationExecutorService</h3>
-<div class="member-signature"><span class="annotations"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html" title="class or interface in java.lang" class="external-link">@Deprecated</a>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Deprecated.html#forRemoval()" title="class or interface in java.lang" class="external-link">forRemoval</a>=true)
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../engine/jdbc/mutation/spi/MutationExecutorService.html" title="interface in org.hibernate.engine.jdbc.mutation.spi">MutationExecutorService</a></span>&nbsp;<span class="element-name">getMutationExecutorService</span>()</div>
-<div class="deprecation-block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
 </section>
 </li>
 </ul>

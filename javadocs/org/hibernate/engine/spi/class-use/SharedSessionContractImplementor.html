@@ -144,35 +144,35 @@ loadScripts(document, 'script');</script>
 <div class="block">This package defines some central internal SPI abstractions
  used throughout the implementation of Hibernate.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.hibernate.envers.internal.entities">org.hibernate.envers.internal.entities</a></div>
+<div class="col-first even-row-color"><a href="#org.hibernate.envers.internal.entities.mapper.relation.lazy">org.hibernate.envers.internal.entities.mapper.relation.lazy</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.envers.internal.entities.mapper.relation.lazy">org.hibernate.envers.internal.entities.mapper.relation.lazy</a></div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.envers.internal.entities.mapper.relation.query">org.hibernate.envers.internal.entities.mapper.relation.query</a></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><a href="#org.hibernate.envers.internal.entities.mapper.relation.query">org.hibernate.envers.internal.entities.mapper.relation.query</a></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.event.internal">org.hibernate.event.internal</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.hibernate.event.internal">org.hibernate.event.internal</a></div>
+<div class="col-last even-row-color">
 <div class="block">This package defines a default set of event listeners that implement
  the default behaviors of Hibernate session operations.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.hibernate.event.spi">org.hibernate.event.spi</a></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><a href="#org.hibernate.event.spi">org.hibernate.event.spi</a></div>
+<div class="col-last odd-row-color">
 <div class="block">Defines the event types and event listener interfaces for
  events produced by the stateful <a href="../../../Session.html" title="interface in org.hibernate"><code>Session</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.generator">org.hibernate.generator</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><a href="#org.hibernate.generator">org.hibernate.generator</a></div>
+<div class="col-last even-row-color">
 <div class="block">This package defines an abstraction over all kinds of automatic
  value generation, including id generation and version number
  generation.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.hibernate.generator.internal">org.hibernate.generator.internal</a></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.generator.values">org.hibernate.generator.values</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><a href="#org.hibernate.generator.internal">org.hibernate.generator.internal</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#org.hibernate.generator.values">org.hibernate.generator.values</a></div>
+<div class="col-last even-row-color">
 <div class="block">Contains a framework of strategies for efficient retrieval of
  <a href="../../../generator/OnExecutionGenerator.html" title="interface in org.hibernate.generator">database-generated values</a>.</div>
 </div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.generator.values.internal">org.hibernate.generator.values.internal</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><a href="#org.hibernate.id">org.hibernate.id</a></div>
 <div class="col-last even-row-color">
 <div class="block">This package and its subpackages, especially <a href="../../../id/enhanced/package-summary.html"><code>org.hibernate.id.enhanced</code></a>,
@@ -2276,16 +2276,13 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">BatchFetchQueue.</span><code><a href="../BatchFetchQueue.html#getSession()" class="member-name-link">getSession</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">LazySessionWrapperOptions.</span><code><a href="../LazySessionWrapperOptions.html#getSession()" class="member-name-link">getSession</a>()</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">PersistenceContext.</span><code><a href="../PersistenceContext.html#getSession()" class="member-name-link">getSession</a>()</code></div>
-<div class="col-last even-row-color">
+<div class="col-second odd-row-color"><span class="type-name-label">PersistenceContext.</span><code><a href="../PersistenceContext.html#getSession()" class="member-name-link">getSession</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Get the session to which this persistence context is bound.</div>
 </div>
-<div class="col-first odd-row-color"><code>default <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SharedSessionContractImplementor.</span><code><a href="../SharedSessionContractImplementor.html#getSession()" class="member-name-link">getSession</a>()</code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>default <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SharedSessionContractImplementor.</span><code><a href="../SharedSessionContractImplementor.html#getSession()" class="member-name-link">getSession</a>()</code></div>
+<div class="col-last even-row-color">
 <div class="block">Returns this object, fulfilling the contract of <a href="../../../type/descriptor/WrapperOptions.html" title="interface in org.hibernate.type.descriptor"><code>WrapperOptions</code></a>.</div>
 </div>
 </div>
@@ -2309,28 +2306,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../CollectionEntry.html#postInitialize(org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">postInitialize</a><wbr>(<a href="../../../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="org.hibernate.envers.internal.entities">
-<h2>Uses of <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a> in <a href="../../../envers/internal/entities/package-summary.html">org.hibernate.envers.internal.entities</a></h2>
-<div class="caption"><span>Methods in <a href="../../../envers/internal/entities/package-summary.html">org.hibernate.envers.internal.entities</a> with parameters of type <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../../../envers/RevisionType.html" title="enum class in org.hibernate.envers">RevisionType</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">RevisionTypeType.</span><code><a href="../../../envers/internal/entities/RevisionTypeType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
- int&nbsp;position,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">RevisionTypeType.</span><code><a href="../../../envers/internal/entities/RevisionTypeType.html#nullSafeSet(java.sql.PreparedStatement,org.hibernate.envers.RevisionType,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;preparedStatement,
- <a href="../../../envers/RevisionType.html" title="enum class in org.hibernate.envers">RevisionType</a>&nbsp;value,
- int&nbsp;index,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -2438,11 +2413,68 @@ loadScripts(document, 'script');</script>
  <a href="../../../event/spi/EventManager.CacheActionDescription.html" title="enum class in org.hibernate.event.spi">EventManager.CacheActionDescription</a>&nbsp;description)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeDirtyCalculationEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.EntityEntry,int%5B%5D)" class="member-name-link">completeDirtyCalculationEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;dirtyCalculationEvent,
+<div class="col-second odd-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeCollectionRecreateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionRecreateEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeCollectionRemoveEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionRemoveEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeCollectionUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionUpdateEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeDirtyCalculationEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.EntityEntry,int%5B%5D)" class="member-name-link">completeDirtyCalculationEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;dirtyCalculationEvent,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  int[]&nbsp;dirtyProperties)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeEntityDeleteEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityDeleteEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeEntityInsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityInsertEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeEntityLockEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,org.hibernate.LockMode,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityLockEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ <a href="../../../LockMode.html" title="enum class in org.hibernate">LockMode</a>&nbsp;lockMode,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeEntityUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityUpdateEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeEntityUpsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityUpsertEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">EmptyEventManager.</span><code><a href="../../../event/internal/EmptyEventManager.html#completeJdbcConnectionAcquisitionEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">completeJdbcConnectionAcquisitionEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;jdbcConnectionAcquisitionEvent,
@@ -2540,11 +2572,68 @@ loadScripts(document, 'script');</script>
  <a href="../../../event/spi/EventManager.CacheActionDescription.html" title="enum class in org.hibernate.event.spi">EventManager.CacheActionDescription</a>&nbsp;description)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeDirtyCalculationEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.EntityEntry,int%5B%5D)" class="member-name-link">completeDirtyCalculationEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;dirtyCalculationEvent,
+<div class="col-second odd-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeCollectionRecreateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionRecreateEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeCollectionRemoveEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionRemoveEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeCollectionUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeCollectionUpdateEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;role,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeDirtyCalculationEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,org.hibernate.persister.entity.EntityPersister,org.hibernate.engine.spi.EntityEntry,int%5B%5D)" class="member-name-link">completeDirtyCalculationEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;dirtyCalculationEvent,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
  <a href="../EntityEntry.html" title="interface in org.hibernate.engine.spi">EntityEntry</a>&nbsp;entry,
  int[]&nbsp;dirtyProperties)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeEntityDeleteEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityDeleteEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeEntityInsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityInsertEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeEntityLockEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,org.hibernate.LockMode,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityLockEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ <a href="../../../LockMode.html" title="enum class in org.hibernate">LockMode</a>&nbsp;lockMode,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeEntityUpdateEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityUpdateEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeEntityUpsertEvent(org.hibernate.event.spi.HibernateMonitoringEvent,java.lang.Object,java.lang.String,boolean,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">completeEntityUpsertEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;event,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;id,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;entityName,
+ boolean&nbsp;success,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">EventManager.</span><code><a href="../../../event/spi/EventManager.html#completeJdbcConnectionAcquisitionEvent(org.hibernate.event.spi.HibernateMonitoringEvent,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">completeJdbcConnectionAcquisitionEvent</a><wbr>(<a href="../../../event/spi/HibernateMonitoringEvent.html" title="interface in org.hibernate.event.spi">HibernateMonitoringEvent</a>&nbsp;jdbcConnectionAcquisitionEvent,
@@ -2673,6 +2762,26 @@ loadScripts(document, 'script');</script>
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Create a <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a> from the provided <code>sql</code> based on the delegate needs.</div>
+</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.generator.values.internal">
+<h2>Uses of <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a> in <a href="../../../generator/values/internal/package-summary.html">org.hibernate.generator.values.internal</a></h2>
+<div class="caption"><span>Methods in <a href="../../../generator/values/internal/package-summary.html">org.hibernate.generator.values.internal</a> with parameters of type <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static <a href="../../../generator/values/GeneratedValues.html" title="interface in org.hibernate.generator.values">GeneratedValues</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">GeneratedValuesHelper.</span><code><a href="../../../generator/values/internal/GeneratedValuesHelper.html#getGeneratedValues(java.sql.ResultSet,org.hibernate.persister.entity.EntityPersister,org.hibernate.generator.EventType,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">getGeneratedValues</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;resultSet,
+ <a href="../../../persister/entity/EntityPersister.html" title="interface in org.hibernate.persister.entity">EntityPersister</a>&nbsp;persister,
+ <a href="../../../generator/EventType.html" title="enum class in org.hibernate.generator">EventType</a>&nbsp;timing,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Reads the <a href="../../../persister/entity/EntityPersister.html#getGeneratedProperties(org.hibernate.generator.EventType)"><code>generated values</code></a>
+ for the specified <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
 </div>
 </div>
 </section>
@@ -4948,15 +5057,6 @@ Y&gt;&nbsp;int</code></div>
 <li>
 <section class="detail" id="org.hibernate.persister.entity">
 <h2>Uses of <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a> in <a href="../../../persister/entity/package-summary.html">org.hibernate.persister.entity</a></h2>
-<div class="caption"><span>Methods in <a href="../../../persister/entity/package-summary.html">org.hibernate.persister.entity</a> that return <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SessionFactoryBasedWrapperOptions.</span><code><a href="../../../persister/entity/SessionFactoryBasedWrapperOptions.html#getSession()" class="member-name-link">getSession</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="caption"><span>Methods in <a href="../../../persister/entity/package-summary.html">org.hibernate.persister.entity</a> with parameters of type <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -8015,118 +8115,103 @@ Y&gt;&nbsp;int</code></div>
 <div class="col-last even-row-color">
 <div class="block">Load an instance by a unique key that is not the primary key.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../../type/EnumType.html" title="type parameter in EnumType">T</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EnumType.</span><code><a href="../../../type/EnumType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
- int&nbsp;position,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
-<div class="col-first even-row-color"><code>final void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractSingleColumnStandardBasicType.</span><code><a href="../../../type/AbstractSingleColumnStandardBasicType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-first odd-row-color"><code>final void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractSingleColumnStandardBasicType.</span><code><a href="../../../type/AbstractSingleColumnStandardBasicType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  boolean[]&nbsp;settable,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractStandardBasicType.</span><code><a href="../../../type/AbstractStandardBasicType.html#nullSafeSet(java.sql.CallableStatement,T,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/CallableStatement.html" title="class or interface in java.sql" class="external-link">CallableStatement</a>&nbsp;st,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractStandardBasicType.</span><code><a href="../../../type/AbstractStandardBasicType.html#nullSafeSet(java.sql.CallableStatement,T,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/CallableStatement.html" title="class or interface in java.sql" class="external-link">CallableStatement</a>&nbsp;st,
  <a href="../../../type/AbstractStandardBasicType.html" title="type parameter in AbstractStandardBasicType">T</a>&nbsp;value,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractStandardBasicType.</span><code><a href="../../../type/AbstractStandardBasicType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
- int&nbsp;index,
- boolean[]&nbsp;settable,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>final void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AbstractStandardBasicType.</span><code><a href="../../../type/AbstractStandardBasicType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
- int&nbsp;index,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AnyType.</span><code><a href="../../../type/AnyType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
- int&nbsp;index,
- boolean[]&nbsp;settable,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">AnyType.</span><code><a href="../../../type/AnyType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-second odd-row-color"><span class="type-name-label">AbstractStandardBasicType.</span><code><a href="../../../type/AbstractStandardBasicType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
+ boolean[]&nbsp;settable,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>final void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CollectionType.</span><code><a href="../../../type/CollectionType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-second even-row-color"><span class="type-name-label">AbstractStandardBasicType.</span><code><a href="../../../type/AbstractStandardBasicType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
+ int&nbsp;index,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">AnyType.</span><code><a href="../../../type/AnyType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  boolean[]&nbsp;settable,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CollectionType.</span><code><a href="../../../type/CollectionType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AnyType.</span><code><a href="../../../type/AnyType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>final void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CollectionType.</span><code><a href="../../../type/CollectionType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
+ int&nbsp;index,
+ boolean[]&nbsp;settable,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ComponentType.</span><code><a href="../../../type/ComponentType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-second even-row-color"><span class="type-name-label">CollectionType.</span><code><a href="../../../type/CollectionType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
+ int&nbsp;index,
+ <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ComponentType.</span><code><a href="../../../type/ComponentType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;begin,
  boolean[]&nbsp;settable,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">ComponentType.</span><code><a href="../../../type/ComponentType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">ComponentType.</span><code><a href="../../../type/ComponentType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;begin,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CustomType.</span><code><a href="../../../type/CustomType.html#nullSafeSet(java.sql.CallableStatement,J,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/CallableStatement.html" title="class or interface in java.sql" class="external-link">CallableStatement</a>&nbsp;statement,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CustomType.</span><code><a href="../../../type/CustomType.html#nullSafeSet(java.sql.CallableStatement,J,java.lang.String,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/CallableStatement.html" title="class or interface in java.sql" class="external-link">CallableStatement</a>&nbsp;statement,
  <a href="../../../type/CustomType.html" title="type parameter in CustomType">J</a>&nbsp;value,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CustomType.</span><code><a href="../../../type/CustomType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CustomType.</span><code><a href="../../../type/CustomType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  boolean[]&nbsp;settable,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CustomType.</span><code><a href="../../../type/CustomType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CustomType.</span><code><a href="../../../type/CustomType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EntityType.</span><code><a href="../../../type/EntityType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">EntityType.</span><code><a href="../../../type/EntityType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  boolean[]&nbsp;settable,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">EntityType.</span><code><a href="../../../type/EntityType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">EntityType.</span><code><a href="../../../type/EntityType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
  int&nbsp;index,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">EnumType.</span><code><a href="../../../type/EnumType.html#nullSafeSet(java.sql.PreparedStatement,T,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
- <a href="../../../type/EnumType.html" title="type parameter in EnumType">T</a>&nbsp;value,
- int&nbsp;index,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">
-<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span></div>
-&nbsp;</div>
+<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
 <div class="col-second even-row-color"><span class="type-name-label">MetaType.</span><code><a href="../../../type/MetaType.html#nullSafeSet(java.sql.PreparedStatement,java.lang.Object,int,boolean%5B%5D,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;value,
@@ -8725,15 +8810,6 @@ Y&gt;&nbsp;int</code></div>
 <li>
 <section class="detail" id="org.hibernate.type.internal">
 <h2>Uses of <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a> in <a href="../../../type/internal/package-summary.html">org.hibernate.type.internal</a></h2>
-<div class="caption"><span>Methods in <a href="../../../type/internal/package-summary.html">org.hibernate.type.internal</a> that return <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">TypeConfigurationWrapperOptions.</span><code><a href="../../../type/internal/TypeConfigurationWrapperOptions.html#getSession()" class="member-name-link">getSession</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
 <div class="caption"><span>Methods in <a href="../../../type/internal/package-summary.html">org.hibernate.type.internal</a> with parameters of type <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a></span></div>
 <div class="summary-table three-column-summary">
 <div class="table-header col-first">Modifier and Type</div>
@@ -8854,74 +8930,45 @@ Y&gt;&nbsp;int</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Increment the version.</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../../usertype/BaseUserTypeSupport.html" title="type parameter in BaseUserTypeSupport">T</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">BaseUserTypeSupport.</span><code><a href="../../../usertype/BaseUserTypeSupport.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
- int&nbsp;position,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code><a href="../../../usertype/StaticUserTypeSupport.html" title="type parameter in StaticUserTypeSupport">T</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StaticUserTypeSupport.</span><code><a href="../../../usertype/StaticUserTypeSupport.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
- int&nbsp;position,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>default <a href="../../../usertype/UserType.html" title="type parameter in UserType">J</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">UserType.</span><code><a href="../../../usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
- int&nbsp;position,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Read an instance of the Java class mapped by this custom type
- from the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link"><code>ResultSet</code></a>.</div>
-</div>
-<div class="col-first odd-row-color"><code>default <a href="../../../usertype/UserType.html" title="type parameter in UserType">J</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">UserType.</span><code><a href="../../../usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
+<div class="col-second even-row-color"><span class="type-name-label">UserType.</span><code><a href="../../../usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">nullSafeGet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/ResultSet.html" title="class or interface in java.sql" class="external-link">ResultSet</a>&nbsp;rs,
  int&nbsp;position,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
-<div class="deprecation-comment">Implement <a href="../../../usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>UserType.nullSafeGet(ResultSet, int, SharedSessionContractImplementor)</code></a></div>
+<div class="deprecation-comment">Implement <a href="../../../usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)"><code>UserType.nullSafeGet(ResultSet, int, WrapperOptions)</code></a></div>
 </div>
 </div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">BaseUserTypeSupport.</span><code><a href="../../../usertype/BaseUserTypeSupport.html#nullSafeSet(java.sql.PreparedStatement,T,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
- <a href="../../../usertype/BaseUserTypeSupport.html" title="type parameter in BaseUserTypeSupport">T</a>&nbsp;value,
- int&nbsp;index,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">StaticUserTypeSupport.</span><code><a href="../../../usertype/StaticUserTypeSupport.html#nullSafeSet(java.sql.PreparedStatement,T,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
- <a href="../../../usertype/StaticUserTypeSupport.html" title="type parameter in StaticUserTypeSupport">T</a>&nbsp;value,
- int&nbsp;index,
- <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code>default void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">UserType.</span><code><a href="../../../usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
+<div class="col-first odd-row-color"><code>default void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">UserType.</span><code><a href="../../../usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">nullSafeSet</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link">PreparedStatement</a>&nbsp;st,
  <a href="../../../usertype/UserType.html" title="type parameter in UserType">J</a>&nbsp;value,
  int&nbsp;position,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">
-<div class="block">Write an instance of the Java class mapped by this custom type
- to the given JDBC <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/PreparedStatement.html" title="class or interface in java.sql" class="external-link"><code>PreparedStatement</code></a>.</div>
+<div class="col-last odd-row-color">
+<div class="block"><span class="deprecated-label">Deprecated, for removal: This API element is subject to removal in a future version.</span>
+<div class="deprecation-comment">Implement <a href="../../../usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)"><code>UserType.nullSafeSet(PreparedStatement, Object, int, WrapperOptions)</code></a></div>
 </div>
-<div class="col-first odd-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">UserCollectionType.</span><code><a href="../../../usertype/UserCollectionType.html#replaceElements(java.lang.Object,java.lang.Object,org.hibernate.persister.collection.CollectionPersister,java.lang.Object,java.util.Map,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">replaceElements</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;original,
+</div>
+<div class="col-first even-row-color"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">UserCollectionType.</span><code><a href="../../../usertype/UserCollectionType.html#replaceElements(java.lang.Object,java.lang.Object,org.hibernate.persister.collection.CollectionPersister,java.lang.Object,java.util.Map,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">replaceElements</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;original,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;target,
  <a href="../../../persister/collection/CollectionPersister.html" title="interface in org.hibernate.persister.collection">CollectionPersister</a>&nbsp;persister,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;owner,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&nbsp;copyCache,
  <a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Replace the elements of a collection with the elements of another collection</div>
 </div>
-<div class="col-first even-row-color"><code><a href="../../../usertype/UserVersionType.html" title="type parameter in UserVersionType">T</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">UserVersionType.</span><code><a href="../../../usertype/UserVersionType.html#seed(org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">seed</a><wbr>(<a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code><a href="../../../usertype/UserVersionType.html" title="type parameter in UserVersionType">T</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">UserVersionType.</span><code><a href="../../../usertype/UserVersionType.html#seed(org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">seed</a><wbr>(<a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Generate an initial version.</div>
 </div>
-<div class="col-first odd-row-color"><code><a href="../../../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">UserCollectionType.</span><code><a href="../../../usertype/UserCollectionType.html#wrap(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">wrap</a><wbr>(<a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
+<div class="col-first even-row-color"><code><a href="../../../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">UserCollectionType.</span><code><a href="../../../usertype/UserCollectionType.html#wrap(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">wrap</a><wbr>(<a href="../SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;collection)</code></div>
-<div class="col-last odd-row-color">
+<div class="col-last even-row-color">
 <div class="block">Wrap an instance of a collection</div>
 </div>
 </div>

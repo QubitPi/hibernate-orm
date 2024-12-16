@@ -447,7 +447,7 @@ A prefix for properties specifying arbitrary JDBC connection properties. These p
 
 ****
 
-Controls the autocommit mode of JDBC connections obtained from any link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] implementation which respects this setting, which includes the built-in implementations do, except for link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html[`DatasourceConnectionProviderImpl`].
+Controls the autocommit mode of JDBC connections obtained from any link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] implementation which respects this setting, including every built-in implementation except for link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html[`DatasourceConnectionProviderImpl`].
 **See: **link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#AUTOCOMMIT[JdbcSettings.AUTOCOMMIT]
 
 
@@ -472,7 +472,9 @@ Specifies how Hibernate should manage JDBC connections in terms of acquisition a
 '''
 [[settings-hibernate.connection.isolation]]
 ==== `hibernate.connection.isolation`
-Specified the JDBC transaction isolation level.
+Specifies the JDBC transaction isolation level for connections obtained from any link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] implementation which respects this setting, including every built-in implementation except for link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/internal/DatasourceConnectionProviderImpl.html[`DatasourceConnectionProviderImpl`].  Possible values are enumerated by link:https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/java/sql/Connection.html[`Connection`]: `NONE`, `READ_UNCOMMITTED`, `READ_COMMITTED`, `REPEATABLE_READ`, `SERIALIZABLE`. 
+ If this setting is not explicitly specified, Hibernate does not modify the transaction isolation level of the JDBC connection.
+
 **See: **link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#ISOLATION[JdbcSettings.ISOLATION]
 
 
@@ -493,12 +495,18 @@ Specifies the maximum number of inactive connections for the built-in link:https
 '''
 [[settings-hibernate.connection.provider_class]]
 ==== `hibernate.connection.provider_class`
+****
+**See:** https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#CONNECTION_PROVIDER[JdbcSettings.CONNECTION_PROVIDER]
+
+The term "class" appears in the setting name due to legacy reasons; however it can accept instances.
+
+****
+
 Specifies a link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] to use for obtaining JDBC connections, either: 
  
   * an instance of `ConnectionProvider`, 
   * a link:https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html[`Class`] representing a class that implements `ConnectionProvider`, or 
-  * the name of a class that implements `ConnectionProvider`.   The term `"class"` appears in the setting name due to legacy reasons; however it can accept instances.
-
+  * the name of a class that implements `ConnectionProvider`. 
 **See: **link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#CONNECTION_PROVIDER[JdbcSettings.CONNECTION_PROVIDER]
 
 
@@ -512,11 +520,11 @@ Specifies a link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate
 
 *_Default Value:_* false
 
-By default, Hibernate calls Connection.setAutoCommit(boolean) on newly-obtained connections. This setting allows to circumvent that call (as well as other operations) in the interest of performance.
+By default, Hibernate calls Connection.setAutoCommit(boolean) on newly-obtained connections. With this setting enabled, that call is skipped, along with some other operations, in the interest of performance.
 
 ****
 
-Indicates that Connections obtained from the configured link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] have auto-commit already disabled when they are acquired.  It is inappropriate to set this value to `true` when the Connections returned by the provider do not, in fact, have auto-commit disabled. Doing so may lead to Hibernate executing SQL operations outside the scope of any transaction.
+Indicates that connections obtained from the configured link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../engine/jdbc/connections/spi/ConnectionProvider.html[`ConnectionProvider`] have auto-commit already disabled when they are acquired.  It is inappropriate to set this value to `true` when the connections returned by the provider do not, in fact, have auto-commit disabled. Doing so may lead to Hibernate executing SQL operations outside the scope of any transaction.
 
 **See: **link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/JdbcSettings.html#CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT[JdbcSettings.CONNECTION_PROVIDER_DISABLES_AUTOCOMMIT]
 
@@ -1037,6 +1045,21 @@ A default database catalog name to use for unqualified database object (table, s
 ==== `hibernate.default_schema`
 A default database schema (owner) name to use for unqualified database object (table, sequence, ...) names
 **See: **link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/MappingSettings.html#DEFAULT_SCHEMA[MappingSettings.DEFAULT_SCHEMA]
+
+
+'''
+[[settings-hibernate.discriminator.force_in_select]]
+==== `hibernate.discriminator.force_in_select`
+****
+**See:** https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/MappingSettings.html#FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT[MappingSettings.FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT]
+
+*_Default Value:_* false
+
+****
+
+Specifies that Hibernate should always restrict by discriminator values in SQL `select` statements, even when querying the root entity of an entity inheritance hierarchy.  By default, Hibernate only restricts by discriminator values when querying a subtype, or when the root entity is explicitly annotated link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/../annotations/DiscriminatorOptions.html#force()[`DiscriminatorOptions(force=true)`].
+
+**See: **link:https://docs.jboss.org/hibernate/orm/7.0/javadocs/org/hibernate/cfg/MappingSettings.html#FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT[MappingSettings.FORCE_DISCRIMINATOR_IN_SELECTS_BY_DEFAULT]
 
 
 '''

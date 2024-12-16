@@ -699,11 +699,12 @@ implements <a href="../exception/spi/ConversionContext.html" title="interface in
  or a given list of values (with NULL value allowed).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCheckCondition(java.lang.String,java.util.Set,org.hibernate.type.descriptor.jdbc.JdbcType)" class="member-name-link">getCheckCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;?&gt;&nbsp;valueSet,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCheckCondition(java.lang.String,java.util.Collection,org.hibernate.type.descriptor.jdbc.JdbcType)" class="member-name-link">getCheckCondition</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;?&gt;&nbsp;valueSet,
  <a href="../type/descriptor/jdbc/JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcType</a>&nbsp;jdbcType)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Generate a check condition for column with the given set of values.</div>
+<div class="block">Generate a SQL <code>check</code> condition for the given column,
+ constraining to the given values.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCheckConstraintString(org.hibernate.mapping.CheckConstraint)" class="member-name-link">getCheckConstraintString</a><wbr>(<a href="../mapping/CheckConstraint.html" title="class in org.hibernate.mapping">CheckConstraint</a>&nbsp;checkConstraint)</code></div>
@@ -2716,15 +2717,21 @@ implements <a href="../exception/spi/ConversionContext.html" title="interface in
 </section>
 </li>
 <li>
-<section class="detail" id="getCheckCondition(java.lang.String,java.util.Set,org.hibernate.type.descriptor.jdbc.JdbcType)">
+<section class="detail" id="getCheckCondition(java.lang.String,java.util.Collection,org.hibernate.type.descriptor.jdbc.JdbcType)">
 <h3>getCheckCondition</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getCheckCondition</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;columnName,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Set.html" title="class or interface in java.util" class="external-link">Set</a>&lt;?&gt;&nbsp;valueSet,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" title="class or interface in java.util" class="external-link">Collection</a>&lt;?&gt;&nbsp;valueSet,
  <a href="../type/descriptor/jdbc/JdbcType.html" title="interface in org.hibernate.type.descriptor.jdbc">JdbcType</a>&nbsp;jdbcType)</span></div>
-<div class="block">Generate a check condition for column with the given set of values.</div>
+<div class="block">Generate a SQL <code>check</code> condition for the given column,
+ constraining to the given values.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>a SQL expression that will occur in a <code>check</code> constraint</dd>
+<dt>Since:</dt>
+<dd>7.0</dd>
 <dt>API Note:</dt>
-<dd>Only supports TINYINT, SMALLINT and (VAR)CHAR</dd>
+<dd>Only supports <code>TINYINT</code>, <code>SMALLINT</code>, <code>CHAR</code>,
+          and <code>VARCHAR</code></dd>
 </dl>
 </section>
 </li>

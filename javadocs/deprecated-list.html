@@ -78,6 +78,16 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-comment">Use <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/Column.html#secondPrecision()" title="class or interface in jakarta.persistence" class="external-link"><code>Column.secondPrecision()</code></a> which was introduced
              in JPA 3.2</div>
 </div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/annotations/Source.html" title="annotation interface in org.hibernate.annotations">org.hibernate.annotations.Source</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">use <a href="org/hibernate/annotations/CurrentTimestamp.html" title="annotation interface in org.hibernate.annotations"><code>CurrentTimestamp</code></a> instead</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/annotations/Target.html" title="annotation interface in org.hibernate.annotations">org.hibernate.annotations.Target</a></div>
+<div class="col-last even-row-color">
+<div class="deprecation-comment">use annotation members of JPA association mapping
+             annotations, for example,
+             <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/OneToMany.html#targetEntity()" title="class or interface in jakarta.persistence" class="external-link"><code>OneToMany.targetEntity()</code></a></div>
+</div>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/BaseSessionEventListener.html" title="class in org.hibernate">org.hibernate.BaseSessionEventListener</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">Just implement <a href="org/hibernate/SessionEventListener.html" title="interface in org.hibernate"><code>SessionEventListener</code></a> directly.</div>
@@ -281,10 +291,6 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sql/internal/NativeQueryImpl.html#%3Cinit%3E(java.lang.String,java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>NativeQueryImpl(String, Class, SharedSessionContractImplementor)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/FastSessionServices.html#getDefaultTimeZoneStorageStrategy()">org.hibernate.internal.FastSessionServices.getDefaultTimeZoneStorageStrategy()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/FastSessionServices.html#getMutationExecutorService()">org.hibernate.internal.FastSessionServices.getMutationExecutorService()</a></div>
-<div class="col-last odd-row-color"></div>
 <div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.SessionBuilderImpl.html#tenantIdentifier(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.SessionBuilderImpl.tenantIdentifier<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/collections/StandardStack.html#%3Cinit%3E(java.lang.Class)">org.hibernate.internal.util.collections.StandardStack<wbr>(Class&lt;T&gt;)</a></div>
@@ -347,14 +353,6 @@ loadScripts(document, 'script');</script>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByInfluencers(org.hibernate.engine.spi.LoadQueryInfluencers)">org.hibernate.loader.ast.spi.Loadable.isAffectedByInfluencers<wbr>(LoadQueryInfluencers)</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByInfluencers(org.hibernate.engine.spi.LoadQueryInfluencers,boolean)"><code>Loadable.isAffectedByInfluencers(LoadQueryInfluencers, boolean)</code></a> instead</div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/LockOptions.html#getScope()">org.hibernate.LockOptions.getScope()</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/LockOptions.html#getLockScope()"><code>LockOptions.getLockScope()</code></a></div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/LockOptions.html#setScope(boolean)">org.hibernate.LockOptions.setScope<wbr>(boolean)</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/LockOptions.html#setLockScope(jakarta.persistence.PessimisticLockScope)"><code>LockOptions.setLockScope(PessimisticLockScope)</code></a></div>
 </div>
 <div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/KeyValue.html#createGenerator(org.hibernate.dialect.Dialect,org.hibernate.mapping.RootClass)">org.hibernate.mapping.KeyValue.createGenerator<wbr>(Dialect, RootClass)</a></div>
 <div class="col-last even-row-color">
@@ -970,7 +968,11 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)">org.hibernate.usertype.UserType.nullSafeGet<wbr>(ResultSet, int, SharedSessionContractImplementor, Object)</a></div>
 <div class="col-last odd-row-color">
-<div class="deprecation-comment">Implement <a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>UserType.nullSafeGet(ResultSet, int, SharedSessionContractImplementor)</code></a></div>
+<div class="deprecation-comment">Implement <a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)"><code>UserType.nullSafeGet(ResultSet, int, WrapperOptions)</code></a></div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.usertype.UserType.nullSafeSet<wbr>(PreparedStatement, J, int, SharedSessionContractImplementor)</a></div>
+<div class="col-last even-row-color">
+<div class="deprecation-comment">Implement <a href="org/hibernate/usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)"><code>UserType.nullSafeSet(PreparedStatement, Object, int, WrapperOptions)</code></a></div>
 </div>
 </div>
 </div>
@@ -1601,313 +1603,318 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/CacheSettings.html#JAKARTA_SHARED_CACHE_STORE_MODE"><code>CacheSettings.JAKARTA_SHARED_CACHE_STORE_MODE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DATASOURCE">org.hibernate.cfg.JdbcSettings.DATASOURCE</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#CONNECTION_PREFIX">org.hibernate.cfg.JdbcSettings.CONNECTION_PREFIX</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">This setting is only supported by <code>C3P0ConnectionProvider</code>
+ and <a href="org/hibernate/engine/jdbc/connections/internal/DriverManagerConnectionProviderImpl.html" title="class in org.hibernate.engine.jdbc.connections.internal"><code>DriverManagerConnectionProviderImpl</code></a>.</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DATASOURCE">org.hibernate.cfg.JdbcSettings.DATASOURCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">The JPA-standard <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JTA_DATASOURCE">"jakarta.persistence.jtaDataSource"</a> or
              <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_NON_JTA_DATASOURCE">"jakarta.persistence.nonJtaDataSource"</a> setting are now
              preferred.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_MAJOR_VERSION">org.hibernate.cfg.JdbcSettings.DIALECT_DB_MAJOR_VERSION</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_MAJOR_VERSION">org.hibernate.cfg.JdbcSettings.DIALECT_DB_MAJOR_VERSION</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_MAJOR_VERSION"><code>JdbcSettings.JAKARTA_HBM2DDL_DB_MAJOR_VERSION</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_MINOR_VERSION">org.hibernate.cfg.JdbcSettings.DIALECT_DB_MINOR_VERSION</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_MINOR_VERSION">org.hibernate.cfg.JdbcSettings.DIALECT_DB_MINOR_VERSION</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_MINOR_VERSION"><code>JdbcSettings.JAKARTA_HBM2DDL_DB_MINOR_VERSION</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_NAME">org.hibernate.cfg.JdbcSettings.DIALECT_DB_NAME</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_NAME">org.hibernate.cfg.JdbcSettings.DIALECT_DB_NAME</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_NAME"><code>JdbcSettings.JAKARTA_HBM2DDL_DB_NAME</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_VERSION">org.hibernate.cfg.JdbcSettings.DIALECT_DB_VERSION</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DIALECT_DB_VERSION">org.hibernate.cfg.JdbcSettings.DIALECT_DB_VERSION</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_DB_VERSION"><code>JdbcSettings.JAKARTA_HBM2DDL_DB_VERSION</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DRIVER">org.hibernate.cfg.JdbcSettings.DRIVER</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#DRIVER">org.hibernate.cfg.JdbcSettings.DRIVER</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">The JPA-standard setting <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_DRIVER"><code>JdbcSettings.JAKARTA_JDBC_DRIVER</code></a> is now preferred.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#HBM2DDL_CONNECTION">org.hibernate.cfg.JdbcSettings.HBM2DDL_CONNECTION</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#HBM2DDL_CONNECTION">org.hibernate.cfg.JdbcSettings.HBM2DDL_CONNECTION</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_HBM2DDL_CONNECTION"><code>JdbcSettings.JAKARTA_HBM2DDL_CONNECTION</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_DRIVER">org.hibernate.cfg.JdbcSettings.JPA_JDBC_DRIVER</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_DRIVER">org.hibernate.cfg.JdbcSettings.JPA_JDBC_DRIVER</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_DRIVER"><code>JdbcSettings.JAKARTA_JDBC_DRIVER</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_PASSWORD">org.hibernate.cfg.JdbcSettings.JPA_JDBC_PASSWORD</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_PASSWORD">org.hibernate.cfg.JdbcSettings.JPA_JDBC_PASSWORD</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_PASSWORD"><code>JdbcSettings.JAKARTA_JDBC_PASSWORD</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_URL">org.hibernate.cfg.JdbcSettings.JPA_JDBC_URL</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_URL">org.hibernate.cfg.JdbcSettings.JPA_JDBC_URL</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_URL"><code>JdbcSettings.JAKARTA_JDBC_URL</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_USER">org.hibernate.cfg.JdbcSettings.JPA_JDBC_USER</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JDBC_USER">org.hibernate.cfg.JdbcSettings.JPA_JDBC_USER</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_USER"><code>JdbcSettings.JAKARTA_JDBC_USER</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JTA_DATASOURCE">org.hibernate.cfg.JdbcSettings.JPA_JTA_DATASOURCE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_JTA_DATASOURCE">org.hibernate.cfg.JdbcSettings.JPA_JTA_DATASOURCE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JTA_DATASOURCE"><code>JdbcSettings.JAKARTA_JTA_DATASOURCE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_NON_JTA_DATASOURCE">org.hibernate.cfg.JdbcSettings.JPA_NON_JTA_DATASOURCE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#JPA_NON_JTA_DATASOURCE">org.hibernate.cfg.JdbcSettings.JPA_NON_JTA_DATASOURCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_NON_JTA_DATASOURCE"><code>JdbcSettings.JAKARTA_NON_JTA_DATASOURCE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#PASS">org.hibernate.cfg.JdbcSettings.PASS</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#PASS">org.hibernate.cfg.JdbcSettings.PASS</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">The JPA-standard setting <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_PASSWORD"><code>JdbcSettings.JAKARTA_JDBC_PASSWORD</code></a> is now preferred.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#URL">org.hibernate.cfg.JdbcSettings.URL</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#URL">org.hibernate.cfg.JdbcSettings.URL</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">The JPA-standard setting <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_URL"><code>JdbcSettings.JAKARTA_JDBC_URL</code></a> is now preferred.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#USER">org.hibernate.cfg.JdbcSettings.USER</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JdbcSettings.html#USER">org.hibernate.cfg.JdbcSettings.USER</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">The JPA-standard setting <a href="org/hibernate/cfg/JdbcSettings.html#JAKARTA_JDBC_USER"><code>JdbcSettings.JAKARTA_JDBC_USER</code></a> is now preferred.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JpaComplianceSettings.html#JPA_CASCADE_COMPLIANCE">org.hibernate.cfg.JpaComplianceSettings.JPA_CASCADE_COMPLIANCE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JpaComplianceSettings.html#JPA_CASCADE_COMPLIANCE">org.hibernate.cfg.JpaComplianceSettings.JPA_CASCADE_COMPLIANCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">No longer has any effect.  Since 7.0 (and removal of save/update processing),
  Hibernate always cascades <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/CascadeType.html#PERSIST" title="class or interface in jakarta.persistence" class="external-link">PERSIST</a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/JpaComplianceSettings.html#JPAQL_STRICT_COMPLIANCE">org.hibernate.cfg.JpaComplianceSettings.JPAQL_STRICT_COMPLIANCE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/JpaComplianceSettings.html#JPAQL_STRICT_COMPLIANCE">org.hibernate.cfg.JpaComplianceSettings.JPAQL_STRICT_COMPLIANCE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Prefer <a href="org/hibernate/cfg/JpaComplianceSettings.html#JPA_QUERY_COMPLIANCE"><code>JpaComplianceSettings.JPA_QUERY_COMPLIANCE</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/ManagedBeanSettings.html#CDI_BEAN_MANAGER">org.hibernate.cfg.ManagedBeanSettings.CDI_BEAN_MANAGER</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/ManagedBeanSettings.html#CDI_BEAN_MANAGER">org.hibernate.cfg.ManagedBeanSettings.CDI_BEAN_MANAGER</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/ManagedBeanSettings.html#JAKARTA_CDI_BEAN_MANAGER"><code>ManagedBeanSettings.JAKARTA_CDI_BEAN_MANAGER</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/PersistenceSettings.html#JPA_PERSISTENCE_PROVIDER">org.hibernate.cfg.PersistenceSettings.JPA_PERSISTENCE_PROVIDER</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/PersistenceSettings.html#JPA_PERSISTENCE_PROVIDER">org.hibernate.cfg.PersistenceSettings.JPA_PERSISTENCE_PROVIDER</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/PersistenceSettings.html#JAKARTA_PERSISTENCE_PROVIDER"><code>PersistenceSettings.JAKARTA_PERSISTENCE_PROVIDER</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/PersistenceSettings.html#JPA_TRANSACTION_TYPE">org.hibernate.cfg.PersistenceSettings.JPA_TRANSACTION_TYPE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/PersistenceSettings.html#JPA_TRANSACTION_TYPE">org.hibernate.cfg.PersistenceSettings.JPA_TRANSACTION_TYPE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/PersistenceSettings.html#JAKARTA_TRANSACTION_TYPE"><code>PersistenceSettings.JAKARTA_TRANSACTION_TYPE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/QuerySettings.html#QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE">org.hibernate.cfg.QuerySettings.QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/QuerySettings.html#QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE">org.hibernate.cfg.QuerySettings.QUERY_PLAN_CACHE_PARAMETER_METADATA_MAX_SIZE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">this setting is not currently used</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_GLOBAL_TEMPORARY_CREATE_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_GLOBAL_TEMPORARY_CREATE_TABLES</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_GLOBAL_TEMPORARY_CREATE_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_GLOBAL_TEMPORARY_CREATE_TABLES</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/mutation/internal/temptable/GlobalTemporaryTableStrategy.html#CREATE_ID_TABLES"><code>GlobalTemporaryTableStrategy.CREATE_ID_TABLES</code></a>.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_GLOBAL_TEMPORARY_DROP_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_GLOBAL_TEMPORARY_DROP_TABLES</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_GLOBAL_TEMPORARY_DROP_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_GLOBAL_TEMPORARY_DROP_TABLES</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/mutation/internal/temptable/GlobalTemporaryTableStrategy.html#DROP_ID_TABLES"><code>GlobalTemporaryTableStrategy.DROP_ID_TABLES</code></a>.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_LOCAL_TEMPORARY_DROP_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_LOCAL_TEMPORARY_DROP_TABLES</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_LOCAL_TEMPORARY_DROP_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_LOCAL_TEMPORARY_DROP_TABLES</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/mutation/internal/temptable/LocalTemporaryTableStrategy.html#DROP_ID_TABLES"><code>LocalTemporaryTableStrategy.DROP_ID_TABLES</code></a>.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_CREATE_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_CREATE_TABLES</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_CREATE_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_CREATE_TABLES</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/mutation/internal/temptable/PersistentTableStrategy.html#CREATE_ID_TABLES"><code>PersistentTableStrategy.CREATE_ID_TABLES</code></a>.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_DROP_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_DROP_TABLES</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_DROP_TABLES">org.hibernate.cfg.SchemaToolingSettings.BULK_ID_STRATEGY_PERSISTENT_TEMPORARY_DROP_TABLES</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/mutation/internal/temptable/PersistentTableStrategy.html#DROP_ID_TABLES"><code>PersistentTableStrategy.DROP_ID_TABLES</code></a>.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_NAMESPACES">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_NAMESPACES</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_NAMESPACES">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_NAMESPACES</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">The JPA-standard setting <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SCHEMAS"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_CREATE_SCHEMAS</code></a> is now preferred.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_SCHEMAS">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_SCHEMAS</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_SCHEMAS">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_SCHEMAS</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SCHEMAS"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_CREATE_SCHEMAS</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_SCRIPT_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_SCRIPT_SOURCE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_SCRIPT_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_SCRIPT_SOURCE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Migrate to <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_SOURCE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_CREATE_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_CREATE_SOURCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Migrate to <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SOURCE"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_CREATE_SOURCE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DATABASE_ACTION">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_DATABASE_ACTION</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DATABASE_ACTION">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_DATABASE_ACTION</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DATABASE_ACTION"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_DATABASE_ACTION</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DROP_SCRIPT_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_DROP_SCRIPT_SOURCE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DROP_SCRIPT_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_DROP_SCRIPT_SOURCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Migrate to <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DROP_SCRIPT_SOURCE"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_DROP_SCRIPT_SOURCE</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DROP_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_DROP_SOURCE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_DROP_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_DROP_SOURCE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Migrate to <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_DROP_SOURCE"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_DROP_SOURCE</code></a>.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_IMPORT_FILES</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_IMPORT_FILES">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_IMPORT_FILES</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">The JPA-standard setting <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_CREATE_SCRIPT_SOURCE</code></a> is now preferred.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_LOAD_SCRIPT_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_LOAD_SCRIPT_SOURCE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_LOAD_SCRIPT_SOURCE">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_LOAD_SCRIPT_SOURCE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_LOAD_SCRIPT_SOURCE"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_LOAD_SCRIPT_SOURCE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_ACTION">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_SCRIPTS_ACTION</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_ACTION">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_SCRIPTS_ACTION</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_ACTION"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_SCRIPTS_ACTION</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_CREATE_TARGET">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_SCRIPTS_CREATE_TARGET</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_CREATE_TARGET">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_SCRIPTS_CREATE_TARGET</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Migrate to <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_CREATE_TARGET"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_SCRIPTS_CREATE_TARGET</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_DROP_TARGET">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_SCRIPTS_DROP_TARGET</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SchemaToolingSettings.html#HBM2DDL_SCRIPTS_DROP_TARGET">org.hibernate.cfg.SchemaToolingSettings.HBM2DDL_SCRIPTS_DROP_TARGET</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Migrate to <a href="org/hibernate/cfg/SchemaToolingSettings.html#JAKARTA_HBM2DDL_SCRIPTS_DROP_TARGET"><code>SchemaToolingSettings.JAKARTA_HBM2DDL_SCRIPTS_DROP_TARGET</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/SessionEventSettings.html#LOG_SESSION_METRICS">org.hibernate.cfg.SessionEventSettings.LOG_SESSION_METRICS</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/SessionEventSettings.html#LOG_SESSION_METRICS">org.hibernate.cfg.SessionEventSettings.LOG_SESSION_METRICS</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">This setting is now ignored. Enable the log category
              <code>org.hibernate.session.metrics</code> to automatically
              collect and log session-level metrics.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_PERSIST_VALIDATION_GROUP">org.hibernate.cfg.ValidationSettings.JPA_PERSIST_VALIDATION_GROUP</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_PERSIST_VALIDATION_GROUP">org.hibernate.cfg.ValidationSettings.JPA_PERSIST_VALIDATION_GROUP</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/ValidationSettings.html#JAKARTA_PERSIST_VALIDATION_GROUP"><code>ValidationSettings.JAKARTA_PERSIST_VALIDATION_GROUP</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_REMOVE_VALIDATION_GROUP">org.hibernate.cfg.ValidationSettings.JPA_REMOVE_VALIDATION_GROUP</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_REMOVE_VALIDATION_GROUP">org.hibernate.cfg.ValidationSettings.JPA_REMOVE_VALIDATION_GROUP</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/ValidationSettings.html#JAKARTA_REMOVE_VALIDATION_GROUP"><code>ValidationSettings.JAKARTA_REMOVE_VALIDATION_GROUP</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_UPDATE_VALIDATION_GROUP">org.hibernate.cfg.ValidationSettings.JPA_UPDATE_VALIDATION_GROUP</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_UPDATE_VALIDATION_GROUP">org.hibernate.cfg.ValidationSettings.JPA_UPDATE_VALIDATION_GROUP</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/ValidationSettings.html#JAKARTA_UPDATE_VALIDATION_GROUP"><code>ValidationSettings.JAKARTA_UPDATE_VALIDATION_GROUP</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_VALIDATION_FACTORY">org.hibernate.cfg.ValidationSettings.JPA_VALIDATION_FACTORY</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_VALIDATION_FACTORY">org.hibernate.cfg.ValidationSettings.JPA_VALIDATION_FACTORY</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/ValidationSettings.html#JAKARTA_VALIDATION_FACTORY"><code>ValidationSettings.JAKARTA_VALIDATION_FACTORY</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_VALIDATION_MODE">org.hibernate.cfg.ValidationSettings.JPA_VALIDATION_MODE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/cfg/ValidationSettings.html#JPA_VALIDATION_MODE">org.hibernate.cfg.ValidationSettings.JPA_VALIDATION_MODE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/cfg/ValidationSettings.html#JAKARTA_VALIDATION_MODE"><code>ValidationSettings.JAKARTA_VALIDATION_MODE</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/SybaseDialect.html#jtdsDriver">org.hibernate.dialect.SybaseDialect.jtdsDriver</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/CascadingActions.html#DELETE">org.hibernate.engine.spi.CascadingActions.DELETE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/SybaseDialect.html#jtdsDriver">org.hibernate.dialect.SybaseDialect.jtdsDriver</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/CascadingActions.html#DELETE">org.hibernate.engine.spi.CascadingActions.DELETE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/engine/spi/CascadingActions.html#REMOVE"><code>CascadingActions.REMOVE</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/CascadingActions.html#LOCK">org.hibernate.engine.spi.CascadingActions.LOCK</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/CascadingActions.html#LOCK">org.hibernate.engine.spi.CascadingActions.LOCK</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">because <a href="org/hibernate/annotations/CascadeType.html#LOCK"><code>CascadeType.LOCK</code></a>
              is deprecated</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageLexer.html#tokenNames">org.hibernate.grammars.graph.GraphLanguageLexer.tokenNames</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageLexer.html#tokenNames">org.hibernate.grammars.graph.GraphLanguageLexer.tokenNames</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/graph/GraphLanguageLexer.html#VOCABULARY"><code>GraphLanguageLexer.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageParser.html#tokenNames">org.hibernate.grammars.graph.GraphLanguageParser.tokenNames</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageParser.html#tokenNames">org.hibernate.grammars.graph.GraphLanguageParser.tokenNames</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/graph/GraphLanguageParser.html#VOCABULARY"><code>GraphLanguageParser.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/hql/HqlLexer.html#tokenNames">org.hibernate.grammars.hql.HqlLexer.tokenNames</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/hql/HqlLexer.html#tokenNames">org.hibernate.grammars.hql.HqlLexer.tokenNames</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/hql/HqlLexer.html#VOCABULARY"><code>HqlLexer.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/hql/HqlParser.html#tokenNames">org.hibernate.grammars.hql.HqlParser.tokenNames</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/hql/HqlParser.html#tokenNames">org.hibernate.grammars.hql.HqlParser.tokenNames</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/hql/HqlParser.html#VOCABULARY"><code>HqlParser.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptLexer.html#tokenNames">org.hibernate.grammars.importsql.SqlScriptLexer.tokenNames</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptLexer.html#tokenNames">org.hibernate.grammars.importsql.SqlScriptLexer.tokenNames</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/importsql/SqlScriptLexer.html#VOCABULARY"><code>SqlScriptLexer.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptParser.html#tokenNames">org.hibernate.grammars.importsql.SqlScriptParser.tokenNames</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptParser.html#tokenNames">org.hibernate.grammars.importsql.SqlScriptParser.tokenNames</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/importsql/SqlScriptParser.html#VOCABULARY"><code>SqlScriptParser.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/ordering/OrderingLexer.html#tokenNames">org.hibernate.grammars.ordering.OrderingLexer.tokenNames</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/ordering/OrderingLexer.html#tokenNames">org.hibernate.grammars.ordering.OrderingLexer.tokenNames</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/ordering/OrderingLexer.html#VOCABULARY"><code>OrderingLexer.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/ordering/OrderingParser.html#tokenNames">org.hibernate.grammars.ordering.OrderingParser.tokenNames</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/ordering/OrderingParser.html#tokenNames">org.hibernate.grammars.ordering.OrderingParser.tokenNames</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/grammars/ordering/OrderingParser.html#VOCABULARY"><code>OrderingParser.VOCABULARY</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/IdentifierGeneratorHelper.html#SHORT_CIRCUIT_INDICATOR">org.hibernate.id.IdentifierGeneratorHelper.SHORT_CIRCUIT_INDICATOR</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/IdentifierGeneratorHelper.html#SHORT_CIRCUIT_INDICATOR">org.hibernate.id.IdentifierGeneratorHelper.SHORT_CIRCUIT_INDICATOR</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">This is not an elegant way to do anything</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/PersistentIdentifierGenerator.html#IDENTIFIER_NORMALIZER">org.hibernate.id.PersistentIdentifierGenerator.IDENTIFIER_NORMALIZER</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/PersistentIdentifierGenerator.html#IDENTIFIER_NORMALIZER">org.hibernate.id.PersistentIdentifierGenerator.IDENTIFIER_NORMALIZER</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">no longer set, use <a href="org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html#getIdentifierHelper()"><code>JdbcEnvironment.getIdentifierHelper()</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jdbc/Expectations.html#BASIC">org.hibernate.jdbc.Expectations.BASIC</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jdbc/Expectations.html#BASIC">org.hibernate.jdbc.Expectations.BASIC</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/jdbc/Expectation.RowCount.html" title="class in org.hibernate.jdbc"><code>Expectation.RowCount</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jdbc/Expectations.html#NONE">org.hibernate.jdbc.Expectations.NONE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jdbc/Expectations.html#NONE">org.hibernate.jdbc.Expectations.NONE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/jdbc/Expectation.None.html" title="class in org.hibernate.jdbc"><code>Expectation.None</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jdbc/Expectations.html#PARAM">org.hibernate.jdbc.Expectations.PARAM</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jdbc/Expectations.html#PARAM">org.hibernate.jdbc.Expectations.PARAM</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/jdbc/Expectation.OutParameter.html" title="class in org.hibernate.jdbc"><code>Expectation.OutParameter</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jpa/boot/spi/JpaSettings.html#METADATA_BUILDER_CONTRIBUTOR">org.hibernate.jpa.boot.spi.JpaSettings.METADATA_BUILDER_CONTRIBUTOR</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jpa/boot/spi/JpaSettings.html#METADATA_BUILDER_CONTRIBUTOR">org.hibernate.jpa.boot.spi.JpaSettings.METADATA_BUILDER_CONTRIBUTOR</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link">discovery</a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jpa/boot/spi/JpaSettings.html#TYPE_CONTRIBUTORS">org.hibernate.jpa.boot.spi.JpaSettings.TYPE_CONTRIBUTORS</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jpa/boot/spi/JpaSettings.html#TYPE_CONTRIBUTORS">org.hibernate.jpa.boot.spi.JpaSettings.TYPE_CONTRIBUTORS</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Consider using <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ServiceLoader.html" title="class or interface in java.util" class="external-link">discovery</a> instead to
  dynamically locate <a href="org/hibernate/boot/model/TypeContributor.html" title="interface in org.hibernate.boot.model">contributors</a>.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/LockOptions.html#SKIP_LOCKED">org.hibernate.LockOptions.SKIP_LOCKED</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/LockOptions.html#SKIP_LOCKED">org.hibernate.LockOptions.SKIP_LOCKED</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/LockMode.html#UPGRADE_SKIPLOCKED"><code>LockMode.UPGRADE_SKIPLOCKED</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/SimpleValue.html#DEFAULT_ID_GEN_STRATEGY">org.hibernate.mapping.SimpleValue.DEFAULT_ID_GEN_STRATEGY</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#elementColumnAliases">org.hibernate.persister.collection.AbstractCollectionPersister.elementColumnAliases</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/SimpleValue.html#DEFAULT_ID_GEN_STRATEGY">org.hibernate.mapping.SimpleValue.DEFAULT_ID_GEN_STRATEGY</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#elementType">org.hibernate.persister.collection.AbstractCollectionPersister.elementType</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#elementColumnAliases">org.hibernate.persister.collection.AbstractCollectionPersister.elementColumnAliases</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#indexColumnAliases">org.hibernate.persister.collection.AbstractCollectionPersister.indexColumnAliases</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#elementType">org.hibernate.persister.collection.AbstractCollectionPersister.elementType</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#keyColumnAliases">org.hibernate.persister.collection.AbstractCollectionPersister.keyColumnAliases</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#indexColumnAliases">org.hibernate.persister.collection.AbstractCollectionPersister.indexColumnAliases</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#customSQLDelete">org.hibernate.persister.entity.AbstractEntityPersister.customSQLDelete</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/collection/AbstractCollectionPersister.html#keyColumnAliases">org.hibernate.persister.collection.AbstractCollectionPersister.keyColumnAliases</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#customSQLInsert">org.hibernate.persister.entity.AbstractEntityPersister.customSQLInsert</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#customSQLDelete">org.hibernate.persister.entity.AbstractEntityPersister.customSQLDelete</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#customSQLUpdate">org.hibernate.persister.entity.AbstractEntityPersister.customSQLUpdate</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#customSQLInsert">org.hibernate.persister.entity.AbstractEntityPersister.customSQLInsert</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#deleteCallable">org.hibernate.persister.entity.AbstractEntityPersister.deleteCallable</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#customSQLUpdate">org.hibernate.persister.entity.AbstractEntityPersister.customSQLUpdate</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#deleteExpectations">org.hibernate.persister.entity.AbstractEntityPersister.deleteExpectations</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#deleteCallable">org.hibernate.persister.entity.AbstractEntityPersister.deleteCallable</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#insertCallable">org.hibernate.persister.entity.AbstractEntityPersister.insertCallable</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#deleteExpectations">org.hibernate.persister.entity.AbstractEntityPersister.deleteExpectations</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#insertExpectations">org.hibernate.persister.entity.AbstractEntityPersister.insertExpectations</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#insertCallable">org.hibernate.persister.entity.AbstractEntityPersister.insertCallable</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#updateCallable">org.hibernate.persister.entity.AbstractEntityPersister.updateCallable</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#insertExpectations">org.hibernate.persister.entity.AbstractEntityPersister.insertExpectations</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#updateExpectations">org.hibernate.persister.entity.AbstractEntityPersister.updateExpectations</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#updateCallable">org.hibernate.persister.entity.AbstractEntityPersister.updateCallable</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/EntityPersister.html#ENTITY_ID">org.hibernate.persister.entity.EntityPersister.ENTITY_ID</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/persister/entity/AbstractEntityPersister.html#updateExpectations">org.hibernate.persister.entity.AbstractEntityPersister.updateExpectations</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/persister/entity/EntityPersister.html#ENTITY_ID">org.hibernate.persister.entity.EntityPersister.ENTITY_ID</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">this feature of HQL is now deprecated</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/query/spi/QueryParameterBindings.html#NO_PARAM_BINDINGS">org.hibernate.query.spi.QueryParameterBindings.NO_PARAM_BINDINGS</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/spi/QueryParameterBindings.html#NO_PARAM_BINDINGS">org.hibernate.query.spi.QueryParameterBindings.NO_PARAM_BINDINGS</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/spi/QueryParameterBindings.html#empty()"><code>QueryParameterBindings.empty()</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/results/spi/ScrollableResultsConsumer.html#INSTANCE">org.hibernate.sql.results.spi.ScrollableResultsConsumer.INSTANCE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/results/spi/ScrollableResultsConsumer.html#INSTANCE">org.hibernate.sql.results.spi.ScrollableResultsConsumer.INSTANCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">in favor of <a href="org/hibernate/sql/results/spi/ScrollableResultsConsumer.html#instance()"><code>ScrollableResultsConsumer.instance()</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/java/Immutability.html#INSTANCE">org.hibernate.type.descriptor.java.Immutability.INSTANCE</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/java/Immutability.html#INSTANCE">org.hibernate.type.descriptor.java.Immutability.INSTANCE</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">in favor of <a href="org/hibernate/type/descriptor/java/Immutability.html#instance()"><code>Immutability.instance()</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/java/ImmutableMutabilityPlan.html#INSTANCE">org.hibernate.type.descriptor.java.ImmutableMutabilityPlan.INSTANCE</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/java/ImmutableMutabilityPlan.html#INSTANCE">org.hibernate.type.descriptor.java.ImmutableMutabilityPlan.INSTANCE</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">in favor of <a href="org/hibernate/type/descriptor/java/ImmutableMutabilityPlan.html#instance()"><code>ImmutableMutabilityPlan.instance()</code></a></div>
 </div>
 </div>
@@ -2078,411 +2085,389 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">only because it's currently never called</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/classic/Lifecycle.html#onLoad(org.hibernate.Session,java.io.Serializable)">org.hibernate.classic.Lifecycle.onLoad<wbr>(Session, Serializable)</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/classic/Lifecycle.html#onLoad(org.hibernate.Session,java.lang.Object)"><code>Lifecycle.onLoad(Session, Object)</code></a></div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/DatabaseVersion.html#makeCopy()">org.hibernate.dialect.DatabaseVersion.makeCopy()</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">In dialect implementations, prefer <a href="org/hibernate/dialect/DatabaseVersion.html#makeCopyOrDefault(org.hibernate.dialect.DatabaseVersion)"><code>DatabaseVersion.makeCopyOrDefault(DatabaseVersion)</code></a> to gracefully default
- to the minimum supported version.</div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/DatabaseVersion.html#makeCopy(boolean)">org.hibernate.dialect.DatabaseVersion.makeCopy<wbr>(boolean)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/DatabaseVersion.html#makeCopy()">org.hibernate.dialect.DatabaseVersion.makeCopy()</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">In dialect implementations, prefer <a href="org/hibernate/dialect/DatabaseVersion.html#makeCopyOrDefault(org.hibernate.dialect.DatabaseVersion)"><code>DatabaseVersion.makeCopyOrDefault(DatabaseVersion)</code></a> to gracefully default
  to the minimum supported version.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/Dialect.html#getCheckCondition(java.lang.String,long%5B%5D)">org.hibernate.dialect.Dialect.getCheckCondition<wbr>(String, long[])</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/DatabaseVersion.html#makeCopy(boolean)">org.hibernate.dialect.DatabaseVersion.makeCopy<wbr>(boolean)</a></div>
 <div class="col-last even-row-color">
+<div class="deprecation-comment">In dialect implementations, prefer <a href="org/hibernate/dialect/DatabaseVersion.html#makeCopyOrDefault(org.hibernate.dialect.DatabaseVersion)"><code>DatabaseVersion.makeCopyOrDefault(DatabaseVersion)</code></a> to gracefully default
+ to the minimum supported version.</div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/Dialect.html#getCheckCondition(java.lang.String,long%5B%5D)">org.hibernate.dialect.Dialect.getCheckCondition<wbr>(String, long[])</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/dialect/Dialect.html#getCheckCondition(java.lang.String,java.lang.Long%5B%5D)"><code>Dialect.getCheckCondition(String, Long[])</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/Dialect.html#getDropTableString(java.lang.String)">org.hibernate.dialect.Dialect.getDropTableString<wbr>(String)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/Dialect.html#getDropTableString(java.lang.String)">org.hibernate.dialect.Dialect.getDropTableString<wbr>(String)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">No longer used</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/Dialect.html#getNativeIdentifierGeneratorStrategy()">org.hibernate.dialect.Dialect.getNativeIdentifierGeneratorStrategy()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/Dialect.html#getNativeIdentifierGeneratorStrategy()">org.hibernate.dialect.Dialect.getNativeIdentifierGeneratorStrategy()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/dialect/Dialect.html#getNativeValueGenerationStrategy()">Dialect.getNativeValueGenerationStrategy()</a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/Dialect.html#getNoColumnsInsertString()">org.hibernate.dialect.Dialect.getNoColumnsInsertString()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/Dialect.html#getNoColumnsInsertString()">org.hibernate.dialect.Dialect.getNoColumnsInsertString()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Override the method <code>renderInsertIntoNoColumns()</code>
              on the <a href="org/hibernate/dialect/Dialect.html#getSqlAstTranslatorFactory()"><code>translator</code></a>
              returned by this dialect.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/DialectDelegateWrapper.html#getCheckCondition(java.lang.String,long%5B%5D)">org.hibernate.dialect.DialectDelegateWrapper.getCheckCondition<wbr>(String, long[])</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/DialectDelegateWrapper.html#getNativeIdentifierGeneratorStrategy()">org.hibernate.dialect.DialectDelegateWrapper.getNativeIdentifierGeneratorStrategy()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/DialectDelegateWrapper.html#getCheckCondition(java.lang.String,long%5B%5D)">org.hibernate.dialect.DialectDelegateWrapper.getCheckCondition<wbr>(String, long[])</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/DialectDelegateWrapper.html#getNoColumnsInsertString()">org.hibernate.dialect.DialectDelegateWrapper.getNoColumnsInsertString()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/DialectDelegateWrapper.html#getNativeIdentifierGeneratorStrategy()">org.hibernate.dialect.DialectDelegateWrapper.getNativeIdentifierGeneratorStrategy()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#crc32()">org.hibernate.dialect.function.CommonFunctionFactory.crc32()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/DialectDelegateWrapper.html#getNoColumnsInsertString()">org.hibernate.dialect.DialectDelegateWrapper.getNoColumnsInsertString()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#md5()">org.hibernate.dialect.function.CommonFunctionFactory.md5()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#crc32()">org.hibernate.dialect.function.CommonFunctionFactory.crc32()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#sha()">org.hibernate.dialect.function.CommonFunctionFactory.sha()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#md5()">org.hibernate.dialect.function.CommonFunctionFactory.md5()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#sha1()">org.hibernate.dialect.function.CommonFunctionFactory.sha1()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#sha()">org.hibernate.dialect.function.CommonFunctionFactory.sha()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#sha2()">org.hibernate.dialect.function.CommonFunctionFactory.sha2()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#sha1()">org.hibernate.dialect.function.CommonFunctionFactory.sha1()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/H2SqlAstTranslator.html#visitReturningInsertStatement(org.hibernate.sql.model.internal.TableInsertStandard)">org.hibernate.dialect.H2SqlAstTranslator.visitReturningInsertStatement<wbr>(TableInsertStandard)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/function/CommonFunctionFactory.html#sha2()">org.hibernate.dialect.function.CommonFunctionFactory.sha2()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/identity/H2FinalTableIdentityColumnSupport.html#render(org.hibernate.sql.model.ast.TableInsert,java.util.function.Consumer,java.util.function.Consumer,org.hibernate.dialect.identity.H2IdentityColumnSupport.InsertValuesHandler,org.hibernate.engine.spi.SessionFactoryImplementor)">org.hibernate.dialect.identity.H2FinalTableIdentityColumnSupport.render<wbr>(TableInsert, Consumer&lt;String&gt;, Consumer&lt;ColumnReference&gt;, H2IdentityColumnSupport.InsertValuesHandler, SessionFactoryImplementor)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/H2SqlAstTranslator.html#visitReturningInsertStatement(org.hibernate.sql.model.internal.TableInsertStandard)">org.hibernate.dialect.H2SqlAstTranslator.visitReturningInsertStatement<wbr>(TableInsertStandard)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/identity/H2IdentityColumnSupport.html#render(org.hibernate.sql.model.ast.TableInsert,java.util.function.Consumer,java.util.function.Consumer,org.hibernate.dialect.identity.H2IdentityColumnSupport.InsertValuesHandler,org.hibernate.engine.spi.SessionFactoryImplementor)">org.hibernate.dialect.identity.H2IdentityColumnSupport.render<wbr>(TableInsert, Consumer&lt;String&gt;, Consumer&lt;ColumnReference&gt;, H2IdentityColumnSupport.InsertValuesHandler, SessionFactoryImplementor)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/identity/H2FinalTableIdentityColumnSupport.html#render(org.hibernate.sql.model.ast.TableInsert,java.util.function.Consumer,java.util.function.Consumer,org.hibernate.dialect.identity.H2IdentityColumnSupport.InsertValuesHandler,org.hibernate.engine.spi.SessionFactoryImplementor)">org.hibernate.dialect.identity.H2FinalTableIdentityColumnSupport.render<wbr>(TableInsert, Consumer&lt;String&gt;, Consumer&lt;ColumnReference&gt;, H2IdentityColumnSupport.InsertValuesHandler, SessionFactoryImplementor)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/identity/IdentityColumnSupport.html#appendIdentitySelectToInsert(java.lang.String)">org.hibernate.dialect.identity.IdentityColumnSupport.appendIdentitySelectToInsert<wbr>(String)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/identity/H2IdentityColumnSupport.html#render(org.hibernate.sql.model.ast.TableInsert,java.util.function.Consumer,java.util.function.Consumer,org.hibernate.dialect.identity.H2IdentityColumnSupport.InsertValuesHandler,org.hibernate.engine.spi.SessionFactoryImplementor)">org.hibernate.dialect.identity.H2IdentityColumnSupport.render<wbr>(TableInsert, Consumer&lt;String&gt;, Consumer&lt;ColumnReference&gt;, H2IdentityColumnSupport.InsertValuesHandler, SessionFactoryImplementor)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/identity/IdentityColumnSupport.html#appendIdentitySelectToInsert(java.lang.String)">org.hibernate.dialect.identity.IdentityColumnSupport.appendIdentitySelectToInsert<wbr>(String)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/dialect/identity/IdentityColumnSupport.html#appendIdentitySelectToInsert(java.lang.String,java.lang.String)"><code>IdentityColumnSupport.appendIdentitySelectToInsert(String, String)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/MySQLDialect.html#createVersion(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)">org.hibernate.dialect.MySQLDialect.createVersion<wbr>(DialectResolutionInfo)</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/MySQLDialect.html#getCharacterSetBytesPerCharacter(java.sql.DatabaseMetaData)">org.hibernate.dialect.MySQLDialect.getCharacterSetBytesPerCharacter<wbr>(DatabaseMetaData)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/MySQLDialect.html#createVersion(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)">org.hibernate.dialect.MySQLDialect.createVersion<wbr>(DialectResolutionInfo)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/MySQLServerConfiguration.html#fromDatabaseMetadata(java.sql.DatabaseMetaData)">org.hibernate.dialect.MySQLServerConfiguration.fromDatabaseMetadata<wbr>(DatabaseMetaData)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/MySQLDialect.html#getCharacterSetBytesPerCharacter(java.sql.DatabaseMetaData)">org.hibernate.dialect.MySQLDialect.getCharacterSetBytesPerCharacter<wbr>(DatabaseMetaData)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/MySQLServerConfiguration.html#fromDatabaseMetadata(java.sql.DatabaseMetaData)">org.hibernate.dialect.MySQLServerConfiguration.fromDatabaseMetadata<wbr>(DatabaseMetaData)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/dialect/MySQLServerConfiguration.html#fromDialectResolutionInfo(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)"><code>MySQLServerConfiguration.fromDialectResolutionInfo(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/OracleDialect.html#isAutonomous(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)">org.hibernate.dialect.OracleDialect.isAutonomous<wbr>(DialectResolutionInfo)</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/OracleDialect.html#isExtended(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)">org.hibernate.dialect.OracleDialect.isExtended<wbr>(DialectResolutionInfo)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/dialect/OracleDialect.html#isAutonomous(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)">org.hibernate.dialect.OracleDialect.isAutonomous<wbr>(DialectResolutionInfo)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/internal/StatefulPersistenceContext.html#getCollectionEntries()">org.hibernate.engine.internal.StatefulPersistenceContext.getCollectionEntries()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/dialect/OracleDialect.html#isExtended(org.hibernate.engine.jdbc.dialect.spi.DialectResolutionInfo)">org.hibernate.dialect.OracleDialect.isExtended<wbr>(DialectResolutionInfo)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/internal/StatefulPersistenceContext.html#getCollectionEntries()">org.hibernate.engine.internal.StatefulPersistenceContext.getCollectionEntries()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">We should not expose this directly: the other accessors that have been created as a replacement
  have better chances of skipping initializing this map, which is a good performance improvement.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/internal/StatefulPersistenceContext.html#getEntitiesByKey()">org.hibernate.engine.internal.StatefulPersistenceContext.getEntitiesByKey()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/internal/StatefulPersistenceContext.html#getEntitiesByKey()">org.hibernate.engine.internal.StatefulPersistenceContext.getEntitiesByKey()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">this will be removed: it provides too wide access, making it hard to optimise the internals
  for specific access needs. Consider using #iterateEntities instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html#getQualifiedObjectNameFormatter()">org.hibernate.engine.jdbc.env.spi.JdbcEnvironment.getQualifiedObjectNameFormatter()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/jdbc/env/spi/JdbcEnvironment.html#getQualifiedObjectNameFormatter()">org.hibernate.engine.jdbc.env.spi.JdbcEnvironment.getQualifiedObjectNameFormatter()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use a provided <a href="org/hibernate/boot/model/relational/SqlStringGenerationContext.html" title="interface in org.hibernate.boot.model.relational"><code>SqlStringGenerationContext</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/jdbc/Size.html#getLobMultiplier()">org.hibernate.engine.jdbc.Size.getLobMultiplier()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/jdbc/Size.html#setLobMultiplier(org.hibernate.engine.jdbc.Size.LobMultiplier)">org.hibernate.engine.jdbc.Size.setLobMultiplier<wbr>(Size.LobMultiplier)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/jdbc/Size.html#getLobMultiplier()">org.hibernate.engine.jdbc.Size.getLobMultiplier()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/AbstractDelegatingSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.engine.spi.AbstractDelegatingSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/jdbc/Size.html#setLobMultiplier(org.hibernate.engine.jdbc.Size.LobMultiplier)">org.hibernate.engine.jdbc.Size.setLobMultiplier<wbr>(Size.LobMultiplier)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/AbstractDelegatingSharedSessionBuilder.html#connectionReleaseMode()">org.hibernate.engine.spi.AbstractDelegatingSharedSessionBuilder.connectionReleaseMode()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/AbstractDelegatingSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.engine.spi.AbstractDelegatingSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/AbstractDelegatingSharedSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.engine.spi.AbstractDelegatingSharedSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/AbstractDelegatingSharedSessionBuilder.html#connectionReleaseMode()">org.hibernate.engine.spi.AbstractDelegatingSharedSessionBuilder.connectionReleaseMode()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/CascadingAction.html#noCascade(org.hibernate.event.spi.EventSource,java.lang.Object,org.hibernate.persister.entity.EntityPersister,org.hibernate.type.Type,int)">org.hibernate.engine.spi.CascadingAction.noCascade<wbr>(EventSource, Object, EntityPersister, Type, int)</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">No longer used</div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/CascadingAction.html#requiresNoCascadeChecking()">org.hibernate.engine.spi.CascadingAction.requiresNoCascadeChecking()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/AbstractDelegatingSharedSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.engine.spi.AbstractDelegatingSharedSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/CascadingAction.html#noCascade(org.hibernate.event.spi.EventSource,java.lang.Object,org.hibernate.persister.entity.EntityPersister,org.hibernate.type.Type,int)">org.hibernate.engine.spi.CascadingAction.noCascade<wbr>(EventSource, Object, EntityPersister, Type, int)</a></div>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">No longer used</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/LoadQueryInfluencers.html#getInternalFetchProfile()">org.hibernate.engine.spi.LoadQueryInfluencers.getInternalFetchProfile()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/CascadingAction.html#requiresNoCascadeChecking()">org.hibernate.engine.spi.CascadingAction.requiresNoCascadeChecking()</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">No longer used</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/LoadQueryInfluencers.html#getInternalFetchProfile()">org.hibernate.engine.spi.LoadQueryInfluencers.getInternalFetchProfile()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/engine/spi/LoadQueryInfluencers.html#getEnabledCascadingFetchProfile()"><code>LoadQueryInfluencers.getEnabledCascadingFetchProfile()</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/LoadQueryInfluencers.html#setInternalFetchProfile(java.lang.String)">org.hibernate.engine.spi.LoadQueryInfluencers.setInternalFetchProfile<wbr>(String)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/LoadQueryInfluencers.html#setInternalFetchProfile(java.lang.String)">org.hibernate.engine.spi.LoadQueryInfluencers.setInternalFetchProfile<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/engine/spi/LoadQueryInfluencers.html#setEnabledCascadingFetchProfile(org.hibernate.loader.ast.spi.CascadingFetchProfile)"><code>LoadQueryInfluencers.setEnabledCascadingFetchProfile(org.hibernate.loader.ast.spi.CascadingFetchProfile)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/PersistenceContext.html#getCollectionsByKey()">org.hibernate.engine.spi.PersistenceContext.getCollectionsByKey()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/PersistenceContext.html#getCollectionsByKey()">org.hibernate.engine.spi.PersistenceContext.getCollectionsByKey()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">this method should be removed; alternative methods are available that better express the intent, allowing
  for better optimisations. Not aggressively removing this as it's an SPI, but also useful for testing and other
  contexts which are not performance sensitive.
  N.B. This might return an immutable map: do not use for mutations!</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/PersistentAttributeInterceptor.html#attributeInitialized(java.lang.String)">org.hibernate.engine.spi.PersistentAttributeInterceptor.attributeInitialized<wbr>(String)</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">Just as the method it overrides.  Interceptors that deal with
- lazy state should implement <a href="org/hibernate/bytecode/enhance/spi/interceptor/BytecodeLazyAttributeInterceptor.html" title="interface in org.hibernate.bytecode.enhance.spi.interceptor"><code>BytecodeLazyAttributeInterceptor</code></a></div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/PersistentAttributeInterceptor.html#getInitializedLazyAttributeNames()">org.hibernate.engine.spi.PersistentAttributeInterceptor.getInitializedLazyAttributeNames()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/PersistentAttributeInterceptor.html#attributeInitialized(java.lang.String)">org.hibernate.engine.spi.PersistentAttributeInterceptor.attributeInitialized<wbr>(String)</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">Just as the method it overrides.  Interceptors that deal with
  lazy state should implement <a href="org/hibernate/bytecode/enhance/spi/interceptor/BytecodeLazyAttributeInterceptor.html" title="interface in org.hibernate.bytecode.enhance.spi.interceptor"><code>BytecodeLazyAttributeInterceptor</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/PersistentAttributeInterceptor.html#isAttributeLoaded(java.lang.String)">org.hibernate.engine.spi.PersistentAttributeInterceptor.isAttributeLoaded<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/PersistentAttributeInterceptor.html#getInitializedLazyAttributeNames()">org.hibernate.engine.spi.PersistentAttributeInterceptor.getInitializedLazyAttributeNames()</a></div>
 <div class="col-last even-row-color">
+<div class="deprecation-comment">Just as the method it overrides.  Interceptors that deal with
+ lazy state should implement <a href="org/hibernate/bytecode/enhance/spi/interceptor/BytecodeLazyAttributeInterceptor.html" title="interface in org.hibernate.bytecode.enhance.spi.interceptor"><code>BytecodeLazyAttributeInterceptor</code></a></div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/PersistentAttributeInterceptor.html#isAttributeLoaded(java.lang.String)">org.hibernate.engine.spi.PersistentAttributeInterceptor.isAttributeLoaded<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Interceptors that deal with
          * lazy state should implement <a href="org/hibernate/bytecode/enhance/spi/interceptor/BytecodeLazyAttributeInterceptor.html" title="interface in org.hibernate.bytecode.enhance.spi.interceptor"><code>BytecodeLazyAttributeInterceptor</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getCollectionRolesByEntityParticipant(java.lang.String)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getCollectionRolesByEntityParticipant<wbr>(String)</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getFilterDefinition(java.lang.String)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getFilterDefinition<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getCollectionRolesByEntityParticipant(java.lang.String)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getCollectionRolesByEntityParticipant<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getGenerator(java.lang.String)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getGenerator<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getFilterDefinition(java.lang.String)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getFilterDefinition<wbr>(String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getMetamodel()">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getMetamodel()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getGenerator(java.lang.String)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getGenerator<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#resolveParameterBindType(java.lang.Class)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.resolveParameterBindType<wbr>(Class&lt;T&gt;)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#getMetamodel()">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.getMetamodel()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#resolveParameterBindType(T)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.resolveParameterBindType<wbr>(T)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#resolveParameterBindType(java.lang.Class)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.resolveParameterBindType<wbr>(Class&lt;T&gt;)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryImplementor.html#getGenerator(java.lang.String)">org.hibernate.engine.spi.SessionFactoryImplementor.getGenerator<wbr>(String)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionFactoryDelegatingImpl.html#resolveParameterBindType(T)">org.hibernate.engine.spi.SessionFactoryDelegatingImpl.resolveParameterBindType<wbr>(T)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionFactoryImplementor.html#getGenerator(java.lang.String)">org.hibernate.engine.spi.SessionFactoryImplementor.getGenerator<wbr>(String)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Only used in one place, will be removed</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createNamedQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createNamedQuery<wbr>(String)</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createNativeQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createNativeQuery<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createNamedQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createNamedQuery<wbr>(String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createNativeQuery(java.lang.String,java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createNativeQuery<wbr>(String, String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createNativeQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createNativeQuery<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">org.hibernate.engine.spi.SessionLazyDelegator.createQuery<wbr>(CriteriaDelete)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createNativeQuery(java.lang.String,java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createNativeQuery<wbr>(String, String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">org.hibernate.engine.spi.SessionLazyDelegator.createQuery<wbr>(CriteriaUpdate)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">org.hibernate.engine.spi.SessionLazyDelegator.createQuery<wbr>(CriteriaDelete)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createQuery<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">org.hibernate.engine.spi.SessionLazyDelegator.createQuery<wbr>(CriteriaUpdate)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#getNamedNativeQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.getNamedNativeQuery<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#createQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.createQuery<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#getNamedNativeQuery(java.lang.String,java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.getNamedNativeQuery<wbr>(String, String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#getNamedNativeQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.getNamedNativeQuery<wbr>(String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#getNamedQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.getNamedQuery<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#getNamedNativeQuery(java.lang.String,java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.getNamedNativeQuery<wbr>(String, String)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#replicate(java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.engine.spi.SessionLazyDelegator.replicate<wbr>(Object, ReplicationMode)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#getNamedQuery(java.lang.String)">org.hibernate.engine.spi.SessionLazyDelegator.getNamedQuery<wbr>(String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#replicate(java.lang.String,java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.engine.spi.SessionLazyDelegator.replicate<wbr>(String, Object, ReplicationMode)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#replicate(java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.engine.spi.SessionLazyDelegator.replicate<wbr>(Object, ReplicationMode)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#getFlushMode()">org.hibernate.engine.spi.SharedSessionContractImplementor.getFlushMode()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SessionLazyDelegator.html#replicate(java.lang.String,java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.engine.spi.SessionLazyDelegator.replicate<wbr>(String, Object, ReplicationMode)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#getFlushMode()">org.hibernate.engine.spi.SharedSessionContractImplementor.getFlushMode()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">there's no good reason to expose this here</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#isAutoCloseSessionEnabled()">org.hibernate.engine.spi.SharedSessionContractImplementor.isAutoCloseSessionEnabled()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#isAutoCloseSessionEnabled()">org.hibernate.engine.spi.SharedSessionContractImplementor.isAutoCloseSessionEnabled()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">there's no reason to expose this here</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#setAutoClear(boolean)">org.hibernate.engine.spi.SharedSessionContractImplementor.setAutoClear<wbr>(boolean)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#setAutoClear(boolean)">org.hibernate.engine.spi.SharedSessionContractImplementor.setAutoClear<wbr>(boolean)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">there's no good reason to expose this here</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#shouldAutoClose()">org.hibernate.engine.spi.SharedSessionContractImplementor.shouldAutoClose()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/engine/spi/SharedSessionContractImplementor.html#shouldAutoClose()">org.hibernate.engine.spi.SharedSessionContractImplementor.shouldAutoClose()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">there's no reason to expose this here</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/Audited.html#auditParents()">org.hibernate.envers.Audited.auditParents()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/Audited.html#auditParents()">org.hibernate.envers.Audited.auditParents()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <code>@AuditOverride(forClass=SomeEntity.class)</code> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/AuditReader.html#getCurrentRevision(java.lang.Class,boolean)">org.hibernate.envers.AuditReader.getCurrentRevision<wbr>(Class&lt;T&gt;, boolean)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/AuditReader.html#getCurrentRevision(java.lang.Class,boolean)">org.hibernate.envers.AuditReader.getCurrentRevision<wbr>(Class&lt;T&gt;, boolean)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/envers/RevisionListener.html" title="interface in org.hibernate.envers"><code>RevisionListener</code></a> instead.  While this method is
  being deprecated, expect a new API for this in 6.0.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/boot/internal/EnversServiceImpl.html#getAuditStrategy()">org.hibernate.envers.boot.internal.EnversServiceImpl.getAuditStrategy()</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/query/internal/impl/AbstractAuditQuery.html#setLockMode(org.hibernate.LockMode)">org.hibernate.envers.query.internal.impl.AbstractAuditQuery.setLockMode<wbr>(LockMode)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/boot/internal/EnversServiceImpl.html#getAuditStrategy()">org.hibernate.envers.boot.internal.EnversServiceImpl.getAuditStrategy()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/query/internal/impl/AbstractAuditQuery.html#setLockMode(org.hibernate.LockMode)">org.hibernate.envers.query.internal.impl.AbstractAuditQuery.setLockMode<wbr>(LockMode)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Instead use setLockOptions</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/strategy/AuditStrategy.html#perform(org.hibernate.Session,java.lang.String,org.hibernate.envers.boot.internal.EnversService,java.lang.Object,java.lang.Object,java.lang.Object)">org.hibernate.envers.strategy.AuditStrategy.perform<wbr>(Session, String, EnversService, Object, Object, Object)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/strategy/AuditStrategy.html#perform(org.hibernate.Session,java.lang.String,org.hibernate.envers.boot.internal.EnversService,java.lang.Object,java.lang.Object,java.lang.Object)">org.hibernate.envers.strategy.AuditStrategy.perform<wbr>(Session, String, EnversService, Object, Object, Object)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/envers/strategy/spi/AuditStrategy.html#perform(org.hibernate.Session,java.lang.String,org.hibernate.envers.configuration.Configuration,java.lang.Object,java.lang.Object,java.lang.Object)"><code>AuditStrategy.perform(Session, String, Configuration, Object, Object, Object)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/strategy/AuditStrategy.html#performCollectionChange(org.hibernate.Session,java.lang.String,java.lang.String,org.hibernate.envers.boot.internal.EnversService,org.hibernate.envers.internal.entities.mapper.PersistentCollectionChangeData,java.lang.Object)">org.hibernate.envers.strategy.AuditStrategy.performCollectionChange<wbr>(Session, String, String, EnversService, PersistentCollectionChangeData, Object)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/strategy/AuditStrategy.html#performCollectionChange(org.hibernate.Session,java.lang.String,java.lang.String,org.hibernate.envers.boot.internal.EnversService,org.hibernate.envers.internal.entities.mapper.PersistentCollectionChangeData,java.lang.Object)">org.hibernate.envers.strategy.AuditStrategy.performCollectionChange<wbr>(Session, String, String, EnversService, PersistentCollectionChangeData, Object)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/envers/strategy/spi/AuditStrategy.html#performCollectionChange(org.hibernate.Session,java.lang.String,java.lang.String,org.hibernate.envers.configuration.Configuration,org.hibernate.envers.internal.entities.mapper.PersistentCollectionChangeData,java.lang.Object)"><code>AuditStrategy.performCollectionChange(Session, String, String, Configuration, PersistentCollectionChangeData, Object)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/envers/strategy/internal/ValidityAuditStrategy.html#setRevisionTimestampGetter(org.hibernate.property.access.spi.Getter)">org.hibernate.envers.strategy.internal.ValidityAuditStrategy.setRevisionTimestampGetter<wbr>(Getter)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/envers/strategy/internal/ValidityAuditStrategy.html#setRevisionTimestampGetter(org.hibernate.property.access.spi.Getter)">org.hibernate.envers.strategy.internal.ValidityAuditStrategy.setRevisionTimestampGetter<wbr>(Getter)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">with no replacement.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/event/service/spi/EventListenerGroup.html#clear()">org.hibernate.event.service.spi.EventListenerGroup.clear()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/event/service/spi/EventListenerGroup.html#clear()">org.hibernate.event.service.spi.EventListenerGroup.clear()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/event/service/spi/EventListenerGroup.html#clearListeners()"><code>EventListenerGroup.clearListeners()</code></a> instead, which doesn't also reset
              the registered <a href="org/hibernate/event/service/spi/DuplicationStrategy.html" title="interface in org.hibernate.event.service.spi"><code>DuplicationStrategy</code></a>s.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/event/service/spi/EventListenerGroup.html#listeners()">org.hibernate.event.service.spi.EventListenerGroup.listeners()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/event/service/spi/EventListenerGroup.html#listeners()">org.hibernate.event.service.spi.EventListenerGroup.listeners()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">this is not the most efficient way for iterating the event listeners.
  See <a href="org/hibernate/event/service/spi/EventListenerGroup.html#fireEventOnEachListener(U,java.util.function.BiConsumer)"><code>EventListenerGroup.fireEventOnEachListener(Object, BiConsumer)</code></a> and its overloaded variants for better alternatives.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/exception/internal/StandardSQLExceptionConverter.html#addDelegate(org.hibernate.exception.spi.SQLExceptionConversionDelegate)">org.hibernate.exception.internal.StandardSQLExceptionConverter.addDelegate<wbr>(SQLExceptionConversionDelegate)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/exception/internal/StandardSQLExceptionConverter.html#addDelegate(org.hibernate.exception.spi.SQLExceptionConversionDelegate)">org.hibernate.exception.internal.StandardSQLExceptionConverter.addDelegate<wbr>(SQLExceptionConversionDelegate)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/exception/internal/StandardSQLExceptionConverter.html#%3Cinit%3E(org.hibernate.exception.spi.SQLExceptionConversionDelegate...)"><code>StandardSQLExceptionConverter(SQLExceptionConversionDelegate...)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Filter.html#getFilterDefinition()">org.hibernate.Filter.getFilterDefinition()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Filter.html#getFilterDefinition()">org.hibernate.Filter.getFilterDefinition()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">There is no plan to remove this operation, but its use
              should be avoided since <a href="org/hibernate/engine/spi/FilterDefinition.html" title="class in org.hibernate.engine.spi"><code>FilterDefinition</code></a> is an
              SPI type, and so this operation is a layer-breaker.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageLexer.html#getTokenNames()">org.hibernate.grammars.graph.GraphLanguageLexer.getTokenNames()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageParser.html#getTokenNames()">org.hibernate.grammars.graph.GraphLanguageParser.getTokenNames()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageLexer.html#getTokenNames()">org.hibernate.grammars.graph.GraphLanguageLexer.getTokenNames()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/hql/HqlLexer.html#getTokenNames()">org.hibernate.grammars.hql.HqlLexer.getTokenNames()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/graph/GraphLanguageParser.html#getTokenNames()">org.hibernate.grammars.graph.GraphLanguageParser.getTokenNames()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/hql/HqlParser.html#getTokenNames()">org.hibernate.grammars.hql.HqlParser.getTokenNames()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/hql/HqlLexer.html#getTokenNames()">org.hibernate.grammars.hql.HqlLexer.getTokenNames()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptLexer.html#getTokenNames()">org.hibernate.grammars.importsql.SqlScriptLexer.getTokenNames()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/hql/HqlParser.html#getTokenNames()">org.hibernate.grammars.hql.HqlParser.getTokenNames()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptParser.html#getTokenNames()">org.hibernate.grammars.importsql.SqlScriptParser.getTokenNames()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptLexer.html#getTokenNames()">org.hibernate.grammars.importsql.SqlScriptLexer.getTokenNames()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/ordering/OrderingLexer.html#getTokenNames()">org.hibernate.grammars.ordering.OrderingLexer.getTokenNames()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/importsql/SqlScriptParser.html#getTokenNames()">org.hibernate.grammars.importsql.SqlScriptParser.getTokenNames()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/ordering/OrderingParser.html#getTokenNames()">org.hibernate.grammars.ordering.OrderingParser.getTokenNames()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/grammars/ordering/OrderingLexer.html#getTokenNames()">org.hibernate.grammars.ordering.OrderingLexer.getTokenNames()</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/graph/GraphSemantic.html#fromJpaHintName(java.lang.String)">org.hibernate.graph.GraphSemantic.fromJpaHintName<wbr>(String)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/grammars/ordering/OrderingParser.html#getTokenNames()">org.hibernate.grammars.ordering.OrderingParser.getTokenNames()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/graph/GraphSemantic.html#fromJpaHintName(java.lang.String)">org.hibernate.graph.GraphSemantic.fromJpaHintName<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/graph/GraphSemantic.html#fromHintName(java.lang.String)"><code>GraphSemantic.fromHintName(java.lang.String)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/graph/GraphSemantic.html#getJpaHintName()">org.hibernate.graph.GraphSemantic.getJpaHintName()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/graph/GraphSemantic.html#getJpaHintName()">org.hibernate.graph.GraphSemantic.getJpaHintName()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/graph/GraphSemantic.html#getJakartaHintName()"><code>GraphSemantic.getJakartaHintName()</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/Configurable.html#configure(org.hibernate.type.Type,java.util.Properties,org.hibernate.service.ServiceRegistry)">org.hibernate.id.Configurable.configure<wbr>(Type, Properties, ServiceRegistry)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/Configurable.html#configure(org.hibernate.type.Type,java.util.Properties,org.hibernate.service.ServiceRegistry)">org.hibernate.id.Configurable.configure<wbr>(Type, Properties, ServiceRegistry)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/id/Configurable.html#configure(org.hibernate.generator.GeneratorCreationContext,java.util.Properties)"><code>Configurable.configure(GeneratorCreationContext, Properties)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/enhanced/DatabaseStructure.html#getAllSqlForTests()">org.hibernate.id.enhanced.DatabaseStructure.getAllSqlForTests()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/enhanced/DatabaseStructure.html#getAllSqlForTests()">org.hibernate.id.enhanced.DatabaseStructure.getAllSqlForTests()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Exposed for tests only.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/enhanced/DatabaseStructure.html#prepare(org.hibernate.id.enhanced.Optimizer)">org.hibernate.id.enhanced.DatabaseStructure.prepare<wbr>(Optimizer)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/enhanced/DatabaseStructure.html#prepare(org.hibernate.id.enhanced.Optimizer)">org.hibernate.id.enhanced.DatabaseStructure.prepare<wbr>(Optimizer)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/id/enhanced/DatabaseStructure.html#configure(org.hibernate.id.enhanced.Optimizer)"><code>DatabaseStructure.configure(Optimizer)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/enhanced/SequenceStructure.html#getAllSqlForTests()">org.hibernate.id.enhanced.SequenceStructure.getAllSqlForTests()</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/enhanced/TableGenerator.html#getAllSqlForTests()">org.hibernate.id.enhanced.TableGenerator.getAllSqlForTests()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/enhanced/SequenceStructure.html#getAllSqlForTests()">org.hibernate.id.enhanced.SequenceStructure.getAllSqlForTests()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/enhanced/TableGenerator.html#getAllSqlForTests()">org.hibernate.id.enhanced.TableGenerator.getAllSqlForTests()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Exposed for tests only.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/enhanced/TableStructure.html#getAllSqlForTests()">org.hibernate.id.enhanced.TableStructure.getAllSqlForTests()</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/enhanced/TableStructure.html#prepare(org.hibernate.id.enhanced.Optimizer)">org.hibernate.id.enhanced.TableStructure.prepare<wbr>(Optimizer)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/enhanced/TableStructure.html#getAllSqlForTests()">org.hibernate.id.enhanced.TableStructure.getAllSqlForTests()</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/IdentifierGenerator.html#configure(org.hibernate.type.Type,java.util.Properties,org.hibernate.service.ServiceRegistry)">org.hibernate.id.IdentifierGenerator.configure<wbr>(Type, Properties, ServiceRegistry)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/enhanced/TableStructure.html#prepare(org.hibernate.id.enhanced.Optimizer)">org.hibernate.id.enhanced.TableStructure.prepare<wbr>(Optimizer)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/IdentifierGenerator.html#configure(org.hibernate.type.Type,java.util.Properties,org.hibernate.service.ServiceRegistry)">org.hibernate.id.IdentifierGenerator.configure<wbr>(Type, Properties, ServiceRegistry)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">since it overrides a deprecated method</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/id/IncrementGenerator.html#getAllSqlForTests()">org.hibernate.id.IncrementGenerator.getAllSqlForTests()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/id/IncrementGenerator.html#getAllSqlForTests()">org.hibernate.id.IncrementGenerator.getAllSqlForTests()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Exposed for tests only.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/IdentifierLoadAccess.html#with(org.hibernate.graph.RootGraph)">org.hibernate.IdentifierLoadAccess.with<wbr>(RootGraph&lt;T&gt;)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/IdentifierLoadAccess.html#with(org.hibernate.graph.RootGraph)">org.hibernate.IdentifierLoadAccess.with<wbr>(RootGraph&lt;T&gt;)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/IdentifierLoadAccess.html#withLoadGraph(org.hibernate.graph.RootGraph)"><code>IdentifierLoadAccess.withLoadGraph(org.hibernate.graph.RootGraph&lt;T&gt;)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Interceptor.html#onDelete(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.type.Type%5B%5D)">org.hibernate.Interceptor.onDelete<wbr>(Object, Object, Object[], String[], Type[])</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Interceptor.html#onDelete(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.type.Type%5B%5D)">org.hibernate.Interceptor.onDelete<wbr>(Object, Object, Object[], String[], Type[])</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/Interceptor.html#onRemove(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.type.Type%5B%5D)"><code>Interceptor.onRemove(Object, Object, Object[], String[], Type[])</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Interceptor.html#onSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.type.Type%5B%5D)">org.hibernate.Interceptor.onSave<wbr>(Object, Object, Object[], String[], Type[])</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Interceptor.html#onSave(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.type.Type%5B%5D)">org.hibernate.Interceptor.onSave<wbr>(Object, Object, Object[], String[], Type[])</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/Interceptor.html#onPersist(java.lang.Object,java.lang.Object,java.lang.Object%5B%5D,java.lang.String%5B%5D,org.hibernate.type.Type%5B%5D)"><code>Interceptor.onPersist(Object, Object, Object[], String[], Type[])</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/AbstractSharedSessionContract.html#addResultType(java.lang.Class,org.hibernate.query.sql.spi.NativeQueryImplementor)">org.hibernate.internal.AbstractSharedSessionContract.addResultType<wbr>(Class&lt;T&gt;, NativeQueryImplementor&lt;T&gt;)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/AbstractSharedSessionContract.html#addResultType(java.lang.Class,org.hibernate.query.sql.spi.NativeQueryImplementor)">org.hibernate.internal.AbstractSharedSessionContract.addResultType<wbr>(Class&lt;T&gt;, NativeQueryImplementor&lt;T&gt;)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sql/internal/NativeQueryImpl.html#%3Cinit%3E(java.lang.String,java.lang.Class,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>NativeQueryImpl(String, Class, SharedSessionContractImplementor)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/FastSessionServices.html#getDefaultTimeZoneStorageStrategy()">org.hibernate.internal.FastSessionServices.getDefaultTimeZoneStorageStrategy()</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/FastSessionServices.html#getMutationExecutorService()">org.hibernate.internal.FastSessionServices.getMutationExecutorService()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.html#configuredInterceptor(org.hibernate.Interceptor,org.hibernate.boot.spi.SessionFactoryOptions)">org.hibernate.internal.SessionFactoryImpl.configuredInterceptor<wbr>(Interceptor, SessionFactoryOptions)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.html#configuredInterceptor(org.hibernate.Interceptor,org.hibernate.boot.spi.SessionFactoryOptions)">org.hibernate.internal.SessionFactoryImpl.configuredInterceptor<wbr>(Interceptor, SessionFactoryOptions)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/internal/SessionFactoryImpl.html#configuredInterceptor(org.hibernate.Interceptor,boolean,org.hibernate.boot.spi.SessionFactoryOptions)"><code>SessionFactoryImpl.configuredInterceptor(Interceptor, boolean, SessionFactoryOptions)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.html#getGenerator(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.getGenerator<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.html#getGenerator(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.getGenerator<wbr>(String)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.SessionBuilderImpl.html#tenantIdentifier(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.SessionBuilderImpl.tenantIdentifier<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.SessionBuilderImpl.html#tenantIdentifier(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.SessionBuilderImpl.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.StatelessSessionBuilderImpl.html#tenantIdentifier(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.StatelessSessionBuilderImpl.tenantIdentifier<wbr>(String)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/SessionFactoryImpl.StatelessSessionBuilderImpl.html#tenantIdentifier(java.lang.String)">org.hibernate.internal.SessionFactoryImpl.StatelessSessionBuilderImpl.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/SessionImpl.html#load(java.lang.String,java.lang.Object)">org.hibernate.internal.SessionImpl.load<wbr>(String, Object)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/SessionImpl.html#load(java.lang.String,java.lang.Object)">org.hibernate.internal.SessionImpl.load<wbr>(String, Object)</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#clone(java.util.Map)">org.hibernate.internal.util.config.ConfigurationHelper.clone<wbr>(Map&lt;?, ?&gt;)</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">No longer used</div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#setIfNotNull(java.lang.Object,java.lang.String,java.util.Map)">org.hibernate.internal.util.config.ConfigurationHelper.setIfNotNull<wbr>(Object, String, Map&lt;String, Object&gt;)</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#toMap(java.lang.String,java.lang.String,java.util.Map)">org.hibernate.internal.util.config.ConfigurationHelper.toMap<wbr>(String, String, Map&lt;?, ?&gt;)</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">No longer used</div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#toMap(java.lang.String,java.lang.String,java.util.Properties)">org.hibernate.internal.util.config.ConfigurationHelper.toMap<wbr>(String, String, Properties)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#clone(java.util.Map)">org.hibernate.internal.util.config.ConfigurationHelper.clone<wbr>(Map&lt;?, ?&gt;)</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">No longer used</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/util/ReflectHelper.html#classForName(java.lang.String)">org.hibernate.internal.util.ReflectHelper.classForName<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#setIfNotNull(java.lang.Object,java.lang.String,java.util.Map)">org.hibernate.internal.util.config.ConfigurationHelper.setIfNotNull<wbr>(Object, String, Map&lt;String, Object&gt;)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#toMap(java.lang.String,java.lang.String,java.util.Map)">org.hibernate.internal.util.config.ConfigurationHelper.toMap<wbr>(String, String, Map&lt;?, ?&gt;)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">No longer used</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/util/config/ConfigurationHelper.html#toMap(java.lang.String,java.lang.String,java.util.Properties)">org.hibernate.internal.util.config.ConfigurationHelper.toMap<wbr>(String, String, Properties)</a></div>
 <div class="col-last even-row-color">
+<div class="deprecation-comment">No longer used</div>
+</div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/ReflectHelper.html#classForName(java.lang.String)">org.hibernate.internal.util.ReflectHelper.classForName<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Depending on context, either <a href="org/hibernate/boot/registry/classloading/spi/ClassLoaderService.html" title="interface in org.hibernate.boot.registry.classloading.spi"><code>ClassLoaderService</code></a>
  or <a href="org/hibernate/boot/spi/ClassLoaderAccess.html" title="interface in org.hibernate.boot.spi"><code>ClassLoaderAccess</code></a> should be preferred</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/internal/util/ReflectHelper.html#implementsInterface(java.lang.Class,java.lang.Class)">org.hibernate.internal.util.ReflectHelper.implementsInterface<wbr>(Class&lt;?&gt;, Class&lt;?&gt;)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/internal/util/ReflectHelper.html#implementsInterface(java.lang.Class,java.lang.Class)">org.hibernate.internal.util.ReflectHelper.implementsInterface<wbr>(Class&lt;?&gt;, Class&lt;?&gt;)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">No longer used</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jpa/boot/spi/PersistenceUnitDescriptor.html#getTransactionType()">org.hibernate.jpa.boot.spi.PersistenceUnitDescriptor.getTransactionType()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jpa/boot/spi/PersistenceUnitDescriptor.html#getTransactionType()">org.hibernate.jpa.boot.spi.PersistenceUnitDescriptor.getTransactionType()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">since <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/spi/PersistenceUnitTransactionType.html" title="class or interface in jakarta.persistence.spi" class="external-link"><code>PersistenceUnitTransactionType</code></a>
              will be removed in JPA 4</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jpa/spi/JpaCompliance.html#isJpaCascadeComplianceEnabled()">org.hibernate.jpa.spi.JpaCompliance.isJpaCascadeComplianceEnabled()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jpa/spi/JpaCompliance.html#isJpaCascadeComplianceEnabled()">org.hibernate.jpa.spi.JpaCompliance.isJpaCascadeComplianceEnabled()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">No longer has any effect.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/jpa/spi/MutableJpaCompliance.html#setCascadeCompliance(boolean)">org.hibernate.jpa.spi.MutableJpaCompliance.setCascadeCompliance<wbr>(boolean)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/jpa/spi/MutableJpaCompliance.html#setCascadeCompliance(boolean)">org.hibernate.jpa.spi.MutableJpaCompliance.setCascadeCompliance<wbr>(boolean)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Always enabled.  See <a href="org/hibernate/jpa/spi/JpaCompliance.html#isJpaCascadeComplianceEnabled()">JpaCompliance.isJpaCascadeComplianceEnabled()</a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/loader/ast/spi/BatchLoaderFactory.html#createEntityBatchLoader(int,org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.engine.spi.SessionFactoryImplementor)">org.hibernate.loader.ast.spi.BatchLoaderFactory.createEntityBatchLoader<wbr>(int, EntityMappingType, SessionFactoryImplementor)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/loader/ast/spi/BatchLoaderFactory.html#createEntityBatchLoader(int,org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.engine.spi.SessionFactoryImplementor)">org.hibernate.loader.ast.spi.BatchLoaderFactory.createEntityBatchLoader<wbr>(int, EntityMappingType, SessionFactoryImplementor)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/loader/ast/spi/BatchLoaderFactory.html#createEntityBatchLoader(int,org.hibernate.metamodel.mapping.EntityMappingType,org.hibernate.engine.spi.LoadQueryInfluencers)"><code>BatchLoaderFactory.createEntityBatchLoader(int, EntityMappingType, LoadQueryInfluencers)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByEnabledFilters(org.hibernate.engine.spi.LoadQueryInfluencers)">org.hibernate.loader.ast.spi.Loadable.isAffectedByEnabledFilters<wbr>(LoadQueryInfluencers)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByEnabledFilters(org.hibernate.engine.spi.LoadQueryInfluencers)">org.hibernate.loader.ast.spi.Loadable.isAffectedByEnabledFilters<wbr>(LoadQueryInfluencers)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByEnabledFilters(org.hibernate.engine.spi.LoadQueryInfluencers,boolean)"><code>Loadable.isAffectedByEnabledFilters(LoadQueryInfluencers, boolean)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByInfluencers(org.hibernate.engine.spi.LoadQueryInfluencers)">org.hibernate.loader.ast.spi.Loadable.isAffectedByInfluencers<wbr>(LoadQueryInfluencers)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByInfluencers(org.hibernate.engine.spi.LoadQueryInfluencers)">org.hibernate.loader.ast.spi.Loadable.isAffectedByInfluencers<wbr>(LoadQueryInfluencers)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/loader/ast/spi/Loadable.html#isAffectedByInfluencers(org.hibernate.engine.spi.LoadQueryInfluencers,boolean)"><code>Loadable.isAffectedByInfluencers(LoadQueryInfluencers, boolean)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/LockOptions.html#getAliasLockIterator()">org.hibernate.LockOptions.getAliasLockIterator()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/LockOptions.html#getAliasLockIterator()">org.hibernate.LockOptions.getAliasLockIterator()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/LockOptions.html#getAliasSpecificLocks()"><code>LockOptions.getAliasSpecificLocks()</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/LockOptions.html#getScope()">org.hibernate.LockOptions.getScope()</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/LockOptions.html#getLockScope()"><code>LockOptions.getLockScope()</code></a></div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/LockOptions.html#setScope(boolean)">org.hibernate.LockOptions.setScope<wbr>(boolean)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/CheckConstraint.html#constraintString()">org.hibernate.mapping.CheckConstraint.constraintString()</a></div>
 <div class="col-last even-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/LockOptions.html#setLockScope(jakarta.persistence.PessimisticLockScope)"><code>LockOptions.setLockScope(PessimisticLockScope)</code></a></div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/CheckConstraint.html#constraintString()">org.hibernate.mapping.CheckConstraint.constraintString()</a></div>
-<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/mapping/CheckConstraint.html#constraintString(org.hibernate.dialect.Dialect)"><code>CheckConstraint.constraintString(Dialect)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Collection.html#validate(org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Collection.validate<wbr>(Mapping)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Collection.html#validate(org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Collection.validate<wbr>(Mapping)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/mapping/Collection.html#validate(org.hibernate.type.MappingContext)"><code>Collection.validate(MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Column.html#checkConstraint()">org.hibernate.mapping.Column.checkConstraint()</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Column.html#getCheckConstraint()">org.hibernate.mapping.Column.getCheckConstraint()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Column.html#getColumnSize(org.hibernate.dialect.Dialect,org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Column.getColumnSize<wbr>(Dialect, Mapping)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Column.html#getColumnSize(org.hibernate.dialect.Dialect,org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Column.getColumnSize<wbr>(Dialect, Mapping)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/mapping/Column.html#getColumnSize(org.hibernate.dialect.Dialect,org.hibernate.type.MappingContext)"><code>Column.getColumnSize(Dialect, MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Column.html#getSqlType(org.hibernate.type.spi.TypeConfiguration,org.hibernate.dialect.Dialect,org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Column.getSqlType<wbr>(TypeConfiguration, Dialect, Mapping)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Column.html#getSqlType(org.hibernate.type.spi.TypeConfiguration,org.hibernate.dialect.Dialect,org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Column.getSqlType<wbr>(TypeConfiguration, Dialect, Mapping)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/mapping/Column.html#getSqlType(org.hibernate.boot.Metadata)"><code>Column.getSqlType(Metadata)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Column.html#getSqlTypeCode(org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Column.getSqlTypeCode<wbr>(Mapping)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Column.html#getSqlTypeCode(org.hibernate.engine.spi.Mapping)">org.hibernate.mapping.Column.getSqlTypeCode<wbr>(Mapping)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/mapping/Column.html#getSqlTypeCode(org.hibernate.type.MappingContext)"><code>Column.getSqlTypeCode(MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Column.html#setCheckConstraint(java.lang.String)">org.hibernate.mapping.Column.setCheckConstraint<wbr>(String)</a></div>
-<div class="col-last even-row-color"></div>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Index.html#getColumnOrderMap()">org.hibernate.mapping.Index.getColumnOrderMap()</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/mapping/Index.html#getSelectableOrderMap()"><code>Index.getSelectableOrderMap()</code></a></div>
@@ -2526,14 +2511,6 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/SimpleValue.html#createGenerator(org.hibernate.dialect.Dialect,org.hibernate.mapping.RootClass)">org.hibernate.mapping.SimpleValue.createGenerator<wbr>(Dialect, RootClass)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/SimpleValue.html#isCascadeDeleteEnabled()">org.hibernate.mapping.SimpleValue.isCascadeDeleteEnabled()</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/mapping/SimpleValue.html#getOnDeleteAction()"><code>SimpleValue.getOnDeleteAction()</code></a></div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/SimpleValue.html#setCascadeDeleteEnabled(boolean)">org.hibernate.mapping.SimpleValue.setCascadeDeleteEnabled<wbr>(boolean)</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">use <a href="org/hibernate/mapping/SimpleValue.html#setOnDeleteAction(org.hibernate.annotations.OnDeleteAction)"><code>SimpleValue.setOnDeleteAction(OnDeleteAction)</code></a></div>
-</div>
 <div class="col-summary-item-name even-row-color"><a href="org/hibernate/mapping/Table.html#addCheckConstraint(java.lang.String)">org.hibernate.mapping.Table.addCheckConstraint<wbr>(String)</a></div>
 <div class="col-last even-row-color"></div>
 <div class="col-summary-item-name odd-row-color"><a href="org/hibernate/mapping/Table.html#addInitCommand(org.hibernate.boot.model.relational.InitCommand)">org.hibernate.mapping.Table.addInitCommand<wbr>(InitCommand)</a></div>
@@ -3128,254 +3105,254 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/internal/SqmUtil.html#isFkOptimizationAllowed(org.hibernate.query.sqm.tree.domain.SqmPath,org.hibernate.metamodel.mapping.EntityAssociationMapping)"><code>SqmUtil.isFkOptimizationAllowed(SqmPath, EntityAssociationMapping)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/sqm/produce/function/ArgumentsValidator.html#validate(java.util.List,java.lang.String,org.hibernate.query.spi.QueryEngine)">org.hibernate.query.sqm.produce.function.ArgumentsValidator.validate<wbr>(List&lt;? extends SqmTypedNode&lt;?&gt;&gt;, String, QueryEngine)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/sqm/produce/function/FunctionArgumentTypeResolver.html#resolveFunctionArgumentType(org.hibernate.query.sqm.tree.expression.SqmFunction,int,org.hibernate.query.sqm.sql.SqmToSqlAstConverter)">org.hibernate.query.sqm.produce.function.FunctionArgumentTypeResolver.resolveFunctionArgumentType<wbr>(SqmFunction&lt;?&gt;, int, SqmToSqlAstConverter)</a></div>
 <div class="col-last odd-row-color">
-<div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/produce/function/ArgumentsValidator.html#validate(java.util.List,java.lang.String,org.hibernate.type.spi.TypeConfiguration)"><code>ArgumentsValidator.validate(List, String, TypeConfiguration)</code></a></div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/query/sqm/produce/function/FunctionArgumentTypeResolver.html#resolveFunctionArgumentType(org.hibernate.query.sqm.tree.expression.SqmFunction,int,org.hibernate.query.sqm.sql.SqmToSqlAstConverter)">org.hibernate.query.sqm.produce.function.FunctionArgumentTypeResolver.resolveFunctionArgumentType<wbr>(SqmFunction&lt;?&gt;, int, SqmToSqlAstConverter)</a></div>
-<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/produce/function/FunctionArgumentTypeResolver.html#resolveFunctionArgumentType(java.util.List,int,org.hibernate.query.sqm.sql.SqmToSqlAstConverter)"><code>FunctionArgumentTypeResolver.resolveFunctionArgumentType(List, int, SqmToSqlAstConverter)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/sqm/produce/function/FunctionReturnTypeResolver.html#resolveFunctionReturnType(org.hibernate.query.ReturnableType,java.util.function.Supplier,java.util.List,org.hibernate.type.spi.TypeConfiguration)">org.hibernate.query.sqm.produce.function.FunctionReturnTypeResolver.resolveFunctionReturnType<wbr>(ReturnableType&lt;?&gt;, Supplier&lt;MappingModelExpressible&lt;?&gt;&gt;, List&lt;? extends SqmTypedNode&lt;?&gt;&gt;, TypeConfiguration)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/query/sqm/produce/function/FunctionReturnTypeResolver.html#resolveFunctionReturnType(org.hibernate.query.ReturnableType,java.util.function.Supplier,java.util.List,org.hibernate.type.spi.TypeConfiguration)">org.hibernate.query.sqm.produce.function.FunctionReturnTypeResolver.resolveFunctionReturnType<wbr>(ReturnableType&lt;?&gt;, Supplier&lt;MappingModelExpressible&lt;?&gt;&gt;, List&lt;? extends SqmTypedNode&lt;?&gt;&gt;, TypeConfiguration)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/produce/function/FunctionReturnTypeResolver.html#resolveFunctionReturnType(org.hibernate.query.ReturnableType,org.hibernate.query.sqm.sql.SqmToSqlAstConverter,java.util.List,org.hibernate.type.spi.TypeConfiguration)"><code>FunctionReturnTypeResolver.resolveFunctionReturnType(ReturnableType, SqmToSqlAstConverter, List, TypeConfiguration)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/query/sqm/SqmPathSource.html#findSubPathSource(java.lang.String,org.hibernate.metamodel.model.domain.JpaMetamodel)">org.hibernate.query.sqm.SqmPathSource.findSubPathSource<wbr>(String, JpaMetamodel)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/sqm/SqmPathSource.html#findSubPathSource(java.lang.String,org.hibernate.metamodel.model.domain.JpaMetamodel)">org.hibernate.query.sqm.SqmPathSource.findSubPathSource<wbr>(String, JpaMetamodel)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/query/sqm/SqmPathSource.html#findSubPathSource(java.lang.String,boolean)"><code>SqmPathSource.findSubPathSource(String, boolean)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/sqm/SqmPathSource.html#getSubPathSource(java.lang.String,org.hibernate.metamodel.model.domain.JpaMetamodel)">org.hibernate.query.sqm.SqmPathSource.getSubPathSource<wbr>(String, JpaMetamodel)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/query/sqm/SqmPathSource.html#getSubPathSource(java.lang.String,org.hibernate.metamodel.model.domain.JpaMetamodel)">org.hibernate.query.sqm.SqmPathSource.getSubPathSource<wbr>(String, JpaMetamodel)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use #<a href="org/hibernate/query/sqm/SqmPathSource.html#getSubPathSource(java.lang.String,boolean)"><code>SqmPathSource.getSubPathSource(String, boolean)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/query/sqm/SqmSelectionQuery.html#setHibernateFlushMode(org.hibernate.FlushMode)">org.hibernate.query.sqm.SqmSelectionQuery.setHibernateFlushMode<wbr>(FlushMode)</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#createNamedQuery(java.lang.String)">org.hibernate.Session.createNamedQuery<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/query/sqm/SqmSelectionQuery.html#setHibernateFlushMode(org.hibernate.FlushMode)">org.hibernate.query.sqm.SqmSelectionQuery.setHibernateFlushMode<wbr>(FlushMode)</a></div>
 <div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">org.hibernate.Session.createQuery<wbr>(CriteriaDelete)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#createNamedQuery(java.lang.String)">org.hibernate.Session.createNamedQuery<wbr>(String)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#createQuery(jakarta.persistence.criteria.CriteriaDelete)">org.hibernate.Session.createQuery<wbr>(CriteriaDelete)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaDelete)"><code>QueryProducer.createMutationQuery(CriteriaDelete)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">org.hibernate.Session.createQuery<wbr>(CriteriaUpdate)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#createQuery(jakarta.persistence.criteria.CriteriaUpdate)">org.hibernate.Session.createQuery<wbr>(CriteriaUpdate)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/query/QueryProducer.html#createMutationQuery(jakarta.persistence.criteria.CriteriaUpdate)"><code>QueryProducer.createMutationQuery(CriteriaUpdate)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#createQuery(java.lang.String)">org.hibernate.Session.createQuery<wbr>(String)</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#get(java.lang.Class,java.lang.Object)">org.hibernate.Session.get<wbr>(Class&lt;T&gt;, Object)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#createQuery(java.lang.String)">org.hibernate.Session.createQuery<wbr>(String)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#get(java.lang.Class,java.lang.Object)">org.hibernate.Session.get<wbr>(Class&lt;T&gt;, Object)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Because the semantics of this method may change in a future release.
              Use <a href="org/hibernate/Session.html#find(java.lang.Class,java.lang.Object)"><code>Session.find(Class, Object)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">org.hibernate.Session.get<wbr>(Class&lt;T&gt;, Object, LockMode)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockMode)">org.hibernate.Session.get<wbr>(Class&lt;T&gt;, Object, LockMode)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">The semantics of this method may change in a future release.
              Use <a href="org/hibernate/Session.html#find(java.lang.Class,java.lang.Object,org.hibernate.LockMode)"><code>Session.find(Class, Object, LockMode)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockOptions)">org.hibernate.Session.get<wbr>(Class&lt;T&gt;, Object, LockOptions)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#get(java.lang.Class,java.lang.Object,org.hibernate.LockOptions)">org.hibernate.Session.get<wbr>(Class&lt;T&gt;, Object, LockOptions)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">The semantics of this method may change in a future release.
              Use <a href="org/hibernate/Session.html#find(java.lang.Class,java.lang.Object,org.hibernate.LockOptions)"><code>Session.find(Class, Object, LockOptions)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#get(java.lang.String,java.lang.Object)">org.hibernate.Session.get<wbr>(String, Object)</a></div>
-<div class="col-last even-row-color">
-<div class="deprecation-comment">The semantics of this method may change in a future release.</div>
-</div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#get(java.lang.String,java.lang.Object,org.hibernate.LockMode)">org.hibernate.Session.get<wbr>(String, Object, LockMode)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#get(java.lang.String,java.lang.Object)">org.hibernate.Session.get<wbr>(String, Object)</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">The semantics of this method may change in a future release.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#get(java.lang.String,java.lang.Object,org.hibernate.LockOptions)">org.hibernate.Session.get<wbr>(String, Object, LockOptions)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#get(java.lang.String,java.lang.Object,org.hibernate.LockMode)">org.hibernate.Session.get<wbr>(String, Object, LockMode)</a></div>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">The semantics of this method may change in a future release.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#replicate(java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.Session.replicate<wbr>(Object, ReplicationMode)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#get(java.lang.String,java.lang.Object,org.hibernate.LockOptions)">org.hibernate.Session.get<wbr>(String, Object, LockOptions)</a></div>
 <div class="col-last odd-row-color">
-<div class="deprecation-comment">With no real replacement. For some use cases try
-             <a href="org/hibernate/StatelessSession.html#upsert(java.lang.Object)"><code>StatelessSession.upsert(Object)</code></a>.</div>
+<div class="deprecation-comment">The semantics of this method may change in a future release.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#replicate(java.lang.String,java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.Session.replicate<wbr>(String, Object, ReplicationMode)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/Session.html#replicate(java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.Session.replicate<wbr>(Object, ReplicationMode)</a></div>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">With no real replacement. For some use cases try
              <a href="org/hibernate/StatelessSession.html#upsert(java.lang.Object)"><code>StatelessSession.upsert(Object)</code></a>.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/SessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.SessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/Session.html#replicate(java.lang.String,java.lang.Object,org.hibernate.ReplicationMode)">org.hibernate.Session.replicate<wbr>(String, Object, ReplicationMode)</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">With no real replacement. For some use cases try
+             <a href="org/hibernate/StatelessSession.html#upsert(java.lang.Object)"><code>StatelessSession.upsert(Object)</code></a>.</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/SessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.SessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/SessionBuilder.html#tenantIdentifier(java.lang.Object)"><code>SessionBuilder.tenantIdentifier(Object)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/SessionFactory.html#getFilterDefinition(java.lang.String)">org.hibernate.SessionFactory.getFilterDefinition<wbr>(String)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/SessionFactory.html#getFilterDefinition(java.lang.String)">org.hibernate.SessionFactory.getFilterDefinition<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">There is no plan to remove this operation, but its use should be
              avoided since <a href="org/hibernate/engine/spi/FilterDefinition.html" title="class in org.hibernate.engine.spi"><code>FilterDefinition</code></a> is an SPI type, and so this
              operation is a layer-breaker.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/SessionFactory.html#getSessionFactoryOptions()">org.hibernate.SessionFactory.getSessionFactoryOptions()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/SessionFactory.html#getSessionFactoryOptions()">org.hibernate.SessionFactory.getSessionFactoryOptions()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">There is no plan to remove this operation, but its use should be
              avoided since <a href="org/hibernate/boot/spi/SessionFactoryOptions.html" title="interface in org.hibernate.boot.spi"><code>SessionFactoryOptions</code></a> is an SPI type, and so
              this operation is a layer-breaker.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/SharedSessionBuilder.html#connectionReleaseMode()">org.hibernate.SharedSessionBuilder.connectionReleaseMode()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/SharedSessionBuilder.html#connectionReleaseMode()">org.hibernate.SharedSessionBuilder.connectionReleaseMode()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/SharedSessionBuilder.html#connectionHandlingMode()"><code>SharedSessionBuilder.connectionHandlingMode()</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/SharedSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.SharedSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/exec/spi/JdbcOperationQuery.html#getAppliedParameters()">org.hibernate.sql.exec.spi.JdbcOperationQuery.getAppliedParameters()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/SharedSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.SharedSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/exec/spi/JdbcOperationQuery.html#getAppliedParameters()">org.hibernate.sql.exec.spi.JdbcOperationQuery.getAppliedParameters()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">No longer called</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/model/ast/MutationGroup.html#forEachTableMutation(java.util.function.BiConsumer)">org.hibernate.sql.model.ast.MutationGroup.forEachTableMutation<wbr>(BiConsumer&lt;Integer, M&gt;)</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/model/ast/MutationGroup.html#getTableMutation(java.lang.String)">org.hibernate.sql.model.ast.MutationGroup.getTableMutation<wbr>(String)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/model/ast/MutationGroup.html#forEachTableMutation(java.util.function.BiConsumer)">org.hibernate.sql.model.ast.MutationGroup.forEachTableMutation<wbr>(BiConsumer&lt;Integer, M&gt;)</a></div>
 <div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/model/MutationOperationGroup.html#forEachOperation(java.util.function.BiConsumer)">org.hibernate.sql.model.MutationOperationGroup.forEachOperation<wbr>(BiConsumer&lt;Integer, O&gt;)</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">Will be removed. Use the other methods to visit each operation.</div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/model/MutationOperationGroup.html#hasMatching(java.util.function.BiFunction)">org.hibernate.sql.model.MutationOperationGroup.hasMatching<wbr>(BiFunction&lt;Integer, O, Boolean&gt;)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/model/ast/MutationGroup.html#getTableMutation(java.lang.String)">org.hibernate.sql.model.ast.MutationGroup.getTableMutation<wbr>(String)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/model/MutationOperationGroup.html#forEachOperation(java.util.function.BiConsumer)">org.hibernate.sql.model.MutationOperationGroup.forEachOperation<wbr>(BiConsumer&lt;Integer, O&gt;)</a></div>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">Will be removed. Use the other methods to visit each operation.</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/results/caching/QueryCachePutManager.html#finishUp(org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.sql.results.caching.QueryCachePutManager.finishUp<wbr>(SharedSessionContractImplementor)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/model/MutationOperationGroup.html#hasMatching(java.util.function.BiFunction)">org.hibernate.sql.model.MutationOperationGroup.hasMatching<wbr>(BiFunction&lt;Integer, O, Boolean&gt;)</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">Will be removed. Use the other methods to visit each operation.</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/results/caching/QueryCachePutManager.html#finishUp(org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.sql.results.caching.QueryCachePutManager.finishUp<wbr>(SharedSessionContractImplementor)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/sql/results/caching/QueryCachePutManager.html#finishUp(int,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>QueryCachePutManager.finishUp(int, SharedSessionContractImplementor)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/sql/results/internal/InitializersList.html#asList()">org.hibernate.sql.results.internal.InitializersList.asList()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/stat/Statistics.html#getStartTime()">org.hibernate.stat.Statistics.getStartTime()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/sql/results/internal/InitializersList.html#asList()">org.hibernate.sql.results.internal.InitializersList.asList()</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/stat/Statistics.html#getStartTime()">org.hibernate.stat.Statistics.getStartTime()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/stat/Statistics.html#getStart()"><code>Statistics.getStart()</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/StatelessSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.StatelessSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/StatelessSessionBuilder.html#tenantIdentifier(java.lang.String)">org.hibernate.StatelessSessionBuilder.tenantIdentifier<wbr>(String)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/StatelessSessionBuilder.html#tenantIdentifier(java.lang.Object)"><code>StatelessSessionBuilder.tenantIdentifier(Object)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/testing/transaction/TransactionUtil.html#setJdbcTimeout(org.hibernate.Session)">org.hibernate.testing.transaction.TransactionUtil.setJdbcTimeout<wbr>(Session)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/testing/transaction/TransactionUtil.html#setJdbcTimeout(org.hibernate.Session)">org.hibernate.testing.transaction.TransactionUtil.setJdbcTimeout<wbr>(Session)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/testing/transaction/TransactionUtil.html#withJdbcTimeout(org.hibernate.Session,java.lang.Runnable)"><code>TransactionUtil.withJdbcTimeout(Session, Runnable)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/testing/transaction/TransactionUtil.html#setJdbcTimeout(org.hibernate.Session,long)">org.hibernate.testing.transaction.TransactionUtil.setJdbcTimeout<wbr>(Session, long)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/testing/transaction/TransactionUtil.html#setJdbcTimeout(org.hibernate.Session,long)">org.hibernate.testing.transaction.TransactionUtil.setJdbcTimeout<wbr>(Session, long)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/testing/transaction/TransactionUtil.html#withJdbcTimeout(org.hibernate.Session,long,java.lang.Runnable)"><code>TransactionUtil.withJdbcTimeout(Session, long, Runnable)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/tool/schema/internal/StandardTableExporter.html#applyComments(org.hibernate.mapping.Table,org.hibernate.boot.model.relational.QualifiedTableName,java.util.List)">org.hibernate.tool.schema.internal.StandardTableExporter.applyComments<wbr>(Table, QualifiedTableName, List&lt;String&gt;)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/tool/schema/internal/StandardTableExporter.html#applyComments(org.hibernate.mapping.Table,org.hibernate.boot.model.relational.QualifiedTableName,java.util.List)">org.hibernate.tool.schema.internal.StandardTableExporter.applyComments<wbr>(Table, QualifiedTableName, List&lt;String&gt;)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/tool/schema/internal/StandardTableExporter.html#applyComments(org.hibernate.mapping.Table,java.lang.String,java.util.List)"><code>StandardTableExporter.applyComments(Table, String, List)</code></a> instead.</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/tuple/entity/EntityMetamodel.html#isExplicitPolymorphism()">org.hibernate.tuple.entity.EntityMetamodel.isExplicitPolymorphism()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/tuple/entity/EntityMetamodel.html#isExplicitPolymorphism()">org.hibernate.tuple.entity.EntityMetamodel.isExplicitPolymorphism()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">No longer supported</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/tuple/IdentifierAttribute.html#getIdentifierGenerator()">org.hibernate.tuple.IdentifierAttribute.getIdentifierGenerator()</a></div>
-<div class="col-last odd-row-color"></div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/tuple/NonIdentifierAttribute.html#isDirtyCheckable(boolean)">org.hibernate.tuple.NonIdentifierAttribute.isDirtyCheckable<wbr>(boolean)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/tuple/IdentifierAttribute.html#getIdentifierGenerator()">org.hibernate.tuple.IdentifierAttribute.getIdentifierGenerator()</a></div>
+<div class="col-last even-row-color"></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/tuple/NonIdentifierAttribute.html#isDirtyCheckable(boolean)">org.hibernate.tuple.NonIdentifierAttribute.isDirtyCheckable<wbr>(boolean)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/tuple/NonIdentifierAttribute.html#isDirtyCheckable()"><code>NonIdentifierAttribute.isDirtyCheckable()</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/CollectionType.html#getElementsIterator(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.type.CollectionType.getElementsIterator<wbr>(Object, SharedSessionContractImplementor)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/CollectionType.html#getElementsIterator(java.lang.Object,org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.type.CollectionType.getElementsIterator<wbr>(Object, SharedSessionContractImplementor)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/type/CollectionType.html#getElementsIterator(java.lang.Object)"><code>CollectionType.getElementsIterator(Object)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/DateTimeUtils.html#appendAsTime(org.hibernate.sql.ast.spi.SqlAppender,java.util.Calendar)">org.hibernate.type.descriptor.DateTimeUtils.appendAsTime<wbr>(SqlAppender, Calendar)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/DateTimeUtils.html#appendAsTime(org.hibernate.sql.ast.spi.SqlAppender,java.util.Calendar)">org.hibernate.type.descriptor.DateTimeUtils.appendAsTime<wbr>(SqlAppender, Calendar)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/DateTimeUtils.html#appendAsLocalTime(org.hibernate.sql.ast.spi.SqlAppender,java.util.Calendar)"><code>DateTimeUtils.appendAsLocalTime(SqlAppender, Calendar)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/DateTimeUtils.html#appendAsTime(org.hibernate.sql.ast.spi.SqlAppender,java.util.Date)">org.hibernate.type.descriptor.DateTimeUtils.appendAsTime<wbr>(SqlAppender, Date)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/DateTimeUtils.html#appendAsTime(org.hibernate.sql.ast.spi.SqlAppender,java.util.Date)">org.hibernate.type.descriptor.DateTimeUtils.appendAsTime<wbr>(SqlAppender, Date)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/DateTimeUtils.html#appendAsLocalTime(org.hibernate.sql.ast.spi.SqlAppender,java.util.Date)"><code>DateTimeUtils.appendAsLocalTime(SqlAppender, Date)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/DateTimeUtils.html#roundToDefaultPrecision(T,org.hibernate.dialect.Dialect)">org.hibernate.type.descriptor.DateTimeUtils.roundToDefaultPrecision<wbr>(T, Dialect)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/DateTimeUtils.html#roundToDefaultPrecision(T,org.hibernate.dialect.Dialect)">org.hibernate.type.descriptor.DateTimeUtils.roundToDefaultPrecision<wbr>(T, Dialect)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/DateTimeUtils.html#adjustToDefaultPrecision(T,org.hibernate.dialect.Dialect)"><code>DateTimeUtils.adjustToDefaultPrecision(Temporal, Dialect)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.metamodel.mapping.SqlExpressible,java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.DdlType.getCastTypeName<wbr>(SqlExpressible, Long, Integer, Integer)</a></div>
-<div class="col-last odd-row-color">
-<div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.metamodel.mapping.SqlExpressible,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getCastTypeName(Size, SqlExpressible, DdlTypeRegistry)</code></a> instead</div>
-</div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.type.descriptor.jdbc.JdbcType,org.hibernate.type.descriptor.java.JavaType)">org.hibernate.type.descriptor.sql.DdlType.getCastTypeName<wbr>(JdbcType, JavaType&lt;?&gt;)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.metamodel.mapping.SqlExpressible,java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.DdlType.getCastTypeName<wbr>(SqlExpressible, Long, Integer, Integer)</a></div>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.metamodel.mapping.SqlExpressible,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getCastTypeName(Size, SqlExpressible, DdlTypeRegistry)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.type.descriptor.jdbc.JdbcType,org.hibernate.type.descriptor.java.JavaType,java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.DdlType.getCastTypeName<wbr>(JdbcType, JavaType&lt;?&gt;, Long, Integer, Integer)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.type.descriptor.jdbc.JdbcType,org.hibernate.type.descriptor.java.JavaType)">org.hibernate.type.descriptor.sql.DdlType.getCastTypeName<wbr>(JdbcType, JavaType&lt;?&gt;)</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.metamodel.mapping.SqlExpressible,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getCastTypeName(Size, SqlExpressible, DdlTypeRegistry)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getRawTypeName()">org.hibernate.type.descriptor.sql.DdlType.getRawTypeName()</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.type.descriptor.jdbc.JdbcType,org.hibernate.type.descriptor.java.JavaType,java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.DdlType.getCastTypeName<wbr>(JdbcType, JavaType&lt;?&gt;, Long, Integer, Integer)</a></div>
 <div class="col-last even-row-color">
-<div class="deprecation-comment">not appropriate for named enum or array types</div>
+<div class="deprecation-comment">Use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getCastTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.metamodel.mapping.SqlExpressible,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getCastTypeName(Size, SqlExpressible, DdlTypeRegistry)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getRawTypeNames()">org.hibernate.type.descriptor.sql.DdlType.getRawTypeNames()</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getRawTypeName()">org.hibernate.type.descriptor.sql.DdlType.getRawTypeName()</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">not appropriate for named enum or array types</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.DdlType.getTypeName<wbr>(Long, Integer, Integer)</a></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getRawTypeNames()">org.hibernate.type.descriptor.sql.DdlType.getRawTypeNames()</a></div>
 <div class="col-last even-row-color">
-<div class="deprecation-comment">not appropriate for named enum or array types,
-             use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.type.Type,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getTypeName(Size, Type, DdlTypeRegistry)</code></a> instead</div>
+<div class="deprecation-comment">not appropriate for named enum or array types</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(org.hibernate.engine.jdbc.Size)">org.hibernate.type.descriptor.sql.DdlType.getTypeName<wbr>(Size)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.DdlType.getTypeName<wbr>(Long, Integer, Integer)</a></div>
 <div class="col-last odd-row-color">
 <div class="deprecation-comment">not appropriate for named enum or array types,
              use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.type.Type,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getTypeName(Size, Type, DdlTypeRegistry)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/internal/CapacityDependentDdlType.html#getRawTypeNames()">org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType.getRawTypeNames()</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry.getTypeName<wbr>(int, Long, Integer, Integer)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(org.hibernate.engine.jdbc.Size)">org.hibernate.type.descriptor.sql.DdlType.getTypeName<wbr>(Size)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">not appropriate for named enum or array types,
-             use <a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,org.hibernate.engine.jdbc.Size,org.hibernate.type.Type)"><code>DdlTypeRegistry.getTypeName(int, Size, Type)</code></a> instead</div>
+             use <a href="org/hibernate/type/descriptor/sql/DdlType.html#getTypeName(org.hibernate.engine.jdbc.Size,org.hibernate.type.Type,org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry)"><code>DdlType.getTypeName(Size, Type, DdlTypeRegistry)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,org.hibernate.engine.jdbc.Size)">org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry.getTypeName<wbr>(int, Size)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/internal/CapacityDependentDdlType.html#getRawTypeNames()">org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType.getRawTypeNames()</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,java.lang.Long,java.lang.Integer,java.lang.Integer)">org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry.getTypeName<wbr>(int, Long, Integer, Integer)</a></div>
 <div class="col-last even-row-color">
 <div class="deprecation-comment">not appropriate for named enum or array types,
              use <a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,org.hibernate.engine.jdbc.Size,org.hibernate.type.Type)"><code>DdlTypeRegistry.getTypeName(int, Size, Type)</code></a> instead</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/EntityType.html#getIdentifierOrUniqueKeyPropertyName(org.hibernate.engine.spi.Mapping)">org.hibernate.type.EntityType.getIdentifierOrUniqueKeyPropertyName<wbr>(Mapping)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,org.hibernate.engine.jdbc.Size)">org.hibernate.type.descriptor.sql.spi.DdlTypeRegistry.getTypeName<wbr>(int, Size)</a></div>
 <div class="col-last odd-row-color">
+<div class="deprecation-comment">not appropriate for named enum or array types,
+             use <a href="org/hibernate/type/descriptor/sql/spi/DdlTypeRegistry.html#getTypeName(int,org.hibernate.engine.jdbc.Size,org.hibernate.type.Type)"><code>DdlTypeRegistry.getTypeName(int, Size, Type)</code></a> instead</div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/EntityType.html#getIdentifierOrUniqueKeyPropertyName(org.hibernate.engine.spi.Mapping)">org.hibernate.type.EntityType.getIdentifierOrUniqueKeyPropertyName<wbr>(Mapping)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">No longer used</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/EntityType.html#getIdentifierOrUniqueKeyType(org.hibernate.engine.spi.Mapping)">org.hibernate.type.EntityType.getIdentifierOrUniqueKeyType<wbr>(Mapping)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/EntityType.html#getIdentifierOrUniqueKeyType(org.hibernate.engine.spi.Mapping)">org.hibernate.type.EntityType.getIdentifierOrUniqueKeyType<wbr>(Mapping)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/type/EntityType.html#getIdentifierOrUniqueKeyType(org.hibernate.type.MappingContext)"><code>EntityType.getIdentifierOrUniqueKeyType(MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/MetaType.html#fromXMLString(java.lang.String,org.hibernate.engine.spi.Mapping)">org.hibernate.type.MetaType.fromXMLString<wbr>(String, Mapping)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/MetaType.html#fromXMLString(java.lang.String,org.hibernate.engine.spi.Mapping)">org.hibernate.type.MetaType.fromXMLString<wbr>(String, Mapping)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/type/MetaType.html#fromXMLString(java.lang.String,org.hibernate.type.MappingContext)"><code>MetaType.fromXMLString(String, MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/SerializableToBlobType.html#setJavaTypeDescriptor(org.hibernate.type.descriptor.java.JavaType)">org.hibernate.type.SerializableToBlobType.setJavaTypeDescriptor<wbr>(JavaType&lt;T&gt;)</a></div>
-<div class="col-last even-row-color"></div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/spi/TypeConfiguration.html#getMetadataBuildingContext()">org.hibernate.type.spi.TypeConfiguration.getMetadataBuildingContext()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/SerializableToBlobType.html#setJavaTypeDescriptor(org.hibernate.type.descriptor.java.JavaType)">org.hibernate.type.SerializableToBlobType.setJavaTypeDescriptor<wbr>(JavaType&lt;T&gt;)</a></div>
+<div class="col-last odd-row-color"></div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/spi/TypeConfiguration.html#getMetadataBuildingContext()">org.hibernate.type.spi.TypeConfiguration.getMetadataBuildingContext()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">This operation is not very typesafe, and we're migrating away from its use</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/spi/TypeConfiguration.html#getServiceRegistry()">org.hibernate.type.spi.TypeConfiguration.getServiceRegistry()</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/spi/TypeConfiguration.html#getServiceRegistry()">org.hibernate.type.spi.TypeConfiguration.getServiceRegistry()</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">This simply isn't a very sensible place to hang the <a href="org/hibernate/service/ServiceRegistry.html" title="interface in org.hibernate.service"><code>ServiceRegistry</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/spi/TypeConfiguration.html#getSessionFactory()">org.hibernate.type.spi.TypeConfiguration.getSessionFactory()</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/spi/TypeConfiguration.html#getSessionFactory()">org.hibernate.type.spi.TypeConfiguration.getSessionFactory()</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">This operation is not very typesafe, and we're migrating away from its use</div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/Type.html#beforeAssemble(java.io.Serializable,org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.type.Type.beforeAssemble<wbr>(Serializable, SharedSessionContractImplementor)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/Type.html#beforeAssemble(java.io.Serializable,org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.type.Type.beforeAssemble<wbr>(Serializable, SharedSessionContractImplementor)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">Is not called anymore</div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/Type.html#getColumnSpan(org.hibernate.engine.spi.Mapping)">org.hibernate.type.Type.getColumnSpan<wbr>(Mapping)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/Type.html#getColumnSpan(org.hibernate.engine.spi.Mapping)">org.hibernate.type.Type.getColumnSpan<wbr>(Mapping)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/type/Type.html#getColumnSpan(org.hibernate.type.MappingContext)"><code>Type.getColumnSpan(MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/Type.html#getSqlTypeCodes(org.hibernate.engine.spi.Mapping)">org.hibernate.type.Type.getSqlTypeCodes<wbr>(Mapping)</a></div>
-<div class="col-last even-row-color">
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/Type.html#getSqlTypeCodes(org.hibernate.engine.spi.Mapping)">org.hibernate.type.Type.getSqlTypeCodes<wbr>(Mapping)</a></div>
+<div class="col-last odd-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/type/Type.html#getSqlTypeCodes(org.hibernate.type.MappingContext)"><code>Type.getSqlTypeCodes(MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/type/Type.html#toColumnNullness(java.lang.Object,org.hibernate.engine.spi.Mapping)">org.hibernate.type.Type.toColumnNullness<wbr>(Object, Mapping)</a></div>
-<div class="col-last odd-row-color">
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/type/Type.html#toColumnNullness(java.lang.Object,org.hibernate.engine.spi.Mapping)">org.hibernate.type.Type.toColumnNullness<wbr>(Object, Mapping)</a></div>
+<div class="col-last even-row-color">
 <div class="deprecation-comment">use <a href="org/hibernate/type/Type.html#toColumnNullness(java.lang.Object,org.hibernate.type.MappingContext)"><code>Type.toColumnNullness(Object, MappingContext)</code></a></div>
 </div>
-<div class="col-summary-item-name even-row-color"><a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)">org.hibernate.usertype.UserType.nullSafeGet<wbr>(ResultSet, int, SharedSessionContractImplementor, Object)</a></div>
+<div class="col-summary-item-name odd-row-color"><a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)">org.hibernate.usertype.UserType.nullSafeGet<wbr>(ResultSet, int, SharedSessionContractImplementor, Object)</a></div>
+<div class="col-last odd-row-color">
+<div class="deprecation-comment">Implement <a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.type.descriptor.WrapperOptions)"><code>UserType.nullSafeGet(ResultSet, int, WrapperOptions)</code></a></div>
+</div>
+<div class="col-summary-item-name even-row-color"><a href="org/hibernate/usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.engine.spi.SharedSessionContractImplementor)">org.hibernate.usertype.UserType.nullSafeSet<wbr>(PreparedStatement, J, int, SharedSessionContractImplementor)</a></div>
 <div class="col-last even-row-color">
-<div class="deprecation-comment">Implement <a href="org/hibernate/usertype/UserType.html#nullSafeGet(java.sql.ResultSet,int,org.hibernate.engine.spi.SharedSessionContractImplementor)"><code>UserType.nullSafeGet(ResultSet, int, SharedSessionContractImplementor)</code></a></div>
+<div class="deprecation-comment">Implement <a href="org/hibernate/usertype/UserType.html#nullSafeSet(java.sql.PreparedStatement,J,int,org.hibernate.type.descriptor.WrapperOptions)"><code>UserType.nullSafeSet(PreparedStatement, Object, int, WrapperOptions)</code></a></div>
 </div>
 </div>
 </div>

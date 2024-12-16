@@ -81,18 +81,12 @@ loadScripts(document, 'script');</script>
 <div class="block">An internal package containing implementations of central Hibernate APIs,
  mostly defined in <a href="../../../package-summary.html"><code>org.hibernate</code></a>.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.persister.entity">org.hibernate.persister.entity</a></div>
-<div class="col-last odd-row-color">
-<div class="block">This package abstracts persistence mechanisms for entities.</div>
-</div>
-<div class="col-first even-row-color"><a href="#org.hibernate.testing.boot">org.hibernate.testing.boot</a></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.type.descriptor">org.hibernate.type.descriptor</a></div>
-<div class="col-last odd-row-color">
+<div class="col-first odd-row-color"><a href="#org.hibernate.testing.boot">org.hibernate.testing.boot</a></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><a href="#org.hibernate.type.descriptor">org.hibernate.type.descriptor</a></div>
+<div class="col-last even-row-color">
 <div class="block">Contracts for reading and writing values to and from JDBC.</div>
 </div>
-<div class="col-first even-row-color"><a href="#org.hibernate.type.internal">org.hibernate.type.internal</a></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 <section class="class-uses">
 <ul class="block-list">
@@ -228,14 +222,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">AbstractDelegatingWrapperOptions.</span><code><a href="../../spi/AbstractDelegatingWrapperOptions.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SessionDelegatorBaseImpl.</span><code><a href="../../spi/SessionDelegatorBaseImpl.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">SessionDelegatorBaseImpl.</span><code><a href="../../spi/SessionDelegatorBaseImpl.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SharedSessionDelegatorBaseImpl.</span><code><a href="../../spi/SharedSessionDelegatorBaseImpl.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SharedSessionDelegatorBaseImpl.</span><code><a href="../../spi/SharedSessionDelegatorBaseImpl.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>
@@ -249,20 +240,6 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">AbstractSharedSessionContract.</span><code><a href="../../../internal/AbstractSharedSessionContract.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="org.hibernate.persister.entity">
-<h2>Uses of <a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a> in <a href="../../../persister/entity/package-summary.html">org.hibernate.persister.entity</a></h2>
-<div class="caption"><span>Methods in <a href="../../../persister/entity/package-summary.html">org.hibernate.persister.entity</a> that return <a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SessionFactoryBasedWrapperOptions.</span><code><a href="../../../persister/entity/SessionFactoryBasedWrapperOptions.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -289,25 +266,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
+<div class="col-first even-row-color"><code>default <a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
 <div class="col-second even-row-color"><span class="type-name-label">WrapperOptions.</span><code><a href="../../../type/descriptor/WrapperOptions.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Obtain access to the <a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc"><code>LobCreator</code></a>.</div>
 </div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="org.hibernate.type.internal">
-<h2>Uses of <a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a> in <a href="../../../type/internal/package-summary.html">org.hibernate.type.internal</a></h2>
-<div class="caption"><span>Methods in <a href="../../../type/internal/package-summary.html">org.hibernate.type.internal</a> that return <a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code><a href="../LobCreator.html" title="interface in org.hibernate.engine.jdbc">LobCreator</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">TypeConfigurationWrapperOptions.</span><code><a href="../../../type/internal/TypeConfigurationWrapperOptions.html#getLobCreator()" class="member-name-link">getLobCreator</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
 </li>

@@ -515,8 +515,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code>class&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="../CallbackException.html" class="type-name-link" title="class in org.hibernate">CallbackException</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Intended to be thrown from <a href="../classic/Lifecycle.html" title="interface in org.hibernate.classic"><code>Lifecycle</code></a>
- and <a href="../Interceptor.html" title="interface in org.hibernate"><code>Interceptor</code></a> callbacks.</div>
+<div class="block">Intended to be thrown from <a href="../Interceptor.html" title="interface in org.hibernate"><code>Interceptor</code></a> callbacks.</div>
 </div>
 <div class="col-first even-row-color"><code>class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="../DuplicateMappingException.html" class="type-name-link" title="class in org.hibernate">DuplicateMappingException</a></code></div>
@@ -2161,26 +2160,21 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color"><code><a href="../engine/spi/SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">SessionFactoryDelegatingImpl.</span><code><a href="../engine/spi/SessionFactoryDelegatingImpl.html#openTemporarySession()" class="member-name-link">openTemporarySession</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-first even-row-color"><code><a href="../engine/spi/SessionImplementor.html" title="interface in org.hibernate.engine.spi">SessionImplementor</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">SessionFactoryImplementor.</span><code><a href="../engine/spi/SessionFactoryImplementor.html#openTemporarySession()" class="member-name-link">openTemporarySession</a>()</code></div>
+<div class="col-first even-row-color"><code>void</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../engine/spi/CollectionEntry.html#postFlush(org.hibernate.collection.spi.PersistentCollection)" class="member-name-link">postFlush</a><wbr>(<a href="../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Get a non-transactional "current" session (used by hibernate-envers)</div>
-</div>
-<div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../engine/spi/CollectionEntry.html#postFlush(org.hibernate.collection.spi.PersistentCollection)" class="member-name-link">postFlush</a><wbr>(<a href="../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection)</code></div>
-<div class="col-last odd-row-color">
 <div class="block">Called after a successful flush</div>
 </div>
-<div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../engine/spi/CollectionEntry.html#postInitialize(org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">postInitialize</a><wbr>(<a href="../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
- <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code>void</code></div>
-<div class="col-second odd-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../engine/spi/CollectionEntry.html#preFlush(org.hibernate.collection.spi.PersistentCollection)" class="member-name-link">preFlush</a><wbr>(<a href="../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection)</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../engine/spi/CollectionEntry.html#postInitialize(org.hibernate.collection.spi.PersistentCollection,org.hibernate.engine.spi.SharedSessionContractImplementor)" class="member-name-link">postInitialize</a><wbr>(<a href="../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection,
+ <a href="../engine/spi/SharedSessionContractImplementor.html" title="interface in org.hibernate.engine.spi">SharedSessionContractImplementor</a>&nbsp;session)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
 <div class="col-first even-row-color"><code>void</code></div>
-<div class="col-second even-row-color"><span class="type-name-label">ActionQueue.</span><code><a href="../engine/spi/ActionQueue.html#prepareActions()" class="member-name-link">prepareActions</a>()</code></div>
-<div class="col-last even-row-color">
+<div class="col-second even-row-color"><span class="type-name-label">CollectionEntry.</span><code><a href="../engine/spi/CollectionEntry.html#preFlush(org.hibernate.collection.spi.PersistentCollection)" class="member-name-link">preFlush</a><wbr>(<a href="../collection/spi/PersistentCollection.html" title="interface in org.hibernate.collection.spi">PersistentCollection</a>&lt;?&gt;&nbsp;collection)</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code>void</code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">ActionQueue.</span><code><a href="../engine/spi/ActionQueue.html#prepareActions()" class="member-name-link">prepareActions</a>()</code></div>
+<div class="col-last odd-row-color">
 <div class="block">Prepares the internal action queues for execution.</div>
 </div>
 </div>

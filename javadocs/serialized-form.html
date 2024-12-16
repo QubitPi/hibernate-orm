@@ -258,10 +258,6 @@ loadScripts(document, 'script');</script>
 <pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" title="class or interface in java.util" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="org/hibernate/LockMode.html" title="enum class in org.hibernate">LockMode</a>&gt; aliasSpecificLockModes</pre>
 </li>
 <li class="block-list">
-<h5>extendedScope</h5>
-<pre>boolean extendedScope</pre>
-</li>
-<li class="block-list">
 <h5>followOnLocking</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Boolean.html" title="class or interface in java.lang" class="external-link">Boolean</a> followOnLocking</pre>
 </li>
@@ -272,6 +268,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>lockMode</h5>
 <pre><a href="org/hibernate/LockMode.html" title="enum class in org.hibernate">LockMode</a> lockMode</pre>
+</li>
+<li class="block-list">
+<h5>pessimisticLockScope</h5>
+<pre><a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/PessimisticLockScope.html" title="class or interface in jakarta.persistence" class="external-link">PessimisticLockScope</a> pessimisticLockScope</pre>
 </li>
 <li class="block-list">
 <h5>timeout</h5>
@@ -10960,6 +10960,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="serialized-class-details" id="org.hibernate.boot.model.internal.DiscriminatorColumnSecondPass">
+<h3>Class&nbsp;<a href="org/hibernate/boot/model/internal/DiscriminatorColumnSecondPass.html" title="class in org.hibernate.boot.model.internal">org.hibernate.boot.model.internal.DiscriminatorColumnSecondPass</a></h3>
+<div class="type-signature">class DiscriminatorColumnSecondPass extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a> implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>Serialized Fields</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>dialect</h5>
+<pre><a href="org/hibernate/dialect/Dialect.html" title="class in org.hibernate.dialect">Dialect</a> dialect</pre>
+</li>
+<li class="block-list">
+<h5>rootEntityName</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a> rootEntityName</pre>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
 <section class="serialized-class-details" id="org.hibernate.boot.model.internal.FetchOverrideSecondPass">
 <h3>Class&nbsp;<a href="org/hibernate/boot/model/internal/FetchOverrideSecondPass.html" title="class in org.hibernate.boot.model.internal">org.hibernate.boot.model.internal.FetchOverrideSecondPass</a></h3>
 <div class="type-signature">class FetchOverrideSecondPass extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a> implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
@@ -11156,25 +11179,6 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>entity</h5>
 <pre><a href="org/hibernate/mapping/JoinedSubclass.html" title="class in org.hibernate.mapping">JoinedSubclass</a> entity</pre>
-</li>
-</ul>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<li>
-<section class="serialized-class-details" id="org.hibernate.boot.model.internal.NullableDiscriminatorColumnSecondPass">
-<h3>Class&nbsp;<a href="org/hibernate/boot/model/internal/NullableDiscriminatorColumnSecondPass.html" title="class in org.hibernate.boot.model.internal">org.hibernate.boot.model.internal.NullableDiscriminatorColumnSecondPass</a></h3>
-<div class="type-signature">class NullableDiscriminatorColumnSecondPass extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a> implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a></div>
-<ul class="block-list">
-<li>
-<section class="detail">
-<h4>Serialized Fields</h4>
-<ul class="block-list">
-<li class="block-list">
-<h5>rootEntityName</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a> rootEntityName</pre>
 </li>
 </ul>
 </section>
@@ -28067,6 +28071,10 @@ loadScripts(document, 'script');</script>
 <h5>updateCount</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/LongAdder.html" title="class or interface in java.util.concurrent.atomic" class="external-link">LongAdder</a> updateCount</pre>
 </li>
+<li class="block-list">
+<h5>upsertCount</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/LongAdder.html" title="class or interface in java.util.concurrent.atomic" class="external-link">LongAdder</a> upsertCount</pre>
+</li>
 </ul>
 </section>
 </li>
@@ -28267,6 +28275,10 @@ loadScripts(document, 'script');</script>
 <li class="block-list">
 <h5>entityUpdateCount</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/LongAdder.html" title="class or interface in java.util.concurrent.atomic" class="external-link">LongAdder</a> entityUpdateCount</pre>
+</li>
+<li class="block-list">
+<h5>entityUpsertCount</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/atomic/LongAdder.html" title="class or interface in java.util.concurrent.atomic" class="external-link">LongAdder</a> entityUpsertCount</pre>
 </li>
 <li class="block-list">
 <h5>flushCount</h5>

@@ -75,7 +75,6 @@ org.hibernate.engine.spi.CascadingActions#CHECK_ON_FLUSH
 org.hibernate.engine.spi.EntityEntry#getMaybeLazySet
 org.hibernate.engine.spi.EntityEntry#setMaybeLazySet
 org.hibernate.engine.spi.EntityHolder#setEntityEntry
-org.hibernate.engine.spi.LazySessionWrapperOptions
 org.hibernate.engine.spi.LoadQueryInfluencers#adjustFetchProfiles
 org.hibernate.engine.spi.LoadQueryInfluencers#setEnabledFetchProfileNames
 org.hibernate.engine.spi.PersistenceContext#getCollectionEntries
@@ -162,7 +161,6 @@ org.hibernate.persister.entity.DiscriminatorHelper
 org.hibernate.persister.entity.DiscriminatorType
 org.hibernate.persister.entity.EntityPersister#managesColumns
 org.hibernate.persister.entity.JoinedSubclassEntityPersister
-org.hibernate.persister.entity.SessionFactoryBasedWrapperOptions
 org.hibernate.persister.entity.SingleTableEntityPersister
 org.hibernate.persister.entity.UnionSubclassEntityPersister
 org.hibernate.persister.entity.mutation.AbstractMutationCoordinator

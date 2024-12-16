@@ -134,8 +134,7 @@ implements <a href="../spi/EmbeddableInstantiator.html" title="interface in org.
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#instantiate(org.hibernate.metamodel.spi.ValueAccess,org.hibernate.engine.spi.SessionFactoryImplementor)" class="member-name-link">instantiate</a><wbr>(<a href="../spi/ValueAccess.html" title="interface in org.hibernate.metamodel.spi">ValueAccess</a>&nbsp;valuesAccess,
- <a href="../../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a>&nbsp;sessionFactory)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#instantiate(org.hibernate.metamodel.spi.ValueAccess)" class="member-name-link">instantiate</a><wbr>(<a href="../spi/ValueAccess.html" title="interface in org.hibernate.metamodel.spi">ValueAccess</a>&nbsp;valuesAccess)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Create an instance of the embeddable</div>
 </div>
@@ -144,13 +143,13 @@ implements <a href="../spi/EmbeddableInstantiator.html" title="interface in org.
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.metamodel.internal.AbstractPojoInstantiator">Methods inherited from class&nbsp;org.hibernate.metamodel.internal.<a href="AbstractPojoInstantiator.html" title="class in org.hibernate.metamodel.internal">AbstractPojoInstantiator</a></h3>
-<code><a href="AbstractPojoInstantiator.html#getMappedPojoClass()">getMappedPojoClass</a>, <a href="AbstractPojoInstantiator.html#isAbstract()">isAbstract</a>, <a href="AbstractPojoInstantiator.html#isInstance(java.lang.Object,org.hibernate.engine.spi.SessionFactoryImplementor)">isInstance</a>, <a href="AbstractPojoInstantiator.html#isSameClass(java.lang.Object,org.hibernate.engine.spi.SessionFactoryImplementor)">isSameClass</a></code></div>
+<code><a href="AbstractPojoInstantiator.html#getMappedPojoClass()">getMappedPojoClass</a>, <a href="AbstractPojoInstantiator.html#isAbstract()">isAbstract</a>, <a href="AbstractPojoInstantiator.html#isInstance(java.lang.Object)">isInstance</a>, <a href="AbstractPojoInstantiator.html#isSameClass(java.lang.Object)">isSameClass</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.hibernate.metamodel.spi.Instantiator">Methods inherited from interface&nbsp;org.hibernate.metamodel.spi.<a href="../spi/Instantiator.html" title="interface in org.hibernate.metamodel.spi">Instantiator</a></h3>
-<code><a href="../spi/Instantiator.html#isInstance(java.lang.Object,org.hibernate.engine.spi.SessionFactoryImplementor)">isInstance</a>, <a href="../spi/Instantiator.html#isSameClass(java.lang.Object,org.hibernate.engine.spi.SessionFactoryImplementor)">isSameClass</a></code></div>
+<code><a href="../spi/Instantiator.html#isInstance(java.lang.Object)">isInstance</a>, <a href="../spi/Instantiator.html#isSameClass(java.lang.Object)">isSameClass</a></code></div>
 </section>
 </li>
 </ul>
@@ -191,15 +190,14 @@ implements <a href="../spi/EmbeddableInstantiator.html" title="interface in org.
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="instantiate(org.hibernate.metamodel.spi.ValueAccess,org.hibernate.engine.spi.SessionFactoryImplementor)">
+<section class="detail" id="instantiate(org.hibernate.metamodel.spi.ValueAccess)">
 <h3>instantiate</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">instantiate</span><wbr><span class="parameters">(<a href="../spi/ValueAccess.html" title="interface in org.hibernate.metamodel.spi">ValueAccess</a>&nbsp;valuesAccess,
- <a href="../../engine/spi/SessionFactoryImplementor.html" title="interface in org.hibernate.engine.spi">SessionFactoryImplementor</a>&nbsp;sessionFactory)</span></div>
-<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../spi/EmbeddableInstantiator.html#instantiate(org.hibernate.metamodel.spi.ValueAccess,org.hibernate.engine.spi.SessionFactoryImplementor)">EmbeddableInstantiator</a></code></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">instantiate</span><wbr><span class="parameters">(<a href="../spi/ValueAccess.html" title="interface in org.hibernate.metamodel.spi">ValueAccess</a>&nbsp;valuesAccess)</span></div>
+<div class="block"><span class="descfrm-type-label">Description copied from interface:&nbsp;<code><a href="../spi/EmbeddableInstantiator.html#instantiate(org.hibernate.metamodel.spi.ValueAccess)">EmbeddableInstantiator</a></code></span></div>
 <div class="block">Create an instance of the embeddable</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../spi/EmbeddableInstantiator.html#instantiate(org.hibernate.metamodel.spi.ValueAccess,org.hibernate.engine.spi.SessionFactoryImplementor)">instantiate</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/EmbeddableInstantiator.html" title="interface in org.hibernate.metamodel.spi">EmbeddableInstantiator</a></code></dd>
+<dd><code><a href="../spi/EmbeddableInstantiator.html#instantiate(org.hibernate.metamodel.spi.ValueAccess)">instantiate</a></code>&nbsp;in interface&nbsp;<code><a href="../spi/EmbeddableInstantiator.html" title="interface in org.hibernate.metamodel.spi">EmbeddableInstantiator</a></code></dd>
 </dl>
 </section>
 </li>

@@ -385,6 +385,26 @@ extends <a href="query/QueryProducer.html" title="interface in org.hibernate.que
 <li><a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html#begin()" title="class or interface in jakarta.persistence" class="external-link"><code>EntityTransaction.begin()</code></a></li>
 </ul>
 </dd>
+<dt>API Note:</dt>
+<dd>The JPA-standard way to begin a new resource-local transaction is by calling
+ <a href="#getTransaction()"><code>getTransaction().begin()</code></a>. But it's not always safe to
+ execute this idiom.
+ <ul>
+ <li>JPA doesn't allow an <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html" title="class or interface in jakarta.persistence" class="external-link"><code>EntityTransaction</code></a> to represent a JTA transaction context. Therefore, when
+ <a href="jpa/spi/JpaCompliance.html#isJpaTransactionComplianceEnabled()">strict JPA transaction compliance</a> is enabled via, for example, setting
+ <a href="cfg/JpaComplianceSettings.html#JPA_TRANSACTION_COMPLIANCE">"hibernate.jpa.compliance.transaction"</a>,
+ the call to <code>getTransaction()</code> fails if transactions are managed by JTA.
+ <p>
+ On the other hand, this method does not fail when JTA transaction management
+ is used, not even if strict JPA transaction compliance is enabled.
+ <li>Even when resource-local transactions are in use, and even when strict JPA
+ transaction compliance is <em>disabled</em>, the call to <code>begin()</code>
+ fails if a transaction is already <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html#isActive()" title="class or interface in jakarta.persistence" class="external-link">active</a>.
+ <p>
+ This method never fails when a transaction is already active. Instead,
+ <code>beginTransaction()</code> simply returns the <a href="Transaction.html" title="interface in org.hibernate"><code>Transaction</code></a> object
+ representing the active transaction.
+ </ul></dd>
 </dl>
 </section>
 </li>
@@ -403,6 +423,18 @@ extends <a href="query/QueryProducer.html" title="interface in org.hibernate.que
 <li><a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityManager.html#getTransaction()" title="class or interface in jakarta.persistence" class="external-link"><code>EntityManager.getTransaction()</code></a></li>
 </ul>
 </dd>
+<dt>API Note:</dt>
+<dd>This method is the JPA-standard way to obtain an instance of
+ <a href="https://jakarta.ee/specifications/platform/9/apidocs/jakarta/persistence/EntityTransaction.html" title="class or interface in jakarta.persistence" class="external-link"><code>EntityTransaction</code></a>
+ representing a resource-local transaction. But JPA doesn't allow an
+ <code>EntityTransaction</code> to represent a JTA transaction. Therefore, when
+ <a href="jpa/spi/JpaCompliance.html#isJpaTransactionComplianceEnabled()">strict JPA transaction compliance</a> is enabled via, for example, setting
+ <a href="cfg/JpaComplianceSettings.html#JPA_TRANSACTION_COMPLIANCE">"hibernate.jpa.compliance.transaction"</a>,
+ this method fails if transactions are managed by JTA.
+ <p>
+ On the other hand, when JTA transaction management is used, and when
+ strict JPA transaction compliance is <em>disabled</em>, this method happily
+ returns a <a href="Transaction.html" title="interface in org.hibernate"><code>Transaction</code></a> representing the current JTA transaction context.</dd>
 </dl>
 </section>
 </li>

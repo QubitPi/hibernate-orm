@@ -66,10 +66,19 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">A range of SPIs allowing integration with&mdash;and customization of&mdash;the process of building metadata.</div>
 </div>
-<div class="col-first odd-row-color"><a href="#org.hibernate.internal">org.hibernate.internal</a></div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.engine.spi">org.hibernate.engine.spi</a></div>
 <div class="col-last odd-row-color">
+<div class="block">This package defines some central internal SPI abstractions
+ used throughout the implementation of Hibernate.</div>
+</div>
+<div class="col-first even-row-color"><a href="#org.hibernate.internal">org.hibernate.internal</a></div>
+<div class="col-last even-row-color">
 <div class="block">An internal package containing implementations of central Hibernate APIs,
  mostly defined in <a href="../../../package-summary.html"><code>org.hibernate</code></a>.</div>
+</div>
+<div class="col-first odd-row-color"><a href="#org.hibernate.type.descriptor">org.hibernate.type.descriptor</a></div>
+<div class="col-last odd-row-color">
+<div class="block">Contracts for reading and writing values to and from JDBC.</div>
 </div>
 <div class="col-first even-row-color"><a href="#org.hibernate.type.descriptor.java.spi">org.hibernate.type.descriptor.java.spi</a></div>
 <div class="col-last even-row-color">&nbsp;</div>
@@ -190,6 +199,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
+<section class="detail" id="org.hibernate.engine.spi">
+<h2>Uses of <a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a> in <a href="../../../engine/spi/package-summary.html">org.hibernate.engine.spi</a></h2>
+<div class="caption"><span>Methods in <a href="../../../engine/spi/package-summary.html">org.hibernate.engine.spi</a> that return <a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SessionDelegatorBaseImpl.</span><code><a href="../../../engine/spi/SessionDelegatorBaseImpl.html#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SharedSessionDelegatorBaseImpl.</span><code><a href="../../../engine/spi/SharedSessionDelegatorBaseImpl.html#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">SessionDelegatorBaseImpl.</span><code><a href="../../../engine/spi/SessionDelegatorBaseImpl.html#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">SharedSessionDelegatorBaseImpl.</span><code><a href="../../../engine/spi/SharedSessionDelegatorBaseImpl.html#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="org.hibernate.internal">
 <h2>Uses of <a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a> in <a href="../../../internal/package-summary.html">org.hibernate.internal</a></h2>
 <div class="caption"><span>Methods in <a href="../../../internal/package-summary.html">org.hibernate.internal</a> that return <a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span></div>
@@ -198,11 +230,38 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
-<div class="col-second even-row-color"><span class="type-name-label">FastSessionServices.</span><code><a href="../../../internal/FastSessionServices.html#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractSharedSessionContract.</span><code><a href="../../../internal/AbstractSharedSessionContract.html#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-first odd-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">FastSessionServices.</span><code><a href="../../../internal/FastSessionServices.html#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-first even-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">AbstractSharedSessionContract.</span><code><a href="../../../internal/AbstractSharedSessionContract.html#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 <div class="col-first odd-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
 <div class="col-second odd-row-color"><span class="type-name-label">FastSessionServices.</span><code><a href="../../../internal/FastSessionServices.html#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="org.hibernate.type.descriptor">
+<h2>Uses of <a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a> in <a href="../../descriptor/package-summary.html">org.hibernate.type.descriptor</a></h2>
+<div class="caption"><span>Methods in <a href="../../descriptor/package-summary.html">org.hibernate.type.descriptor</a> that return <a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Method</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second even-row-color"><span class="type-name-label">WrapperOptions.</span><code><a href="../../descriptor/WrapperOptions.html#getJsonFormatMapper()" class="member-name-link">getJsonFormatMapper</a>()</code></div>
+<div class="col-last even-row-color">
+<div class="block">Obtain the JSON <a href="../FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+</div>
+<div class="col-first odd-row-color"><code><a href="../FormatMapper.html" title="interface in org.hibernate.type.format">FormatMapper</a></code></div>
+<div class="col-second odd-row-color"><span class="type-name-label">WrapperOptions.</span><code><a href="../../descriptor/WrapperOptions.html#getXmlFormatMapper()" class="member-name-link">getXmlFormatMapper</a>()</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Obtain the XML <a href="../FormatMapper.html" title="interface in org.hibernate.type.format"><code>FormatMapper</code></a>.</div>
+</div>
 </div>
 </section>
 </li>
